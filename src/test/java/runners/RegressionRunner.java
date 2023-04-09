@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
         features = "@target/failed_scenarios.txt",//.txt dosya path
         glue = {"stepdefinitions","hooks"},   //stepdefinitions path
+
         dryRun = false
 )
 

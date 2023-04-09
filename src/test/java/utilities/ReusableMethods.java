@@ -1,9 +1,11 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import pages.LoginPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -185,7 +187,18 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+    static LoginPage loginPage=new LoginPage();
 
+
+    public static void login(String username,String password){
+   Driver.getDriver().get("https://www.managementonschools.com/login");
+    loginPage=new LoginPage();
+    loginPage.login.click();
+    loginPage.userName.sendKeys(username);
+    loginPage.password.sendKeys(password);
+    loginPage.signinLogin.click();
+
+    }
 
 
 }
