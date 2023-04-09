@@ -13,7 +13,7 @@ Feature:
       Then Basariyla Dean girisi yaptigini  dogrular.
       Then close driver
 
-
+@login
       Scenario: ViceDeanLogin
         When Kullanici StudentManagement sayfasina gider.
         When Kullanici viceDean olarak login olur.
