@@ -5,3 +5,4 @@ Feature: Team20 Title testi
     When Sayfa basligi yazdirilir
     Then Sayfa basligi bootcamp yazisi test edilir
     And Sayfa kapatilir
+

@@ -8,10 +8,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
         plugin = {"html:src/test/resources/reports/g1g2g3g4.html"},
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
-        features = "src/test/resources/features/uifeature",
+        features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@g1 ",
-        dryRun = false //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
+        tags = "@login ",
+        dryRun = false
+        //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
 )
 public class Runner {
