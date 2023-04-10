@@ -200,5 +200,11 @@ public class ReusableMethods {
 
     }
 
+    public static void JSEClickToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", element);
+        waitFor(2);
+    }
+
 
 }
