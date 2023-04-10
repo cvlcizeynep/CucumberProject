@@ -1,5 +1,5 @@
 package pages;
 
 public class AdminManagementPage {
-    //hayriye hanim, Nuran hanim, ibrahim bey,
+    //hayriye hanim,ibrahim bey,
 }
