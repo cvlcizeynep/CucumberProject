@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="27.621">
+    <testcase classname="Unknown" name="Admin Login" time="12.179">
+        <system-out>
+            <![CDATA[When Kullanici StudentManagement sayfasina gider............................passed
+When Kullanici admin olarak login olur......................................passed
+Then Basariyla admin girisi yaptigini dogrular..............................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Unknown" name="DeanLogin" time="8.615">
+        <system-out>
+            <![CDATA[When Kullanici StudentManagement sayfasina gider............................passed
+When Kullanici Dean olarak login olur.......................................passed
+Then Basariyla Dean girisi yaptigini  dogrular..............................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Unknown" name="ViceDeanLogin" time="6.615">
+        <system-out>
+            <![CDATA[When Kullanici StudentManagement sayfasina gider............................passed
+When Kullanici viceDean olarak login olur...................................passed
+Then Basariyla viceDean girisi yaptigini dogrular...........................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
