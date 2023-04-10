@@ -1,5 +1,6 @@
 package stepdefinitions.uidefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.checkerframework.checker.units.qual.C;
@@ -14,12 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class LoginStepDefinitions {
     LoginPage loginPage=new LoginPage();
 
-
-    @When("Kullanici StudentManagement sayfasina gider.")
-    public void kullanici_student_management_sayfasina_gider() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-
-    }@When("Kullanici admin olarak login olur.")
+    @Given("Kullanici admin olarak login olur.")
     public void kullanici_admin_olarak_login_olur() {
    ReusableMethods.login(ConfigReader.getProperty("adminUserName"),ConfigReader.getProperty("adminPassword"));
     }
@@ -34,7 +30,7 @@ public class LoginStepDefinitions {
     }
 
 
-    @When("Kullanici Dean olarak login olur.")
+    @Given("Kullanici Dean olarak login olur.")
     public void kullanici_dean_olarak_login_olur() {
         ReusableMethods.login(ConfigReader.getProperty("deanUserName"),ConfigReader.getProperty("deanPassword"));
     }
@@ -53,7 +49,7 @@ public class LoginStepDefinitions {
 
 
 
-    @When("Kullanici viceDean olarak login olur.")
+    @Given("Kullanici viceDean olarak login olur.")
     public void kullanici_vice_dean_olarak_login_olur() {
         ReusableMethods.login(ConfigReader.getProperty("viceDeanUserName"),ConfigReader.getProperty("viceDeanPassword"));
     }
@@ -63,7 +59,7 @@ public class LoginStepDefinitions {
 
     }
 
-    @When("Kullanici Teacher olarak login olur.")
+    @Given("Kullanici Teacher olarak login olur.")
     public void kullanici_teacher_olarak_login_olur() {
 
     }
@@ -72,7 +68,7 @@ public class LoginStepDefinitions {
 
     }
 
-    @When("Kullanici Student olarak login olur.")
+    @Given("Kullanici Student olarak login olur.")
     public void kullanici_student_olarak_login_olur() {
 
     }
