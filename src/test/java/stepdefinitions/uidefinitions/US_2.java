@@ -39,4 +39,17 @@ public class US_2 {
     public void guestUserListUserNameGoruldugunuDogrular() {
         Assert.assertTrue(Driver.getDriver().getPageSource().contains("User Name"));
     }
+
+    @Then("Guest User List bilgilerini siler")
+    public void guestUserListBilgileriniSiler() {
+        guestUserPage.silmeButonu.click();
+
+
+    }
+
+    @Then("Guest User deleted Successful mesaji goruldugunu dogrular")
+    public void guestUserDeletedSuccessfulMesajiGoruldugunuDogrular() {
+        guestUserPage.mesaj.isDisplayed();
+
+    }
 }
