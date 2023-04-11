@@ -14,7 +14,9 @@ public class GuestUserPage {
     public WebElement menuButton;
     @FindBy(xpath = "//a[text()='Guest User']")
     public WebElement guestUser;
-    @FindBy (xpath = "//*[@class='table table-striped table-bordered table-hover']")
-    public  WebElement guestdogrulama;
+    @FindBy (xpath = "//*[@class='btn btn-danger'][1]")
+    public  WebElement silmeButonu;
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
+    public  WebElement mesaj;
 
 }
