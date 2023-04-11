@@ -87,6 +87,7 @@ public class US_16 {
         int nameNo = 1;
         List<WebElement> nameList =
                 Driver.getDriver().findElements(By.xpath("//table//tbody//tr[" + nameNo + 1 + "]//td[1]"));
+        System.out.println(nameList);
         for (int i = 0; i < nameList.size(); i++) {
             Assert.assertTrue("This name is on the list!", nameList.get(i).getText().equals(name));
             Assert.assertFalse("This name is not on the list!", !nameList.get(i).getText().equals(name));
