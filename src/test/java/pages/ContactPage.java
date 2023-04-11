@@ -42,4 +42,7 @@ public class ContactPage {
     @FindBy(xpath="(//span[@aria-hidden='true'])[4]")
     public WebElement goToLastPage;
 
+  //  @FindBy(xpath="//table//tbody//tr[*]//td[1]")
+    //public WebElement nameList;
+
 }
