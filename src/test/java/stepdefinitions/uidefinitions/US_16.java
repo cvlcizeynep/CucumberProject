@@ -87,14 +87,12 @@ public class US_16 {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
         executor.executeScript("document.body.style.zoom = '70%'");
         // ReusableMethods.JSEClickToElement(contactPage.goToLastPage);
-
-
         List<WebElement> nameList =
                 Driver.getDriver().findElements(By.xpath("//table//tbody//tr//td[1]"));
         for (int l = 0; l <= 20; l++) {
             for (int i = 0; i < nameList.size(); i++) {
-                action.sendKeys(Keys.ENTER);
                 Assert.assertTrue("This name is on the list!", nameList.get(i).getText().equals(name));
+                action.sendKeys(Keys.ENTER);
             }
         }
     }
