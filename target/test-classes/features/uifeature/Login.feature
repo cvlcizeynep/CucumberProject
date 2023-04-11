@@ -15,7 +15,6 @@ Feature:Admin,Dean,ViceDean,Teacher ve Student Loginleri
 
   @login
   Scenario: ViceDeanLogin
-
     Given Kullanici viceDean olarak login olur.
     Then Basariyla viceDean girisi yaptigini dogrular.
 
