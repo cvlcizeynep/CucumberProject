@@ -108,7 +108,6 @@ public class US_16 {
     public void kullanici_mesajin_konusunun_subject_sutununda_goruntulendigini_dogrular() {
 
     }
-
     @Given("Kullanici mesajin Message sutununda goruntulendigini dogrular")
     public void kullanici_mesajin_message_sutununda_goruntulendigini_dogrular() {
 
