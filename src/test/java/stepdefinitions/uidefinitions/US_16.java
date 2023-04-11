@@ -1,17 +1,27 @@
 package stepdefinitions.uidefinitions;
 
+import com.beust.ah.A;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.ContactPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class US_16 {
     ContactPage contactPage = new ContactPage();
+    Faker faker = new Faker();
+    String name = faker.name().name();
+
+    String lastName = faker.internet().emailAddress();
+
     @Given("Kullanici viceDean olarak login olur")
     public void kullanici_vice_dean_olarak_login_olur() {
         ReusableMethods.login(ConfigReader.getProperty("viceDeanUserName"), ConfigReader.getProperty("viceDeanPassword"));
@@ -25,26 +35,27 @@ public class US_16 {
 
     @And("Kullanici Your Name textboxini  gecerli yourname bilgisini girer")
     public void kullaniciYourNameTextboxiniGecerliYournameBilgisiniGirer() {
-        Faker faker=new Faker();
-        String name = faker.name().name();
+
+        contactPage.yourNameTextbox.click();
         contactPage.yourNameTextbox.sendKeys(name);
     }
 
     @And("Kullanici Your Mail textboxini  gecerli mailini girer")
     public void kullaniciYourMailTextboxiniGecerliMailiniGirer() {
-        Faker faker1=new Faker();
-        String lastName = faker1.internet().emailAddress();
+
+        contactPage.yourNameTextbox.click();
         contactPage.yourEmailTextbox.sendKeys(lastName);
     }
 
-
     @Given("Kullanici Subject textboxini doldurur")
     public void kullanici_subject_textboxini_doldurur() {
+        contactPage.subjectTextbox.click();
         contactPage.subjectTextbox.sendKeys("konumuz bu");
     }
 
     @Given("Kullanici Message textboxini doldurur")
     public void kullanici_message_textboxini_doldurur() {
+        ReusableMethods.JSEClickToElement(contactPage.messageTextbox);
         contactPage.messageTextbox.sendKeys("mesaj olarak bisey bulamadim");
     }
 
@@ -55,7 +66,7 @@ public class US_16 {
 
     @Given("Kullanici basarili giris yapildigini dogrular")
     public void kullanici_basarili_giris_yapildigini_dogrular() {
-        Assert.assertTrue("Successfully mesaji goruldu",contactPage.successfullyToastify.isDisplayed());
+        Assert.assertTrue("Successfully mesaji goruldu", contactPage.successfullyToastify.isDisplayed());
     }
 
     @Given("Kullanici Menu butonuna tiklar")
@@ -71,9 +82,18 @@ public class US_16 {
     @Given("Kullanici gonderen kisi isminin Name sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisi_isminin_name_sutununda_goruntulendigini_dogrular() {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-        executor.executeScript("document.body.style.zoom = '50%'");
+        executor.executeScript("document.body.style.zoom = '70%'");
         ReusableMethods.JSEClickToElement(contactPage.goToLastPage);
+        int nameNo = 1;
+        List<WebElement> nameList =
+                Driver.getDriver().findElements(By.xpath("//table//tbody//tr[" + nameNo + 1 + "]//td[1]"));
+        System.out.println(nameList);
+        for (int i = 0; i < nameList.size(); i++) {
+            Assert.assertTrue("This name is on the list!", nameList.get(i).getText().equals(name));
+            Assert.assertFalse("This name is not on the list!", !nameList.get(i).getText().equals(name));
+        }
     }
+
 
     @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisinin_mailinin_email_sutununda_goruntulendigini_dogrular() {
@@ -89,7 +109,6 @@ public class US_16 {
     public void kullanici_mesajin_konusunun_subject_sutununda_goruntulendigini_dogrular() {
 
     }
-
     @Given("Kullanici mesajin Message sutununda goruntulendigini dogrular")
     public void kullanici_mesajin_message_sutununda_goruntulendigini_dogrular() {
 
