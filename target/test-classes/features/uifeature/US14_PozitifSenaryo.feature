@@ -1,16 +1,16 @@
 @pozitif
-Feature:Teacher Ekleme Pozitif Senaryo
+Feature:Teacher Guncelleme Pozitif Senaryo
 
   Background:
     When Kullanici viceDean olarak login olur.
     Then Basariyla viceDean girisi yaptigini dogrular.
     When Menu butonuna tiklar
     When Teacher Management butonuna tiklar
-
+    When Choose Lessons alanindan bir ders secer
 
   Scenario Outline:  Pozitif Senaryo
 
-    When Choose Lessons alanindan bir ders secer
+
     When Name alanina valid bir deger "<Name>" girer
     When Surname alanina valid bir deger "<Surname>" girer
     When Birth Place alanina valid bir deger "<Birth Place>" girer
