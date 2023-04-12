@@ -44,7 +44,6 @@ public class US_16 {
 
     @And("Kullanici Your Mail textboxini  gecerli mailini girer")
     public void kullaniciYourMailTextboxiniGecerliMailiniGirer() {
-
         contactPage.yourNameTextbox.click();
         contactPage.yourEmailTextbox.sendKeys(lastName);
     }
