@@ -15,6 +15,8 @@ public class LessonsManagementPage {
     @FindBy(id="compulsory") public WebElement compulsory;
     @FindBy(id="creditScore") public WebElement creditScore;
     @FindBy(xpath="//*[text()='Submit']") public WebElement Submit;
+    @FindBy(xpath="//font[contains(text(),'Ders Oluşturuldu')]") public WebElement lesson_Created;
+
 
 
 
