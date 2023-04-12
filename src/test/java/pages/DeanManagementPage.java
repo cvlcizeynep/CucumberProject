@@ -42,8 +42,10 @@ public class DeanManagementPage {
     public WebElement PasswordButton;
     @FindBy(xpath = "//button[normalize-space()='Submit']")
     public WebElement SubmitButton;
-    @FindBy(xpath = "//div[contains(text(),'Dean Saved')]")
-    public WebElement DeanSavedAlert;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement DeanSavedpopUp;
+    @FindBy(xpath = "//div[.='Required']")
+    public WebElement RequiredYazisi;
 
 
 
