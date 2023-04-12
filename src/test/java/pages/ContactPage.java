@@ -42,4 +42,7 @@ public class ContactPage {
     @FindBy(xpath="(//span[@aria-hidden='true'])[4]")
     public WebElement goToLastPage;
 
+    @FindBy(xpath="d-flex justify-content-start ps-5 col")
+    public WebElement howManyPages;
+
 }
