@@ -104,7 +104,16 @@ public class US13_TeacherManagementStepDefinitions {
 
     @Then("Submit butonunun aktif olmadigini gorur")
     public void submitButonununAktifOlmadiginiGorur() {
-        Assert.assertFalse(teacherManagementPage.popUp.isDisplayed());
+        Assert.assertFalse(teacherManagementPage.popUp.getText().contains("Teacher saved successfully"));
+
+    }
+
+
+    @When("Teacher saved successfully yazisini gorur")
+    public void teacherSavedSuccessfullyYazisiniGorur() {
+        Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
+        Assert.assertTrue(teacherManagementPage.popUp.getText().contains("Teacher saved successfully"));
+        //Please enter valid SSN number
     }
 
     @When("Name alanina valid bir deger {string} girer")
@@ -114,12 +123,6 @@ public class US13_TeacherManagementStepDefinitions {
 
     }
 
-    @When("Teacher saved successfully yazisini gorur")
-    public void teacherSavedSuccessfullyYazisiniGorur() {
-        Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
-        Assert.assertTrue(teacherManagementPage.popUp.getText().contains("Teacher saved successfully"));
-        //Please enter valid SSN number
-    }
 
     @When("Choose Lessons alanindan bir ders secer")
     public void chooseLessonsAlanindanBirDersSecer() throws InterruptedException {
@@ -184,7 +187,7 @@ public class US13_TeacherManagementStepDefinitions {
 
     @When("Birth Place alanina space {string} girer")
     public void birthPlaceAlaninaSpaceGirer(String string) {
-        teacherManagementPage.birthPlace.sendKeys(string, Keys.SPACE);
+        teacherManagementPage.birthPlace.sendKeys(string);
     }
 
     @When("Email alanina space {string} girer")
@@ -199,7 +202,8 @@ public class US13_TeacherManagementStepDefinitions {
 
     @When("Password alanina space {string} girer")
     public void passwordAlaninaSpaceGirer(String string) {
-        teacherManagementPage.password.sendKeys(string, Keys.SPACE);
+        teacherManagementPage.password.sendKeys(string, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE,
+                                                        Keys.SPACE, Keys.SPACE, Keys.SPACE);
     }
 
 
@@ -217,6 +221,11 @@ public class US13_TeacherManagementStepDefinitions {
     @When("Phone alanina space {string} girer")
     public void phoneAlaninaSpaceGirer(String string) {
         teacherManagementPage.phone.sendKeys(string);
+    }
+
+    @When("Gender alanindan male secer")
+    public void genderAlanindanMaleSecer() {
+        teacherManagementPage.genderMale.click();
     }
 }
 

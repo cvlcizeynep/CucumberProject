@@ -1,4 +1,4 @@
-@pozitif
+@pozitif1
 Feature:Teacher Ekleme Pozitif Senaryo
 
   Background:
@@ -20,7 +20,7 @@ Feature:Teacher Ekleme Pozitif Senaryo
     When Username alanina valid bir deger girer
     When Password alanina valid bir deger "<Password>" girer
     When Is Advisor Teacher alanindaki checkbox a tiklar
-    When Gender alanindan cinsiyet "<Cinsiyet>" secer
+    When Gender alanindan male secer
     When Date of birth alanina bir tarih "<Date of birth>" girer
     When Submit butonuna tiklar
     When Teacher saved successfully yazisini gorur
@@ -29,5 +29,5 @@ Feature:Teacher Ekleme Pozitif Senaryo
 
 
     Examples:
-      | Surname | Name   | Birth Place | Password  | Cinsiyet | Date of birth |
-      | Team20  | Team20 | izmir       | Team20_09 | male     | 09-01-1998    |
+      | Surname | Name   | Birth Place | Password  | Date of birth |
+      | Team20  | Team20 | izmir       | Team20_09 | 01-09-1998    |

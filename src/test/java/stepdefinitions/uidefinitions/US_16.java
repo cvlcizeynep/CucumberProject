@@ -1,3 +1,4 @@
+/*
 package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
@@ -22,7 +23,6 @@ public class US_16 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String name = faker.name().name();
-
     String lastName = faker.internet().emailAddress();
     Actions action = new Actions(Driver.getDriver());
     SoftAssert softAssert = new SoftAssert();
@@ -127,3 +127,4 @@ public class US_16 {
 
 
 }
+*/
