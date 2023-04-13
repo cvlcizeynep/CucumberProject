@@ -1,3 +1,4 @@
+
 package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
@@ -22,7 +23,6 @@ public class US_16 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String name = faker.name().name();
-
     String lastName = faker.internet().emailAddress();
     Actions action = new Actions(Driver.getDriver());
     SoftAssert softAssert = new SoftAssert();
@@ -83,7 +83,7 @@ public class US_16 {
     public void kullanici_contact_get_all_butonuna_tiklar() {
         ReusableMethods.JSEClickToElement(contactPage.contactGetAllButton);
     }
-
+/*
     @Given("Kullanici gonderen kisi isminin Name sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisi_isminin_name_sutununda_goruntulendigini_dogrular() {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
@@ -92,31 +92,19 @@ public class US_16 {
         System.out.println(name);
 
 
-
-      /*  for (int l = 1; l <= 20; l++) {
+        for (int l = 1; l <= 20; l++) {
             List<WebElement> nameList = Driver.getDriver().findElements(By.xpath("//table//tbody//tr//td[1]"));
-            Assert.assertTrue(Driver.getDriver().getPageSource().contains(name));
-            ReusableMethods.JSEClickToElement(contactPage.oneTimeForward);
-         //   for (int i = 0; i < nameList.size(); i++) {
-           //     softAssert.assertTrue(nameList.get(i).getText().equals(name), "This name is on the list!");
 
 
-            //}
+            for (int i = 0; i < nameList.size(); i++) {
+                softAssert.assertTrue(nameList.get(i).getText().equals(name), "This name is on the list!");
+
+                ReusableMethods.JSEClickToElement(contactPage.oneTimeForward);
+            }
         }
         softAssert.assertAll();
-    }*/
-        String pageText = Driver.getDriver().findElement(By.xpath("//table//tbody//tr//td[1]")).getText();
-// Tüm sayfaları ziyaret etmek için döngü
-        for (int i = 1; i <= 27; i++) {
-            // Tüm tablolarda aranan kelimeyi bulmak için döngü
-            List<WebElement> tables = Driver.getDriver().findElements(By.xpath("//table//tbody//tr//td[1]"));
-            for (WebElement table : tables) {
-                String nameAttribute = table.getAttribute(“name”);
-                if (nameAttribute != null && nameAttribute.contains(“name”)) {
-                    System.out.println(“Tabloda aranan kelime bulundu: ”+nameAttribute);
-                }
-            }
-        }}
+    }
+*/
     @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisinin_mailinin_email_sutununda_goruntulendigini_dogrular() {
 
@@ -139,3 +127,4 @@ public class US_16 {
 
 
 }
+
