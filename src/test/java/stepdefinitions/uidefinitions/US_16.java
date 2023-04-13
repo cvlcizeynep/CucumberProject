@@ -1,4 +1,4 @@
-/*
+
 package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
@@ -83,7 +83,7 @@ public class US_16 {
     public void kullanici_contact_get_all_butonuna_tiklar() {
         ReusableMethods.JSEClickToElement(contactPage.contactGetAllButton);
     }
-
+/*
     @Given("Kullanici gonderen kisi isminin Name sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisi_isminin_name_sutununda_goruntulendigini_dogrular() {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
@@ -104,7 +104,7 @@ public class US_16 {
         }
         softAssert.assertAll();
     }
-
+*/
     @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisinin_mailinin_email_sutununda_goruntulendigini_dogrular() {
 
@@ -127,4 +127,4 @@ public class US_16 {
 
 
 }
-*/
+
