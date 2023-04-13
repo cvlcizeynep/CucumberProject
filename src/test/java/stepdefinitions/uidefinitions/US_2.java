@@ -7,8 +7,10 @@ import pages.GuestUserPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+
 public class US_2 {
     GuestUserPage guestUserPage = new GuestUserPage();
+
 
     @And("Menu botonuna tiklar")
     public void menuBotonunaTiklar() {
@@ -38,6 +40,7 @@ public class US_2 {
     @Then("Guest User List, User Name bilgisinin goruldugunu dogrular")
     public void guestUserListUserNameGoruldugunuDogrular() {
         Assert.assertTrue(Driver.getDriver().getPageSource().contains("User Name"));
+        ReusableMethods.waitFor(3);
     }
 
     @Then("Guest User List bilgilerini siler")

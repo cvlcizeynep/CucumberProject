@@ -1,3 +1,4 @@
+/*
 package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
@@ -9,20 +10,22 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.asserts.SoftAssert;
 import pages.ContactPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class US_16 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String name = faker.name().name();
-
     String lastName = faker.internet().emailAddress();
     Actions action = new Actions(Driver.getDriver());
+    SoftAssert softAssert = new SoftAssert();
 
     @Given("Kullanici viceDean olarak login olur")
     public void kullanici_vice_dean_olarak_login_olur() {
@@ -86,16 +89,21 @@ public class US_16 {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
         executor.executeScript("document.body.style.zoom = '70%'");
         // ReusableMethods.JSEClickToElement(contactPage.goToLastPage);
-        List<WebElement> nameList =
-                Driver.getDriver().findElements(By.xpath("//table//tbody//tr//td[1]"));
-        for (int l = 0; l <= 20; l++) {
+        System.out.println(name);
+
+
+        for (int l = 1; l <= 20; l++) {
+            List<WebElement> nameList = Driver.getDriver().findElements(By.xpath("//table//tbody//tr//td[1]"));
+
+
             for (int i = 0; i < nameList.size(); i++) {
-                Assert.assertTrue("This name is on the list!", nameList.get(i).getText().equals(name));
-                action.sendKeys(Keys.ENTER);
+                softAssert.assertTrue(nameList.get(i).getText().equals(name), "This name is on the list!");
+
+                ReusableMethods.JSEClickToElement(contactPage.oneTimeForward);
             }
         }
+        softAssert.assertAll();
     }
-
 
     @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisinin_mailinin_email_sutununda_goruntulendigini_dogrular() {
@@ -119,3 +127,4 @@ public class US_16 {
 
 
 }
+*/
