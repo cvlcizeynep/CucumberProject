@@ -61,11 +61,14 @@ public class LoginStepDefinitions {
 
     @Given("Kullanici Teacher olarak login olur.")
     public void kullanici_teacher_olarak_login_olur() {
-
+        ReusableMethods.login(ConfigReader.getProperty("teacherUserName"),ConfigReader.getProperty("teacherPassword"));
     }
     @Then("Basariyla teacher girisi yaptigini dogrular.")
     public void basariyla_teacher_girisi_yaptigini_dogrular() {
-
+        ReusableMethods.waitFor(3);
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://www.managementonschools.com/studentInfo";
+        assertEquals(expectedUrl,actualUrl);
     }
 
     @Given("Kullanici Student olarak login olur.")

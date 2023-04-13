@@ -42,10 +42,15 @@ public class DeanManagementPage {
     public WebElement PasswordButton;
     @FindBy(xpath = "//button[normalize-space()='Submit']")
     public WebElement SubmitButton;
-    @FindBy(xpath = "//div[@role='alert']")
-    public WebElement DeanSavedpopUp;
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
+    public WebElement popUpMesaji;
     @FindBy(xpath = "//div[.='Required']")
     public WebElement RequiredYazisi;
+
+    @FindBy(xpath = "//div[.='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement SsnUyariYazisi;
+    @FindBy(xpath = "//div[.='Minimum 8 character']")
+    public WebElement passwordBoxUyariYazisi;
 
 
 
