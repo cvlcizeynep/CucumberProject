@@ -14,8 +14,9 @@ public class LessonsManagementPage {
     @FindBy(id ="lessonName")  public WebElement lessonName;
     @FindBy(id="compulsory") public WebElement compulsory;
     @FindBy(id="creditScore") public WebElement creditScore;
-    @FindBy(xpath="//*[text()='Submit']") public WebElement Submit;
-    @FindBy(xpath="//font[contains(text(),'Ders Oluşturuldu')]") public WebElement lesson_Created;
+    @FindBy(xpath = "//button[text()='Submit']")   public WebElement lessonSubmit;
+    @FindBy(xpath="//font[contains(text()='Ders Oluşturuldu')]") public WebElement lessonDersOluşturulduMesaji;
+    @FindBy(xpath="//div[contains(text()='JSON parse error: Cannot deserialize value of type']]") public WebElement lessonhataMesaji;
 
 
 
