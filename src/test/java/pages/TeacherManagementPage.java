@@ -62,19 +62,26 @@ public class TeacherManagementPage {
     @FindBy(id = "controlled-tab-example-tabpane-teachersList")
     public List<WebElement> required;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//*[@role='alert']")
     public WebElement popUp;
 
     @FindBy(xpath="//div[@class=' css-1xc3v61-indicatorContainer']")
     public WebElement chooseLessons;
 
+    @FindBy(xpath="(//*[text()='Name Surname'])[1]")
+    public WebElement nameSurnameInfo;
 
+    @FindBy(xpath="//*[text()='Phone Number']")
+    public WebElement phoneNumberInfo;
 
+    @FindBy(xpath="(//*[text()='Ssn'])[1]")
+    public WebElement ssnInfo;
 
+    @FindBy(xpath="(//*[text()='User Name'])[2]")
+    public WebElement userNameInfo;
 
-
-
-
+    @FindBy(xpath="(//*[@class='page-item'])[4]")
+    public WebElement sagOkButton;
 
 
 
