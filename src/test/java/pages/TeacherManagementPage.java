@@ -53,6 +53,8 @@ public class TeacherManagementPage {
     public List<WebElement> required;
     @FindBy(xpath = "//*[@role='alert']")
     public WebElement popUp;
+    @FindBy(xpath = "//*[text()='Teacher saved successfully']")
+    public WebElement popUpBasarili;
     @FindBy(xpath = "//div[@class=' css-1xc3v61-indicatorContainer']")
     public WebElement chooseLessons;
     @FindBy(xpath = "(//*[text()='Name Surname'])[1]")

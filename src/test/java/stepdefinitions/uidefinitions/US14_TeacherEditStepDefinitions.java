@@ -1,5 +1,6 @@
 package stepdefinitions.uidefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -15,29 +16,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static utilities.Driver.clickWithJS;
+import static utilities.ReusableMethods.JSEClickToElement;
 import static utilities.ReusableMethods.waitFor;
 
 public class US14_TeacherEditStepDefinitions {
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
     Actions actions;
+    Faker faker = new Faker();
 
 
     @When("Butun alanlari siler")
     public void butunAlanlariSiler() {
         teacherManagementPage.editNameTextBox.clear();
-        waitFor(2);
         teacherManagementPage.editSurnameTextBox.clear();
-        waitFor(2);
         teacherManagementPage.editBirthPlace.clear();
-        waitFor(2);
         teacherManagementPage.editEmailTextbox.clear();
-        waitFor(2);
         teacherManagementPage.editPhoneTextbox.clear();
-        waitFor(2);
         teacherManagementPage.editSsnTextbox.clear();
-        waitFor(2);
         teacherManagementPage.editUsernameTextbox.clear();
-        waitFor(2);
         teacherManagementPage.editPasswordTextbox.clear();
     }
 
@@ -120,20 +116,72 @@ public class US14_TeacherEditStepDefinitions {
 
     @Then("Alanlardaki bilgileri {string}, {string}, {string}, {string},{string} olarak gunceller")
     public void alanlardakiBilgileriOlarakGunceller(String name, String surname, String birthPlace, String password, String dateOfBirth) {
-//        ReusableMethod.wait(3);
-//        ReusableMethod.cleanByJs(viceDeanTeacherListPage.nameBox);
-//        ReusableMethod.wait(2);
-//        viceDeanTeacherListPage.nameBox.sendKeys("Seda");
 
-        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + name).perform();
-        waitFor(1);
-        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + surname).perform();
-        waitFor(1);
-        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE + birthPlace).perform();
-        waitFor(1);
-        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE + password).perform();
-        waitFor(1);
-        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE + dateOfBirth).perform();
-        waitFor(1);
+        ReusableMethods.cleanByJs(teacherManagementPage.editNameTextBox);
+        waitFor(2);
+        teacherManagementPage.editNameTextBox.sendKeys(name);
+        waitFor(2);
+        ReusableMethods.cleanByJs(teacherManagementPage.editSurnameTextBox);
+        waitFor(2);
+        teacherManagementPage.editSurnameTextBox.sendKeys(surname);
+        waitFor(2);
+        ReusableMethods.cleanByJs(teacherManagementPage.editBirthPlace);
+        waitFor(2);
+        teacherManagementPage.editBirthPlace.sendKeys(birthPlace);
+        waitFor(2);
+        ReusableMethods.cleanByJs(teacherManagementPage.editPasswordTextbox);
+        waitFor(2);
+        teacherManagementPage.editPasswordTextbox.sendKeys(password);
+        waitFor(2);
+        ReusableMethods.cleanByJs(teacherManagementPage.editdateOfBirth);
+        waitFor(2);
+        teacherManagementPage.editdateOfBirth.sendKeys(dateOfBirth);
+        waitFor(2);
+        ReusableMethods.cleanByJs(teacherManagementPage.editUsernameTextbox);
+        waitFor(2);
+        teacherManagementPage.editUsernameTextbox.sendKeys("Ali");
+//        ReusableMethods.cleanByJs(teacherManagementPage.editEmailTextbox);
+//        ReusableMethods.cleanByJs(teacherManagementPage.editPhoneTextbox);
+
+
+//        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + name).perform();
+//        waitFor(1);
+        //    actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + surname).perform();
+//        waitFor(1);
+//        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE + birthPlace).perform();
+////        waitFor(1);
+//        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE + password).perform();
+//        waitFor(1);
+//        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE + dateOfBirth).perform();
+//        waitFor(1);
+
+
+    }
+
+    @When("Edit alanindaki Is Advisor Teacher alanindaki checkbox a tiklar")
+    public void editAlanindakiIsAdvisorTeacherAlanindakiCheckboxATiklar() {
+        JSEClickToElement(teacherManagementPage.editIsAdvisorTeacher);
+    }
+
+    @When("Edit alanindaki Gender alanindan male secer")
+    public void editAlanindakiGenderAlanindanMaleSecer() {
+        JSEClickToElement(teacherManagementPage.editGenderMale);
+    }
+
+    @When("Edit alanindaki Submit butonuna tiklar")
+    public void editAlanindakiSubmitButonunaTiklar() {
+        JSEClickToElement(teacherManagementPage.editSubmitButton);
+    }
+
+
+    @When("Username alanina space deger girer")
+    public void usernameAlaninaSpaceDegerGirer(String string) {
+        teacherManagementPage.username.sendKeys(string, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE);
+
+    }
+
+    @When("Teacher updated successful yazisini gorur")
+    public void teacherUpdatedSuccessfulYazisiniGorur() {
+        Assert.assertTrue(teacherManagementPage.popUp.getText().contains("Teacher updated Successful"));
     }
 }
