@@ -9,17 +9,22 @@ When Menuden contact get all u tiklar
 
   Scenario: TC01 Mesajlar Dean tarafindan gorulebilmeli
     Then Dean hesabiyla mesajlarin gorulebildigini dogrular
+    Then close driver
 
     Scenario: TC02 Mesaj gonderen kisiler gorulebilmeli
       Then Kullanici dean hesabiyla mesaj gonderen kisilerin goruldugunu dogrular
+      Then close driver
 
       Scenario: TC03 Mesaj gonderenlerin mailleri gorulebilmeli
         Then Kullanici dean hesabiyla mesaj gonderen kisilerin maillerinin goruldugunu dogrular
+        Then close driver
 
         Scenario: TC04 Mesajlarin tarihi gorulmeli
           Then Kullanici dean hesabiyla gonderilen mesajlarin tarihlerinin  goruldugunu dogrular
+          Then close driver
 
           Scenario: TC05 Mesajlarin subjecti gorulmeli
           Then Kullanici dean hesabiyla gonderilen mesajlarin subjectlerinin goruldugunu dogrular
+            Then close driver
 
 
