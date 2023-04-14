@@ -72,9 +72,9 @@ public class US_24 {
             teacherManagementPage.genderMale.click();
         } else if (gender.equals("female")) {
             teacherManagementPage.genderFemale.click();
-        } else {
-            Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
         }
+            Assert.assertFalse(teacherManagementPage.submit.isSelected());
+
     }
 
     @And("Kullanici Date of birth alanina bir tarih {string} girer")
@@ -86,7 +86,6 @@ public class US_24 {
     @Given("Kullanici Submit butonuna tiklar")
     public void kullanici_submit_butonuna_tiklar() {
         Driver.clickWithJS(teacherManagementPage.submit);
-      //  ReusableMethods.waitFor(6);
     }
 
     @Given("Kullanici Submit butonunun aktif olmadigini gorur")
@@ -98,6 +97,41 @@ public class US_24 {
     public void kullaniciNameTextboxinaValidBirDegerGirer() {
        String isim = faker.name().name();
        teacherManagementPage.name.sendKeys(isim);
+    }
+
+    @And("Kullanici Email textboxina valid bir deger {string}girer")
+    public void kullaniciEmailTextboxinaValidBirDegerGirer(String email) {
+        teacherManagementPage.email.sendKeys(email);
+    }
+
+    @And("Kullanici Phone textboxina valid bir deger {string} girer")
+    public void kullaniciPhoneTextboxinaValidBirDegerGirer(String phone) {
+        teacherManagementPage.phone.sendKeys(phone);
+    }
+
+    @And("Kullanici SSN textboxina valid bir deger {string}girer")
+    public void kullaniciSSNTextboxinaValidBirDegerGirer(String SSN) {
+        teacherManagementPage.ssn.sendKeys(SSN);
+    }
+
+    @And("Kullanici Username textboxina valid bir deger {string} girer")
+    public void kullaniciUsernameTextboxinaValidBirDegerGirer(String username) {
+        teacherManagementPage.username.sendKeys(username);
+    }
+
+    @And("Kullanici Password textboxina valid bir deger {string} girer")
+    public void kullaniciPasswordTextboxinaValidBirDegerGirer(String password) {
+        teacherManagementPage.password.sendKeys(password);
+    }
+
+    @And("Kullanici Name textboxina valid bir deger {string} girer")
+    public void kullaniciNameTextboxinaValidBirDegerGirer(String name) {
+        teacherManagementPage.name.sendKeys(name);
+    }
+
+    @And("Kullanici Surname textboxina valid bir deger {string} girer")
+    public void kullaniciSurnameTextboxinaValidBirDegerGirer(String surname) {
+        teacherManagementPage.surname.sendKeys(surname);
     }
 }
 
