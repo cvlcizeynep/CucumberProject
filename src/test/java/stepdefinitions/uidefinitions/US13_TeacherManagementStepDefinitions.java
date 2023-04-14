@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class US13_TeacherManagementStepDefinitions {
 
+    Faker faker;
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
 
 
@@ -33,40 +34,31 @@ public class US13_TeacherManagementStepDefinitions {
         teacherManagementPage.surname.sendKeys(string);
     }
 
-
     @When("Birth Place alanina valid bir deger {string} girer")
     public void birthPlaceAlaninaValidBirDegerGirer(String string) {
         teacherManagementPage.birthPlace.sendKeys(string);
-
     }
-
 
     @When("Email alanina valid bir deger girer")
     public void emailAlaninaValidBirDegerGirer() {
-        Faker faker = new Faker();
+        faker = new Faker();
         teacherManagementPage.email.sendKeys(faker.internet().emailAddress());
-
     }
-
 
     @When("SSN alanina valid bir deger girer")
     public void ssnAlaninaValidBirDegerGirer() {
 
-        Faker faker = new Faker();
+        faker = new Faker();
         String ssn = faker.idNumber().ssnValid().replaceAll("[^0-9]", "");
         String formattedSSN = ssn.substring(0, 3) + "-" + ssn.substring(3, 5) + "-" + ssn.substring(5, 9);
         teacherManagementPage.ssn.sendKeys(formattedSSN);
 
-
     }
-
     @When("Username alanina valid bir deger girer")
     public void usernameAlaninaValidBirDegerGirer() {
-
-        Faker faker = new Faker();
+        faker = new Faker();
         teacherManagementPage.username.sendKeys(faker.name().username());
     }
-
 
     @When("Password alanina valid bir deger {string} girer")
     public void passwordAlaninaValidBirDegerGirer(String string) {
@@ -87,14 +79,11 @@ public class US13_TeacherManagementStepDefinitions {
         } else {
             Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
         }
-
     }
 
     @When("Date of birth alanina bir tarih {string} girer")
     public void dateOfBirthAlaninaBirTarihGirer(String string) {
-        teacherManagementPage.dateOfBirth.sendKeys(string);
-
-    }
+        teacherManagementPage.dateOfBirth.sendKeys("01.19.1998");}
 
     @When("Submit butonuna tiklar")
     public void submitButonunaTiklar() {
@@ -108,21 +97,17 @@ public class US13_TeacherManagementStepDefinitions {
 
     }
 
-
     @When("Teacher saved successfully yazisini gorur")
     public void teacherSavedSuccessfullyYazisiniGorur() {
         Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
         Assert.assertTrue(teacherManagementPage.popUp.getText().contains("Teacher saved successfully"));
-        //Please enter valid SSN number
     }
 
     @When("Name alanina valid bir deger {string} girer")
     public void nameAlaninaValidBirDegerGirer(String string) {
 
         teacherManagementPage.name.sendKeys(string);
-
     }
-
 
     @When("Choose Lessons alanindan bir ders secer")
     public void chooseLessonsAlanindanBirDersSecer() throws InterruptedException {
@@ -136,12 +121,11 @@ public class US13_TeacherManagementStepDefinitions {
     @When("Email alanina invalid bir deger girer")
     public void emailAlaninainvalidBirDegerGirer() {
 
-        Faker faker = new Faker();
+        faker = new Faker();
         String invalidEmail = faker.name().username() + "." + faker.lorem().word();
         System.out.println(invalidEmail);
         teacherManagementPage.email.sendKeys(invalidEmail);
     }
-
 
     @When("SSN alanina valid bir deger {string} girer")
     public void ssnAlaninaValidBirDegerGirer(String string) {
@@ -151,7 +135,7 @@ public class US13_TeacherManagementStepDefinitions {
     @When("Ekran goruntusu alinir")
     public void ekranGoruntusuAlinir() {
         try {
-            ReusableMethods.getScreenshot("Teacher saved successfully");
+            ReusableMethods.getScreenshot("ScreenShot");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -165,7 +149,7 @@ public class US13_TeacherManagementStepDefinitions {
 
     @When("Phone alanina valid bir deger girer")
     public void phoneAlaninaValidBirDegerGirer() {
-        Faker faker = new Faker();
+        faker = new Faker();
         String phoneNumber = faker.phoneNumber().phoneNumber().replaceAll("[^0-9]", "");
         phoneNumber = String.format("%s-%s-%s",
                 phoneNumber.substring(0, 3),
@@ -203,7 +187,7 @@ public class US13_TeacherManagementStepDefinitions {
     @When("Password alanina space {string} girer")
     public void passwordAlaninaSpaceGirer(String string) {
         teacherManagementPage.password.sendKeys(string, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE,
-                                                        Keys.SPACE, Keys.SPACE, Keys.SPACE);
+                Keys.SPACE, Keys.SPACE, Keys.SPACE);
     }
 
 
