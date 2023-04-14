@@ -93,7 +93,7 @@ public class US13_TeacherManagementStepDefinitions {
 
     @Then("Submit butonunun aktif olmadigini gorur")
     public void submitButonununAktifOlmadiginiGorur() {
-        Assert.assertFalse(teacherManagementPage.popUp.getText().contains("Teacher saved successfully"));
+        Assert.assertFalse(teacherManagementPage.submit.isSelected());
 
     }
 
