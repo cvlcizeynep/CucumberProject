@@ -1,7 +1,7 @@
-
+@namesurname
 Feature: Dean Vice Dean Eklerken Gerekli Kisimlari Doldurmadan Kayit Olusturamamalidir
 
-  Background:
+  Background:dean olrak giris
     Given Kullanici Dean olarak login olur.
 
   Scenario TC02 Name bos birakilmamali
