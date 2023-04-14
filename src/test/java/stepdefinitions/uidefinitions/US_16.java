@@ -76,6 +76,7 @@ public class US_16 {
 
     @Given("Kullanici Menu butonuna tiklar")
     public void kullanici_menu_butonuna_tiklar() {
+        ReusableMethods.waitForClickablility(contactPage.menuButton,6);
         ReusableMethods.JSEClickToElement(contactPage.menuButton);
     }
 
