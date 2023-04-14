@@ -49,7 +49,8 @@ public class US20PozitiveStepdefinition {
     public void deleteBasariliYazisiniGorur() {
         Assert.assertTrue(meetManagementPage.deleteBasarili.isSelected());
     }
-}
+
+
 
     @And("Toplanti guncellendi yazisini gorur")
     public void toplantiGuncellendiYazisiniGorur() {
