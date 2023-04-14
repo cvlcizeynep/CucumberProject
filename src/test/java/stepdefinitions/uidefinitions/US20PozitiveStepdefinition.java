@@ -40,8 +40,20 @@ public class US20PozitiveStepdefinition {
         Assert.assertTrue(meetManagementPage.description.isDisplayed());
     }
 
+    @And("deleteye tiklar")
+    public void deleteyeTiklar() {
+        ReusableMethods.waitForClickablility(meetManagementPage.meetDelete,5);
+    }
+
+    @And("delete basarili yazisini gorur")
+    public void deleteBasariliYazisiniGorur() {
+        Assert.assertTrue(meetManagementPage.deleteBasarili.isSelected());
+    }
+}
+
     @And("Toplanti guncellendi yazisini gorur")
     public void toplantiGuncellendiYazisiniGorur() {
         Assert.assertTrue(meetManagementPage.editMeetBasarili.isDisplayed());
     }
+
 }

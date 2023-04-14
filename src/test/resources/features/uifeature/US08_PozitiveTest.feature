@@ -24,6 +24,7 @@ Feature:US8PozıtıveTest
     And Credit Score degeri girdigini dogrular
     Then close the application
 
+  
 
 
 
