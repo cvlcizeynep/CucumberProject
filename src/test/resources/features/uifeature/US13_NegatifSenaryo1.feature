@@ -47,7 +47,7 @@ Feature:Teacher Ekleme Negatif Senaryo 1
     When Is Advisor Teacher alanindaki checkbox a tiklar
     When Gender alanindan male secer
     When Submit butonuna tiklar
-   # When Submit butonunun aktif olmadigini gorur
+    When Submit butonunun aktif olmadigini gorur
     When Ekran goruntusu alinir
     Then close driver
 
@@ -109,8 +109,6 @@ Feature:Teacher Ekleme Negatif Senaryo 1
       | Team20  | Team20 | izmir       | 123456789 | 01-09-1998    |
 
 
-
-
   Scenario Outline: Choose Lessons Alaninin Bos Birakilmasi
 
     When Alanlara bilgileri girer "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>"
@@ -130,8 +128,24 @@ Feature:Teacher Ekleme Negatif Senaryo 1
 
 
 
+  Scenario Outline: Username Alaninin Bos Birakilmasi
+    When Choose Lessons alanindan bir ders secer
+    When Alanlara bilgileri girer "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>"
+    When Email alanina valid bir deger girer
+    When Phone alanina valid bir deger girer
+    When SSN alanina valid bir deger girer
+    When Username alanina valid bir deger girer
+    When Is Advisor Teacher alanindaki checkbox a tiklar
+    When Gender alanindan male secer
+    When Submit butonuna tiklar
+    When Teacher saved successfully yazisini gorur
+    When Submit butonunun aktif olmadigini gorur
+    When Ekran goruntusu alinir
+    Then close driver
 
-
+    Examples:
+      | Surname | Name   | Birth Place | Password  | Date of birth |
+      | Team20  | Team20 | izmir       | 123456789 | 01-09-1998    |
 
 
 

@@ -8,13 +8,7 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When Teacher Management butonuna tiklar
 
 
-  Scenario: Ogretmen_Editleme
-    When Teacher list alanindaki bir ogretmenin edit butonuna tiklar
-    When Edit teacher sayfasini goruntuler
-
-
   Scenario: Olusturulan_bilgilerin_goruntulenmesi
-
     When Teacher List alaninda ogretmenin name bilgilerini gorur
     When Teacher List alaninda ogretmenin phone number bilgilerini gorur
     When Teacher List alaninda ogretmenin SSN bilgilerini gorur
@@ -22,12 +16,11 @@ Feature:Teacher Guncelleme Pozitif Senaryo
 
 
   Scenario Outline:  Edit Alani Pozitif Senaryo
-
-    When Teacher list alanindaki bir ogretmenin edit butonuna tiklar
+    When Olusturulan ogretmenin edit butonuna tiklar
     When Edit teacher sayfasini goruntuler
     When Edit sayfasindaki Choose Lessons alanindan bir ders secer
-    When Butun alanlari siler
-   # Then Alanlardaki bilgileri "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>" olarak gunceller
+    #When Butun alanlari siler
+    Then Alanlardaki bilgileri "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>" olarak gunceller
     When Email alanina valid bir deger girer
     When Phone alanina valid bir deger girer
     When SSN alanina valid bir deger girer

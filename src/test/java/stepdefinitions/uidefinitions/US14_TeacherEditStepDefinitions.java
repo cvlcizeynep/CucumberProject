@@ -3,6 +3,7 @@ package stepdefinitions.uidefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -57,22 +58,33 @@ public class US14_TeacherEditStepDefinitions {
     @When("Teacher List alaninda ogretmenin SSN bilgilerini gorur")
     public void teacherListAlanindaOgretmeninSSNBilgileriniGorur() {
         Assert.assertTrue(teacherManagementPage.ssnInfo.isDisplayed());
-       // Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Ssn")));
+        // Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Ssn")));
     }
 
     @Then("Teacher List alaninda ogretmenin username bilgilerini gorur")
     public void teacherListAlanindaOgretmeninUsernameBilgileriniGorur() {
         Assert.assertTrue(teacherManagementPage.userNameInfo.isDisplayed());
-       // Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("User")));
+        // Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("User")));
     }
 
-    @When("Teacher list alanindaki bir ogretmenin edit butonuna tiklar")
+    @When("Olusturulan ogretmenin edit butonuna tiklar")
     public void teacherListAlanindakiBirOgretmeninEditButonunaTiklar() {
-        for (int i = 1; i < 7; i++) {
-            clickWithJS(teacherManagementPage.sagOkButton);
-            waitFor(2);
-        }clickWithJS(teacherManagementPage.editButton);
+
+        List<String> teacherListString = new ArrayList<>();
+        List<WebElement> teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+        teacherList.forEach(t -> teacherListString.add(t.getText()));
+
+        while (!teacherListString.contains("Team20 Team20")) {
+            Driver.clickWithJS(teacherManagementPage.sagOkButton);
+            teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+            teacherListString.clear();
+            teacherList.forEach(t -> teacherListString.add(t.getText()));
+            ReusableMethods.waitFor(2);
+        }
+        Driver.clickWithJS(teacherManagementPage.editButton);
+
     }
+
 
     @When("Edit teacher sayfasini goruntuler")
     public void editTeacherSayfasiniGoruntuler() {
@@ -81,43 +93,47 @@ public class US14_TeacherEditStepDefinitions {
 
     @When("Alanlara bilgileri girer {string}, {string}, {string}, {string},{string}")
     public void butunAlanlaraBilgileriGirer(String name, String surname, String birthPlace, String password, String dateOfBirth) {
-        Driver.waitAndSendText(teacherManagementPage.name,name);
-        Driver.waitAndSendText(teacherManagementPage.surname,surname);
-        Driver.waitAndSendText(teacherManagementPage.birthPlace,birthPlace);
-        Driver.waitAndSendText(teacherManagementPage.password,password);
-        Driver.waitAndSendText(teacherManagementPage.dateOfBirth,dateOfBirth);
+        Driver.waitAndSendText(teacherManagementPage.name, name);
+        Driver.waitAndSendText(teacherManagementPage.surname, surname);
+        Driver.waitAndSendText(teacherManagementPage.birthPlace, birthPlace);
+        Driver.waitAndSendText(teacherManagementPage.password, password);
+        Driver.waitAndSendText(teacherManagementPage.dateOfBirth, dateOfBirth);
 
     }
 
     @When("Edit alanlarina bilgileri girer {string}, {string}, {string}, {string},{string}")
     public void editAlanlarinaBilgileriGirer(String name, String surname, String birthPlace, String password, String dateOfBirth) {
 
-        Driver.waitAndSendText(teacherManagementPage.editNameTextBox,name);
-        Driver.waitAndSendText(teacherManagementPage.editSurnameTextBox,surname);
-        Driver.waitAndSendText(teacherManagementPage.editBirthPlace,birthPlace);
-        Driver.waitAndSendText(teacherManagementPage.editPasswordTextbox,password);
-        Driver.waitAndSendText(teacherManagementPage.editdateOfBirth,dateOfBirth);
+        Driver.waitAndSendText(teacherManagementPage.editNameTextBox, name);
+        Driver.waitAndSendText(teacherManagementPage.editSurnameTextBox, surname);
+        Driver.waitAndSendText(teacherManagementPage.editBirthPlace, birthPlace);
+        Driver.waitAndSendText(teacherManagementPage.editPasswordTextbox, password);
+        Driver.waitAndSendText(teacherManagementPage.editdateOfBirth, dateOfBirth);
     }
 
     @When("Edit sayfasindaki Choose Lessons alanindan bir ders secer")
     public void editSayfasindakiChooseLessonsAlanindanBirDersSecer() {
         teacherManagementPage.editTeacherYazisi.click();
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("MathT6"+ Keys.ENTER).perform();
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("MathT6" + Keys.ENTER).perform();
     }
 
     @Then("Alanlardaki bilgileri {string}, {string}, {string}, {string},{string} olarak gunceller")
     public void alanlardakiBilgileriOlarakGunceller(String name, String surname, String birthPlace, String password, String dateOfBirth) {
+//        ReusableMethod.wait(3);
+//        ReusableMethod.cleanByJs(viceDeanTeacherListPage.nameBox);
+//        ReusableMethod.wait(2);
+//        viceDeanTeacherListPage.nameBox.sendKeys("Seda");
 
-        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE+name).perform();
+        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + name).perform();
         waitFor(1);
-        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE+surname).perform();
+        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + surname).perform();
         waitFor(1);
-        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE+birthPlace).perform();
+        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE + birthPlace).perform();
         waitFor(1);
-        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE+password).perform();
+        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE + password).perform();
         waitFor(1);
-        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE+dateOfBirth).perform();
+        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE + dateOfBirth).perform();
         waitFor(1);
     }
 }
