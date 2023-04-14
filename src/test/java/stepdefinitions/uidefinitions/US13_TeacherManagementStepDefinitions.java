@@ -12,6 +12,9 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 
+import static utilities.ReusableMethods.JSEClickToElement;
+import static utilities.ReusableMethods.waitFor;
+
 public class US13_TeacherManagementStepDefinitions {
 
     Faker faker;
@@ -67,7 +70,8 @@ public class US13_TeacherManagementStepDefinitions {
 
     @When("Is Advisor Teacher alanindaki checkbox a tiklar")
     public void ısAdvisorTeacherAlanindakiCheckboxATiklar() {
-        teacherManagementPage.isAdvisorTeacher.click();
+        ReusableMethods.JSEClickToElement(teacherManagementPage.isAdvisorTeacher);
+
     }
 
     @When("Gender alanindan cinsiyet {string} secer")
@@ -88,19 +92,19 @@ public class US13_TeacherManagementStepDefinitions {
     @When("Submit butonuna tiklar")
     public void submitButonunaTiklar() {
         Driver.clickWithJS(teacherManagementPage.submit);
-        ReusableMethods.waitFor(2);
+        waitFor(2);
     }
 
     @Then("Submit butonunun aktif olmadigini gorur")
     public void submitButonununAktifOlmadiginiGorur() {
-        Assert.assertFalse(teacherManagementPage.submit.isSelected());
+        Assert.assertFalse(teacherManagementPage.submit.isEnabled());
+
 
     }
 
     @When("Teacher saved successfully yazisini gorur")
     public void teacherSavedSuccessfullyYazisiniGorur() {
-        Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
-        Assert.assertTrue(teacherManagementPage.popUp.getText().contains("Teacher saved successfully"));
+        Assert.assertTrue(teacherManagementPage.popUpBasarili.getText().contains("Teacher saved successfully"));
     }
 
     @When("Name alanina valid bir deger {string} girer")
@@ -209,7 +213,7 @@ public class US13_TeacherManagementStepDefinitions {
 
     @When("Gender alanindan male secer")
     public void genderAlanindanMaleSecer() {
-        teacherManagementPage.genderMale.click();
+        JSEClickToElement(teacherManagementPage.genderMale);
     }
 }
 
