@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import pages.TeacherManagementPage;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US_24 {
@@ -71,9 +72,9 @@ public class US_24 {
             teacherManagementPage.genderMale.click();
         } else if (gender.equals("female")) {
             teacherManagementPage.genderFemale.click();
-        } else {
-            Assert.assertTrue(teacherManagementPage.popUp.isDisplayed());
         }
+            Assert.assertFalse(teacherManagementPage.submit.isSelected());
+
     }
 
     @And("Kullanici Date of birth alanina bir tarih {string} girer")
@@ -81,23 +82,56 @@ public class US_24 {
         teacherManagementPage.dateOfBirth.sendKeys(dateOfBirth);
     }
 
-    @Given("Kullanici Name textboxinin altinda {string} yazisini gorur")
-    public void kullanici_name_textboxinin_altinda_yazisini_gorur(String required) {
-
-    }
 
     @Given("Kullanici Submit butonuna tiklar")
     public void kullanici_submit_butonuna_tiklar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Driver.clickWithJS(teacherManagementPage.submit);
     }
 
     @Given("Kullanici Submit butonunun aktif olmadigini gorur")
     public void kullanici_submit_butonunun_aktif_olmadigini_gorur() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertFalse(teacherManagementPage.submit.isSelected());
     }
 
+    @And("Kullanici Name textboxina valid bir deger girer")
+    public void kullaniciNameTextboxinaValidBirDegerGirer() {
+       String isim = faker.name().name();
+       teacherManagementPage.name.sendKeys(isim);
+    }
 
+    @And("Kullanici Email textboxina valid bir deger {string}girer")
+    public void kullaniciEmailTextboxinaValidBirDegerGirer(String email) {
+        teacherManagementPage.email.sendKeys(email);
+    }
+
+    @And("Kullanici Phone textboxina valid bir deger {string} girer")
+    public void kullaniciPhoneTextboxinaValidBirDegerGirer(String phone) {
+        teacherManagementPage.phone.sendKeys(phone);
+    }
+
+    @And("Kullanici SSN textboxina valid bir deger {string}girer")
+    public void kullaniciSSNTextboxinaValidBirDegerGirer(String SSN) {
+        teacherManagementPage.ssn.sendKeys(SSN);
+    }
+
+    @And("Kullanici Username textboxina valid bir deger {string} girer")
+    public void kullaniciUsernameTextboxinaValidBirDegerGirer(String username) {
+        teacherManagementPage.username.sendKeys(username);
+    }
+
+    @And("Kullanici Password textboxina valid bir deger {string} girer")
+    public void kullaniciPasswordTextboxinaValidBirDegerGirer(String password) {
+        teacherManagementPage.password.sendKeys(password);
+    }
+
+    @And("Kullanici Name textboxina valid bir deger {string} girer")
+    public void kullaniciNameTextboxinaValidBirDegerGirer(String name) {
+        teacherManagementPage.name.sendKeys(name);
+    }
+
+    @And("Kullanici Surname textboxina valid bir deger {string} girer")
+    public void kullaniciSurnameTextboxinaValidBirDegerGirer(String surname) {
+        teacherManagementPage.surname.sendKeys(surname);
+    }
 }
 

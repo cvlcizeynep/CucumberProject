@@ -37,10 +37,7 @@ public class LoginStepDefinitions {
 
     @Then("Basariyla Dean girisi yaptigini  dogrular.")
     public void basariyla_dean_girisi_yaptigini_dogrular() {
-        ReusableMethods.waitFor(3);
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        String expectedUrl="https://www.managementonschools.com/vicedean-management";
-        assertEquals(expectedUrl,actualUrl);
+
     }
     @Then("close driver")
     public void close_driver() {

@@ -207,4 +207,9 @@ public class ReusableMethods {
     }
 
 
+    public static void cleanByJs(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].value = '';", element);
+    }
+
 }

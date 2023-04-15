@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 public class ContactGellAllPage {
     { PageFactory.initElements(Driver.getDriver(),this);}
-    @FindBy(xpath = "//*[.='Menu']")
+    @FindBy(xpath = "//button[text()='Menu']")
     public WebElement menu_button;
-    @FindBy(xpath = "//*[.='Contact Get All']")
+    @FindBy(xpath = "//a[normalize-space()='Contact Get All']")
     public WebElement contact_getAll_button;
     @FindBy(xpath = "//*[.='Contact Message']")
     public WebElement contact_message_header;

@@ -52,6 +52,16 @@ public class DeanManagementPage {
     @FindBy(xpath = "//div[.='Minimum 8 character']")
     public WebElement passwordBoxUyariYazisi;
 
+    //Edit
+    @FindBy(xpath = "(//*[@class='text-dark btn btn-outline-info'])[1]")
+    public WebElement deanListEditButonu;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement editpopupmesaji;
+    @FindBy(xpath = "(//*[@role='button'])[21]")
+    public WebElement soneklenenegit;
+
+
+
 
 
 }
