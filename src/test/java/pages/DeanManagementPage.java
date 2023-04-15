@@ -7,6 +7,8 @@ import utilities.Driver;
 
 public class DeanManagementPage {
 
+
+
     //nuran hanim,hayriye hanim
     public DeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -51,6 +53,18 @@ public class DeanManagementPage {
     public WebElement SsnUyariYazisi;
     @FindBy(xpath = "//div[.='Minimum 8 character']")
     public WebElement passwordBoxUyariYazisi;
+
+    //Edit
+    @FindBy(xpath = "(//*[@class='text-dark btn btn-outline-info'])[1]")
+    public WebElement deanListEditButonu;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement deanListeditpopupmesaji;
+    @FindBy(xpath = "(//*[@role='button'])[21]")
+    public WebElement soneklenenegit;
+    @FindBy(xpath = "(//*[@role='button'])[13]")
+    public WebElement deanListEditsagButton;
+
+
 
 
 

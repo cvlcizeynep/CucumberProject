@@ -4,7 +4,7 @@ Feature: Dean Vice Dean Eklerken Gerekli Kisimlari Doldurmadan Kayit Olusturamam
   Background:dean olrak giris
     Given Kullanici Dean olarak login olur.
 
-  Scenario TC02 Name bos birakilmamali
+  Scenario: TC02 Name bos birakilmamali
     Given Kullanici Name kismina deger girmez
     When Kullanici Surname kismina valid "deger" girer
     And Birth Place kismina valid "deger" girer
