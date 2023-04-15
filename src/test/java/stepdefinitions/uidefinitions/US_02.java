@@ -50,9 +50,12 @@ public class US_02 {
 
     }
 
+
     @Then("Guest User deleted Successful mesaji goruldugunu dogrular")
     public void guestUserDeletedSuccessfulMesajiGoruldugunuDogrular() {
         guestUserPage.mesaj.isDisplayed();
 
     }
+
+
 }

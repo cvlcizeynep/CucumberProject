@@ -5,9 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.DeanManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class US_05 {
     DeanManagementPage deanManagementPage = new DeanManagementPage();
@@ -47,21 +52,24 @@ public class US_05 {
         ReusableMethods.waitFor(3);
     }
 
+//***************EDİT ALANI*******************
 
-    @Then("Edit butonuna tiklar")
-    public void editButonunaTiklar() {
-//        @Then("Dean Vice Dean Listin altinda olusturdugu kullanicinin User Namesinin varligini dogrular")
-//        public void deanViceDeanListinAltindaOlusturduguKullanicininUserNamesininVarliginiDogrular() {
-//            ReusableMethod.scrollWithJS(Driver.getDriver().findElement(By.xpath("//table/tbody/tr[10]")));
-//            ReusableMethod.clickWithJS(deanAddViceDeanPage.viceDeanListSonSayfa);
-//            ReusableMethod.wait(1);
-//            ReusableMethod.scrollWithJS(deanAddViceDeanPage.viceDeanListText);
-//            ReusableMethod.wait(2);
-//            Assert.assertTrue( deanAddViceDeanPage.viceDeanList.getText().contains(userName) );
+    @When("Olusturulan daen'in edit butonuna tiklar")
+    public void olusturulanDaenInEditButonunaTiklar() {
 
-        deanManagementPage.deanListEditButonu.click();
+        List<String> deanListString = new ArrayList<>();
+        List<WebElement> deanList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+        deanList.forEach(t -> deanListString.add(t.getText()));
+
+        while (!deanListString.contains("Team20 Team20")) {
+            Driver.clickWithJS(deanManagementPage.deanListEditsagButton);
+            deanList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+            deanListString.clear();
+            deanList.forEach(t -> deanListString.add(t.getText()));
+            ReusableMethods.waitFor(2);
+        }
+
     }
-
 
     @Given("name {string} kismina valid  girer")
     public void nameKisminaValidGirer(String String) {
@@ -105,8 +113,10 @@ public class US_05 {
     }
     @Then("Dean updated Successful mesaji goruntulenmeli dogrular.")
     public void deanUpdatedSuccessfulMesajiGoruntulenmeliDogrular() {
-        Assert.assertTrue(deanManagementPage.editpopupmesaji.isDisplayed());
+        Assert.assertTrue(deanManagementPage.deanListeditpopupmesaji.isDisplayed());
     }
+
+
 }
 
 

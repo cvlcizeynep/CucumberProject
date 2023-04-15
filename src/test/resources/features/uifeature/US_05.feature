@@ -24,9 +24,11 @@ Feature: TC1_Dean_User
   Scenario:Dean_User_TC05
     And Admin Deanlerin, User Name bilgisinin goruldugunu dogrular
     Then close driver
-  @Dean
+
     Scenario Outline:Edit_alani_TC07
-      Given name "<Name>" kismina valid  girer
+
+      When Olusturulan daen'in edit butonuna tiklar
+      When name "<Name>" kismina valid  girer
       When surname "<Surname>" kismina valid  girer
       And  birt place "<Birth Place>" kismina valid deger girer
       And  Cinsiyet kismini secer
