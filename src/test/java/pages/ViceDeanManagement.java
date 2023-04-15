@@ -54,7 +54,10 @@ public class ViceDeanManagement {
 
 
 
-   //ibrahim 52 ila  arası
+
+
+
+   //ibrahim 60 ila 80 arası
    @FindBy(xpath = "//*[.='Student Management']") public WebElement StudentManagement;
    @FindBy(xpath = "//select[@id='advisorTeacherId']") public WebElement ChooseadvisorTeacher ;
    @FindBy(xpath = "//*[@id='email']") public WebElement email;
