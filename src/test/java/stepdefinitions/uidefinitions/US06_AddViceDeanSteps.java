@@ -70,12 +70,6 @@ public class US06_AddViceDeanSteps {
 
     }
 
-    @Then("close driver")
-    public void close_driver() {
-        Driver.closeDriver();
-    }
-
-
 
 
 

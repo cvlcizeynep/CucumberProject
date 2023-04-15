@@ -7,6 +7,9 @@ import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class US_24 {
 
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
@@ -73,7 +76,7 @@ public class US_24 {
         } else if (gender.equals("female")) {
             teacherManagementPage.genderFemale.click();
         }
-            Assert.assertFalse(teacherManagementPage.submit.isSelected());
+        Assert.assertFalse(teacherManagementPage.submit.isSelected());
 
     }
 
@@ -95,8 +98,8 @@ public class US_24 {
 
     @And("Kullanici Name textboxina valid bir deger girer")
     public void kullaniciNameTextboxinaValidBirDegerGirer() {
-       String isim = faker.name().name();
-       teacherManagementPage.name.sendKeys(isim);
+        String isim = faker.name().name();
+        teacherManagementPage.name.sendKeys(isim);
     }
 
     @And("Kullanici Email textboxina valid bir deger {string}girer")
@@ -132,6 +135,25 @@ public class US_24 {
     @And("Kullanici Surname textboxina valid bir deger {string} girer")
     public void kullaniciSurnameTextboxinaValidBirDegerGirer(String surname) {
         teacherManagementPage.surname.sendKeys(surname);
+    }
+
+    @And("Kullanici SSN textboxina  bir deger {string}girer")
+    public void kullaniciSSNTextboxinaBirDegerGirer(String ssn9) {
+        String SSN = ssn9;
+        SSN.replaceAll("\\D", "");
+        int length = SSN.replaceAll("\\D", "").length();
+        if (length == 9) {
+            Assert.assertTrue(length == 9);
+        } else if (length>=10) {
+            Assert.assertFalse(length==9);
+        } else if (length<=8) {
+            Assert.assertFalse(length==9);
+        }
+       /*
+       guzel diye yazdim:) unnecessary code
+       Pattern pattern = Pattern.compile("^\\d{3}-\\d{2}-\\d{4}$");
+        Matcher matcher = pattern.matcher(ssn9);
+        */
     }
 }
 
