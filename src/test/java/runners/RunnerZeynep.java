@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
 
         features = "src/test/resources/features/uifeature",
-        glue = {"stepdefinitions", "hooks",
+        glue = {"stepdefinitions",
         },
         tags = "@US063",
         dryRun =false
