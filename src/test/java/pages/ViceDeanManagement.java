@@ -33,16 +33,21 @@ public class ViceDeanManagement {
     public WebElement passwordMinumummessage;
    @FindBy(xpath = "//body/div[@id='root']/div[contains(@class,'app')]/main[contains(@class,'content')]/div/div[contains(@class,'Toastify')]/div[contains(@class,'Toastify__toast-container Toastify__toast-container--top-center')]/div[@id='145']/div[1]")
     public WebElement formatOutSSn;
-   @FindBy(xpath ="//div[contains(text(),'Required')])[1]")public WebElement requiredName;
-   @FindBy(xpath ="//div[contains(text(),'Required')])[2]")public WebElement requiredSurNme;
-   @FindBy(xpath ="//div[contains(text(),'Required')])[3]")public WebElement requiredBirthPlace;
+   @FindBy(xpath = "//div[@role='alert']//div[contains(text(),'Please enter valid phone number')]")public WebElement invalidPhoneMessage;
+
+
+   @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[1]")public WebElement requiredName;
+   @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[2]")public WebElement requiredSurNme;
+   @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[3]")public WebElement requiredBirthPlace;
    @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[4]")public WebElement requiredDateofBirth;
-   @FindBy(xpath = "(//div[contains(text(),'Required')])[5]") public WebElement requiredPhone;
-   @FindBy(xpath = "(//div[contains(text(),'Required')])[6]") public WebElement requiredSsn;
-   @FindBy(xpath = "(//div[contains(text(),'Required')])[7]") public WebElement requiredUsername;
-   @FindBy(xpath = "(//div[contains(text(),'Required')])[8]") public WebElement requiredPassword;
-
-
+   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[5]") public WebElement requiredPhone;
+   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[6]") public WebElement requiredSsn;
+   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[7]") public WebElement requiredUsername;
+   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[8]") public WebElement requiredPassword;
+@FindBy(xpath = "//body/div[@id='root']/div[@class='app']/main[@class='content']/div/div[@class='Toastify']/div[@class='Toastify__toast-container Toastify__toast-container--top-center']/div[@id='18']/div[@role='alert']/div[2]")
+    public WebElement invalidBirtDateMessage;
+@FindBy(xpath = "//a[normalize-space()='Logout']") public WebElement logout;
+@FindBy(xpath = "//button[normalize-space()='Yes']")public WebElement yes;
 
 
 
