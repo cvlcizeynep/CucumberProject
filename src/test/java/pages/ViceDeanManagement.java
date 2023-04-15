@@ -8,7 +8,7 @@ import utilities.Driver;
 import javax.security.auth.x500.X500Principal;
 
 public class ViceDeanManagement {
-     //Zeynep ,Erkam bey,Nuran
+     //Zeynep ,Erkam bey,Nuran,ibrahim
      { PageFactory.initElements(Driver.getDriver(),this);}
 
     @FindBy(xpath = "//input[@id='name'] ") public WebElement name;
@@ -48,6 +48,25 @@ public class ViceDeanManagement {
     public WebElement invalidBirtDateMessage;
 @FindBy(xpath = "//a[normalize-space()='Logout']") public WebElement logout;
 @FindBy(xpath = "//button[normalize-space()='Yes']")public WebElement yes;
+
+
+
+
+
+
+
+
+
+   //ibrahim 60 ila 80 arası
+   @FindBy(xpath = "//*[.='Student Management']") public WebElement StudentManagement;
+   @FindBy(xpath = "//select[@id='advisorTeacherId']") public WebElement ChooseadvisorTeacher ;
+   @FindBy(xpath = "//*[@id='email']") public WebElement email;
+   @FindBy(id ="username") public WebElement username;
+   @FindBy(xpath = "//*[@id='fatherName']") public WebElement fatherName;
+   @FindBy(xpath = "//*[@id='motherName']") public WebElement motherName;
+   @FindBy(xpath = "//*[text()='Student saved Successfully']") public  WebElement succesfully;
+
+
 
 
 
