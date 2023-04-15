@@ -1,6 +1,7 @@
 package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -97,6 +98,7 @@ public class US14_TeacherEditStepDefinitions {
 
     }
 
+
     @When("Edit alanlarina bilgileri girer {string}, {string}, {string}, {string},{string}")
     public void editAlanlarinaBilgileriGirer(String name, String surname, String birthPlace, String password, String dateOfBirth) {
 
@@ -118,42 +120,20 @@ public class US14_TeacherEditStepDefinitions {
     public void alanlardakiBilgileriOlarakGunceller(String name, String surname, String birthPlace, String password, String dateOfBirth) {
 
         ReusableMethods.cleanByJs(teacherManagementPage.editNameTextBox);
-        waitFor(2);
         teacherManagementPage.editNameTextBox.sendKeys(name);
-        waitFor(2);
         ReusableMethods.cleanByJs(teacherManagementPage.editSurnameTextBox);
-        waitFor(2);
         teacherManagementPage.editSurnameTextBox.sendKeys(surname);
-        waitFor(2);
         ReusableMethods.cleanByJs(teacherManagementPage.editBirthPlace);
-        waitFor(2);
         teacherManagementPage.editBirthPlace.sendKeys(birthPlace);
-        waitFor(2);
         ReusableMethods.cleanByJs(teacherManagementPage.editPasswordTextbox);
-        waitFor(2);
         teacherManagementPage.editPasswordTextbox.sendKeys(password);
-        waitFor(2);
         ReusableMethods.cleanByJs(teacherManagementPage.editdateOfBirth);
-        waitFor(2);
         teacherManagementPage.editdateOfBirth.sendKeys(dateOfBirth);
-        waitFor(2);
         ReusableMethods.cleanByJs(teacherManagementPage.editUsernameTextbox);
-        waitFor(2);
         teacherManagementPage.editUsernameTextbox.sendKeys("Ali");
-//        ReusableMethods.cleanByJs(teacherManagementPage.editEmailTextbox);
-//        ReusableMethods.cleanByJs(teacherManagementPage.editPhoneTextbox);
+        ReusableMethods.cleanByJs(teacherManagementPage.editEmailTextbox);
+        ReusableMethods.cleanByJs(teacherManagementPage.editPhoneTextbox);
 
-
-//        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + name).perform();
-//        waitFor(1);
-        //    actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + surname).perform();
-//        waitFor(1);
-//        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE + birthPlace).perform();
-////        waitFor(1);
-//        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE + password).perform();
-//        waitFor(1);
-//        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE + dateOfBirth).perform();
-//        waitFor(1);
 
 
     }
@@ -175,13 +155,74 @@ public class US14_TeacherEditStepDefinitions {
 
 
     @When("Username alanina space deger girer")
-    public void usernameAlaninaSpaceDegerGirer(String string) {
-        teacherManagementPage.username.sendKeys(string, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE);
+    public void usernameAlaninaSpaceDegerGirer() {
+        teacherManagementPage.username.sendKeys( Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE);
 
     }
 
     @When("Teacher updated successful yazisini gorur")
     public void teacherUpdatedSuccessfulYazisiniGorur() {
         Assert.assertTrue(teacherManagementPage.popUp.getText().contains("Teacher updated Successful"));
+    }
+
+
+    @And("Name bilgisini {string} olarak gunceller")
+    public void nameBilgisiniOlarakGunceller(String string) {
+        waitFor(1);
+        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Surname bilgisini {string} olarak gunceller")
+    public void surnameBilgisiniOlarakGunceller(String string) {
+        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Birth Place bilgisini {string} olarak gunceller")
+    public void birthPlaceBilgisiniOlarakGunceller(String string) {
+        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Date Of Birth bilgisini {string} olarak gunceller")
+    public void dateOfBirthBilgisiniOlarakGunceller(String string) {
+        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Phone bilgisini {string} olarak gunceller")
+    public void phoneBilgisiniOlarakGunceller(String string) {
+        actions.click(teacherManagementPage.editPhoneTextbox)
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Ssn bilgisini {string} olarak gunceller")
+    public void ssnBilgisiniOlarakGunceller(String string) {
+        actions.click(teacherManagementPage.editSsnTextbox)
+                .keyDown(Keys.CONTROL).sendKeys("a")
+                .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Username bilgisini {string} olarak gunceller")
+    public void usernameBilgisiniOlarakGunceller(String string) {
+        actions.click(teacherManagementPage.editUsernameTextbox)
+                .keyDown(Keys.CONTROL).sendKeys("a")
+                .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @And("Password bilgisini {string} olarak gunceller")
+    public void passwordBilgisiniOlarakGunceller(String string) {
+        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE+string).perform();
+        waitFor(1);
+    }
+
+    @When("Username alanina invalid deger {string} girer")
+    public void usernameAlaninaInvalidDegerGirer(String string) {
+        teacherManagementPage.username.sendKeys(string);
     }
 }

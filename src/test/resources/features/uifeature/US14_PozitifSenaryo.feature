@@ -19,12 +19,7 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When Olusturulan ogretmenin edit butonuna tiklar
     When Edit teacher sayfasini goruntuler
     When Edit sayfasindaki Choose Lessons alanindan bir ders secer
-    When Butun alanlari siler
     Then Alanlardaki bilgileri "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>" olarak gunceller
-   # When Email alanina valid bir deger girer
-    #When Phone alanina valid bir deger girer
-    #When SSN alanina valid bir deger girer
-   # When Username alanina valid bir deger girer
     When Edit alanindaki Is Advisor Teacher alanindaki checkbox a tiklar
     When Edit alanindaki Gender alanindan male secer
     When Edit alanindaki Submit butonuna tiklar
