@@ -8,7 +8,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 
-public class US_2 {
+public class US_02 {
     GuestUserPage guestUserPage = new GuestUserPage();
 
 
@@ -50,9 +50,12 @@ public class US_2 {
 
     }
 
+
     @Then("Guest User deleted Successful mesaji goruldugunu dogrular")
     public void guestUserDeletedSuccessfulMesajiGoruldugunuDogrular() {
         guestUserPage.mesaj.isDisplayed();
 
     }
+
+
 }
