@@ -1,4 +1,4 @@
-@gulser1
+@gulser1 @gecti
 Feature:Teacher Ekleme Negatif Senaryo 1
 
   Background:
