@@ -31,7 +31,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
      # | Advisor Teacher | Name  | surname | Birth Place | Email             | Phone        | Date Of Birth | Ssn         | User Name | Father | Mother | Password |
       #| m | janet | al | ordu | janet@hotmail.com | 534-301-4211 | 01.01.1990 | 420-53-0010 | janetal | adem | havva | 12345678 |
 
-
+    
   @US15_TC02
   Scenario:TC_02 name alani bos birakilir
 

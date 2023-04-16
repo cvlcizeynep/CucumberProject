@@ -31,7 +31,7 @@ public class US_15 {
     public void viceDeanChooseAdvisor_TeacherAlaniSecilir(String string) {
         Select select = new Select(viceDeamanagemet.ChooseadvisorTeacher);
         select.selectByVisibleText(string);
-    // Driver.clickWithJS(viceDeamanagemet.ChooseadvisorTeacher);
+        // Driver.clickWithJS(viceDeamanagemet.ChooseadvisorTeacher);
         //waitFor(2);
         //viceDeamanagemet.ChooseadvisorTeacher.sendKeys(string);
     }//*[@value='107']
@@ -108,14 +108,30 @@ public class US_15 {
     }
 
     @Then("Vice Dean Submit Butonuna tiklar")
-    public void viceDeanSubmitButonunaTiklar(){
-    viceDeamanagemet.submit.click();
+    public void viceDeanSubmitButonunaTiklar() {
+        viceDeamanagemet.submit.click();
     }
 
     @And("Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar")
     public void viceDeanSuccesfullyIbaresiniGorurDogrulamasiniYapar() {
+        waitFor(2);
         viceDeamanagemet.succesfully.isDisplayed();
     }
 
 
+    @Then("Vice Dean {string}Name alanını bos birakilir")
+    public void viceDeanNameAlaniniBosBirakilir(String string) {
+
+viceDeamanagemet.name.clear();
+    }
+
+    @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
+    public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
+        
+    }
+
+    @Then("Vice Dean Choose Advisor Teacher alani  bos birakilir")
+    public void viceDeanChooseAdvisorTeacherAlaniBosBirakilir() {
+
+    }
 }
