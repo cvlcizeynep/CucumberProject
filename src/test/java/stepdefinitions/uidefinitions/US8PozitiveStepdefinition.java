@@ -15,7 +15,7 @@ public class US8PozitiveStepdefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
 
 
-    @Given("Lessons a tiklar")
+    @Given("Lessons a tiklar1")
     public void lessons_a_tiklar() {
         lessonsManagementPage.lessons.click();
     }
