@@ -23,16 +23,13 @@ public class US8NegativeTestStepdefinition {
         Assert.assertTrue(lessonsManagementPage.lessonhataMesaji.isDisplayed());
     }
 
-<<<<<<< HEAD
-    @And("Credit  Score {string}  gırer")
-=======
-/*    @And("Credit Score {string}  gırer")
->>>>>>> master
+
+   @And("Credit Score {string}  gırer")
     public void creditScoreGırer(String string) {
 
         lessonsManagementPage.creditScore.sendKeys("?:",Keys.TAB,Keys.ENTER);
 
-    }*/
+    }
     @And("Submit  e tiklarr")
     public void submitETiklar() {
         ReusableMethods.waitFor(5);

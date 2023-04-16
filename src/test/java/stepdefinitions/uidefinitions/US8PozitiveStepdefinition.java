@@ -54,8 +54,4 @@ public class US8PozitiveStepdefinition {
     }
 
 
-    @And("Credit Score {string}  gırer")
-    public void creditScoreGırer(String string) {
-        lessonsManagementPage.creditScore.sendKeys(string);
-    }
 }
