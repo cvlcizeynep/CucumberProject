@@ -27,6 +27,10 @@ Feature:US20PozıtıveTest
     And Description nun gorundugunu dogrular
     Then close the application
 
+  Scenario: TC05
+    And deleteye tiklar
+    And delete basarili yazisini gorur
+    Then close the application
 
 
 
