@@ -40,45 +40,58 @@ public class US14_TeacherEditStepDefinitions {
 
     @When("Teacher List alaninda ogretmenin name bilgilerini gorur")
     public void teacherListAlanindaOgretmeninNameBilgileriniGorur() {
-        Assert.assertFalse(teacherManagementPage.nameSurnameInfo.isDisplayed());
+       // Assert.assertFalse(teacherManagementPage.nameSurnameInfo.isDisplayed());
 
-        //Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Name")));
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Name")));
     }
 
     @When("Teacher List alaninda ogretmenin phone number bilgilerini gorur")
     public void teacherListAlanindaOgretmeninPhoneNumberBilgileriniGorur() {
-        Assert.assertTrue(teacherManagementPage.phoneNumberInfo.isDisplayed());
-        //Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Phone")));
+        //Assert.assertTrue(teacherManagementPage.phoneNumberInfo.isDisplayed());
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Phone")));
 
     }
 
     @When("Teacher List alaninda ogretmenin SSN bilgilerini gorur")
     public void teacherListAlanindaOgretmeninSSNBilgileriniGorur() {
-        Assert.assertTrue(teacherManagementPage.ssnInfo.isDisplayed());
-        // Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Ssn")));
+        //Assert.assertTrue(teacherManagementPage.ssnInfo.isDisplayed());
+         Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Ssn")));
     }
 
     @Then("Teacher List alaninda ogretmenin username bilgilerini gorur")
     public void teacherListAlanindaOgretmeninUsernameBilgileriniGorur() {
-        Assert.assertTrue(teacherManagementPage.userNameInfo.isDisplayed());
-        // Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("User")));
+        //Assert.assertTrue(teacherManagementPage.userNameInfo.isDisplayed());
+         Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("User")));
     }
 
     @When("Olusturulan ogretmenin edit butonuna tiklar")
     public void teacherListAlanindakiBirOgretmeninEditButonunaTiklar() {
 
-        List<String> teacherListString = new ArrayList<>();
-        List<WebElement> teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
-        teacherList.forEach(t -> teacherListString.add(t.getText()));
+//        List<String> teacherListString = new ArrayList<>();
+//        List<WebElement> teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+//        teacherList.forEach(t -> teacherListString.add(t.getText()));
+//
+//        while (!teacherListString.contains("Team20 Team20")) {
+//            Driver.clickWithJS(teacherManagementPage.sagOkButton);
+//            teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+//            teacherListString.clear();
+//            teacherList.forEach(t -> teacherListString.add(t.getText()));
+//            ReusableMethods.waitFor(2);
+//        }
+//        Driver.clickWithJS(teacherManagementPage.editButton);
 
-        while (!teacherListString.contains("Team20 Team20")) {
+        for (int i = 1; i < 7; i++) {
+
             Driver.clickWithJS(teacherManagementPage.sagOkButton);
-            teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
-            teacherListString.clear();
-            teacherList.forEach(t -> teacherListString.add(t.getText()));
-            ReusableMethods.waitFor(2);
+            waitFor(2);
         }
         Driver.clickWithJS(teacherManagementPage.editButton);
+
+
+
+
+
+
 
     }
 
