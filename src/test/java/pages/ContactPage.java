@@ -69,7 +69,7 @@ public class ContactPage {
     public WebElement messageBox;
 
     @FindBy(xpath = "(//*[@type='button'])[3]")
-    public WebElement sendMessageButton;
+   public WebElement sendMessajButtonn;
 
     @FindBy(xpath = "(//*[text()='Contact us'])[1]")
     public  WebElement contactUsSayfasi;

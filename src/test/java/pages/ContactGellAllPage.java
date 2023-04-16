@@ -24,8 +24,10 @@ public class ContactGellAllPage {
     public WebElement subject_column;
     @FindBy(xpath = "//*[.='Message']")
     public WebElement message_column;
-
-
+    @FindBy(xpath = "//a[normalize-space()='Vice Dean Management']")
+    public WebElement viceDeanManagement;
+    @FindBy(xpath = "//body/div[@id='offcanvasNavbar-expand-lg']/div[@class='offcanvas-header']/button[1]")
+    public WebElement xButton;
 
 
 }

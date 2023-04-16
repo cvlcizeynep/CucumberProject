@@ -17,8 +17,8 @@ import org.junit.runner.RunWith;
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
         features = "./src/test/resources/features/uifeature",//features folder path
         glue = {"stepdefinitions"},   //stepdefinitions path
-        tags = "@qwe",
-        dryRun = true
+        tags = "@adminaddvicedean",
+        dryRun = false
 )
 public class SmokeTestRunner {
 }
