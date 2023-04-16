@@ -3,13 +3,20 @@ package stepdefinitions.uidefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Optional;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static utilities.ReusableMethods.waitFor;
 
 public class US_24 {
 
@@ -154,6 +161,34 @@ public class US_24 {
     @And("Kullanici Password textboxina {int}  karakter iceren bir deger {string} girer")
     public void kullaniciPasswordTextboxinaKarakterIcerenBirDegerGirer(int arg0, String password) {
         Assert.assertNotEquals(password.length(), 8);
+    }
+
+    @And("Kullanici Username textboxina valid bir deger  girer")
+    public void kullaniciUsernameTextboxinaValidBirDegerGirer() {
+        teacherManagementPage.username.sendKeys(faker.name().username());
+    }
+
+    @And("Kullanici Date of birth alanina ileri bir tarih girer")
+    public void kullaniciDateOfBirthAlaninaIleriBirTarihGirer() {
+
+        LocalDate forwardDate = LocalDate.of(2025, 6, 11);
+        LocalDate currentDate = LocalDate.now(ZoneId.of("Turkey"));
+        if (forwardDate.isAfter(currentDate)) {
+            String ay = String.valueOf(forwardDate.getMonthValue());
+            //System.out.println(ay);
+            String gun = String.valueOf(forwardDate.getDayOfMonth());
+            //System.out.println(gun);
+            String yil = String.valueOf(forwardDate.getYear());
+            //System.out.println(yil);
+            teacherManagementPage.dateOfBirth.sendKeys(ay, gun, yil, Keys.ENTER);
+
+        }
+
+    }
+
+    @And("Kullanici Surname textboxina valid bir deger {string} girer")
+    public void kullaniciSurnameTextboxinaValidBirDegerGirerSpace(String spaceSurname) {
+        Assert.assertTrue(spaceSurname.contains(" "));
     }
 }
 

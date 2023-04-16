@@ -24,12 +24,19 @@ public class US8NegativeTestStepdefinition {
     }
 
 
-
     @And("Submit  e tiklarr")
     public void submitETiklar() {
         ReusableMethods.waitFor(5);
 
     }
+
+
+    @And("Credit  Score  {string}  gırer")
+    public void creditScoreGırer(String arg0) {
+        lessonsManagementPage.creditScore.sendKeys("?:",Keys.TAB,Keys.ENTER);
+    }
+
+
 }
 
 
