@@ -7,6 +7,9 @@ import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -154,6 +157,27 @@ public class US_24 {
     @And("Kullanici Password textboxina {int}  karakter iceren bir deger {string} girer")
     public void kullaniciPasswordTextboxinaKarakterIcerenBirDegerGirer(int arg0, String password) {
         Assert.assertNotEquals(password.length(), 8);
+    }
+
+    @And("Kullanici Username textboxina valid bir deger  girer")
+    public void kullaniciUsernameTextboxinaValidBirDegerGirer() {
+        teacherManagementPage.username.sendKeys(faker.name().username());
+    }
+
+    @And("Kullanici Date of birth alanina ileri bir tarih girer")
+    public void kullaniciDateOfBirthAlaninaIleriBirTarihGirer() {
+
+        LocalDate forwardDate=LocalDate.of(2025,01,18);
+
+
+        LocalDate currentDate= LocalDate.now(ZoneId.of("Turkey"));
+
+        if(forwardDate.isAfter(currentDate)){
+            String finalDate = forwardDate.getMonth()+"-"+forwardDate.getDayOfMonth()+"-"+forwardDate.getYear();
+            teacherManagementPage.dateOfBirth.sendKeys(finalDate.toString());
+        }
+        Assert.assertTrue(teacherManagementPage.forwardDatePopoup.isDisplayed());
+
     }
 }
 
