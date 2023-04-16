@@ -186,9 +186,5 @@ public class US_24 {
 
     }
 
-    @And("Kullanici Surname textboxina valid bir deger {string} girer")
-    public void kullaniciSurnameTextboxinaValidBirDegerGirerSpace(String spaceSurname) {
-        Assert.assertTrue(spaceSurname.contains(" "));
-    }
 }
 
