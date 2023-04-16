@@ -54,7 +54,7 @@ public class ContactPage {
 
 
     @FindBy(xpath = "//*[text()='Contact']")
-    public WebElement contact2;
+    public WebElement contact;
 
     @FindBy(xpath = "//*[@id='name']")
     public WebElement yourNameBox;
@@ -69,15 +69,15 @@ public class ContactPage {
     public WebElement messageBox;
 
     @FindBy(xpath = "(//*[@type='button'])[3]")
-    public WebElement sendMesajButton;
+    public WebElement sendMessageButton;
 
     @FindBy(xpath = "(//*[text()='Contact us'])[1]")
     public  WebElement contactUsSayfasi;
 
-    @FindBy(xpath = "//*[text()='Contact Message Created Successfully']")
+    @FindBy(xpath = "//*[@class='Toastify__toast-icon Toastify--animate-icon Toastify__zoom-enter']")
     public WebElement successfullyPopUp;
 
-    @FindBy(xpath = "//*[text()='Error: You already sent a message with this e-mail address today']")
+    @FindBy(xpath = "//*[@class='Toastify__toast-icon Toastify--animate-icon Toastify__zoom-enter']")
     public WebElement ayniMailPopUp;
 
 }
