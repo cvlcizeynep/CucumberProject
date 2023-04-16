@@ -70,7 +70,7 @@ public class TeacherManagementPage {
     public WebElement sagOkButton;
     @FindBy(xpath = "//div[text()='Edit Teacher']")
     public WebElement editTeacherYazisi;
-    @FindBy(xpath = "(//*[@class='text-dark btn btn-outline-info'])[19]")
+    @FindBy(xpath = "(//button[@class='text-dark btn btn-outline-info'])[19]")
     public WebElement editButton;
     @FindBy(xpath = "(//*[@id='name'])[2]")
     public WebElement editNameTextBox;
@@ -120,8 +120,7 @@ public class TeacherManagementPage {
 
 
     //Erkam(120)
-    @FindBy(xpath = "//div[contains(text(),'geçmiş bir tarih olmalı')]")
+    @FindBy(xpath = "//div[contains(text(),'Must be a past date')]")
     public WebElement forwardDatePopoup;
-
 
 }
