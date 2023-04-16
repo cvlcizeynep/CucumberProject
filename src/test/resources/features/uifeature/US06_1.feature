@@ -19,6 +19,6 @@ Scenario Outline: TC01 Dean basariyla viceDean eklemeli
 
     Examples: Name data
         | Name |Surname|Birth Place|Dogum tarihi|Telefon numarasi|SSN|User Name|Password|
-        | Zeynep|Orhan |Londra     |03.08.1987  |572-677-9876    |485-28-9876|zeyoorhn|12wertyumn|
-        |Huseyin|Eken  |Bitlis      |19.06.1985  |765-176-8765    |876-87-0987|huseynoi |789uikmnh |
-        |Ayse   |Narci |Izmir      |09.09.1990  |786-967-8765    |654-98-9876|aysenarmc|87990jnmkg|
+        | Zeynep|Orhan |Londra     |03.08.1987  |572-677-9876    |405-28-9876|zerhn|12wertyumn|
+        |Huseyin|Eken  |Bitlis      |19.06.1985  |085-176-8765    |176-87-0987|enoi |789uikmnh |
+        |Ayse   |Narci |Izmir      |09.09.1990  |756-967-8765    |754-98-9876|enrmc|87990jnmkg|
