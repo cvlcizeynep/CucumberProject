@@ -1,7 +1,6 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -16,6 +15,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
+
+import static utilities.Driver.driver;
 
 public class ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
@@ -110,7 +111,7 @@ public class ReusableMethods {
     }
 
 
-    public static void clickWithTimeOut(WebElement element, int timeout) {
+    public static void clickWithTimeOut(WebElement element,int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
                 element.click();
@@ -210,6 +211,10 @@ public class ReusableMethods {
     public static void cleanByJs(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].value = '';", element);
+    }
+     public static void scrollIntoViewJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
 
 }
