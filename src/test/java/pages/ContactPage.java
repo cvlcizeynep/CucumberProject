@@ -48,4 +48,36 @@ public class ContactPage {
     //@FindBy(xpath="d-flex justify-content-start ps-5 col")
     //public WebElement howManyPages;
 
+
+
+    //fatmanur
+
+
+    @FindBy(xpath = "//*[text()='Contact']")
+    public WebElement contact2;
+
+    @FindBy(xpath = "//*[@id='name']")
+    public WebElement yourNameBox;
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement yourEmailBox;
+
+    @FindBy(xpath = "//*[@id='subject']")
+    public WebElement subjectBox;
+
+    @FindBy(xpath = "//*[@id='message']")
+    public WebElement messageBox;
+
+    @FindBy(xpath = "(//*[@type='button'])[3]")
+    public WebElement sendMesajButton;
+
+    @FindBy(xpath = "(//*[text()='Contact us'])[1]")
+    public  WebElement contactUsSayfasi;
+
+    @FindBy(xpath = "//*[text()='Contact Message Created Successfully']")
+    public WebElement successfullyPopUp;
+
+    @FindBy(xpath = "//*[text()='Error: You already sent a message with this e-mail address today']")
+    public WebElement ayniMailPopUp;
+
 }

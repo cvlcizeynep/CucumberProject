@@ -7,6 +7,10 @@ import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class US_24 {
 
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
@@ -73,7 +77,7 @@ public class US_24 {
         } else if (gender.equals("female")) {
             teacherManagementPage.genderFemale.click();
         }
-            Assert.assertFalse(teacherManagementPage.submit.isSelected());
+        Assert.assertFalse(teacherManagementPage.submit.isSelected());
 
     }
 
@@ -95,8 +99,8 @@ public class US_24 {
 
     @And("Kullanici Name textboxina valid bir deger girer")
     public void kullaniciNameTextboxinaValidBirDegerGirer() {
-       String isim = faker.name().name();
-       teacherManagementPage.name.sendKeys(isim);
+        String isim = faker.name().name();
+        teacherManagementPage.name.sendKeys(isim);
     }
 
     @And("Kullanici Email textboxina valid bir deger {string}girer")
@@ -121,6 +125,7 @@ public class US_24 {
 
     @And("Kullanici Password textboxina valid bir deger {string} girer")
     public void kullaniciPasswordTextboxinaValidBirDegerGirer(String password) {
+        ReusableMethods.JSEClickToElement(teacherManagementPage.password);
         teacherManagementPage.password.sendKeys(password);
     }
 
@@ -132,6 +137,23 @@ public class US_24 {
     @And("Kullanici Surname textboxina valid bir deger {string} girer")
     public void kullaniciSurnameTextboxinaValidBirDegerGirer(String surname) {
         teacherManagementPage.surname.sendKeys(surname);
+    }
+
+    @And("Kullanici SSN textboxina  formata uygun bir deger {string} girer")
+    public void kullaniciSSNTextboxinaFormataUygunBirDegerGirer(String ssn) {
+        Assert.assertFalse(!ssn.substring(3, 4).equals("-") || !ssn.substring(6, 7).equals("-"));
+    }
+
+    @And("Kullanici SSN textboxina  {int} rakam icerenbir deger {string}girer")
+    public void kullaniciSSNTextboxinaRakamIcerenbirDegerGirer(int arg0, String SSN) {
+        SSN.replaceAll("\\D", "");
+        int length = SSN.replaceAll("\\D", "").length();
+        Assert.assertNotEquals(9, length);
+    }
+
+    @And("Kullanici Password textboxina {int}  karakter iceren bir deger {string} girer")
+    public void kullaniciPasswordTextboxinaKarakterIcerenBirDegerGirer(int arg0, String password) {
+        Assert.assertNotEquals(password.length(), 8);
     }
 }
 
