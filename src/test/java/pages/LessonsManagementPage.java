@@ -13,12 +13,14 @@ public class LessonsManagementPage {
     @FindBy(id ="controlled-tab-example-tab-lessonsList") public WebElement lessons;
     @FindBy(id ="lessonName")  public WebElement lessonName;
     @FindBy(id="compulsory") public WebElement compulsory;
+    @FindBy(id="Submit") public WebElement submit;
     @FindBy(id="creditScore") public WebElement creditScore;
-    @FindBy(xpath = "//button[text()='Submit']")   public WebElement lessonSubmit;
-    @FindBy(xpath="//font[contains(text()='Ders Oluşturuldu')]") public WebElement lessonDersOluşturulduMesaji;
-    @FindBy(xpath="//*[@class='Toastify__toast-icon Toastify--animate-icon Toastify__zoom-enter']") public WebElement lessonhataMesaji;
 
-    //nuran
+    @FindBy(xpath="//div[contains(text(),'Lesson Created')]") public WebElement lessonDersOluşturulduMesaji;
+    @FindBy(xpath="//*[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement lessonhataMesaji;
+
+
+
     @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']")
     public WebElement LessonProgramButton;
     @FindBy(xpath = "//h5[normalize-space()='Lesson Program List']")
