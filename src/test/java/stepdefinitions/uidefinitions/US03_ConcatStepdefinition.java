@@ -21,7 +21,7 @@ public class US03_ConcatStepdefinition {
     @When("kullanici Contact butonuna tiklar")
     public void kullanici_contact_butonuna_tiklar() {
 
-        ReusableMethods.JSEClickToElement(contactPage.contact2);
+        ReusableMethods.JSEClickToElement(contactPage.contact);
     }
     @Then("kullanici Concatct sayfasina yonlendirilir")
     public void kullanici_concatct_sayfasina_yonlendirilir() {
@@ -79,7 +79,7 @@ public class US03_ConcatStepdefinition {
 
     @Then("kullanici Contact Message Created Created Successfully mesajini goruntulemez")
     public void kullaniciContactMessageCreatedCreatedSuccessfullyMesajiniGoruntulemez() {
-        Assert.assertTrue(!ReusableMethods.waitForVisibility(contactPage.successfullyPopUp,10).isDisplayed());
+        assert contactPage.successfullyPopUp.isDisplayed();
 
 
     }
@@ -119,5 +119,25 @@ public class US03_ConcatStepdefinition {
     @Then("kullanici Contact Message Created Created Successfully mesajini goruntuler")
     public void kullaniciContactMessageCreatedCreatedSuccessfullyMesajiniGoruntuler() {
         Assert.assertTrue(ReusableMethods.waitForVisibility(contactPage.successfullyPopUp,5).isDisplayed());
+    }
+
+    @When("kullanici yourname {string} alanini bos birakir")
+    public void kullaniciYournameAlaniniBosBirakir(String string) {
+        contactPage.yourNameBox.sendKeys(string);
+    }
+
+    @When("kullanici email {string} alanini bos birakir")
+    public void kullaniciEmailAlaniniBosBirakir(String string) {
+        contactPage.yourEmailBox.sendKeys(string);
+    }
+
+    @When("kullanici subject {string} alanini bos birakir")
+    public void kullaniciSubjectAlaniniBosBirakir(String string) {
+        contactPage.subjectBox.sendKeys(string);
+    }
+
+    @When("kullanici Message {string} alanini bos birakir")
+    public void kullaniciMessageAlaniniBosBirakir(String string) {
+        contactPage.messageBox.sendKeys(string);
     }
 }
