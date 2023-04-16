@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -104,6 +105,7 @@ public class US_15 {
 
     @Then("Vice {string} Password alanina valid bir deger girer")
     public void vicePasswordAlaninaValidBirDegerGirer(String string) {
+
         viceDeamanagemet.password.sendKeys(string);
     }
 
@@ -122,16 +124,16 @@ public class US_15 {
     @Then("Vice Dean {string}Name alanını bos birakilir")
     public void viceDeanNameAlaniniBosBirakilir(String string) {
 
-viceDeamanagemet.name.clear();
+        viceDeamanagemet.name.clear();
     }
 
     @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
     public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
-        
+        Assert.assertTrue(viceDeamanagemet.nameRequired.isDisplayed());
     }
 
     @Then("Vice Dean Choose Advisor Teacher alani  bos birakilir")
     public void viceDeanChooseAdvisorTeacherAlaniBosBirakilir() {
-
+        viceDeamanagemet.ChooseadvisorTeacher.clear();
     }
 }

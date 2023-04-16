@@ -9,7 +9,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
 
 
   @US15_TC01
-  Scenario: TC_01 Ogrecinin danisman ogretmeni secilmelidir.
+  Scenario Outline: TC_01 Ogrecinin danisman ogretmeni secilmelidir.
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
     Then Vice Dean "<surname>" surname alanina valid bir deger girer
@@ -26,14 +26,14 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar
 
-   # Examples:Choose Advisor Teacher
+    Examples:Choose Advisor Teacher
 
-     # | Advisor Teacher | Name  | surname | Birth Place | Email             | Phone        | Date Of Birth | Ssn         | User Name | Father | Mother | Password |
-      #| m | janet | al | ordu | janet@hotmail.com | 534-301-4211 | 01.01.1990 | 420-53-0010 | janetal | adem | havva | 12345678 |
+      | Advisor Teacher | Name  | surname | Birth Place | Email             | Phone        | Date Of Birth | Ssn         | User Name | Father | Mother | Password |
+      | m | janet | al | ordu | janet@hotmail.com | 534-301-4211 | 01.01.1990 | 420-53-0010 | janetal | adem | havva | 12345678 |
 
 
   @US15_TC02
-  Scenario:TC_02 name alani bos birakilir
+  Scenario:TC_02 Choose Advisor Teacher alani  bos birakilir
 
     Then Vice Dean Choose Advisor Teacher alani  bos birakilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
@@ -52,7 +52,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     And Vice  Required  ibaresini gorur dogrulamasini yapar
 
   @US15_TC03
-  Scenario:TC_03 name alani bos birakilir
+  Scenario Outline:TC_03 name alani bos birakilir
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanını bos birakilir
     Then Vice Dean "<surname>" surname alanina valid bir deger girer
@@ -68,3 +68,8 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Required  ibaresini gorur dogrulamasini yapar
+
+    Examples:Choose Advisor Teacher
+
+      | Advisor Teacher | Name | surname | Birth Place | Email  | Phone  | Date Of Birth | Ssn    | User Name | Father | Mother | Password |
+      | m               |      | string  | string      | string | string | string        | string | string    | string | string | string   |
