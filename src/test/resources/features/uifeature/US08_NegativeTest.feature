@@ -1,4 +1,4 @@
-@U08Negatıve
+@U08Negatıve8
 Feature: US8NegativeTest
 
   Scenario: TC04
@@ -6,7 +6,7 @@ Feature: US8NegativeTest
     And Basariyla viceDean girisi yaptigini dogrular.
     And Lessons a tiklar
     And And Lesson Name "fizik13" girer
-    And Credit Score "?:"  gırer
+    And Credit  Score "?:"  gırer
     And Submit  e tiklarr
     And Hata mesajini gorur
     Then close the application

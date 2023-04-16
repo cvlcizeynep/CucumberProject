@@ -3,8 +3,8 @@
   Feature: "Aday öğrenciler sisteme kayıt olabilmelidir"(Register)
     Background: Kullanıcı Register sayfasına gider
       Scenario Outline: Kullanıcı Boş bir bölüm ile kayıt olamaz
-        Given Kullanici Name "<Name>" kismina valid  girer
-        When Kullanici Surname "<Surname>" kismina valid  girer
+        Given Kullanici register Name "<Name>" kismina değer  girer
+        When Kullanici register Surname "<Surname>" kismina değer  girer
         And Kullanici Birth place "<Birth Place>" kismina valid deger girer
         And  Kullanici Gender kismini secer
         And  Kullanici Birth of Date "<Birth of Date>"  girer

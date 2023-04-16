@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class DeanManagementPage {
 
 
@@ -55,14 +57,33 @@ public class DeanManagementPage {
     public WebElement passwordBoxUyariYazisi;
 
     //Edit
-    @FindBy(xpath = "(//*[@class='text-dark btn btn-outline-info'])[1]")
+    @FindBy(xpath = "(//table[@class='table table-striped table-bordered table-hover']//tbody//td[6])[3]//button")
+    //"(//*[@class='text-dark btn btn-outline-info'])[20]"
     public WebElement deanListEditButonu;
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement deanListeditpopupmesaji;
     @FindBy(xpath = "(//*[@role='button'])[21]")
     public WebElement soneklenenegit;
-    @FindBy(xpath = "(//*[@role='button'])[13]")
+    @FindBy(xpath = "//main[@class='content']//li[4]//a[1]")
     public WebElement deanListEditsagButton;
+    @FindBy(xpath = "(//table[@class='table table-striped table-bordered table-hover'])//tbody//tr//td[1]")
+    //((//table[@class='table table-striped table-bordered table-hover'])//tbody//td[5])[20]hayriye
+    public List<WebElement> deanListKayitliKisi;
+    @FindBy(xpath = "//span[text()='hayriye']")
+    public WebElement hayriyeText;
+    @FindBy(xpath = "(//span[@aria-hidden='true'])[4]")
+    public WebElement ileriEdit2;
+    @FindBy(xpath = "(//span[@aria-hidden='true'])[3]")
+    public WebElement ileriEdit;
+    @FindBy(xpath = "//span[.='»']")
+    public WebElement viceDeanListSonSayfa;
+    @FindBy(xpath = "//h5[.='Vice Dean List']")
+    public WebElement viceDeanListText;
+    @FindBy(xpath = "//table//tr[last()]//td[5]")
+    public WebElement viceDeanList;
+    @FindBy(xpath = "//table[@class='table table-striped table-bordered table-hover']//tbody//tr//td[1]")
+    public List<WebElement> isimlertext;
+
 
 
 
