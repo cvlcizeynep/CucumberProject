@@ -90,6 +90,11 @@ public class US06_3Steps {
 
     }
 
+    @Then("Kullanici dogum tarihi bos birakildiginda  kayit olunamdigini dogrular")
+    public void kullanici_dogum_tarihi_bos_birakildiginda_kayit_olunamdigini_dogrular() {
+        viceDeanManagement=new ViceDeanManagement();
+        assert viceDeanManagement.requiredDateofBirth.isDisplayed();
 
+    }
 
 }

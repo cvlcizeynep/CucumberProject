@@ -3,9 +3,19 @@ package stepdefinitions.uidefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static utilities.ReusableMethods.waitFor;
 
 public class US_24 {
 
@@ -73,7 +83,7 @@ public class US_24 {
         } else if (gender.equals("female")) {
             teacherManagementPage.genderFemale.click();
         }
-            Assert.assertFalse(teacherManagementPage.submit.isSelected());
+        Assert.assertFalse(teacherManagementPage.submit.isSelected());
 
     }
 
@@ -95,8 +105,8 @@ public class US_24 {
 
     @And("Kullanici Name textboxina valid bir deger girer")
     public void kullaniciNameTextboxinaValidBirDegerGirer() {
-       String isim = faker.name().name();
-       teacherManagementPage.name.sendKeys(isim);
+        String isim = faker.name().name();
+        teacherManagementPage.name.sendKeys(isim);
     }
 
     @And("Kullanici Email textboxina valid bir deger {string}girer")
@@ -121,6 +131,7 @@ public class US_24 {
 
     @And("Kullanici Password textboxina valid bir deger {string} girer")
     public void kullaniciPasswordTextboxinaValidBirDegerGirer(String password) {
+        ReusableMethods.JSEClickToElement(teacherManagementPage.password);
         teacherManagementPage.password.sendKeys(password);
     }
 
@@ -132,6 +143,52 @@ public class US_24 {
     @And("Kullanici Surname textboxina valid bir deger {string} girer")
     public void kullaniciSurnameTextboxinaValidBirDegerGirer(String surname) {
         teacherManagementPage.surname.sendKeys(surname);
+    }
+
+    @And("Kullanici SSN textboxina  formata uygun bir deger {string} girer")
+    public void kullaniciSSNTextboxinaFormataUygunBirDegerGirer(String ssn) {
+        Assert.assertFalse(!ssn.substring(3, 4).equals("-") || !ssn.substring(6, 7).equals("-"));
+    }
+
+    @And("Kullanici SSN textboxina  {int} rakam icerenbir deger {string}girer")
+    public void kullaniciSSNTextboxinaRakamIcerenbirDegerGirer(int arg0, String SSN) {
+        SSN.replaceAll("\\D", "");
+        int length = SSN.replaceAll("\\D", "").length();
+        Assert.assertNotEquals(9, length);
+    }
+
+    @And("Kullanici Password textboxina {int}  karakter iceren bir deger {string} girer")
+    public void kullaniciPasswordTextboxinaKarakterIcerenBirDegerGirer(int arg0, String password) {
+        Assert.assertNotEquals(password.length(), 8);
+    }
+
+    @And("Kullanici Username textboxina valid bir deger  girer")
+    public void kullaniciUsernameTextboxinaValidBirDegerGirer() {
+        teacherManagementPage.username.sendKeys(faker.name().username());
+    }
+
+    @And("Kullanici Date of birth alanina ileri bir tarih girer")
+    public void kullaniciDateOfBirthAlaninaIleriBirTarihGirer() {
+
+        LocalDate forwardDate = LocalDate.of(2025, 6, 11);
+        LocalDate currentDate = LocalDate.now(ZoneId.of("Turkey"));
+        if (forwardDate.isAfter(currentDate)) {
+            String ay = String.valueOf(forwardDate.getMonthValue());
+            //System.out.println(ay);
+            String gun = String.valueOf(forwardDate.getDayOfMonth());
+            //System.out.println(gun);
+            String yil = String.valueOf(forwardDate.getYear());
+            //System.out.println(yil);
+            teacherManagementPage.dateOfBirth.sendKeys(ay, gun, yil, Keys.ENTER);
+
+        }
+
+    }
+
+    @And("Kullanici Must be a past date pop-up inin gorunurlugunu dogrular")
+    public void kullaniciMustBeAPastDatePopUpIninGorunurlugunuDogrular() {
+        waitFor(5);
+       // Assert.assertTrue(teacherManagementPage.forwardDatePopoup.isDisplayed());
     }
 }
 
