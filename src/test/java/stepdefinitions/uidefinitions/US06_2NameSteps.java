@@ -48,16 +48,14 @@ public class US06_2NameSteps {
     @When("Kullanici Cinsiyet kismini secer")
     public void kullanici_cinsiyet_kismini_secer() {
         viceDeanManagement=new ViceDeanManagement();
-        viceDeanManagement.female.click();
-
-
+        viceDeanManagement.male.click();
     }
 
     @When("Kullanici  telefon numarasina valid deger girer")
     public void kullanici_telefon_numarasina_valid_deger_girer() {
         viceDeanManagement=new ViceDeanManagement();
         faker=new Faker();
-        viceDeanManagement.phone.sendKeys(faker.phoneNumber().phoneNumber());
+        viceDeanManagement.phone.sendKeys(faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(1000,9999));
     }
     @When("Kullanici SSN kismina valid deger girer")
     public void kullanici_ssn_kismina_valid_deger_girer() {
