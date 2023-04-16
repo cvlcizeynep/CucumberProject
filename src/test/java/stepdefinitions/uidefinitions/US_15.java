@@ -120,12 +120,18 @@ public class US_15 {
 
 
     @Then("Vice Dean {string}Name alanını bos birakilir")
-    public void viceDeanNameAlanınıBosBirakilir(String arg0) {
+    public void viceDeanNameAlaniniBosBirakilir(String string) {
 
+viceDeamanagemet.name.clear();
     }
 
     @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
     public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
         
+    }
+
+    @Then("Vice Dean Choose Advisor Teacher alani  bos birakilir")
+    public void viceDeanChooseAdvisorTeacherAlaniBosBirakilir() {
+
     }
 }

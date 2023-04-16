@@ -23,9 +23,9 @@ public class US8NegativeTestStepdefinition {
         Assert.assertTrue(lessonsManagementPage.lessonhataMesaji.isDisplayed());
     }
 
-//<<<<<<< HEAD
-//    @And("Credit  Score {string}  gırer")
-//=======
+
+
+
 /*    @And("Credit Score {string}  gırer")
 >>>>>>> master
     public void creditScoreGırer(String string) {
