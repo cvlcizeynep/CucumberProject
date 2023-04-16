@@ -7,6 +7,7 @@ import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -124,6 +125,7 @@ public class US_24 {
 
     @And("Kullanici Password textboxina valid bir deger {string} girer")
     public void kullaniciPasswordTextboxinaValidBirDegerGirer(String password) {
+        ReusableMethods.JSEClickToElement(teacherManagementPage.password);
         teacherManagementPage.password.sendKeys(password);
     }
 
@@ -137,23 +139,21 @@ public class US_24 {
         teacherManagementPage.surname.sendKeys(surname);
     }
 
-    @And("Kullanici SSN textboxina  bir deger {string}girer")
-    public void kullaniciSSNTextboxinaBirDegerGirer(String ssn9) {
-        String SSN = ssn9;
+    @And("Kullanici SSN textboxina  formata uygun bir deger {string} girer")
+    public void kullaniciSSNTextboxinaFormataUygunBirDegerGirer(String ssn) {
+        Assert.assertFalse(!ssn.substring(3, 4).equals("-") || !ssn.substring(6, 7).equals("-"));
+    }
+
+    @And("Kullanici SSN textboxina  {int} rakam icerenbir deger {string}girer")
+    public void kullaniciSSNTextboxinaRakamIcerenbirDegerGirer(int arg0, String SSN) {
         SSN.replaceAll("\\D", "");
         int length = SSN.replaceAll("\\D", "").length();
-        if (length == 9) {
-            Assert.assertTrue(length == 9);
-        } else if (length>=10) {
-            Assert.assertFalse(length==9);
-        } else if (length<=8) {
-            Assert.assertFalse(length==9);
-        }
-       /*
-       guzel diye yazdim:) unnecessary code
-       Pattern pattern = Pattern.compile("^\\d{3}-\\d{2}-\\d{4}$");
-        Matcher matcher = pattern.matcher(ssn9);
-        */
+        Assert.assertNotEquals(9, length);
+    }
+
+    @And("Kullanici Password textboxina {int}  karakter iceren bir deger {string} girer")
+    public void kullaniciPasswordTextboxinaKarakterIcerenBirDegerGirer(int arg0, String password) {
+        Assert.assertNotEquals(password.length(), 8);
     }
 }
 
