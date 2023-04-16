@@ -14,7 +14,7 @@ Feature:Teacher Ekleme Negatif Senaryo 1
     When Is Advisor Teacher alanindaki checkbox a tiklar
     When Gender alanindan male secer
     When Submit butonuna tiklar
-   # When Submit butonunun aktif olmadigini gorur
+    When Submit butonunun aktif olmadigini gorur
     When Ekran goruntusu alinir
     Then close driver
 
@@ -87,7 +87,7 @@ Feature:Teacher Ekleme Negatif Senaryo 1
     When Username alanina valid bir deger girer
     When Is Advisor Teacher alanindaki checkbox a tiklar
     When Submit butonuna tiklar
-   # When Submit butonunun aktif olmadigini gorur
+    When Submit butonunun aktif olmadigini gorur
     When Ekran goruntusu alinir
     Then close driver
     Examples:
@@ -104,7 +104,7 @@ Feature:Teacher Ekleme Negatif Senaryo 1
     When Is Advisor Teacher alanindaki checkbox a tiklar
     When Gender alanindan male secer
     When Submit butonuna tiklar
-  #  When Submit butonunun aktif olmadigini gorur
+    When Submit butonunun aktif olmadigini gorur
     When Ekran goruntusu alinir
     Then close driver
     Examples:

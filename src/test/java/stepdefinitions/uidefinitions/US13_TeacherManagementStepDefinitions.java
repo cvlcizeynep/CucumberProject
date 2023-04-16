@@ -214,7 +214,6 @@ public class US13_TeacherManagementStepDefinitions {
 
     @When("Alanlara space karakteri girer {string}, {string}, {string}, {string},{string},{string},{string},{string},{string}")
     public void alanlaraSpaceKarakteriGirer(String name, String surname, String birthPlace, String email, String SSN, String password, String phone, String dateOfBirth, String arg8) {
-
         faker = new Faker();
         teacherManagementPage.name.sendKeys(name, Keys.SPACE);
         waitFor(1);
