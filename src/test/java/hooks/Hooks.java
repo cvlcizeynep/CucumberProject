@@ -25,6 +25,7 @@ public class Hooks {
 
         }
         Driver.wait(1);
+        Driver.closeDriver();
     }
 }
 
