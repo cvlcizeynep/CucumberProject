@@ -39,11 +39,7 @@ public class US8PozitiveStepdefinition {
         Assert.assertTrue(lessonsManagementPage.compulsory.isSelected());
     }
 
-    @Given("Credit Score {string}  girer")
-    public void credit_score_girer(String string) {
-        ReusableMethods.waitFor(5);
-        lessonsManagementPage.creditScore.sendKeys(string);
-    }
+
 
     @And("Credit Score degeri girdigini dogrular")
     public void creditScoreDegeriGirdiginiDogrular() {
@@ -57,8 +53,5 @@ public class US8PozitiveStepdefinition {
         Driver.quitDriver();
     }
 
-    @And("Credit Score {string}  gırer")
-    public void creditScoreGırer(String string) {
-        lessonsManagementPage.creditScore.sendKeys("25");
-    }
+
 }
