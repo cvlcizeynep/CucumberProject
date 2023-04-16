@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 
+import static org.junit.Assert.assertFalse;
+
 public class ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
      * I use getScreenShotAs method to take a screenshot in selenium in my framework
@@ -211,5 +213,19 @@ public class ReusableMethods {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].value = '';", element);
     }
+    public static void verifyElementNotDisplayed(WebElement element) {
+        try {
+            assertFalse("Element should not be visible: " + element, element.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+
+
 
 }
