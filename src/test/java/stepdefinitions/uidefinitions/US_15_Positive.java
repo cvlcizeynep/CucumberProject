@@ -5,18 +5,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.ViceDeanManagement;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 import static utilities.ReusableMethods.waitFor;
 
-public class US_15 {
+public class US_15_Positive {
     ViceDeanManagement viceDeamanagemet = new ViceDeanManagement();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
@@ -117,23 +113,48 @@ public class US_15 {
     @And("Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar")
     public void viceDeanSuccesfullyIbaresiniGorurDogrulamasiniYapar() {
         waitFor(2);
-        viceDeamanagemet.succesfully.isDisplayed();
+        Assert.assertTrue(viceDeamanagemet.succesfully.isDisplayed());
     }
 
 
-    @Then("Vice Dean {string}Name alanını bos birakilir")
+//////////tc02
+
+   /* @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
+    public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
+        Assert.assertTrue(viceDeamanagemet.nameRequired.isDisplayed());
+       }
+    */
+
+
+    @Then("Vice Dean Choose {string} Advisor_Teacher alani bos birakilir")
+    public void viceDeanChooseAdvisor_TeacherAlaniBosBirakilir(String string) {
+
+        viceDeamanagemet.ChooseadvisorTeacher.sendKeys("");
+    }
+
+    @And("Vice Dean kayit yapilamadigini dogrular")
+    public void viceDeanKayitYapilamadiginiDogrular() {
+        waitFor(1);
+        Assert.assertTrue(viceDeamanagemet.teacherPopup.getText().contains("Please select advisor teacher"));
+    }
+
+
+    ////////////////////tc3
+    @Then("Vice Dean {string}Name alanini bos birakilir")
     public void viceDeanNameAlaniniBosBirakilir(String string) {
+        viceDeamanagemet.name.sendKeys("");
 
-        viceDeamanagemet.name.clear();
     }
+
 
     @And("Vice  Required  ibaresini gorur dogrulamasini yapar")
     public void viceRequiredIbaresiniGorurDogrulamasiniYapar() {
         Assert.assertTrue(viceDeamanagemet.nameRequired.isDisplayed());
     }
 
-    @Then("Vice Dean Choose Advisor Teacher alani  bos birakilir")
-    public void viceDeanChooseAdvisorTeacherAlaniBosBirakilir() {
-        viceDeamanagemet.ChooseadvisorTeacher.clear();
-    }
+    ////////////////////tc4
+
+
+
 }
+

@@ -33,9 +33,9 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
 
 
   @US15_TC02
-  Scenario:TC_02 Choose Advisor Teacher alani  bos birakilir
+  Scenario Outline:TC_02 Choose Advisor Teacher alani  bos birakilir
 
-    Then Vice Dean Choose Advisor Teacher alani  bos birakilir
+    Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani bos birakilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
     Then Vice Dean "<surname>" surname alanina valid bir deger girer
     Then Vice Dean "<Birth Place>" Birth Place alanina valid bir deger girer
@@ -49,12 +49,17 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Mother>" Mother alanina valid bir deger girer
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
-    And Vice  Required  ibaresini gorur dogrulamasini yapar
+    And Vice Dean kayit yapilamadigini dogrular
+
+    Examples:Choose Advisor Teacher
+
+      | Advisor Teacher | Name | surname | Birth Place | Email | Phone | Date Of Birth | Ssn | User Name | Father | Mother | Password |
+      |                 |      |         |             |       |       | 01.01.1990    |     |           |        |        | 12345678 |
 
   @US15_TC03
   Scenario Outline:TC_03 name alani bos birakilir
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
-    Then Vice Dean "<Name>"Name alanını bos birakilir
+    Then Vice Dean "<Name>"Name alanini bos birakilir
     Then Vice Dean "<surname>" surname alanina valid bir deger girer
     Then Vice Dean "<Birth Place>" Birth Place alanina valid bir deger girer
     Then Vice Dean "<Email>" Email alanina valid bir deger girer
@@ -68,8 +73,12 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Required  ibaresini gorur dogrulamasini yapar
+   Examples:
+     | Advisor Teacher | Date Of Birth |  | Password |
+     | m               | 01.01.1990    |  | 12345678 |
 
-    Examples:Choose Advisor Teacher
 
-      | Advisor Teacher | Name | surname | Birth Place | Email  | Phone  | Date Of Birth | Ssn    | User Name | Father | Mother | Password |
-      | m               |      | string  | string      | string | string | string        | string | string    | string | string | string   |
+
+
+
+

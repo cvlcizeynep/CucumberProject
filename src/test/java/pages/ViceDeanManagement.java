@@ -65,8 +65,8 @@ public class ViceDeanManagement {
    @FindBy(xpath = "//*[@id='motherName']") public WebElement motherName;
    @FindBy(xpath = "//*[text()='Student saved Successfully']") public  WebElement succesfully;
    @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")public  WebElement nameRequired;
-
-
+    @FindBy(xpath = "//div[text()='Please select advisor teacher']") public  WebElement teacherPopup;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")public WebElement surnameRequired;
 
 
 
