@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
 
         features = "src/test/resources/features/uifeature",
-        glue = {"stepdefinitions",
+        glue = {"stepdefinitions,hooks"
         },
-        tags = "@US063",
+        tags = "@w",
         dryRun =false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
