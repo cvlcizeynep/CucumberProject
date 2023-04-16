@@ -27,10 +27,21 @@ Feature:US20PozıtıveTest
     And Description nun gorundugunu dogrular
     Then close the application
 
-  Scenario: TC05
+  Scenario Outline: //div[@ TC05
+    And Choose Students e tiklar
+    When Alanlara  bilgileri girer "<ogrenci>", "<tarih>", "<star time>", "<stop time>","<description>"
+    And Submit e tiklar
+    And Toplanti guncellenmedi yazisini gorur
+    Then close the application
     And deleteye tiklar
     And delete basarili yazisini gorur
     Then close the application
+
+    Examples:
+      | ogrenci | tarih      | star time  | stop time | description |
+      |ahmet    |12:02:2023  |12:15       |15:15      |abv          |
+
+
 
 
 

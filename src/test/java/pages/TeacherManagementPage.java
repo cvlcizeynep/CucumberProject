@@ -120,8 +120,7 @@ public class TeacherManagementPage {
 
 
     //Erkam(120)
-    @FindBy(xpath = "//div[contains(text(),'geçmiş bir tarih olmalı')]")
+    @FindBy(xpath = "//div[contains(text(),'Must be a past date')]")
     public WebElement forwardDatePopoup;
-
 
 }

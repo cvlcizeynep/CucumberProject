@@ -3,7 +3,10 @@ package stepdefinitions.uidefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.MeetManagementPage;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US20PozitiveStepdefinition {
@@ -42,7 +45,11 @@ public class US20PozitiveStepdefinition {
 
     @And("deleteye tiklar")
     public void deleteyeTiklar() {
-        ReusableMethods.waitForClickablility(meetManagementPage.meetDelete,5);
+Actions actions=new Actions(Driver.getDriver());
+actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+Driver.clickWithJS(meetManagementPage.meetDelete);
+
+
     }
 
     @And("delete basarili yazisini gorur")
@@ -52,9 +59,6 @@ public class US20PozitiveStepdefinition {
 
 
 
-    @And("Toplanti guncellendi yazisini gorur")
-    public void toplantiGuncellendiYazisiniGorur() {
-        Assert.assertTrue(meetManagementPage.editMeetBasarili.isDisplayed());
-    }
+
 
 }

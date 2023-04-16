@@ -1,9 +1,11 @@
 package stepdefinitions.uidefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 import pages.LessonsManagementPage;
 import utilities.Driver;
@@ -13,7 +15,7 @@ public class US8PozitiveStepdefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
 
 
-    @Given("Lessons a tiklar")
+    @Given("Lessons a tiklar1")
     public void lessons_a_tiklar() {
         lessonsManagementPage.lessons.click();
     }
@@ -54,4 +56,19 @@ public class US8PozitiveStepdefinition {
     }
 
 
+
+    @And("dersin olustugunu dogrular")
+    public void dersinOlustugunuDogrular() {
+        Assert.assertTrue(lessonsManagementPage.lessonDersOluşturulduMesaji.getText().contains("Lesson Created"));
+
+        ReusableMethods.waitFor(2);
+    }
+
+
+    @And("Credit Score {string}  gırer")
+    public void creditScoreGırer(String string) {
+        lessonsManagementPage.creditScore.sendKeys(string, Keys.TAB,Keys.ENTER);
+        ReusableMethods.waitFor(2);
+
+    }
 }

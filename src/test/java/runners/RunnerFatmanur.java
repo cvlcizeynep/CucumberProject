@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         //monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@login ",
+        tags = "@US21_Pozitif",
         dryRun = false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 

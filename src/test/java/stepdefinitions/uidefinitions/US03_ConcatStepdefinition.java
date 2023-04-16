@@ -47,8 +47,8 @@ public class US03_ConcatStepdefinition {
     @When("kullanici Send Message alanina tiklar")
     public void kullanici_send_message_alanina_tiklar() {
         ReusableMethods.waitFor(4);
-        ReusableMethods.scrollToElement(contactPage.sendMessageButton);
-        ReusableMethods.JSEClickToElement(contactPage.sendMessageButton);
+        ReusableMethods.scrollToElement(contactPage.sendMessajButton);
+        ReusableMethods.JSEClickToElement(contactPage.sendMessajButton);
 
     }
     @Then("kullanici Contact Message Created Created Successfully mesajini gorur")
