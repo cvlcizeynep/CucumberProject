@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = {"stepdefinitions","Hooks"},
-        tags = "@U08Negatıve8",
+        tags = "@20Negaive",
         dryRun = false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
