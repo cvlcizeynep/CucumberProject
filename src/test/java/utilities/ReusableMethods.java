@@ -15,8 +15,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
-
 import static utilities.Driver.driver;
+import static org.junit.Assert.assertFalse;
 
 public class ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
@@ -212,9 +212,26 @@ public class ReusableMethods {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].value = '';", element);
     }
+
      public static void scrollIntoViewJS(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
+
+    public static void verifyElementNotDisplayed(WebElement element) {
+        try {
+            assertFalse("Element should not be visible: " + element, element.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+
+
+
 
 }
