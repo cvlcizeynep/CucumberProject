@@ -1,4 +1,4 @@
-@smoke,@US06.1
+@US06.1, @smoke
 Feature: Dean Vice Dean ekleyebilmeli
 
   Background:

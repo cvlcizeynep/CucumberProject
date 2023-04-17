@@ -9,7 +9,7 @@ Feature:
     And Edite tiklar
 
   Scenario: 1
-    And Select student e "yagiz Ates" girerr
+    And Select student e bir ogrenci secer
     And Eski bir tarih "12-05-2000" girer
     And Star time  "11:12" girer
     And Stop time  "12:12" girer
@@ -19,7 +19,7 @@ Feature:
     Then close the application
 
   Scenario: 2
-    And Select student e "yagiz Ates" girerr
+    And Select student e bir ogrenci secer
     And Ileri bir Star time  "14:12" girer
     And Stop time  "13:12" girer
     And Deskription  "BCA" girer
@@ -29,7 +29,7 @@ Feature:
 
 
   Scenario: 3
-    And Select student e "yagiz Ates" girerr
+    And Select student e bir ogrenci secer
     And Cok ileride bir tarih "13-05-9000" girer
     And Star time  "11:12" girer
     And Stop time  "12:12" girer
