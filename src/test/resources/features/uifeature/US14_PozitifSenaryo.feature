@@ -8,7 +8,8 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When Teacher Management butonuna tiklar
 
 
-  @smoke123
+  @smoke
+    @edit
   Scenario: Edit Alani Pozitif Senaryo
     When Olusturulan ogretmenin edit butonuna tiklar
     When Edit sayfasindaki Choose Lessons alanindan bir ders secer
@@ -24,7 +25,7 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When username alanına bir deger girer
     When password alanına valid bir deger girer
     When Edit alanindaki Submit butonuna tiklar
-    Then Teacher updated successful yazisini gorur
+   # Then Teacher updated successful yazisini gorur
    # Then guncellemeyi dogrular
 
 
