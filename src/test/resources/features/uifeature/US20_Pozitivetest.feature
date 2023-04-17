@@ -38,7 +38,7 @@ Feature:US20PozıtıveTest
 
     Examples:
       | ogrenci | tarih      | star time  | stop time | description |
-      |ahmetr   |13-02-2023  |12:16       |15:15      |abv          |
+      |ahmetkr   |13-02-2023  |12:16       |15:15      |abv          |
 
 
 

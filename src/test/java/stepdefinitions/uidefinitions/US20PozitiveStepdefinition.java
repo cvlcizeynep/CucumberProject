@@ -47,8 +47,8 @@ public class US20PozitiveStepdefinition {
 
     @And("deleteye tiklar")
     public void deleteyeTiklar() {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+//        Actions actions = new Actions(Driver.getDriver());
+//        actions.sendKeys(Keys.PAGE_DOWN).perform();
         Driver.clickWithJS(meetManagementPage.meetDelete);
 
 
