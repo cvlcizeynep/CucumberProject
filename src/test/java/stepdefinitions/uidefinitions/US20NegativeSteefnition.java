@@ -28,7 +28,7 @@ public class US20NegativeSteefnition {
 
     @When("Alanlara  bilgileri girer {string}, {string}, {string}, {string},{string}")
     public void alanlaraBilgileriGirer(String ogrenci, String tarih, String StartTime, String StopTime, String Description) {
-        Driver.waitAndSendText(meetManagementPage.editChoseStuentds,ogrenci );
+        Driver.waitAndSendText(meetManagementPage.ChoseStuentds,ogrenci );
         Driver.waitAndSendText(meetManagementPage.date,tarih);
         Driver.waitAndSendText(meetManagementPage.StartTime,StartTime);
         Driver.waitAndSendText(meetManagementPage.StopTime,StopTime);
