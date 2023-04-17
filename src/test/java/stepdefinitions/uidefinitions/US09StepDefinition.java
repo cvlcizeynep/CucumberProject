@@ -19,13 +19,10 @@ import java.util.List;
 public class US09StepDefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
     Actions actions;
-    ReusableMethods reusableMethods;
-    LoginStepDefinitions loginStepDefinitions;
 
-    @Given("Kullanici viceDean olarak login olur.")
-    public void kullanici_vice_dean_olarak_login_olur() {
-        ReusableMethods.login("dekan555", "12345678");
-    }
+    LoginStepDefinitions loginStepDefinitions= new LoginStepDefinitions();
+
+
 
     @And("Lessons a tiklar_asl")
     public void lessons_a_tiklar() {
