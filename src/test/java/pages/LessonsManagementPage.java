@@ -62,4 +62,6 @@ public  WebElement creditScore3;
 public WebElement silmeButonu;
 @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lessonsSecenek;
+@FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-lessonsList']//span[@aria-hidden='true'][contains(text(),'›')]")
+    public WebElement sagTus_asli;
 }
