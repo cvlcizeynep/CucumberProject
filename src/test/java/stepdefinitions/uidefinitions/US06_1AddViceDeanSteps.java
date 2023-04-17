@@ -27,8 +27,9 @@ public class US06_1AddViceDeanSteps {
     @Then("Kullanici basariyla Vice Dean ekleyebildigini dogrular.")
     public void kullanici_basariyla_vice_dean_ekleyebildigini_dogrular() {
         viceDeanManagement = new ViceDeanManagement();
-        assert ReusableMethods.waitForVisibility(viceDeanManagement.viceDeanSaved, 2).isDisplayed();
-        //  assert viceDeanManagement.viceDeanSaved.isDisplayed(
+        ReusableMethods.waitFor(1);
+        assert viceDeanManagement.viceDeanSaved.isDisplayed();
+
     }
 
 

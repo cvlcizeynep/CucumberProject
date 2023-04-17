@@ -18,6 +18,7 @@ import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class US_16 {
     ContactPage contactPage = new ContactPage();
@@ -79,13 +80,13 @@ public class US_16 {
         ReusableMethods.JSEClickToElement(contactPage.menuButton);
     }
 
-    @Given("Kullanici Contact Get All butonuna tiklar.")
+    @Given("Kullanici Contact Get All butonuna tiklar")
     public void kullanici_contact_get_all_butonuna_tiklar() {
         ReusableMethods.JSEClickToElement(contactPage.contactGetAllButton);
     }
 
-    @Given("Kullanici gonderen kisi isminin Name sutununda goruntulendigini dogrular")
-    public void kullanici_gonderen_kisi_isminin_name_sutununda_goruntulendigini_dogrular() {
+    @And("Kullanici gonderen kisi  Name-mail-subject-message bilgilerinin listede goruntulendigini dogrular")
+    public void kullaniciGonderenKisiNameMailSubjectMessageBilgilerininListedeGoruntulendiginiDogrular() {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
         executor.executeScript("document.body.style.zoom = '70%'");
 
@@ -100,9 +101,22 @@ public class US_16 {
             nameList.forEach(t -> nameListString.add(t.getText()));
             ReusableMethods.waitFor(2);
         }
-        Assert.assertTrue(nameListString.contains(name));
-    }
+        int indexName = nameListString.indexOf(name);
+        WebElement subjectSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[4]"));
+        System.out.println(subjectSutun.getText());
+        WebElement emailSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[2]"));
+        System.out.println(emailSutun.getText());
+        WebElement messageSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[3]"));
+        System.out.println(messageSutun.getText());
 
+        SoftAssert softAssert=new SoftAssert();
+        Assert.assertTrue(nameListString.contains(name));
+        Assert.assertEquals(subjectSutun.getText(), subject);
+        Assert.assertEquals(emailSutun.getText(), email);
+        Assert.assertEquals(messageSutun.getText(), message);
+        softAssert.assertAll();
+    }
+/*
     @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")
     public void kullanici_gonderen_kisinin_mailinin_email_sutununda_goruntulendigini_dogrular() {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
@@ -140,23 +154,33 @@ public class US_16 {
         }
         Assert.assertTrue(mailListString.contains(email));
     }*/
-
+/*
     @Given("Kullanici mesajin konusunun Subject sutununda goruntulendigini dogrular")
     public void kullanici_mesajin_konusunun_subject_sutununda_goruntulendigini_dogrular() {
         JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
         executor.executeScript("document.body.style.zoom = '70%'");
+
+
         List<String> subjectListString = new ArrayList<>();
         List<WebElement> subjectList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[4]"));
         subjectList.forEach(t -> subjectListString.add(t.getText()));
-
         while (!subjectListString.contains(subject)) {
+
             Driver.clickWithJS(contactPage.oneTimeForward);
             subjectList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[4]"));
             subjectListString.clear();
             subjectList.forEach(t -> subjectListString.add(t.getText()));
             ReusableMethods.waitFor(2);
         }
-        Assert.assertTrue(subjectListString.contains(subject));
+
+
+        int satir =subjectListString.indexOf(subject);
+
+        WebElement satirdakiIsim= Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(satir+1)+"]//td[1]"));
+        System.out.println(satirdakiIsim.getText());
+        System.out.println(name);
+        Assert.assertTrue(subjectListString.contains(subject) && name.equals(satirdakiIsim.getText()));
+
     }
 
     @Given("Kullanici mesajin Message sutununda goruntulendigini dogrular")
@@ -177,6 +201,10 @@ public class US_16 {
         Assert.assertTrue(messageListString.contains(message));
     }
 
-
+    @Then("Kullanici Delete butonuna tiklar")
+    public void kullaniciDeleteButonunaTiklar() {
+        //Delete butonu olmadigi icin tiklayamiyoruz
+    }
+*/
 }
 
