@@ -1,5 +1,4 @@
-
-@adminaddvicedean
+@US23.1, @smoke
 Feature: Admin Dean ekyebilmelidir.
   Background: Admin olarak giris yapip vice dean managementa gelme
     Given Kullanici admin olarak login olur.

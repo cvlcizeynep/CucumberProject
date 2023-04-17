@@ -1,4 +1,4 @@
-@w
+@US06.2
 Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
 
   Background:dean olrak giris
@@ -19,7 +19,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     Then Kullanici name kismi bos birakildiginda required uyarisi alarak kayit olunamdigini dogrular
     Then close driver
 
-  @US06TC03
+  @US06TC03 @failedScenario
   Scenario: TC03 Name valid degerle doldurulmalidir.
     Given Kullanici Name kismina valid olmayan "." girer.
     When Kullanici Surname kismina valid deger girer
@@ -34,8 +34,8 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     Then Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.
     Then close driver
 
-  @US06TC04
-  Scenario:TC04Name valid degerle doldurulmalidir.
+  @US06TC04 @failedScenario
+  Scenario:TC04Name  sadece tubtusuyla  doldurulmalidir.
     Given Kullanici Name kismina valid olmayan tubtusu girer.
     When Kullanici Surname kismina valid deger girer
     And Birth Place kismina valid deger girer
@@ -64,7 +64,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     Then Kullanici surname kismi bos birakildiginda kayit olunmadigi mesajini gorur
     Then close driver
 
-  @US06TC06
+  @US06TC06 @failedScenario
   Scenario: TC06 Surname valid degerle doldurulmalidir.
     Given Kullanici  Name kismina valid deger girer
     Given Kullanici surname kismina valid olmayan  deger "#" girer.
@@ -79,8 +79,8 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.
     Then close driver
 
-  @US06TC07
-  Scenario:TC07 Surname valid degerle doldurulmalidir.
+  @US06TC07 @failedScenario
+  Scenario:TC07 Surname tub tusunu deger olarak kabul etmemelidir.
     Given Kullanici  Name kismina valid deger girer
     When Kullanici surname kismina valid olmayan tubtusu girer.
     And Birth Place kismina valid deger girer
