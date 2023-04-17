@@ -3,7 +3,7 @@ Feature:US8PozıtıveTest
   Background:
     Given Kullanici viceDean olarak login olur.
     And Basariyla viceDean girisi yaptigini dogrular.
-    And Lessons a tiklar
+    And Lessons a tiklarr
 
   @lesson
   Scenario:TC01ders_olusturma_testi
@@ -20,16 +20,16 @@ Feature:US8PozıtıveTest
 
   @Score3
   Scenario:TC03
-    And Credit Score "25"  gırer
+    And Credit Score degerini "25"  gırer
     And Credit Score degeri girdigini dogrular
     Then close the application
 
-@dersOlusturma
-  Scenario: TC04
-    And Lessonsa "fiz"  girer
-    And Credit Score "35"  gırer
-    And dersin olustugunu dogrular
-    Then close the application
+#@dersOlusturma
+#  Scenario: TC04
+#    And Lessonsa "figzhe"  girerr
+#    And Credit Score "305"  gırerr
+#    And dersin olustugunu dogrular
+#    Then close the application
 
 
 

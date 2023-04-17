@@ -4,7 +4,9 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import pages.ViceDeanManagement;
+import utilities.ReusableMethods;
 
 public class US06_4Steps {
     ViceDeanManagement viceDeanManagement;
@@ -31,6 +33,7 @@ public class US06_4Steps {
     @Then("Kullanici valid olmayan ssn ile giris yapilamadigini uyari alarak dogrular")
     public void kullanici_valid_olmayan_ssn_ile_giris_yapilamadigini_uyari_alarak_dogrular() {
         viceDeanManagement=new ViceDeanManagement();
+        ReusableMethods.waitFor(1);
         assert viceDeanManagement.invalidSSNalertMessage.isDisplayed();
 
     }
@@ -50,20 +53,6 @@ public class US06_4Steps {
 
     }
 
-
-    @When("Kullanici User Name kismina tub tusuyla basar karakter girmez")
-    public void kullanici_user_name_kismina_tub_tusuyla_basar_karakter_girmez() {
-        viceDeanManagement=new ViceDeanManagement();
-         viceDeanManagement.userName.sendKeys(Keys.SPACE);
-
-    }
-    @Then("Kullanici username kismina tub tusuyla basilip bos birakildiginda kayit olunmadigini uyari alarak dogrular")
-    public void kullanici_username_kismina_tub_tusuyla_basilip_bos_birakildiginda_kayit_olunmadigini_uyari_alarak_dogrular() {
-
-        assert !viceDeanManagement.saveSuccesfullyMessage.isDisplayed();
-        viceDeanManagement=new ViceDeanManagement();
-
-    }
     @When("Kullanici   password kismini bos birakir")
     public void kullanici_password_kismini_bos_birakir() {
 
@@ -101,6 +90,18 @@ public class US06_4Steps {
 
 
     }
+    @When("Kullanici User Name kismina daha once kayitli bi deger girer")
+    public void kullanici_user_name_kismina_daha_once_kayitli_bi_deger_girer() {
+        viceDeanManagement=new ViceDeanManagement();
+        viceDeanManagement.userName.sendKeys(Keys.SPACE);
 
+    }
+    @Then("Kullanici username kismina tekrarli deger girildiginde kayit olunmadigini uyari alarak dogrular")
+    public void kullanici_username_kismina_tekrarli_deger_girildiginde_kayit_olunmadigini_uyari_alarak_dogrular() {
+        viceDeanManagement=new ViceDeanManagement();
+        ReusableMethods.waitFor(1);
+        assert viceDeanManagement.alreadyUsername.isDisplayed();
+
+    }
 
 }

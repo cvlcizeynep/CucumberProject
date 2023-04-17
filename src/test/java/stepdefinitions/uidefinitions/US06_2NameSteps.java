@@ -1,6 +1,7 @@
 package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.an.E;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,6 +9,7 @@ import org.checkerframework.checker.units.qual.K;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.ViceDeanManagement;
+import utilities.ReusableMethods;
 
 public class US06_2NameSteps {
     Faker faker=new Faker();
@@ -78,6 +80,7 @@ public class US06_2NameSteps {
     @When("Kullanici submit tusuna tiklarr.")
     public void kullanici_submit_tusuna_tiklarr() {
         viceDeanManagement=new ViceDeanManagement();
+        ReusableMethods.waitFor(1);
         viceDeanManagement.submit.click();
     }
     @Given("Kullanici Name kismina valid olmayan {string} girer.")
@@ -89,7 +92,12 @@ public class US06_2NameSteps {
     @Then("Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.")
     public void kullanici_name_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular() {
         viceDeanManagement=new ViceDeanManagement();
-        Assert.assertTrue(!viceDeanManagement.saveSuccesfullyMessage.isDisplayed());
+        try {
+            Assert.assertTrue(!viceDeanManagement.saveSuccesfullyMessage.isDisplayed());
+        }catch (Exception e){
+            throw new RuntimeException("valid olmayan degerler kayit yapiliyor");
+        }
+
 
     }
     @Given("Kullanici Name kismina valid olmayan tubtusu girer.")
@@ -104,6 +112,7 @@ public class US06_2NameSteps {
     @Then("Kullanici surname kismi bos birakildiginda kayit olunmadigi mesajini gorur")
     public void kullanici_surname_kismi_bos_birakildiginda_kayit_olunmadigi_mesajini_gorur() {
         viceDeanManagement=new ViceDeanManagement();
+        ReusableMethods.waitFor(1);
         assert viceDeanManagement.requiredSurNme.isDisplayed();
 
     }
@@ -116,7 +125,12 @@ public class US06_2NameSteps {
     @Then("Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.")
     public void kullanici_surname_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular() {
         viceDeanManagement=new ViceDeanManagement();
-        assert !viceDeanManagement.saveSuccesfullyMessage.isDisplayed();
+        try {
+            assert !viceDeanManagement.saveSuccesfullyMessage.isDisplayed();
+        }catch (Exception e){
+            throw new RuntimeException("kayit yapiliyor");
+        };
+
 
     }
     @When("Kullanici surname kismina valid olmayan tubtusu girer.")
