@@ -94,13 +94,13 @@ public class TeacherManagementPage {
     public WebElement editIsAdvisorTeacher;
     @FindBy(xpath = "(//input[@name='gender'])[4]")
     public WebElement editGenderMale;
+    @FindBy(xpath = "(//*[@value='FEMALE'])[2]")
+    public WebElement editGenderFemale;
     @FindBy(xpath = "(//button[text()='Submit'])[2]")
     public WebElement editSubmitButton;
 
     @FindBy(xpath = "//div[contains(text(),'JSON parse error: Cannot coerce empty String (\"\") ')]")
     public WebElement errorMessage;
-
-
 
 
 

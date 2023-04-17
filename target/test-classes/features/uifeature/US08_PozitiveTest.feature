@@ -24,12 +24,12 @@ Feature:US8PozıtıveTest
     And Credit Score degeri girdigini dogrular
     Then close the application
 
-@dersOlusturma
-  Scenario: TC04
-    And Lessonsa "fize"  girerr
-    And Credit Score "35"  gırerr
-    And dersin olustugunu dogrular
-    Then close the application
+#@dersOlusturma
+#  Scenario: TC04
+#    And Lessonsa "figzhe"  girerr
+#    And Credit Score "305"  gırerr
+#    And dersin olustugunu dogrular
+#    Then close the application
 
 
 

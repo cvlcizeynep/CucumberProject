@@ -1,14 +1,14 @@
-@gulser1 @gecti
+@gulser1
 Feature:Teacher Ekleme Negatif Senaryo 1
 
   Background:
-    When Kullanici viceDean olarak login olur.
+    Given Kullanici viceDean olarak login olur.
     Then Basariyla viceDean girisi yaptigini dogrular.
     When Menu butonuna tiklar
     When Teacher Management butonuna tiklar
 
-
-  Scenario Outline: "<Field>" Alanini Bos Birakarak Ogretmen Ekleme
+@simdiii
+  Scenario Outline: Alanini Bos Birakarak Ogretmen Ekleme
     When Choose Lessons alanindan bir ders secer
     When Alanlara bilgileri girer "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>","<Email>","<Phone>","<SSN>","<Username>"
     When Is Advisor Teacher alanindaki checkbox a tiklar
@@ -19,15 +19,15 @@ Feature:Teacher Ekleme Negatif Senaryo 1
     Then close driver
 
     Examples:
-      | Surname | Name   | Birth Place | Password | Date of birth | Email         | Phone        | SSN         | Field         |
-      | Team20  |        | izmir       | asdfghjk | 09-01-1998    | a@gmail.com   | 333-226-5656 | 333-26-5656 | Name          |
-      |         | Team20 | izmir       | asdfghjk | 09-01-1998    | aq@gmail.com  | 333-226-5655 | 333-26-5556 | Surname       |
-      | Team20  | Team20 |             | asdfghjk | 09-01-1998    | aqw@gmail.com | 333-226-5654 | 333-26-5456 | Birth Place   |
-      | Team20  | Team20 | izmir       |          | 09-01-1998    | awe@gmail.com | 333-226-5653 | 333-26-5356 | Password      |
-      | Team20  | Team20 | izmir       | asdfghjk |               | aer@gmail.com | 333-226-5652 | 333-26-5256 | Date of birth |
-      | Team20  | Team20 | izmir       | asdfghjk | 09-01-1998    |               | 333-226-5651 | 333-26-5156 | Email         |
-      | Team20  | Team20 | izmir       | asdfghjk | 09-01-1998    | aza@gmail.com |              | 333-26-5756 | Phone         |
-      | Team20  | Team20 | izmir       | asdfghjk | 09-01-1998    | ac@gmail.com  | 333-226-5651 |             | SSN           |
+      | Surname | Name   | Birth Place | Password | Date of birth | Email         | Phone        | SSN         |
+      | Team20  |        | izmir       | asdfghjk | 09-01-1998    | a@gmail.com   | 333-226-5656 | 333-26-5656 |
+      |         | Team20 | izmir       | asdfghjk | 09-01-1998    | aq@gmail.com  | 333-226-5655 | 333-26-5556 |
+      | Team20  | Team20 |             | asdfghjk | 09-01-1998    | aqw@gmail.com | 333-226-5654 | 333-26-5456 |
+      | Team20  | Team20 | izmir       |          | 09-01-1998    | awe@gmail.com | 333-226-5653 | 333-26-5356 |
+      | Team20  | Team20 | izmir       | asdfghjk |               | aer@gmail.com | 333-226-5652 | 333-26-5256 |
+      | Team20  | Team20 | izmir       | asdfghjk | 09-01-1998    |               | 333-226-5651 | 333-26-5156 |
+      | Team20  | Team20 | izmir       | asdfghjk | 09-01-1998    | aza@gmail.com |              | 333-26-5756 |
+      | Team20  | Team20 | izmir       | asdfghjk | 09-01-1998    | ac@gmail.com  | 333-226-5651 |             |
 
 
   @json

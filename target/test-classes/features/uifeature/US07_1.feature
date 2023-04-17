@@ -4,7 +4,7 @@ Feature: Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve  s
 Background: Dean get all sayfasina gider
 Given Kullanici Dean olarak login olur.
 Then Basariyla Dean girisi yaptigini  dogrular.
- When Kullanici acilan sayfada menu kismina tiklar
+  When Kullanici acilan sayfada menu kismina tiklar
 When Menuden contact get all u tiklar
 
   Scenario: TC01 Mesajlar Dean tarafindan gorulebilmeli
