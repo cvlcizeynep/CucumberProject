@@ -1,4 +1,4 @@
-@pozitif1
+@smoke123
 Feature:Teacher Ekleme Pozitif Senaryo
 
   Background:
@@ -8,7 +8,6 @@ Feature:Teacher Ekleme Pozitif Senaryo
     When Teacher Management butonuna tiklar
 
   Scenario Outline:  Pozitif Senaryo
-
     When Choose Lessons alanindan bir ders secer
     When Alanlara bilgileri girer "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>"
     When Email alanina valid bir deger girer
