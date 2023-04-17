@@ -15,9 +15,8 @@ public class US8PozitiveStepdefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
 
 
-    @Given("Lessons a tiklar1")
     public void lessons_a_tiklar() {
-        lessonsManagementPage.lessons.click();
+        Driver.clickWithJS(lessonsManagementPage.lessons);
     }
     @Given("Lessonsa {string}  girer")
     public void lessonsa_girer(String string) {
@@ -41,6 +40,10 @@ public class US8PozitiveStepdefinition {
         Assert.assertTrue(lessonsManagementPage.compulsory.isSelected());
     }
 
+    @Given("Lessons a tiklarr")
+    public void lessons_a_tiklarr() {
+     Driver.clickWithJS(lessonsManagementPage.lessons);
+    }
 
 
     @And("Credit Score degeri girdigini dogrular")
@@ -65,10 +68,19 @@ public class US8PozitiveStepdefinition {
     }
 
 
-    @And("Credit Score {string}  gırer")
-    public void creditScoreGırer(String string) {
+    @And("Lessonsa {string}  girerr")
+    public void lessonsaGirerr(String string) {
+        lessonsManagementPage.lessonName.sendKeys(string);
+    }
+
+    @And("Credit Score {string}  gırerr")
+    public void creditScoreGırerr(String string) {
         lessonsManagementPage.creditScore.sendKeys(string, Keys.TAB,Keys.ENTER);
         ReusableMethods.waitFor(2);
+    }
 
+    @And("Credit Score degerini {string}  gırer")
+    public void creditScoreDegeriniGırer(String string) {
+        lessonsManagementPage.creditScore.sendKeys(string);
     }
 }

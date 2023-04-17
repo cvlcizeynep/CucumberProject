@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"stepdefinitions,hooks"
         },
-        tags = "@addean",
+        tags = "@ @US06TC02",
         dryRun =false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 

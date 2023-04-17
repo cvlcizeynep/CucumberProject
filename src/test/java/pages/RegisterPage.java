@@ -27,8 +27,15 @@ public class RegisterPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]") public WebElement usernamefeedback;
     @FindBy(xpath = "//*[@placeholder='Password']") public WebElement password;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]") public WebElement passwordfeedback;
-    @FindBy(xpath = "//button[text()='Register']") public WebElement registerbutton;
+    //@FindBy(xpath = "//button[text()='Register']") public WebElement registerbutton;
 
+
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']") public WebElement registerSubmitButton;
+
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[1]") public WebElement popUpmesaji;
+    ////div[@class='Toastify__toast-body']/div[1]
+//    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement popUpmesaji;
 
 
 

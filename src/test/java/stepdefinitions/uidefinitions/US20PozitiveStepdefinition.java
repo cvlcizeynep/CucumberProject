@@ -10,22 +10,24 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US20PozitiveStepdefinition {
-    MeetManagementPage meetManagementPage=new MeetManagementPage();
+    MeetManagementPage meetManagementPage = new MeetManagementPage();
 
 
     @And("Date nin gorundugunu dogrular")
     public void dateNinGorundugunuDogrular() {
         Assert.assertTrue(meetManagementPage.date.isDisplayed());
     }
+
     @Given("Menuye tiklar")
     public void menuye_tiklar() {
         meetManagementPage.menu.click();
 
     }
+
     @Given("Meet Manegamente tiklar")
     public void meet_manegamente_tiklar() {
         ReusableMethods.waitFor(2);
-      meetManagementPage.meet_Management.click();
+        meetManagementPage.meet_Management.click();
     }
 
     @And("Star Time nin gorundugunu dogrular")
@@ -45,20 +47,17 @@ public class US20PozitiveStepdefinition {
 
     @And("deleteye tiklar")
     public void deleteyeTiklar() {
-Actions actions=new Actions(Driver.getDriver());
-actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
-Driver.clickWithJS(meetManagementPage.meetDelete);
+//        Actions actions = new Actions(Driver.getDriver());
+//        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Driver.clickWithJS(meetManagementPage.meetDelete);
 
 
     }
 
     @And("delete basarili yazisini gorur")
     public void deleteBasariliYazisiniGorur() {
-        Assert.assertTrue(meetManagementPage.deleteBasarili.isSelected());
+        Assert.assertTrue(meetManagementPage.deleteBasarili.isDisplayed());
     }
-
-
-
 
 
 }
