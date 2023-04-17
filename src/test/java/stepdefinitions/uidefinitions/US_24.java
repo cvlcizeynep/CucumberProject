@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.Optional;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -185,10 +186,5 @@ public class US_24 {
 
     }
 
-    @And("Kullanici Must be a past date pop-up inin gorunurlugunu dogrular")
-    public void kullaniciMustBeAPastDatePopUpIninGorunurlugunuDogrular() {
-        waitFor(5);
-       // Assert.assertTrue(teacherManagementPage.forwardDatePopoup.isDisplayed());
-    }
 }
 

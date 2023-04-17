@@ -97,8 +97,8 @@ public class TeacherManagementPage {
     @FindBy(xpath = "(//button[text()='Submit'])[2]")
     public WebElement editSubmitButton;
 
-
-
+    @FindBy(xpath = "//div[contains(text(),'JSON parse error: Cannot coerce empty String (\"\") ')]")
+    public WebElement errorMessage;
 
 
 

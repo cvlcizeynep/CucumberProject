@@ -14,7 +14,7 @@ import utilities.ReusableMethods;
 public class US8PozitiveStepdefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
 
-    @Given("Lessons a tiklarr")
+
     public void lessons_a_tiklar() {
         Driver.clickWithJS(lessonsManagementPage.lessons);
     }

@@ -1,28 +1,32 @@
 package stepdefinitions.uidefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.LessonsManagementPage;
-import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class US09StepDefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
     Actions actions;
+    ReusableMethods reusableMethods;
 
     @Given("Lessons a tiklar")
     public void lessons_a_tiklar() {
+
+       ReusableMethods.scrollToElement(lessonsManagementPage.sagOkTusu);
         lessonsManagementPage.lessonsSecenek.click();
     }
 
+
     @When("histoloji dersinin oldugu son page e gecmek için >> tiklar")
+
     public void histolojidersininoldugupagesegecmekicin() {
         lessonsManagementPage.sagOkTusu.click();
     }
 
-    @When("Daha once olusturulan fiziks dersinin listede goruldugunu dogrular")
+    @When("Daha once olusturulan histoloji dersinin listede goruldugunu dogrular")
     public void dahaonceolusturulanfiziksdersininlistedegoruldugunudogrular() {
         Assert.assertTrue(lessonsManagementPage.histoloji.isDisplayed());
     }

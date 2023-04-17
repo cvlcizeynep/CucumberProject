@@ -54,11 +54,11 @@ public class LessonsManagementPage {
   public WebElement sagOkTusu;
 @FindBy(xpath="//span[normalize-space()='histoloji']")
     public WebElement histoloji;
-@FindBy(xpath = "//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[5]/td[2]/span[1]")
+@FindBy(xpath = "//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[10]/td[2]/span[1]")
 public WebElement compulsoryYes;
-@FindBy(xpath="//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[5]/td[3]/span[1]")
+@FindBy(xpath="//span[normalize-space()='3']")
 public  WebElement creditScore3;
-@FindBy(xpath = "//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[5]/td[4]/span[1]/button[1]/i[1]")
+@FindBy(xpath = "//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[10]/td[4]/span[1]/button[1]/i[1]")
 public WebElement silmeButonu;
 @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lessonsSecenek;

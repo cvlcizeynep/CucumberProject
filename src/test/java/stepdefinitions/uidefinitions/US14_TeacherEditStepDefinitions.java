@@ -2,6 +2,7 @@ package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -40,7 +41,7 @@ public class US14_TeacherEditStepDefinitions {
 
     @When("Teacher List alaninda ogretmenin name bilgilerini gorur")
     public void teacherListAlanindaOgretmeninNameBilgileriniGorur() {
-       // Assert.assertFalse(teacherManagementPage.nameSurnameInfo.isDisplayed());
+        // Assert.assertFalse(teacherManagementPage.nameSurnameInfo.isDisplayed());
 
         Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Name")));
     }
@@ -55,13 +56,13 @@ public class US14_TeacherEditStepDefinitions {
     @When("Teacher List alaninda ogretmenin SSN bilgilerini gorur")
     public void teacherListAlanindaOgretmeninSSNBilgileriniGorur() {
         //Assert.assertTrue(teacherManagementPage.ssnInfo.isDisplayed());
-         Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Ssn")));
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("Ssn")));
     }
 
     @Then("Teacher List alaninda ogretmenin username bilgilerini gorur")
     public void teacherListAlanindaOgretmeninUsernameBilgileriniGorur() {
         //Assert.assertTrue(teacherManagementPage.userNameInfo.isDisplayed());
-         Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("User")));
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains(teacherManagementPage.name.getAttribute("User")));
     }
 
     @When("Olusturulan ogretmenin edit butonuna tiklar")
@@ -86,11 +87,6 @@ public class US14_TeacherEditStepDefinitions {
             waitFor(2);
         }
         Driver.clickWithJS(teacherManagementPage.editButton);
-
-
-
-
-
 
 
     }
@@ -148,7 +144,6 @@ public class US14_TeacherEditStepDefinitions {
         ReusableMethods.cleanByJs(teacherManagementPage.editPhoneTextbox);
 
 
-
     }
 
     @When("Edit alanindaki Is Advisor Teacher alanindaki checkbox a tiklar")
@@ -169,7 +164,7 @@ public class US14_TeacherEditStepDefinitions {
 
     @When("Username alanina space deger girer")
     public void usernameAlaninaSpaceDegerGirer() {
-        teacherManagementPage.username.sendKeys( Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE);
+        teacherManagementPage.username.sendKeys(Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE, Keys.SPACE);
 
     }
 
@@ -182,25 +177,25 @@ public class US14_TeacherEditStepDefinitions {
     @And("Name bilgisini {string} olarak gunceller")
     public void nameBilgisiniOlarakGunceller(String string) {
         waitFor(1);
-        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE+string).perform();
+        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
     @And("Surname bilgisini {string} olarak gunceller")
     public void surnameBilgisiniOlarakGunceller(String string) {
-        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE+string).perform();
+        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
     @And("Birth Place bilgisini {string} olarak gunceller")
     public void birthPlaceBilgisiniOlarakGunceller(String string) {
-        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE+string).perform();
+        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
     @And("Date Of Birth bilgisini {string} olarak gunceller")
     public void dateOfBirthBilgisiniOlarakGunceller(String string) {
-        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE+string).perform();
+        actions.doubleClick(teacherManagementPage.editdateOfBirth).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
@@ -208,7 +203,7 @@ public class US14_TeacherEditStepDefinitions {
     public void phoneBilgisiniOlarakGunceller(String string) {
         actions.click(teacherManagementPage.editPhoneTextbox)
                 .keyDown(Keys.CONTROL)
-                .sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE+string).perform();
+                .sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
@@ -216,7 +211,7 @@ public class US14_TeacherEditStepDefinitions {
     public void ssnBilgisiniOlarakGunceller(String string) {
         actions.click(teacherManagementPage.editSsnTextbox)
                 .keyDown(Keys.CONTROL).sendKeys("a")
-                .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE+string).perform();
+                .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
@@ -224,18 +219,121 @@ public class US14_TeacherEditStepDefinitions {
     public void usernameBilgisiniOlarakGunceller(String string) {
         actions.click(teacherManagementPage.editUsernameTextbox)
                 .keyDown(Keys.CONTROL).sendKeys("a")
-                .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE+string).perform();
+                .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
     @And("Password bilgisini {string} olarak gunceller")
     public void passwordBilgisiniOlarakGunceller(String string) {
-        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE+string).perform();
+        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE + string).perform();
         waitFor(1);
     }
 
     @When("Username alanina invalid deger {string} girer")
     public void usernameAlaninaInvalidDegerGirer(String string) {
         teacherManagementPage.username.sendKeys(string);
+    }
+
+    @When("name alanına valid bir deger girer")
+    public void nameAlanınaValidBirDegerGirer() {
+        Faker faker = new Faker();
+        String name = faker.name().firstName();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + name).perform();
+        waitFor(1);
+    }
+
+    @When("surname alanına valid bir deger girer")
+    public void surnameAlanınaValidBirDegerGirer() {
+        Faker faker = new Faker();
+        String surname = faker.name().lastName();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + surname).perform();
+        waitFor(1);
+    }
+
+    @When("birth place alanına valid bir deger girer")
+    public void birthPlaceAlanınaValidBirDegerGirer() {
+        Faker faker = new Faker();
+        String birthPlace = faker.country().capital();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editBirthPlace).sendKeys(Keys.BACK_SPACE + birthPlace).perform();
+        waitFor(1);
+    }
+
+    @When("email alanına bir deger girer")
+    public void emailAlanınaBirDegerGirer() {
+        Faker faker = new Faker();
+        String email = faker.name().firstName() + "@" + "hotmail.com";
+//        teacherManagement.emailButonUpdate.clear();
+//        teacherManagement.emailButonUpdate.sendKeys(email);
+//        Actions actions = new Actions(Driver.getDriver());
+        teacherManagementPage.editEmailTextbox.sendKeys(Keys.CONTROL, "A", Keys.DELETE);
+        waitFor(1);
+        teacherManagementPage.editEmailTextbox.sendKeys(email);
+    }
+
+    @When("phone alanına bir deger girer")
+    public void phoneAlanınaBirDegerGirer() {
+        Faker faker = new Faker();
+        String phone = faker.phoneNumber().phoneNumber().replaceAll("[^0-9]", "");
+        phone = String.format("%s-%s-%s",
+                phone.substring(0, 3),
+                phone.substring(3, 6),
+                phone.substring(6, 10));
+//        teacherManagement.phoneButonUpdate.clear();
+//        teacherManagement.phoneButonUpdate.sendKeys(phone);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editPhoneTextbox).sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE + phone).perform();
+        waitFor(1);
+    }
+
+    @When("SSN alanına bir deger girer")
+    public void ssnAlanınaBirDegerGirer() {
+        Faker faker = new Faker();
+        String ssn = faker.idNumber().ssnValid().replaceAll("[^0-9]", "");
+        String formattedSSN = ssn.substring(0, 3) + "-" + ssn.substring(3, 5) + "-" + ssn.substring(5, 9);
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editSsnTextbox).sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE + formattedSSN).perform();
+        waitFor(1);
+    }
+
+    @When("edit alanında ıs advisor teacher butonuna tıklar")
+    public void editAlanındaIsAdvisorTeacherButonunaTıklar() {
+        teacherManagementPage.editIsAdvisorTeacher.click();
+    }
+
+    @When("edit alanında cinsiyet secer")
+    public void editAlanındaCinsiyetSecer() {
+        teacherManagementPage.editGenderMale.click();
+    }
+
+    @When("edit alanında date of birth {string} girer")
+    public void editAlanındaDateOfBirthGirer(String string) {
+        teacherManagementPage.editdateOfBirth.sendKeys(string);
+    }
+
+    @When("username alanına bir deger girer")
+    public void usernameAlanınaBirDegerGirer() {
+        Faker faker = new Faker();
+        String username = faker.name().username();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editUsernameTextbox).sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE + username).perform();
+        waitFor(1);
+    }
+
+    @When("password alanına valid bir deger girer")
+    public void passwordAlanınaValidBirDegerGirer() {
+        Faker faker = new Faker();
+        String password = faker.idNumber().valid();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.doubleClick(teacherManagementPage.editPasswordTextbox).sendKeys(Keys.BACK_SPACE + password).perform();
+        waitFor(1);
     }
 }
