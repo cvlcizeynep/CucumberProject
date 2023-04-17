@@ -19,37 +19,49 @@ public class MeetManagementPage {
     @FindBy(xpath = "//input[@id='startTime']") public WebElement startTime;
     @FindBy(xpath = "//input[@id='stopTime']") public WebElement stopTime;
     @FindBy(xpath = "//input[@id='description']")   public WebElement description;
-    @FindBy(xpath = "//button[text()='Submit']")   public WebElement meetSubmit;
-    @FindBy(xpath = "//*[@class='text-dark btn btn-outline-info']")   public WebElement edit;
-    @FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[1]")   public WebElement meetDelete;
-    @FindBy(xpath = "//*[@class='btn btn-danger']")   public WebElement deleteBasarili;
-    @FindBy(xpath = "//*[@class=' css-1wy0on6']")  public WebElement ChoseStuentds;
-
-
-
-
-
-
-    @FindBy(xpath = "//*[@id='react-select-3-input']")  public WebElement editChoseStuentds;
-    @FindBy(xpath = "//input[@id='date']")  public WebElement editDate;
-    @FindBy(xpath = "//input[@id='startTime']") public WebElement StartTime;
-    @FindBy(xpath = "//input[@id='stopTime']") public WebElement StopTime;
-    @FindBy(xpath = "//input[@id='description']")   public WebElement Description;
     @FindBy(xpath = "//button[text()='Submit']")   public WebElement Submit;
-    @FindBy(xpath = "//div[@role='alert']")   public WebElement editMeetBasarili;
-    @FindBy(xpath = "//div[contains(text()='JSON parse error: Cannot coerce empty  ']")   public WebElement editMeetUyariMesaji;
+
+    @FindBy(xpath = "//*[@class='fa-solid fa-trash']")   public WebElement meetDelete;
+    //*[@class='Toastify__toast-container Toastify__toast-container--top-center']
+    @FindBy(xpath = "//button[@class='btn btn-danger']")   public WebElement deleteBasarili;
+
+
+    @FindBy(xpath = "//*[@class='text-dark btn btn-outline-info']")   public WebElement edit;
+    @FindBy(xpath = "//*[text()='must be a later date']")   public WebElement old_date_error;
+    @FindBy(xpath = "//*[text()='Error: start time must not be greater than or equal to stop time']")   public WebElement start_time_error;
+    @FindBy(xpath = "//*[@style='vertical-align: inherit;']")   public WebElement forward_date_error;
+
+
+    @FindBy(xpath = "(//input[@id='date'])[2]")  public WebElement edate;
+    @FindBy(xpath = "(//*[@id='startTime'])[2]") public WebElement estartTime;
+    @FindBy(xpath = "(//input[@id='stopTime'])[2]") public WebElement estopTime;
+    @FindBy(xpath = "(//input[@id='description'])[2]")   public WebElement edescription;
+    @FindBy(xpath = "(//button[text()='Submit'])[2]")   public WebElement esubmit;
+    @FindBy(xpath = "//div[contains(@class,'css-19bb58m')]")   public WebElement eselectStudent1;
+    @FindBy(xpath = "//div[contains(@class,'css-19bb58m')]")   public WebElement eselectStudent2;
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "//div[@class=' css-19bb58m']") public WebElement ChooseStedentsButton;
     @FindBy(xpath = "//h3[@class='fw-bold p-3 card-header']")
     public WebElement MeetManagementBaslik;
-    @FindBy(xpath = "//div[@class=' css-19bb58m']")
-    public WebElement ChooseStedentsButton;
+
     @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--success Toastify__toast--close-on-click']")
     public WebElement MeetpopUpMesaji;
     @FindBy(xpath = "//input[@type='date']")
     public WebElement dateButton;
     @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement hataMesaji;
-    @FindBy(xpath = "//div[normalize-space()='Required']")
-    public WebElement RequiredMesaji;
+
 }
 
 

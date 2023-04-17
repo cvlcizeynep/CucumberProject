@@ -1,18 +1,20 @@
 @us01
 #1-3-5-9-13-18
   Feature: "Aday öğrenciler sisteme kayıt olabilmelidir"(Register)
-    Background: Kullanıcı Register sayfasına gider
+
       Scenario Outline: Kullanıcı Boş bir bölüm ile kayıt olamaz
-        Given Kullanici register Name "<Name>" kismina değer  girer
+
+        Given Kullanıcı register sayfasına gider.
+        When Kullanici register Name "<Name>" kismina değer  girer
         When Kullanici register Surname "<Surname>" kismina değer  girer
-        And Kullanici Birth place "<Birth Place>" kismina valid deger girer
-        And  Kullanici Gender kismini secer
-        And  Kullanici Birth of Date "<Birth of Date>"  girer
-        And Kullanici Phone Number "<Phone Number>" girer
-        And  Kullanici SSN  "<SSN>" girer
-        And Kullanici User Name "<User Name>" girer
-        And   Kullanici en az sekiz karakterden oluşan Password "<Password>" girer
-        And   Kullanici submit tusuna tiklar.
+        And Kullanici register Birth place "<Birth Place>" kismina  deger girer
+        And  Kullanici register Gender kismini secer
+        And  Kullanici register Birth of Date "<Birth of Date>"  girer
+        And Kullanici register Phone Number "<Phone Number>" girer
+        And  Kullanici register SSN  "<SSN>" girer
+        And Kullanici register User Name "<User Name>" girer
+        And   Kullanici register Password "<Password>" girer
+        And   Kullanici register submit tusuna tiklar.
         And Kullanici Guest User Registered yazısı görmez.
         Then close driver
         Examples: data
@@ -32,16 +34,17 @@
 
 
     Scenario Outline:  Kullanıcı bütün boşluklara uygun değerler girerek kayıt olabilir
-      Given Kullanici Name "<Name>" kismina valid  girer
-      When Kullanici Surname "<Surname>" kismina valid  girer
-      And Kullanici Birth place "<Birth Place>" kismina valid deger girer
-      And  Kullanici Gender kismini secer
-      And  Kullanici Birth of Date "<Birth of Date>"  girer
-      And Kullanici Phone Number "<Phone Number>" girer
-      And  Kullanici SSN  "<SSN>" girer
-      And Kullanici User Name "<User Name>" girer
-      And   Kullanici en az sekiz karakterden oluşan Password "<Password>" girer
-      And   Kullanici submit tusuna tiklar.
+      Given Kullanıcı register sayfasına gider.
+      When Kullanici register Name "<Name>" kismina değer  girer
+      When Kullanici register Surname "<Surname>" kismina değer  girer
+      And Kullanici register Birth place "<Birth Place>" kismina  deger girer
+      And  Kullanici register Gender kismini secer
+      And  Kullanici register Birth of Date "<Birth of Date>"  girer
+      And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register SSN  "<SSN>" girer
+      And Kullanici register User Name "<User Name>" girer
+      And   Kullanici register Password "<Password>" girer
+      And   Kullanici register submit tusuna tiklar.
       And Kullanici Guest User Registered yazısı görür.
       Then close driver
       Examples: data
@@ -58,16 +61,17 @@
         | Emre |Yigit      |  İskenderun          |26.01.1996 |123-995-1234   | 123-99-1234  |emre002|123345678|
 
     Scenario Outline: TC16 Kullanıcı 3. ve 5. rakamdan sonra "-" içermeyen bir "ssn" ile kayıt oluşturamaz
-      Given Kullanici Name "<Name>" kismina valid  girer
-      When Kullanici Surname "<Surname>" kismina valid  girer
-      And Kullanici Birth place "<Birth Place>" kismina valid deger girer
-      And  Kullanici Gender kismini secer
-      And  Kullanici Birth of Date "<Birth of Date>"  girer
-      And Kullanici Phone Number "<Phone Number>" girer
-      And  Kullanici SSN  "<SSN>" girer
-      And Kullanici User Name "<User Name>" girer
-      And   Kullanici en az sekiz karakterden oluşan Password "<Password>" girer
-      And   Kullanici submit tusuna tiklar.
+      Given Kullanıcı register sayfasına gider.
+      When Kullanici register Name "<Name>" kismina değer  girer
+      When Kullanici register Surname "<Surname>" kismina değer  girer
+      And Kullanici register Birth place "<Birth Place>" kismina  deger girer
+      And  Kullanici register Gender kismini secer
+      And  Kullanici register Birth of Date "<Birth of Date>"  girer
+      And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register SSN  "<SSN>" girer
+      And Kullanici register User Name "<User Name>" girer
+      And   Kullanici register Password "<Password>" girer
+      And   Kullanici register submit tusuna tiklar.
       And Kullanici Please enter valid ssn yazısı görür.
       Then close driver
       Examples: data
@@ -75,15 +79,16 @@
         | Cem    |Yılmaz   |  İskenderun          |26.01.1996 |123-006-1234   |  12306000099   | cem00001 | 12345678 |
 
     Scenario Outline: TC11 Kullanıcı Cinsiyet seçmeden üye olamaz.
-      Given Kullanici Name "<Name>" kismina valid  girer
-      When Kullanici Surname "<Surname>" kismina valid  girer
-      And Kullanici Birth place "<Birth Place>" kismina valid deger girer
-      And  Kullanici Birth of Date "<Birth of Date>"  girer
-      And Kullanici Phone Number "<Phone Number>" girer
-      And  Kullanici SSN  "<SSN>" girer
-      And Kullanici User Name "<User Name>" girer
-      And   Kullanici en az sekiz karakterden oluşan Password "<Password>" girer
-      And   Kullanici submit tusuna tiklar.
+      Given Kullanıcı register sayfasına gider.
+      When Kullanici register Name "<Name>" kismina değer  girer
+      When Kullanici register Surname "<Surname>" kismina değer  girer
+      And Kullanici register Birth place "<Birth Place>" kismina  deger girer
+      And  Kullanici register Birth of Date "<Birth of Date>"  girer
+      And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register SSN  "<SSN>" girer
+      And Kullanici register User Name "<User Name>" girer
+      And   Kullanici register Password "<Password>" girer
+      And   Kullanici register submit tusuna tiklar.
       And Kullanici Guest User Registered yazısı görmez.
       Then close driver
       Examples: data
@@ -91,16 +96,17 @@
         | Alice |Miller   |  Ula          | 26.01.1996 |  123-004-1234 | 123-04-0000 |alice00001 | 12345678 |
 
     Scenario Outline: TC7 Kullanıcı (xxx-xxx-xxxx) formatının dışında arada "-" olmadan telefon numarasını giremez.
-      Given Kullanici Name "<Name>" kismina valid  girer
-      When Kullanici Surname "<Surname>" kismina valid  girer
-      And Kullanici Birth place "<Birth Place>" kismina valid deger girer
-      And  Kullanici Gender kismini secer
-      And  Kullanici Birth of Date "<Birth of Date>"  girer
-      And Kullanici Phone Number "<Phone Number>" girer
-      And  Kullanici SSN  "<SSN>" girer
-      And Kullanici User Name "<User Name>" girer
-      And   Kullanici en az sekiz karakterden oluşan Password "<Password>" girer
-      And   Kullanici submit tusuna tiklar.
+      Given Kullanıcı register sayfasına gider.
+      When Kullanici register Name "<Name>" kismina değer  girer
+      When Kullanici register Surname "<Surname>" kismina değer  girer
+      And Kullanici register Birth place "<Birth Place>" kismina  deger girer
+      And  Kullanici register Gender kismini secer
+      And  Kullanici register Birth of Date "<Birth of Date>"  girer
+      And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register SSN  "<SSN>" girer
+      And Kullanici register User Name "<User Name>" girer
+      And   Kullanici register Password "<Password>" girer
+      And   Kullanici register submit tusuna tiklar.
       And Kullanici Please enter valid phone number yazısı görür.
       Then close driver
       Examples: data

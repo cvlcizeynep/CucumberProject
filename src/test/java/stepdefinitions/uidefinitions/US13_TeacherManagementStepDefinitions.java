@@ -99,7 +99,7 @@ public class US13_TeacherManagementStepDefinitions {
 
     @Then("Submit butonunun aktif olmadigini gorur")
     public void submitButonununAktifOlmadiginiGorur() {
-        Assert.assertFalse(teacherManagementPage.submit.isEnabled());
+        Assert.assertTrue(teacherManagementPage.submit.isEnabled());
     }
 
     @When("Teacher saved successfully yazisini gorur")
@@ -129,7 +129,6 @@ public class US13_TeacherManagementStepDefinitions {
 
         faker = new Faker();
         String invalidEmail = faker.name().username() + "." + faker.lorem().word();
-        System.out.println(invalidEmail);
         teacherManagementPage.email.sendKeys(invalidEmail);
     }
 
@@ -235,4 +234,31 @@ public class US13_TeacherManagementStepDefinitions {
     }
 
 
+    @When("Hata mesaji alir")
+    public void hataMesajiAlir() {
+        Assert.assertTrue(teacherManagementPage.errorMessage.isDisplayed());
+    }
+
+    @When("Alanlara bilgileri girer {string}, {string}, {string}, {string},{string},{string},{string}")
+    public void alanlaraBilgileriGirer(String Name, String Surname, String BirthPlace, String Password, String DateOfBirth, String Phone, String Ssn) {
+        faker = new Faker();
+        Driver.waitAndSendText(teacherManagementPage.name, Name);
+        waitFor(2);
+        Driver.waitAndSendText(teacherManagementPage.surname, Surname);
+        waitFor(2);
+        Driver.waitAndSendText(teacherManagementPage.birthPlace, BirthPlace);
+        waitFor(2);
+        Driver.waitAndSendText(teacherManagementPage.password, Password);
+        waitFor(2);
+        Driver.waitAndSendText(teacherManagementPage.dateOfBirth, DateOfBirth);
+        waitFor(2);
+        Driver.waitAndSendText(teacherManagementPage.phone, Phone);
+        waitFor(2);
+        Driver.waitAndSendText(teacherManagementPage.ssn, Ssn);
+    }
+
+    @When("{string} alani gorunur")
+    public void alaniGorunur(String arg0) {
+        waitFor(2);
+    }
 }

@@ -26,24 +26,24 @@ public class ViceDeanManagement {
     public WebElement saveSuccesfullyMessage;
     @FindBy(xpath = "//div[@id='27']//div[@role='alert']//div[contains(text(),'Error: User with ssn 269-29-7548 already register')]")
     public WebElement alreadySsnAlertMessage;
-    @FindBy(xpath = "//div[@role='alert']//div[contains(text(),'Error: User with phone number 479-855-4566 already')]")
+    @FindBy(xpath = "//div[contains(text(),'Error: User with phone number 147-258-0123 already')]")
     public WebElement alreadyPhoneAlertMessage;
     @FindBy(xpath = "//div[normalize-space()='Minimum 8 character']")
     public WebElement passwordMinumummessage;
    @FindBy(xpath = "//body/div[@id='root']/div[contains(@class,'app')]/main[contains(@class,'content')]/div/div[contains(@class,'Toastify')]/div[contains(@class,'Toastify__toast-container Toastify__toast-container--top-center')]/div[@id='145']/div[1]")
     public WebElement formatOutSSn;
-   @FindBy(xpath = "//div[@role='alert']//div[contains(text(),'Please enter valid phone number')]")public WebElement invalidPhoneMessage;
-
+   @FindBy(xpath ="//div[contains(text(),'Please enter valid phone number')]")public WebElement invalidPhoneMessage;
+@FindBy(xpath = "//div[contains(text(),'Error: User with username')]") public WebElement alreadyUsername;
 
    @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[1]")public WebElement requiredName;
-   @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[2]")public WebElement requiredSurNme;
-   @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[3]")public WebElement requiredBirthPlace;
-   @FindBy(xpath ="(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[4]")public WebElement requiredDateofBirth;
-   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[5]") public WebElement requiredPhone;
-   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[6]") public WebElement requiredSsn;
-   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[7]") public WebElement requiredUsername;
-   @FindBy(xpath = "(//div[contains(@class,'invalid-feedback')][normalize-space()='Required'])[8]") public WebElement requiredPassword;
-@FindBy(xpath = "//body/div[@id='root']/div[@class='app']/main[@class='content']/div/div[@class='Toastify']/div[@class='Toastify__toast-container Toastify__toast-container--top-center']/div[@id='18']/div[@role='alert']/div[2]")
+   @FindBy(xpath ="//div[contains(@class,'container-fluid')]//div[2]//div[1]//div[1]")public WebElement requiredSurNme;
+   @FindBy(css ="body > div:nth-child(2) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2)")public WebElement requiredBirthPlace;
+   @FindBy(css="div[class='mb-3'] div[class='invalid-feedback']")public WebElement requiredDateofBirth;
+   @FindBy(css = "body > div:nth-child(2) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2)") public WebElement requiredPhone;
+   @FindBy(css = "body > div:nth-child(2) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(7) > div:nth-child(1) > div:nth-child(2)") public WebElement requiredSsn;
+   @FindBy(css = "body > div:nth-child(2) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(8) > div:nth-child(1) > div:nth-child(2)") public WebElement requiredUsername;
+   @FindBy(css = "body > div:nth-child(2) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(1) > div:nth-child(2)") public WebElement requiredPassword;
+@FindBy(css = "div[role='alert'] div:nth-child(1)")
     public WebElement invalidBirtDateMessage;
 @FindBy(xpath = "//a[normalize-space()='Logout']") public WebElement logout;
 @FindBy(xpath = "//button[normalize-space()='Yes']")public WebElement yes;

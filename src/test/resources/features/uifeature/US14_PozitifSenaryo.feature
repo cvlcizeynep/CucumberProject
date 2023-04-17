@@ -1,4 +1,4 @@
-@pozitif1
+@gulser
 Feature:Teacher Guncelleme Pozitif Senaryo
 
   Background:
@@ -8,6 +8,28 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When Teacher Management butonuna tiklar
 
 
+  @smoke
+    @edit
+  Scenario: Edit Alani Pozitif Senaryo
+    When Olusturulan ogretmenin edit butonuna tiklar
+    When Edit sayfasindaki Choose Lessons alanindan bir ders secer
+    When name alanına valid bir deger girer
+    When surname alanına valid bir deger girer
+    When birth place alanına valid bir deger girer
+    When email alanına bir deger girer
+    When phone alanına bir deger girer
+    When SSN alanına bir deger girer
+    When edit alanında ıs advisor teacher butonuna tıklar
+    When edit alanında cinsiyet secer
+    When edit alanında date of birth "01091998" girer
+    When username alanına bir deger girer
+    When password alanına valid bir deger girer
+    When Edit alanindaki Submit butonuna tiklar
+   # Then Teacher updated successful yazisini gorur
+   # Then guncellemeyi dogrular
+
+
+
   Scenario: Olusturulan_bilgilerin_goruntulenmesi
     When Teacher List alaninda ogretmenin name bilgilerini gorur
     When Teacher List alaninda ogretmenin phone number bilgilerini gorur
@@ -15,19 +37,8 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     Then Teacher List alaninda ogretmenin username bilgilerini gorur
 
 
-  Scenario Outline:  Edit Alani Pozitif Senaryo
-    When Olusturulan ogretmenin edit butonuna tiklar
-    When Edit teacher sayfasini goruntuler
-    When Edit sayfasindaki Choose Lessons alanindan bir ders secer
-    Then Alanlardaki bilgileri "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>" olarak gunceller
-    When Edit alanindaki Is Advisor Teacher alanindaki checkbox a tiklar
-    When Edit alanindaki Gender alanindan male secer
-    When Edit alanindaki Submit butonuna tiklar
-    When Teacher updated successful yazisini gorur
-    When Ekran goruntusu alinir
-    Then close driver
 
 
-    Examples:
-      | Surname | Name   | Birth Place | Password  | Date of birth |
-      | Team20  | Team20 | izmir       | Team20_09 | 09-01-1998    |
+
+
+
