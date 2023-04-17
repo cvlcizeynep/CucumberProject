@@ -40,6 +40,10 @@ public class US8PozitiveStepdefinition {
         Assert.assertTrue(lessonsManagementPage.compulsory.isSelected());
     }
 
+    @Given("Lessons a tiklarr")
+    public void lessons_a_tiklarr() {
+     Driver.clickWithJS(lessonsManagementPage.lessons);
+    }
 
 
     @And("Credit Score degeri girdigini dogrular")
