@@ -230,6 +230,12 @@ public class ReusableMethods {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public static void scroolDownToVisibleElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", waitForVisibility(element, 5));
+
+    }
+
 
 
 

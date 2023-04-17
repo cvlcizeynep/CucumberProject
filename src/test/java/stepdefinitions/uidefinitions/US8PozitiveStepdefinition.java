@@ -1,9 +1,11 @@
 package stepdefinitions.uidefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 import pages.LessonsManagementPage;
 import utilities.Driver;
@@ -13,9 +15,8 @@ public class US8PozitiveStepdefinition {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
 
 
-    @Given("Lessons a tiklar")
     public void lessons_a_tiklar() {
-        lessonsManagementPage.lessons.click();
+        Driver.clickWithJS(lessonsManagementPage.lessons);
     }
     @Given("Lessonsa {string}  girer")
     public void lessonsa_girer(String string) {
@@ -54,4 +55,28 @@ public class US8PozitiveStepdefinition {
     }
 
 
+
+    @And("dersin olustugunu dogrular")
+    public void dersinOlustugunuDogrular() {
+        Assert.assertTrue(lessonsManagementPage.lessonDersOluşturulduMesaji.getText().contains("Lesson Created"));
+
+        ReusableMethods.waitFor(2);
+    }
+
+
+    @And("Lessonsa {string}  girerr")
+    public void lessonsaGirerr(String string) {
+        lessonsManagementPage.lessonName.sendKeys(string);
+    }
+
+    @And("Credit Score {string}  gırerr")
+    public void creditScoreGırerr(String string) {
+        lessonsManagementPage.creditScore.sendKeys(string, Keys.TAB,Keys.ENTER);
+        ReusableMethods.waitFor(2);
+    }
+
+    @And("Credit Score degerini {string}  gırer")
+    public void creditScoreDegeriniGırer(String string) {
+        lessonsManagementPage.creditScore.sendKeys(string);
+    }
 }

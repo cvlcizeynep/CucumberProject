@@ -46,3 +46,21 @@ Feature: Your Name alaninin testi
     Then kullanici uyari ayni maili kullanamayacgi mesaji alir
 
     And sayfa kapatilir
+
+
+  Scenario Outline: Alanların bos birakilması testi
+
+    When kullanici yourname "<Your Name>" alanini bos birakir
+    When kullanici email "<Your Email>" alanini bos birakir
+    When kullanici subject "<Subject>" alanini bos birakir
+    When kullanici Message "<Message>" alanini bos birakir
+    When kullanici Send Message alanina tiklar
+    Then kullanici Contact Message Created Created Successfully mesajini goruntulemez
+    And sayfa kapatilir
+
+    Examples: data2
+      |Your Name | Your Email           | Subject | Message                   |
+      |Cahit     |                      | Java    | Kaliteli bir egitim aldim  |
+      |Cahit     | zariifsair@gmail.com  |  Java   |                           |
+      |          | zarifssair@gmail.com  |Java     |Kaliteli bir egitim aldim |
+      |Cahit     | zarifssair@gmail.com  |         |Kaliteli bir egitim aldim  |
