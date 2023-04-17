@@ -1,4 +1,4 @@
-@qwe
+@US06.4
 Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir.
 
   Background:
@@ -9,9 +9,10 @@ Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uyg
     And  Kullanici Cinsiyet kismini secer
     And  Kullanici Dogum tarihine "03061988" girer
     And Kullanici  telefon numarasina valid deger girer
-    Then close driver
 
-  Scenario: TC13 SSN bos birakilamaz
+
+  @US06TC16
+  Scenario: TC16 SSN bos birakilamaz
     When Kullanici  SSN girmez bos birakir
     And Kullanici User Name alanina valid deger girer
     And   Kullanici en az sekiz karakterden oluşan password  girer
@@ -20,15 +21,17 @@ Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uyg
     Then close driver
 
 
-  Scenario: TC14 SSN belirtilen formatta olmalidir
-    When Kullanici format disi bir SSN "123456789" girer
+  @US06TC17
+  Scenario: TC17 SSN belirtilen formatta olmalidir
+    When Kullanici format disi bir SSN "12345678978" girer
     And Kullanici User Name alanina valid deger girer
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici valid olmayan ssn ile giris yapilamadigini uyari alarak dogrular
     Then close driver
 
-  Scenario: TC15 SSN uniq olmalidir
+  @US06TC18
+  Scenario: TC18 SSN uniq olmalidir
     When Kullanici kayitli uniq olmayan bir SSN "269-29-7548" ile deger girer
     And Kullanici User Name alanina valid deger girer
     And   Kullanici en az sekiz karakterden oluşan password  girer
@@ -36,7 +39,8 @@ Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uyg
     Then Kullanici uniq olmayan   ssn girdiginde  uyari alarak dogrulama yapar.
     Then close driver
 
-  Scenario: TC16 User name bos birakilamaz
+  @US06TC19
+  Scenario: TC19 User name bos birakilamaz
     And  Kullanici SSN kismina valid deger girer
     When Kullanici User Name girmez bos birakir
     And   Kullanici en az sekiz karakterden oluşan password  girer
@@ -44,15 +48,17 @@ Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uyg
     Then Kullanici username kismi bos birakildiginda kayit olunmadigi mesajini gorur
     Then close driver
 
-  Scenario:TC17 Username tub tusuyla girilip bos birakilmaz
+  @US06TC20
+  Scenario:TC20 Username daha once alinmamis olmalidir
     And  Kullanici SSN kismina valid deger girer
-    When Kullanici User Name kismina tub tusuyla basar karakter girmez
+    When Kullanici User Name kismina daha once kayitli bi deger girer
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
-    Then  Kullanici username kismina tub tusuyla basilip bos birakildiginda kayit olunmadigini uyari alarak dogrular
+    Then  Kullanici username kismina tekrarli deger girildiginde kayit olunmadigini uyari alarak dogrular
     Then close driver
 
-  Scenario:TC18 Password sekizden az karakter icermemeli
+  @US06TC21
+  Scenario:TC21 Password sekizden az karakter icermemeli
 
     And  Kullanici SSN kismina valid deger girer
     And Kullanici User Name alanina valid deger girer
@@ -61,7 +67,8 @@ Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uyg
     Then Kullanici sekizden az karakterli password ile  kayit olunmadigini uyari alarak dogrular
     Then close driver
 
-  Scenario:TC19 Password kismi bos birakilamaz
+  @US06TC22
+  Scenario:TC22 Password kismi bos birakilamaz
     And  Kullanici SSN kismina valid deger girer
     And Kullanici User Name alanina valid deger girer
     When Kullanici   password kismini bos birakir
