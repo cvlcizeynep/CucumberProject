@@ -19,25 +19,19 @@ public class MeetManagementPage {
     @FindBy(xpath = "//input[@id='startTime']") public WebElement startTime;
     @FindBy(xpath = "//input[@id='stopTime']") public WebElement stopTime;
     @FindBy(xpath = "//input[@id='description']")   public WebElement description;
-    @FindBy(xpath = "//button[text()='Submit']")   public WebElement meetSubmit;
+    @FindBy(xpath = "//button[text()='Submit']")   public WebElement Submit;
     @FindBy(xpath = "//*[@class='text-dark btn btn-outline-info']")   public WebElement edit;
-    @FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[1]")   public WebElement meetDelete;
-    @FindBy(xpath = "//*[@class='btn btn-danger']")   public WebElement deleteBasarili;
-    @FindBy(xpath = "//*[@class=' css-1wy0on6']")  public WebElement ChoseStuentds;
+    @FindBy(xpath = "((//*[@type='button'])[7]")   public WebElement meetDelete;
+    @FindBy(xpath = "//button[@class='btn btn-danger']")   public WebElement deleteBasarili;
+    @FindBy(xpath = "//*[@id='react-select-2-live-region']")  public WebElement ChoseStuentds;
 
 
-
-
-
-
-    @FindBy(xpath = "//*[@id='react-select-3-input']")  public WebElement editChoseStuentds;
-    @FindBy(xpath = "//input[@id='date']")  public WebElement editDate;
     @FindBy(xpath = "//input[@id='startTime']") public WebElement StartTime;
     @FindBy(xpath = "//input[@id='stopTime']") public WebElement StopTime;
     @FindBy(xpath = "//input[@id='description']")   public WebElement Description;
-    @FindBy(xpath = "//button[text()='Submit']")   public WebElement Submit;
-    @FindBy(xpath = "//div[@role='alert']")   public WebElement editMeetBasarili;
-    @FindBy(xpath = "//div[contains(text()='JSON parse error: Cannot coerce empty  ']")   public WebElement editMeetUyariMesaji;
+    @FindBy(xpath = "//div[@role='alert']")   public WebElement meetBasarili;
+    @FindBy(xpath = "(//*[@class='Toastify__toast-container Toastify__toast-container--top-center'])[1]")
+    public WebElement editMeetUyariMesaji;
     @FindBy(xpath = "//h3[@class='fw-bold p-3 card-header']")
     public WebElement MeetManagementBaslik;
     @FindBy(xpath = "//div[@class=' css-19bb58m']")
@@ -48,8 +42,7 @@ public class MeetManagementPage {
     public WebElement dateButton;
     @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement hataMesaji;
-    @FindBy(xpath = "//div[normalize-space()='Required']")
-    public WebElement RequiredMesaji;
+
 }
 
 
