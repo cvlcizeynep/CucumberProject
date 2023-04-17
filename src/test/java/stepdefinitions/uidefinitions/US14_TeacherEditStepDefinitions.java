@@ -237,18 +237,18 @@ public class US14_TeacherEditStepDefinitions {
     @When("name alanına valid bir deger girer")
     public void nameAlanınaValidBirDegerGirer() {
         Faker faker = new Faker();
-        String name = faker.name().firstName();
+        //String name = faker.name().firstName();
         Actions actions = new Actions(Driver.getDriver());
-        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + name).perform();
+        actions.doubleClick(teacherManagementPage.editNameTextBox).sendKeys(Keys.BACK_SPACE + "Degisti").perform();
         waitFor(1);
     }
 
     @When("surname alanına valid bir deger girer")
     public void surnameAlanınaValidBirDegerGirer() {
         Faker faker = new Faker();
-        String surname = faker.name().lastName();
+      //  String surname = faker.name().lastName();
         Actions actions = new Actions(Driver.getDriver());
-        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + surname).perform();
+        actions.doubleClick(teacherManagementPage.editSurnameTextBox).sendKeys(Keys.BACK_SPACE + "Degisti").perform();
         waitFor(1);
     }
 
@@ -309,6 +309,7 @@ public class US14_TeacherEditStepDefinitions {
 
     @When("edit alanında cinsiyet secer")
     public void editAlanındaCinsiyetSecer() {
+        teacherManagementPage.editGenderFemale.click();
         teacherManagementPage.editGenderMale.click();
     }
 
