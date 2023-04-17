@@ -1,4 +1,4 @@
-@smoke
+@smoke @us13
 Feature:Teacher Ekleme Pozitif Senaryo
 
   Background:

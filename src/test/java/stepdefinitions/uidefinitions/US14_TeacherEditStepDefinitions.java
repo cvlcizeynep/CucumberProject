@@ -122,7 +122,7 @@ public class US14_TeacherEditStepDefinitions {
     public void editSayfasindakiChooseLessonsAlanindanBirDersSecer() {
         teacherManagementPage.editTeacherYazisi.click();
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("MathT6" + Keys.ENTER).perform();
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("Math" + Keys.ENTER).perform();
     }
 
     @Then("Alanlardaki bilgileri {string}, {string}, {string}, {string},{string} olarak gunceller")

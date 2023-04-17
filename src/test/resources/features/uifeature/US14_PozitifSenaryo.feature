@@ -8,7 +8,7 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When Teacher Management butonuna tiklar
 
 
-  @smoke
+
     @edit
   Scenario: Edit Alani Pozitif Senaryo
     When Olusturulan ogretmenin edit butonuna tiklar
