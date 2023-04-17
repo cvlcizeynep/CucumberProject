@@ -1,9 +1,14 @@
 package stepdefinitions.uidefinitions;
 
 import io.cucumber.java.en.And;
+import org.apache.xmlbeans.impl.regex.REUtil;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.MeetManagementPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class US20NegativeStepdefinition {
     MeetManagementPage meetManagementPage = new MeetManagementPage();
@@ -53,6 +58,7 @@ public class US20NegativeStepdefinition {
     @And("Cok ileride bir tarih {string} girer")
     public void cokIlerideBirTarihGirer(String string) {
         meetManagementPage.edate.sendKeys(string);
+
     }
 
 
@@ -61,22 +67,33 @@ public class US20NegativeStepdefinition {
     @And("old_date_error  mesajini gorur")
     public void old_date_errorMesajiniGorur() {
         Assert.assertTrue(meetManagementPage.old_date_error.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
 
     @And("start_time_error mesajini gorur")
     public void start_time_errorMesajiniGorur() {
         Assert.assertTrue(meetManagementPage.start_time_error.isDisplayed());
-
+        ReusableMethods.waitFor(1);
     }
 
     @And("forward_date_error mesajini gorur")
     public void forward_date_errorMesajiniGorur() {
         Assert.assertTrue(meetManagementPage.forward_date_error.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
 
 
-    @And("Select student e {string} girerr")
-    public void selectStudentEGirerr(String string) {
-        meetManagementPage.ChooseStedentsButton.sendKeys(string);
+    @And("Select student e bir ogrenci secer")
+    public void selectStudentEBirOgrenciSecer() {
+        meetManagementPage.ChooseStedentsButton.click();
+        ReusableMethods.waitFor(2);
+        Actions action = new Actions(Driver.getDriver());
+        action.keyDown(Keys.ARROW_DOWN).sendKeys("yagiz Ates", Keys.ENTER).perform();
+
+
+//        Driver.clickWithJS(meetManagementPage.eselectStudent1);
+//        meetManagementPage.eselectStudent2.sendKeys("yagiz Ates");
+
+
     }
 }

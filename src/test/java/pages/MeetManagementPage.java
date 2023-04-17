@@ -37,6 +37,10 @@ public class MeetManagementPage {
     @FindBy(xpath = "(//input[@id='stopTime'])[2]") public WebElement estopTime;
     @FindBy(xpath = "(//input[@id='description'])[2]")   public WebElement edescription;
     @FindBy(xpath = "(//button[text()='Submit'])[2]")   public WebElement esubmit;
+    @FindBy(xpath = "//div[contains(@class,'css-19bb58m')]")   public WebElement eselectStudent1;
+    @FindBy(xpath = "//div[contains(@class,'css-19bb58m')]")   public WebElement eselectStudent2;
+
+
 
 
 
