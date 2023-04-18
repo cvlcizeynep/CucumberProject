@@ -1,22 +1,24 @@
+
 @US9
-  #TCO1#TC02#TC03#TC04
+#submiti gormuyor ayrica daha dinamik olmasi icin string kisimlar degistirilebilir
 
-Feature:Vice dean ders secme
-
+Feature:Vice dean dersi listede gorebilmeli-silebilmeli-guncelleyebilmeli
   Background:
     Given Kullanici viceDean olarak login olur.
-    And Lessons a tiklar1
+    And Lessons a tiklarr
 
 
-  Scenario: Kullanici ders secebilmelidir
-
-
-    When histoloji dersinin oldugu son page e gecmek için >> tiklar
-    When Daha once olusturulan histoloji dersinin listede goruldugunu dogrular
-    When histoloji dersinin satiri, compulsory sutununun altinda No yazdigini dogrular
-    When histoloji dersinin credit Score unun 25 olarak girildigini dogrular
+  Scenario:Kullanici ders secebilmelidir
+    And Lessonsa "fiziks"  girer
+    And Credit Score degerini "25"  gırer
+    And Dersin Compulsory olup olmadığını işaretler
+    And Submit butonuna tiklarr
+    When Kullanici listede creditScore dersAdi ve creditScore yazdigini dorular
     When Istenen dersin yanindaki cop kutusuna tiklayarak dersi siler
     Then close driver
+
+
+
 
 
 

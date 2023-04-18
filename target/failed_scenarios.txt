@@ -1,3 +1,0 @@
-file:src/test/resources/features/uifeature/US13_PozitifSenaryo.feature:26
-file:src/test/resources/features/uifeature/US23_1.feature:8
-file:src/test/resources/features/uifeature/US14_PozitifSenaryo.feature:13
