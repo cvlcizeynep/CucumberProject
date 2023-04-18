@@ -42,7 +42,7 @@ public class US10StepDefinition {
     @Given("Education Term i secer")
     public void education_term_secer() {
 
-        lessonsManagementPage.selectLesson_asl.sendKeys("fiziks");
+        lessonsManagementPage.educationTerm_asl.click();
         waitFor(1);
     }
 
