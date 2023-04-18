@@ -1,4 +1,4 @@
-@us19-
+@us19-test01
 #tc03
 Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir.
 
@@ -21,7 +21,7 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
       | Date of Meet | Start time | Stop Time | Description |
       | 11.05.2020   | 12.07      | 14.06     | Toplanti    |
 
-  @us19
+  @us19-test02
   Scenario Outline: Zorunlu alanlar bos birakilmamali
     Given Kullanici Menu butonuna tiklar ve Meet Management secenegini tiklar
     And Kullanici Meet Management sayfasinin acildigini dogrular
