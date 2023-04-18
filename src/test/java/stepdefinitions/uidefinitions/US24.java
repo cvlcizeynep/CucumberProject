@@ -10,15 +10,8 @@ import utilities.ReusableMethods;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.Optional;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import static utilities.ReusableMethods.waitFor;
-
-public class US_24 {
+public class US24 {
 
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
     Faker faker = new Faker();
