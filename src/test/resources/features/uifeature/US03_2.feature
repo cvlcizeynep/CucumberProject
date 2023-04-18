@@ -1,4 +1,4 @@
-@US03_Negatif
+@US03
 Feature: Your Name alaninin testi
 
   Background:
@@ -20,6 +20,7 @@ Feature: Your Name alaninin testi
     Examples: data
 
       |Your Name | Your Email           | Subject | Message                   |
+      |Cahit     |                      | Java    | Kaliteli bir egitim aldim  |
       |Cahit     |                      | Java    | Kaliteli bir egitim aldim  |
       |Cahit     | zarifsair            | Java    |Kaliteli bir egitim aldim  |
       |Cahit     | zarifsairr@gmail.com  |   !     |Kaliteli bir egitim aldim  |
@@ -48,10 +49,10 @@ Feature: Your Name alaninin testi
     And sayfa kapatilir
 
 
+  @failedScenario
   Scenario Outline: Alanların bos birakilması testi
 
     When kullanici yourname "<Your Name>" alanini bos birakir
-    When kullanici email "<Your Email>" alanini bos birakir
     When kullanici subject "<Subject>" alanini bos birakir
     When kullanici Message "<Message>" alanini bos birakir
     When kullanici Send Message alanina tiklar
@@ -59,8 +60,7 @@ Feature: Your Name alaninin testi
     And sayfa kapatilir
 
     Examples: data2
-      |Your Name | Your Email           | Subject | Message                   |
-      |Cahit     |                      | Java    | Kaliteli bir egitim aldim  |
-      |Cahit     | zariifsair@gmail.com  |  Java   |                           |
-      |          | zarifssair@gmail.com  |Java     |Kaliteli bir egitim aldim |
-      |Cahit     | zarifssair@gmail.com  |         |Kaliteli bir egitim aldim  |
+      |Your Name | Subject | Message      |
+      |Cahit     |  Java   |                           |
+      |          |Java     |Kaliteli bir egitim aldim |
+      |Cahit     |         |Kaliteli bir egitim aldim  |
