@@ -69,10 +69,11 @@ public class ViceDeanManagement {
    @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")public  WebElement nameRequired;
     @FindBy(xpath = "//div[text()='Please select advisor teacher']") public  WebElement teacherPopup;
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")public WebElement surnameRequired;
-
-
-
-
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")public WebElement emailRequired;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")public WebElement phoneRequired;
+    @FindBy(xpath = "//*[@class='Toastify__close-button Toastify__close-button--colored']")public WebElement error;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]") public WebElement DateRequired;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[7]") public WebElement SsnRequired;
 
 
 

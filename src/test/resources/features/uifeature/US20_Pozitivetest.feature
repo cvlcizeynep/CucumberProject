@@ -27,12 +27,16 @@ Feature:US20PozıtıveTest
     And Description nun gorundugunu dogrular
     Then close the application
 
+  Scenario:  TC05
 
+    And deleteye tiklar
+    And delete basarili yazisini gorur
+    Then close the application
 
-Scenario:TC05
+Scenario:TC06
     And Edite tiklar
     And Select student e bir ogrenci secer
-    And Bir tarih "18-09-2024" girer
+    And Bir tarih "18-08-2024" girer
     And Star time  "14:12" girer
     And Stop time  "15:12" girer
     And Deskription  "BCA" girer
@@ -40,10 +44,8 @@ Scenario:TC05
     And Toplantı guncellendı mesajini gorur
     Then close the application
 
-  Scenario:TC6
 
-    And deleteye tiklarr
-    And delete basarili yazisini gorurr
-    Then close the application
+
+
 
 

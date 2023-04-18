@@ -15,7 +15,7 @@ import java.io.IOException;
 import static utilities.ReusableMethods.JSEClickToElement;
 import static utilities.ReusableMethods.waitFor;
 
-public class US13_TeacherManagementStepDefinitions {
+public class US13TeacherManagementStepDefinitions {
 
     Faker faker;
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
@@ -116,11 +116,11 @@ public class US13_TeacherManagementStepDefinitions {
     @When("Choose Lessons alanindan bir ders secer")
     public void chooseLessonsAlanindanBirDersSecer() throws InterruptedException {
         teacherManagementPage.chooseLessons.click();
-        waitFor(3);
+        waitFor(2);
         Actions action = new Actions(Driver.getDriver());
-        waitFor(1);
+        waitFor(2);
         action.keyDown(Keys.ARROW_DOWN).sendKeys("Math", Keys.ENTER).perform();
-        waitFor(1);
+        waitFor(2);
     }
 
 

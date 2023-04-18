@@ -28,7 +28,8 @@ public class ContactGellAllPage {
     public WebElement viceDeanManagement;
     @FindBy(xpath = "//body/div[@id='offcanvasNavbar-expand-lg']/div[@class='offcanvas-header']/button[1]")
     public WebElement xButton;
-
+   @FindBy(xpath = "//dletetusu") public WebElement deleteButton;
+   @FindBy(xpath="//succesfullydelete") public WebElement succesfullyDelete;
 
 }
 

@@ -12,7 +12,7 @@ import utilities.Driver;
 
 import static utilities.ReusableMethods.waitFor;
 
-public class US_15_Positive {
+public class US15_Positive {
     ViceDeanManagement viceDeamanagemet = new ViceDeanManagement();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
@@ -152,8 +152,64 @@ public class US_15_Positive {
         Assert.assertTrue(viceDeamanagemet.nameRequired.isDisplayed());
     }
 
+
     ////////////////////tc4
 
+//////////////////tc9
+@Then("Vice Dean {string} Email alanina deger girmez")
+public void viceDeanEmailAlaninaDegerGirmez(String string) {
+        viceDeamanagemet.email.sendKeys("");
+}
+
+    @And("Vice  emailRequired  ibaresini gorur dogrulamasini yapar")
+    public void viceEmailRequiredIbaresiniGorurDogrulamasiniYapar() {
+       Assert.assertTrue(viceDeamanagemet.emailRequired.isDisplayed());
+    }
+
+    @Then("Vice Dean {string} Phone deger girmez")
+    public void viceDeanPhoneDegerGirmez(String string) {
+        viceDeamanagemet.phone.sendKeys("");
+    }
+
+    @And("Vice  phoneRequired  ibaresini gorur dogrulamasini yapar")
+    public void vicePhoneRequiredIbaresiniGorurDogrulamasiniYapar() {
+     Assert.assertTrue(viceDeamanagemet.phoneRequired.isDisplayed());
+    }
+
+    @Then("Vice Dean Gender secmez")
+    public void viceDeanGenderSecmez() {
+        
+    }
+
+    @And("Vice Dean json parse error dogrular")
+    public void viceDeanJsonParseErrorDogrular() {
+        viceDeamanagemet.male.clear();
+    }
+
+    @And("Vice  error  mesaji gorur")
+    public void viceErrorMesajiGorur() {
+        viceDeamanagemet.error.isDisplayed();
+    }
+
+    @Then("Vice Dean {string} Date Of Birth alanina deger girmez")
+    public void viceDeanDateOfBirthAlaninaDegerGirmez(String string) {
+        viceDeamanagemet.birtDate.clear();
+    }
+
+    @And("Vice  DateOfBirthRequired  ibaresini gorur dogrulamasini yapar")
+    public void viceDateOfBirthRequiredIbaresiniGorurDogrulamasiniYapar() {
+        Assert.assertTrue(viceDeamanagemet.DateRequired.isDisplayed());
+    }
+
+    @Then("Vice Dean {string} Ssn alanina deger girmez")
+    public void viceDeanSsnAlaninaDegerGirmez(String string) {
+        viceDeamanagemet.SSN.sendKeys("");
+    }
+
+    @And("Vice  ssnRequired  ibaresini gorur dogrulamasini yapar")
+    public void viceSsnRequiredIbaresiniGorurDogrulamasiniYapar() {
+        Assert.assertTrue(viceDeamanagemet.SsnRequired.isDisplayed());
+    }
 
 
 }
