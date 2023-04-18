@@ -21,7 +21,6 @@ Feature: TC2_Admin
       |11.02.2012   |12345678|
 
 
-
   Scenario Outline:Admin_karakter_TC02
     Given Admin Name kismina ozel karakter  girer
     When Admin Surname kismina ozel karakter  girer

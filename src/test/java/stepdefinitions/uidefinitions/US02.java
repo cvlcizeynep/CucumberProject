@@ -8,7 +8,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 
-public class US_02 {
+public class US02 {
     GuestUserPage guestUserPage = new GuestUserPage();
 
 
