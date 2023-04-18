@@ -1,4 +1,4 @@
-@24
+
 Feature:Admin teacher olusturabilmeli
 
   Background:
@@ -7,11 +7,11 @@ Feature:Admin teacher olusturabilmeli
     And Teacher Management butonuna tiklar
 
 
-  @24_1
+  @24_1 @a
   Scenario:TC01_Ogretmenin girecegi ders secilmelidir.
     And Choose Lessons alanindan bir ders secer
 
-  @24_2
+  @24_2 @a
   Scenario Outline:TC02_Textboxlari bos birakarak Ogretmen Ekleme
     And Choose Lessons alanindan bir ders secer
     And Kullanici Name textboxina valid bir deger "<Name>" girer
@@ -52,7 +52,7 @@ Feature:Admin teacher olusturabilmeli
       | Erkam | uslu    | Ankara      | asdfghjk | 09-01-1998    | asd@gma il.com | 512-310-1538 | 12345678 | male   | 333-26-5656 |
       | Erkam | uslu    | Ankara      | asdfghjk | 09-01-1998    | asd@gma il.com | 512-31 -1538 | 12345678 | male   | 33 -26-5656 |
 
-  @24_3
+  @24_3 @a
   Scenario Outline:TC03_SSN 9 rakam icermelidir
     And Choose Lessons alanindan bir ders secer
     And Kullanici Name textboxina valid bir deger "<Name>" girer
@@ -77,7 +77,7 @@ Feature:Admin teacher olusturabilmeli
       | Erkam | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-1538 | 12345678 | male   | 3333-26-5656 |
 
 
-  @24_4
+  @24_4 @a
   Scenario Outline:TC04_Password en az 8 karakterden olusmalidir
     And Choose Lessons alanindan bir ders secer
     And Kullanici Name textboxina valid bir deger "<Name>" girer
@@ -102,7 +102,7 @@ Feature:Admin teacher olusturabilmeli
       | Erkam | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-1538 | 1234567   | male   | 333-26-5656 |
 
 
-  @24_5
+  @24_5 @a
   Scenario Outline: TC05_Choose Lessons textboxinin bos birakilmasi
     When Alanlara bilgileri girer "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>"
     When Email alanina valid bir deger girer
@@ -119,7 +119,7 @@ Feature:Admin teacher olusturabilmeli
       | Surname | Name   | Birth Place | Password  | Date of birth |
       | Team20  | Team20 | izmir       | 123456789 | 01-09-1998    |
 
-  @24_6
+  @24_6 @a
   Scenario Outline: TC06_Date Of Birth textboxina ileri bir tarih girilmesi
     And Choose Lessons alanindan bir ders secer
     And Kullanici Name textboxina valid bir deger "<Name>" girer
