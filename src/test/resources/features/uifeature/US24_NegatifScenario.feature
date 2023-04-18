@@ -10,6 +10,7 @@ Feature:Admin teacher olusturabilmeli
   @24_1 @a
   Scenario:TC01_Ogretmenin girecegi ders secilmelidir.
     And Choose Lessons alanindan bir ders secer
+    And close driver
 
   @24_2 @a
   Scenario Outline:TC02_Textboxlari bos birakarak Ogretmen Ekleme
@@ -94,7 +95,7 @@ Feature:Admin teacher olusturabilmeli
     And Kullanici Submit butonuna tiklar
     Then Kullanici Submit butonunun aktif olmadigini gorur
     When Ekran goruntusu alinir
-    #Then close driver
+    Then close driver
 
     Examples:
       | Name  | Surname | Birth Place | Username | Date of birth | Email         | Phone        | Password  | Gender | SSN         |
