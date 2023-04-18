@@ -256,4 +256,9 @@ public class US13_TeacherManagementStepDefinitions {
         waitFor(2);
         Driver.waitAndSendText(teacherManagementPage.ssn, Ssn);
     }
+
+    @When("{string} alani gorunur")
+    public void alaniGorunur(String arg0) {
+        waitFor(2);
+    }
 }

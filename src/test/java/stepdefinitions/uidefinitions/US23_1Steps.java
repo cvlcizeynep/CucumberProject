@@ -21,11 +21,18 @@ public class US23_1Steps {
         //if (contactGellAllPage.xButton.isDisplayed()){
        // contactGellAllPage.xButton.click();}
 
-
-
+    }
+    @Given("wait1")
+    public void wait1() {
+       ReusableMethods.waitFor(1);
     }
 
-    }
+
+
+
+
+
+}
 
 
 

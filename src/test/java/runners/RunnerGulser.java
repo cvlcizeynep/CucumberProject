@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@smoke123",
+        tags = "@edit",
         dryRun = false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
