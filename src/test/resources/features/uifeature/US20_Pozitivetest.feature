@@ -40,7 +40,7 @@ Scenario:TC05
     And Toplantı guncellendı mesajini gorur
     Then close the application
 
-  Scenario :TC6
+  Scenario:TC6
 
     And deleteye tiklarr
     And delete basarili yazisini gorurr
