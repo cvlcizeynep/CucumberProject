@@ -8,11 +8,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@us01 ",
+        tags = "@us18",
         dryRun = true
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
 )
 public class RunnerEmre {
+
+
 
 }

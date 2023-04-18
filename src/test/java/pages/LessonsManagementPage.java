@@ -64,4 +64,18 @@ public WebElement silmeButonu;
     public WebElement lessonsSecenek;
 @FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-lessonsList']//span[@aria-hidden='true'][contains(text(),'›')]")
     public WebElement sagTus_asli;
+@FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']")
+    public WebElement lessonProgram_asl;
+@FindBy(xpath = "//div[@class=' css-19bb58m']")
+    public WebElement selectLesson_asl;
+@FindBy(xpath = "//select[@id='term']")
+    public WebElement educationTerm_asl;
+@FindBy(xpath = "//select[@id='day']")
+    public WebElement chooseDay_asl;
+@FindBy(xpath ="//input[@id='startTime']")
+    public WebElement startTime_asl;
+@FindBy(xpath = "//input[@id='stopTime']")
+    public WebElement stopTime_asl;
+
+
 }

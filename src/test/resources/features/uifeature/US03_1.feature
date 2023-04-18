@@ -1,4 +1,4 @@
-@US03_Pozitif
+@US03
 
 Feature: Pozitif Test Senaryosu
   Background:

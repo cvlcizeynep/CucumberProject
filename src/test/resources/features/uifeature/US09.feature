@@ -1,24 +1,24 @@
+
 @US9
-  #TCO1#TC02#TC03#TC04
+#submiti gormuyor ayrica daha dinamik olmasi icin string kisimlar degistirilebilir
 
- Feature : Vice dean ders secme
-
+Feature:Vice dean dersi listede gorebilmeli-silebilmeli-guncelleyebilmeli
   Background:
     Given Kullanici viceDean olarak login olur.
-    And Lessons a tiklar_asl
+    And Lessons a tiklarr
 
 
-  Scenario Outline : Kullanici ders secebilmelidir
-    And  Lessonsa "<ders>" girer
-    And  dersin credit Score unun "<deger>"  olarak girer
-    And  Dersin Compulsory oldugunu işaretler
-    When Daha once olusturulan dersin listede goruldugunu dogrular
-    When dersin satiri, compulsory sutununun altinda Yes yazdigini dogrular
-    When Credit Score degeri girdigini dogrular
+  Scenario:Kullanici ders secebilmelidir
+    And Lessonsa "fiziks"  girer
+    And Credit Score degerini "25"  gırer
+    And Dersin Compulsory olup olmadığını işaretler
+    And Submit butonuna tiklarr
+    When Kullanici listede creditScore dersAdi ve creditScore yazdigini dorular
     When Istenen dersin yanindaki cop kutusuna tiklayarak dersi siler
-    #Then close driver
-    Examples: | ders   | deger|
-              | fiziks | 3    |
+    Then close driver
+
+
+
 
 
 
