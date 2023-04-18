@@ -16,7 +16,7 @@ Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir
     And Kullanici gonderen kisi  Name-mail-subject-message bilgilerinin listede goruntulendigini dogrular
 
 
-  @failedScenario1
+  @failedScenario
   Scenario: Vice Dean, mesajları silebilmelidir
     Given  Kullanici viceDean olarak login olur
     And Kullanici Contact butonuna tiklar

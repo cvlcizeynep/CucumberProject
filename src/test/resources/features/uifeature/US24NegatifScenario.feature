@@ -94,7 +94,7 @@ Feature:Admin teacher olusturabilmeli
     And Kullanici Submit butonuna tiklar
     Then Kullanici Submit butonunun aktif olmadigini gorur
     When Ekran goruntusu alinir
-    Then close driver
+    #Then close driver
 
     Examples:
       | Name  | Surname | Birth Place | Username | Date of birth | Email         | Phone        | Password  | Gender | SSN         |
