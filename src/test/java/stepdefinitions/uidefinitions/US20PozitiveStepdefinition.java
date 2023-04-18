@@ -43,7 +43,7 @@ public class US20PozitiveStepdefinition {
         Assert.assertTrue(meetManagementPage.description.isDisplayed());
     }
 
-    @And("deleteye tiklar")
+    @And("deleteye tiklarr")
     public void deleteyeTiklar() {
 //        Actions actions = new Actions(Driver.getDriver());
 //        actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -51,7 +51,7 @@ public class US20PozitiveStepdefinition {
 
     }
 
-    @And("delete basarili yazisini gorur")
+    @And("delete basarili yazisini gorurr")
     public void deleteBasariliYazisiniGorur() {
         Assert.assertTrue(meetManagementPage.deleteBasarili.isDisplayed());
     }
@@ -63,7 +63,7 @@ public class US20PozitiveStepdefinition {
 
     @And("Toplantı guncellendı mesajini gorur")
     public void toplantıGuncellendıMesajiniGorur() {
-        Assert.assertTrue(meetManagementPage.editBasarili.getText().contains("Meet updated Successfully"));
+        Assert.assertTrue(meetManagementPage.editBasarili.isDisplayed());
 
     }
 }

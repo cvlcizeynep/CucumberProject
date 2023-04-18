@@ -29,7 +29,7 @@ public class MeetManagementPage {
 
 
     @FindBy(xpath = "//*[@class='text-dark btn btn-outline-info']")   public WebElement edit;
-    @FindBy(xpath = "//*[text()='must be a later date']")   public WebElement old_date_error;
+    @FindBy(xpath = "//div[text()='ileri bir tarih olmalı']")   public WebElement old_date_error;
     @FindBy(xpath = "//*[text()='Error: start time must not be greater than or equal to stop time']")   public WebElement start_time_error;
     @FindBy(xpath = "//*[@style='vertical-align: inherit;']")   public WebElement forward_date_error;
 

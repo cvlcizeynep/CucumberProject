@@ -89,7 +89,7 @@ public class US20NegativeStepdefinition {
         meetManagementPage.selectStudents2.click();
         Thread.sleep(2000);
         Actions action=new Actions(Driver.getDriver());
-        action.keyDown(Keys.ARROW_DOWN).sendKeys("Ogrenci 23",Keys.ENTER).perform();
+        action.keyDown(Keys.ARROW_DOWN).sendKeys("Yagiz Ates",Keys.ENTER).perform();
         ReusableMethods.waitFor(2);
 //        Select select = new Select(meetManagementPage.selectStudents2);
 //        ReusableMethods.selectRandomTextFromDropdown(select);
