@@ -26,7 +26,7 @@ Feature:US8PozıtıveTest
 
 @dersOlusturma
   Scenario: TC17
-    And Lessonsa "figiuzuhe"  girerr
+    And Lessonsa "figizuhe"  girerr
     And Credit Score "305"  gırerr
     And dersin olustugunu dogrular
     Then close the application

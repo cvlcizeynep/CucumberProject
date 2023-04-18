@@ -27,7 +27,7 @@ Feature:US20PozıtıveTest
     And Description nun gorundugunu dogrular
     Then close the application
 
-  Scenario:  TC05
+  Scenario :  TC05
 
     And deleteye tiklar
     And delete basarili yazisini gorur
@@ -43,7 +43,6 @@ Scenario:TC06
     And Submit e tiklar
     And Toplantı guncellendı mesajini gorur
     Then close the application
-
 
 
 

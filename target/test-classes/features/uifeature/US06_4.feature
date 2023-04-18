@@ -1,4 +1,4 @@
-@US06
+@US06.4
 Feature: Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir.
 
   Background:
