@@ -1,4 +1,4 @@
-@us19-test01
+@us19
 Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir.
 
   Background:
