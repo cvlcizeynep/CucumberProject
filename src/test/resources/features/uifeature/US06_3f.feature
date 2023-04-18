@@ -1,4 +1,4 @@
-@US06.3
+@US06
 Feature:  Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir.
 
   Background:Dean olrak giris
