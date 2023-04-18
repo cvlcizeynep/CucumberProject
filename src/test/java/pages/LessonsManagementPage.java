@@ -58,8 +58,8 @@ public class LessonsManagementPage {
 public WebElement compulsoryYes;
 @FindBy(xpath="//span[normalize-space()='3']")
 public  WebElement creditScore3;
-@FindBy(xpath = "//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[10]/td[4]/span[1]/button[1]/i[1]")
-public WebElement silmeButonu;
+@FindBy(xpath = "//tbody/tr[3]/td[4]/span[1]/button[1]/i[1]")
+public WebElement silmeButonu_asl;
 @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lessonsSecenek;
 @FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-lessonsList']//span[@aria-hidden='true'][contains(text(),'›')]")
