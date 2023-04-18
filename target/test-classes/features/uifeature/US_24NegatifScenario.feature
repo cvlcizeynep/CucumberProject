@@ -31,22 +31,26 @@ Feature:Admin teacher olusturabilmeli
     Then close driver
 
     Examples:
-      | Name   | Surname | Birth Place | Username | Date of birth | Email         | Phone        | Password | Gender | SSN         |
-      |        | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-1538 | 12345678 | male   | 333-26-5656 |
-      | Team20 |         | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-2538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  |             | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-3538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       |          | 09-01-1998    | asd@gmail.com | 512-310-4538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk |               | asd@gmail.com | 512-310-6538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    |               | 512-310-7538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com |              | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 |          | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 | 12345678 |        | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 | 12345678 | male   |             |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdgmail.com  | 512-310-7538 | 12345678 | male   | 333-26-5656 |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdg@mail.com | 512-310-7538 | 12345678 | male   | 33326-5656  |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdg@mail.com | 512-310-7538 | 12345678 | male   | 333-265656  |
-      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdg@mail.com | 512-310-7538 | A A e    | male   | 333-26-5656 |
+      | Name  | Surname | Birth Place | Username | Date of birth | Email          | Phone        | Password | Gender | SSN         |
+#      |        | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-1538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 |         | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-2538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  |             | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-3538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       |          | 09-01-1998    | asd@gmail.com | 512-310-4538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk |               | asd@gmail.com | 512-310-6538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    |               | 512-310-7538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com |              | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 |          | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 | 12345678 |        | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com | 512-310-7538 | 12345678 | male   |             |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdgmail.com  | 512-310-7538 | 12345678 | male   | 333-26-5656 |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdg@mail.com | 512-310-7538 | 12345678 | male   | 33326-5656  |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdg@mail.com | 512-310-7538 | 12345678 | male   | 333-265656  |
+#      | Team20 | Team20  | izmir       | asdfghjk | 09-01-1998    | asdg@mail.com | 512-310-7538 | A A e    | male   | 333-26-5656 |
+      | Erkam | us lu   | izmir       | asdfghjk | 09-01-1998    | asd@gmail.com  | 512-310-1538 | 12345678 | male   | 333-26-5656 |
+      | Erkam | uslu    | An kara     | asdfghjk | 09-01-1998    | asd@gmail.com  | 512-310-1538 | 12345678 | male   | 333-26-5656 |
+      | Erkam | uslu    | Ankara      | asdfghjk | 09-01-1998    | asd@gma il.com | 512-310-1538 | 12345678 | male   | 333-26-5656 |
+      | Erkam | uslu    | Ankara      | asdfghjk | 09-01-1998    | asd@gma il.com | 512-31 -1538 | 12345678 | male   | 33 -26-5656 |
 
   @3
   Scenario Outline:TC03_SSN 9 rakam icermelidir
@@ -135,5 +139,5 @@ Feature:Admin teacher olusturabilmeli
     Then close driver
 
     Examples:
-      | Name   | Surname | Birth Place | Username | Email         | Phone        | Password | Gender | SSN         |
-      | Team20 | Team20  | izmir       | asdfghjk | asd@gmail.com | 512-310-1538 | 12345678 | male   | 333-26-5656 |
+      | Name   | Surname | Birth Place | Username | Email         | Phone         | Password | Gender | SSN         |
+      | Team20 | Team20  | izmir       | asdfghjk | asd@gmail.com | 512-310 -1538 | 12345678 | male   | 333-26-5656 |

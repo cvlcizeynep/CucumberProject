@@ -30,7 +30,7 @@ public class RegisterPage {
     //@FindBy(xpath = "//button[text()='Register']") public WebElement registerbutton;
 
 
-    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']") public WebElement registerSubmitButton;
+    @FindBy(xpath = "//button[text()='Register']") public WebElement registerSubmitButton;
 
 
     @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[1]") public WebElement popUpmesaji;
