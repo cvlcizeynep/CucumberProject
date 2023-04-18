@@ -2,26 +2,19 @@ package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static utilities.Driver.clickWithJS;
 import static utilities.ReusableMethods.JSEClickToElement;
 import static utilities.ReusableMethods.waitFor;
 
-public class US14_TeacherEditStepDefinitions {
+public class US14TeacherEditStepDefinitions {
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
     Actions actions;
     Faker faker = new Faker();

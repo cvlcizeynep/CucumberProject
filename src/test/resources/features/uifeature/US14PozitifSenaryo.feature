@@ -1,4 +1,4 @@
-@gulser
+
 Feature:Teacher Guncelleme Pozitif Senaryo
 
   Background:
@@ -7,9 +7,7 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When Menu butonuna tiklar
     When Teacher Management butonuna tiklar
 
-
-
-    @edit
+  @US14
   Scenario: Edit Alani Pozitif Senaryo
     When Olusturulan ogretmenin edit butonuna tiklar
     When Edit sayfasindaki Choose Lessons alanindan bir ders secer
@@ -25,7 +23,8 @@ Feature:Teacher Guncelleme Pozitif Senaryo
     When username alanına bir deger girer
     When password alanına valid bir deger girer
     When Edit alanindaki Submit butonuna tiklar
-   # Then Teacher updated successful yazisini gorur
+    When Teacher updated successful yazisini gorur
+    Then close driver
    # Then guncellemeyi dogrular
 
 
