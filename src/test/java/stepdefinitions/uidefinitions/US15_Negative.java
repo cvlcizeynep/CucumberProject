@@ -2,11 +2,12 @@ package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.ViceDeanManagement;
 import utilities.Driver;
 
-public class US_15_Negative {
+public class US15_Negative {
     ViceDeanManagement viceDeamanagemet = new ViceDeanManagement();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
@@ -42,4 +43,9 @@ viceDeamanagemet.motherName.sendKeys("                    ");
         viceDeamanagemet.password.sendKeys("                ");
     }
 
+    @Then("Vice Dean Student Numarası otomatik gelir")
+    public void viceDeanStudentNumarasıOtomatikGelir() {
+        Assert.assertFalse(viceDeamanagemet.succesfully.isDisplayed());
+
+    }
 }

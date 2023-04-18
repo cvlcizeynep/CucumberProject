@@ -12,7 +12,7 @@ import utilities.Driver;
 
 import static utilities.ReusableMethods.waitFor;
 
-public class US_15_Positive {
+public class US15_Positive {
     ViceDeanManagement viceDeamanagemet = new ViceDeanManagement();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
