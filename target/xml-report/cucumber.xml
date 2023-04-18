@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="57.364">
+    <testcase classname="Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir." name="Zorunlu alanlar bos birakilmamali" time="15.871">
+        <system-out>
+            <![CDATA[Given Kullanici Teacher olarak login olur...................................passed
+And Basariyla teacher girisi yaptigini dogrular.............................passed
+Given Kullanici Menu butonuna tiklar ve Meet Management secenegini tiklar...passed
+And Kullanici Meet Management sayfasinin acildigini dogrular................passed
+And Kullanici Choose Students sekmesine tiklayip ogrenci secebildigini dogrular..passed
+And Kullanici Date of Meet "11.05.2023" alanini doldurur....................passed
+And Kullanici Start time "" alanini doldurur................................passed
+And Kullanici Stop Time "14.06" alanini doldur..............................passed
+And Kullanici Description "Toplanti" alanini doldur.........................passed
+And Kullanici submit tusuna tiklar..........................................passed
+And Kullanici uyari yazisi gordugunu dogrular...............................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir." name="Zorunlu alanlar bos birakilmamali 2" time="12.842">
+        <system-out>
+            <![CDATA[Given Kullanici Teacher olarak login olur...................................passed
+And Basariyla teacher girisi yaptigini dogrular.............................passed
+Given Kullanici Menu butonuna tiklar ve Meet Management secenegini tiklar...passed
+And Kullanici Meet Management sayfasinin acildigini dogrular................passed
+And Kullanici Choose Students sekmesine tiklayip ogrenci secebildigini dogrular..passed
+And Kullanici Date of Meet "11.05.2023" alanini doldurur....................passed
+And Kullanici Start time "12.07" alanini doldurur...........................passed
+And Kullanici Stop Time "" alanini doldur...................................passed
+And Kullanici Description "Toplanti" alanini doldur.........................passed
+And Kullanici submit tusuna tiklar..........................................passed
+And Kullanici uyari yazisi gordugunu dogrular...............................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir." name="Zorunlu alanlar bos birakilmamali 3" time="10.943">
+        <system-out>
+            <![CDATA[Given Kullanici Teacher olarak login olur...................................passed
+And Basariyla teacher girisi yaptigini dogrular.............................passed
+Given Kullanici Menu butonuna tiklar ve Meet Management secenegini tiklar...passed
+And Kullanici Meet Management sayfasinin acildigini dogrular................passed
+And Kullanici Choose Students sekmesine tiklayip ogrenci secebildigini dogrular..passed
+And Kullanici Date of Meet "11.05.2023" alanini doldurur....................passed
+And Kullanici Start time "12.07" alanini doldurur...........................passed
+And Kullanici Stop Time "14.06" alanini doldur..............................passed
+And Kullanici Description "" alanini doldur.................................passed
+And Kullanici submit tusuna tiklar..........................................passed
+And Kullanici uyari yazisi gordugunu dogrular...............................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmelidir." name="&quot;Choose Students&quot; öğrenci seçilebilmeli" time="16.171">
+        <system-out>
+            <![CDATA[Given Kullanici Teacher olarak login olur...................................passed
+And Basariyla teacher girisi yaptigini dogrular.............................passed
+Given Kullanici Menu butonuna tiklar ve Meet Management secenegini tiklar...passed
+And Kullanici Meet Management sayfasinin acildigini dogrular................passed
+And Kullanici Choose Students sekmesine tiklayip ogrenci secebildigini dogrular..passed
+And Kullanici Date of Meet "11.05.2023" alanini doldurur....................passed
+And Kullanici Start time "12.07" alanini doldurur...........................passed
+And Kullanici Stop Time "14.06" alanini doldur..............................passed
+And Kullanici Description "Toplanti" alanini doldur.........................passed
+And Kullanici submit tusuna tiklar..........................................passed
+And Kullanici toplanti olustugunu dogrular..................................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
