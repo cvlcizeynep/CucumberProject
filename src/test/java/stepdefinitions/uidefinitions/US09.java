@@ -50,7 +50,7 @@ public class US09 {
 
     @When("Istenen dersin yanindaki cop kutusuna tiklayarak dersi siler")
     public void istenenDersinYanindakiCopKutusunaTiklayarakDersiSiler() {
-       // lessonsManagementPage.cop.click();
+        lessonsManagementPage.silmeButonu_asl.click();
     }
 }
 
