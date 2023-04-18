@@ -1,4 +1,4 @@
-@smoke123
+@smoke
 Feature:Teacher Ekleme Pozitif Senaryo
 
   Background:
