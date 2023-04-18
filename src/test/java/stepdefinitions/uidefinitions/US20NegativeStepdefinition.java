@@ -41,7 +41,7 @@ public class US20NegativeStepdefinition {
 
     @And("Deskription  {string} girer")
     public void deskriptionGirer(String string) {
-        meetManagementPage.description.sendKeys(string);
+        meetManagementPage.edescription.sendKeys(string);
     }
 
     @And("Submit e tiklar")
@@ -79,20 +79,25 @@ public class US20NegativeStepdefinition {
     @And("forward_date_error mesajini gorur")
     public void forward_date_errorMesajiniGorur() {
         Assert.assertTrue(meetManagementPage.forward_date_error.isDisplayed());
+       // Assert.assertTrue(Driver.getDriver().getPageSource().contains("     "));
         ReusableMethods.waitFor(1);
     }
 
 
     @And("Select student e bir ogrenci secer")
-    public void selectStudentEBirOgrenciSecer() {
-        meetManagementPage.ChooseStedentsButton.click();
+    public void selectStudentEBirOgrenciSecer() throws InterruptedException {
+        meetManagementPage.selectStudents2.click();
+        Thread.sleep(2000);
+        Actions action=new Actions(Driver.getDriver());
+        action.keyDown(Keys.ARROW_DOWN).sendKeys("Yagiz Ates",Keys.ENTER).perform();
         ReusableMethods.waitFor(2);
-        Actions action = new Actions(Driver.getDriver());
-        action.keyDown(Keys.ARROW_DOWN).sendKeys("yagiz Ates", Keys.ENTER).perform();
+//        Select select = new Select(meetManagementPage.selectStudents2);
+//        ReusableMethods.selectRandomTextFromDropdown(select);
+//        Assert.assertTrue(select.getFirstSelectedOption().isDisplayed());
+//        ReusableMethods.waitFor(1);
 
 
-//        Driver.clickWithJS(meetManagementPage.eselectStudent1);
-//        meetManagementPage.eselectStudent2.sendKeys("yagiz Ates");
+
 
 
     }

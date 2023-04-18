@@ -27,20 +27,23 @@ Feature:US20PozıtıveTest
     And Description nun gorundugunu dogrular
     Then close the application
 
-  Scenario Outline:  TC05
-    And Choose Students e tiklar
-    When Alanlara  bilgileri girer "<ogrenci>", "<tarih>", "<star time>", "<stop time>","<description>"
+
+
+Scenario:TC05
+    And Edite tiklar
+    And Select student e bir ogrenci secer
+    And Bir tarih "18-09-2024" girer
+    And Star time  "14:12" girer
+    And Stop time  "15:12" girer
+    And Deskription  "BCA" girer
     And Submit e tiklar
-    And Toplanti guncellenmedi yazisini gorur
-    And deleteye tiklar
-    And delete basarili yazisini gorur
+    And Toplantı guncellendı mesajini gorur
     Then close the application
 
-    Examples:
-      | ogrenci | tarih      | star time  | stop time | description |
-      |ahmetkr   |13-02-2023  |12:16       |15:15      |abv          |
+  Scenario :TC6
 
-
-
+    And deleteye tiklarr
+    And delete basarili yazisini gorurr
+    Then close the application
 
 
