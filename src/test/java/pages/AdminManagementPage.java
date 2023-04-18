@@ -62,6 +62,8 @@ public class AdminManagementPage {
     public WebElement ssnMesaj;
     @FindBy(xpath = "//*[text()='Please enter valid phone number']")
     public WebElement phoneNumberMesaj;
+    @FindBy (xpath = "//div[text()='geçmiş bir tarih olmalı']")
+    public WebElement gecmistarihpopup;
 
 
 

@@ -37,6 +37,10 @@ public class US8NegativeTestStepdefinition {
     }
 
 
+    @And("Lessons a tiklar")
+    public void lessonsATiklar() {
+       Driver.clickWithJS(lessonsManagementPage.lessons);
+    }
 }
 
 
