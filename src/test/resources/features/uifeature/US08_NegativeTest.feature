@@ -32,7 +32,7 @@ Background:
   Scenario:TC13
     Given Kullanici viceDean olarak login olur.
     And Basariyla viceDean girisi yaptigini dogrular.
-    And Lessons a tiklar
+    #And Lessons a tiklar
     And And Lesson Name "fizik13" girer
     And Credit  Score  "200000001"  gırer
     And Submit  e tiklarr

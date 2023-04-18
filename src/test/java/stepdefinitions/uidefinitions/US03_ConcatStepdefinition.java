@@ -79,7 +79,7 @@ public class US03_ConcatStepdefinition {
 
     @Then("kullanici Contact Message Created Created Successfully mesajini goruntulemez")
     public void kullaniciContactMessageCreatedCreatedSuccessfullyMesajiniGoruntulemez() {
-        assert contactPage.successfullyPopUp.isDisplayed();
+        Assert.assertFalse(ReusableMethods.waitForVisibility(contactPage.successfullyPopUp,5).isDisplayed());
 
 
     }
