@@ -1,0 +1,3574 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>My Spark Reports</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Smoke Test Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Apr 18, 2023 04:07:21 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Apr 18, 2023 04:07:21 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Apr 18, 2023 04:10:45 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='25%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='75%'><b>3</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='72%'><b>16</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='27%'><b>6</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='97%'><b>276</b> steps passed</small></div>
+<div>
+<small data-tooltip='2%'><b>6</b> steps failed,
+<b>2</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Dean Vice Dean ekleyebilmeli":7.818,"Vice Dean olusturulurken name ve surname bos birakilmamalidir.":81.415,"Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir.":55.676,"Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir.":57.346
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@US06TC03</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@US06TC04</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@US06TC22</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC05</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC17</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC06</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@US06TC15</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC13</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC20</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC07</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@US06TC16</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC08</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC02</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC21</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06</td>
+<td>16</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>72.727%</td>
+</tr>
+<tr>
+<td>@US06TC09</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC10</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC19</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@failedScenario</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>16.667%</td>
+</tr>
+<tr>
+<td>@US06TC11</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC14</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@US06TC18</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@US06TC12</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>os</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 16,
+failChild: 6,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 276,
+failGrandChild: 6,
+warningGrandChild: 0,
+skipGrandChild: 2,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@US06TC03</a><a class="dropdown-item" href="#">@US06TC04</a><a class="dropdown-item" href="#">@US06TC22</a><a class="dropdown-item" href="#">@US06TC05</a><a class="dropdown-item" href="#">@US06TC17</a><a class="dropdown-item" href="#">@US06TC06</a><a class="dropdown-item" href="#">@US06TC15</a><a class="dropdown-item" href="#">@US06TC13</a><a class="dropdown-item" href="#">@US06TC20</a><a class="dropdown-item" href="#">@US06TC07</a><a class="dropdown-item" href="#">@US06TC16</a><a class="dropdown-item" href="#">@US06TC08</a><a class="dropdown-item" href="#">@US06TC02</a><a class="dropdown-item" href="#">@US06TC21</a><a class="dropdown-item" href="#">@US06</a><a class="dropdown-item" href="#">@US06TC09</a><a class="dropdown-item" href="#">@US06TC10</a><a class="dropdown-item" href="#">@US06TC19</a><a class="dropdown-item" href="#">@failedScenario</a><a class="dropdown-item" href="#">@US06TC11</a><a class="dropdown-item" href="#">@US06TC14</a><a class="dropdown-item" href="#">@US06TC18</a><a class="dropdown-item" href="#">@US06TC12</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Dean Vice Dean ekleyebilmeli</p>
+            <p class="text-sm">
+              <span>4:07:22 PM</span> / <span>00:00:07:818</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dean Vice Dean ekleyebilmeli</h5>
+<span class='badge badge-success'>04.18.2023 4:07:22 PM</span>
+<span class='badge badge-danger'>04.18.2023 4:07:30 PM</span>
+<span class='badge badge-default'>00:00:07:818</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>TC01 Dean basariyla viceDean eklemeli</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US04.kullanici_submit_tusuna_tiklar()">
+                <span>And Kullanici submit tusuna tiklar.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_basariyla_vice_dean_ekleyebildigini_dogrular()">
+                <span>Then Kullanici basariyla Vice Dean ekleyebildigini dogrular.</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Vice Dean olusturulurken name ve surname bos birakilmamalidir.</p>
+            <p class="text-sm">
+              <span>4:07:30 PM</span> / <span>00:01:21:415</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Vice Dean olusturulurken name ve surname bos birakilmamalidir.</h5>
+<span class='badge badge-success'>04.18.2023 4:07:30 PM</span>
+<span class='badge badge-danger'>04.18.2023 4:08:51 PM</span>
+<span class='badge badge-default'>00:01:21:415</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>TC02 Name bos birakilmamali</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_name_kismina_deger_girmez()">
+                <span>Given Kullanici Name kismina deger girmez</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_name_kismi_bos_birakildiginda_required_uyarisi_alarak_kayit_olunamdigini_dogrular()">
+                <span>Then Kullanici name kismi bos birakildiginda required uyarisi alarak kayit olunamdigini dogrular</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="31"><span class="badge log fail-bg mr-2">Fail</span>TC03 Name valid degerle doldurulmalidir.</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_name_kismina_valid_olmayan_girer(java.lang.String)">
+                <span>Given Kullanici Name kismina valid olmayan "." girer.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_name_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular()">
+                <span>Then Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.RuntimeException: valid olmayan degerler kayit yapiliyor
+	at stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_name_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular(US06_2NameSteps.java:98)
+	at ✽.Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US06_2f.feature:34)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>hooks.Hooks.tearDownScenarios(io.cucumber.java.Scenario)</span>
+      <div>failed_scenario_TC03 Name valid degerle doldurulmalidir.
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="45"><span class="badge log fail-bg mr-2">Fail</span>TC04Name  sadece tubtusuyla  doldurulmalidir.</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_name_kismina_valid_olmayan_tubtusu_girer()">
+                <span>Given Kullanici Name kismina valid olmayan tubtusu girer.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" >
+                <span>Then Kullanici name kismina valid deger girilmediginde kayit olunmadigi mesajini gorur</span>
+      <div>Step undefined
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="59"><span class="badge log pass-bg mr-2">Pass</span>TC05 Surname bos birakilmamali</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_deger_girmez()">
+                <span>When Kullanici Surname kismina deger girmez</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismi_bos_birakildiginda_kayit_olunmadigi_mesajini_gorur()">
+                <span>Then Kullanici surname kismi bos birakildiginda kayit olunmadigi mesajini gorur</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="73"><span class="badge log fail-bg mr-2">Fail</span>TC06 Surname valid degerle doldurulmalidir.</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_olmayan_deger_girer(java.lang.String)">
+                <span>Given Kullanici surname kismina valid olmayan  deger "#" girer.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular()">
+                <span>Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.RuntimeException: kayit yapiliyor
+	at stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular(US06_2NameSteps.java:131)
+	at ✽.Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US06_2f.feature:79)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>hooks.Hooks.tearDownScenarios(io.cucumber.java.Scenario)</span>
+      <div>failed_scenario_TC06 Surname valid degerle doldurulmalidir.
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded2.png' src="../embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="87"><span class="badge log fail-bg mr-2">Fail</span>TC07 Surname tub tusunu deger olarak kabul etmemelidir.</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_olmayan_tubtusu_girer()">
+                <span>When Kullanici surname kismina valid olmayan tubtusu girer.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular()">
+                <span>Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.RuntimeException: kayit yapiliyor
+	at stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girilmediginde_kayit_olunmadigini_dogrular(US06_2NameSteps.java:131)
+	at ✽.Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US06_2f.feature:94)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>hooks.Hooks.tearDownScenarios(io.cucumber.java.Scenario)</span>
+      <div>failed_scenario_TC07 Surname tub tusunu deger olarak kabul etmemelidir.
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded3.png' src="../embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="101"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir.</p>
+            <p class="text-sm">
+              <span>4:08:52 PM</span> / <span>00:00:55:676</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir.</h5>
+<span class='badge badge-success'>04.18.2023 4:08:52 PM</span>
+<span class='badge badge-danger'>04.18.2023 4:09:47 PM</span>
+<span class='badge badge-default'>00:00:55:676</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=101</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="102"><span class="badge log pass-bg mr-2">Pass</span>TC08 Birt place bos birakilmamalidir</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_birtplace_alanini_bos_birakir()">
+                <span>When Kullanici birtplace alanini bos birakir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_birtplace_kismi_bos_birakildiginda_required_uyarisi_alarak_kayit_olunamdigini_dogrular()">
+                <span>Then Kullanici birtplace kismi bos birakildiginda required uyarisi alarak kayit olunamdigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="117"><span class="badge log pass-bg mr-2">Pass</span>TC08 Birt place kismina valid deger girilmelidir</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_birtplace_alanina_valid_olmayan_dger_girer(java.lang.String)">
+                <span>When Kullanici birtplace alanina valid olmayan "@" dger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_birtplace_kismina_valid_deger_girilmediginde_kayit_olunamadigini_dogrular()">
+                <span>Then Kullanici birtplace kismina valid deger girilmediginde kayit olunamadigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="132"><span class="badge log pass-bg mr-2">Pass</span>TC10 Dogum tarihi bos birakilamaz</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_dogum_tarihini_bos_birakir()">
+                <span>And Kullanici Dogum tarihini bos birakir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_dogum_tarihi_bos_birakildiginda_kayit_olunamdigini_dogrular()">
+                <span>Then Kullanici dogum tarihi bos birakildiginda  kayit olunamdigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="147"><span class="badge log pass-bg mr-2">Pass</span>TC11 Dogum tarihi gelecek zaman secilemez</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_dogum_tarihine_gelecek_tarih_girer()">
+                <span>And Kullanici Dogum tarihine gelecek tarih girer.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_gecmis_tarih_olmali_uyarisi_alir()">
+                <span>Then Kullanici gecmis tarih olmali uyarisi alir.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="162"><span class="badge log fail-bg mr-2">Fail</span>TC12 Dogum tarihi onceki yuzyillardan secilemez</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061200" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_invalid_tarih_uyarisi_alir()">
+                <span>Then Kullanici invalid tarih uyarisi alir</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError
+	at stepdefinitions.uidefinitions.US06_3Steps.kullanici_invalid_tarih_uyarisi_alir(US06_3Steps.java:127)
+	at ✽.Kullanici invalid tarih uyarisi alir(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US06_3f.feature:72)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>hooks.Hooks.tearDownScenarios(io.cucumber.java.Scenario)</span>
+      <div>failed_scenario_TC12 Dogum tarihi onceki yuzyillardan secilemez
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded4.png' src="../embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="177"><span class="badge log pass-bg mr-2">Pass</span>TC13 Telefon no bos birakilmamalidir</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_telefon_numarasini_bos_birakir()">
+                <span>And Kullanici  telefon numarasini bos birakir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_telefon_no_bos_birakildiginda_required_uyarisi_alarak_kayit_olunamadigini_dogrular()">
+                <span>Then Kullanici telefon no bos birakildiginda required uyarisi alarak kayit olunamadigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="192"><span class="badge log pass-bg mr-2">Pass</span>TC14 Telefon no istenen formatta girilmelidir.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_telefon_numarasini_format_disi_girer(java.lang.String)">
+                <span>And Kullanici  telefon numarasini format disi "123456789987" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_telefon_no_format_disi_girildiginde_invalid_number_uyarisi_alarak_kayit_olunamadigini_dogrular()">
+                <span>Then Kullanici telefon no format disi girildiginde invalid number uyarisi alarak kayit olunamadigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="207"><span class="badge log pass-bg mr-2">Pass</span>TC15 Kayitli telefonla kayit yapilamaz</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_telefon_numarasini_daha_once_kayit_olan_tlf_girer_girer()">
+                <span>And Kullanici  telefon numarasini daha once kayit olan tlf girer girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_3Steps.kullanici_telefon_noyu_onceden_kayitli_olan_bir_no_ile_girerse_already_uyrisi_alarak_kayit_olunamadigini_dogrular()">
+                <span>Then Kullanici telefon noyu onceden kayitli olan bir no ile girerse already uyrisi alarak kayit olunamadigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="222"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir.</p>
+            <p class="text-sm">
+              <span>4:09:47 PM</span> / <span>00:00:57:346</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir.</h5>
+<span class='badge badge-success'>04.18.2023 4:09:47 PM</span>
+<span class='badge badge-danger'>04.18.2023 4:10:45 PM</span>
+<span class='badge badge-default'>00:00:57:346</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=222</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="223"><span class="badge log pass-bg mr-2">Pass</span>TC16 SSN bos birakilamaz</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_ssn_girmez_bos_birakir()">
+                <span>When Kullanici  SSN girmez bos birakir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.ssn_girilmediginde_kayit_yapilmadigini_dogrular()">
+                <span>Then Ssn girilmediginde kayit yapilmadigini dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="238"><span class="badge log pass-bg mr-2">Pass</span>TC17 SSN belirtilen formatta olmalidir</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_format_disi_bir_ssn_girer(java.lang.String)">
+                <span>When Kullanici format disi bir SSN "12345678978" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_valid_olmayan_ssn_ile_giris_yapilamadigini_uyari_alarak_dogrular()">
+                <span>Then Kullanici valid olmayan ssn ile giris yapilamadigini uyari alarak dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="253"><span class="badge log fail-bg mr-2">Fail</span>TC18 SSN uniq olmalidir</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_kayitli_uniq_olmayan_bir_ssn_ile_deger_girer(java.lang.String)">
+                <span>When Kullanici kayitli uniq olmayan bir SSN "269-29-7548" ile deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_uniq_olmayan_ssn_girdiginde_uyari_alarak_dogrulama_yapar()">
+                <span>Then Kullanici uniq olmayan   ssn girdiginde  uyari alarak dogrulama yapar.</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='27']//div[@role='alert']//div[contains(text(),'Error: User with ssn 269-29-7548 already register')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [44be67833b5a0b305b892301eb5f092e, findElement {using=xpath, value=//div[@id='27']//div[@role='alert']//div[contains(text(),'Error: User with ssn 269-29-7548 already register')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50878}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50878/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 44be67833b5a0b305b892301eb5f092e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy26.isDisplayed(Unknown Source)
+	at stepdefinitions.uidefinitions.US06_4Steps.kullanici_uniq_olmayan_ssn_girdiginde_uyari_alarak_dogrulama_yapar(US06_4Steps.java:51)
+	at ✽.Kullanici uniq olmayan   ssn girdiginde  uyari alarak dogrulama yapar.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US06_4.feature:39)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>hooks.Hooks.tearDownScenarios(io.cucumber.java.Scenario)</span>
+      <div>failed_scenario_TC18 SSN uniq olmalidir
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded5.png' src="../embedded5.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="268"><span class="badge log pass-bg mr-2">Pass</span>TC19 User name bos birakilamaz</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_user_name_girmez_bos_birakir()">
+                <span>When Kullanici User Name girmez bos birakir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_username_kismi_bos_birakildiginda_kayit_olunmadigi_mesajini_gorur()">
+                <span>Then Kullanici username kismi bos birakildiginda kayit olunmadigi mesajini gorur</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="283"><span class="badge log pass-bg mr-2">Pass</span>TC20 Username daha once alinmamis olmalidir</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_user_name_kismina_daha_once_kayitli_bi_deger_girer()">
+                <span>When Kullanici User Name kismina daha once kayitli bi deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_en_az_sekiz_karakterden_oluşan_password_girer()">
+                <span>And Kullanici en az sekiz karakterden oluşan password  girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_username_kismina_tekrarli_deger_girildiginde_kayit_olunmadigini_uyari_alarak_dogrular()">
+                <span>Then Kullanici username kismina tekrarli deger girildiginde kayit olunmadigini uyari alarak dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="298"><span class="badge log pass-bg mr-2">Pass</span>TC21 Password sekizden az karakter icermemeli</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_yedi_karakterden_oluşan_password_girer()">
+                <span>When Kullanici  yedi karakterden oluşan password girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_sekizden_az_karakterli_password_ile_kayit_olunmadigini_uyari_alarak_dogrular()">
+                <span>Then Kullanici sekizden az karakterli password ile  kayit olunmadigini uyari alarak dogrular</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="313"><span class="badge log pass-bg mr-2">Pass</span>TC22 Password kismi bos birakilamaz</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_dean_olarak_login_olur()">
+                <span>Given Kullanici Dean olarak login olur.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_name_kismina_valid_deger_girer()">
+                <span>Given Kullanici  Name kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_surname_kismina_valid_deger_girer()">
+                <span>When Kullanici Surname kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.birth_place_kismina_valid_deger_girer()">
+                <span>And Birth Place kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_cinsiyet_kismini_secer()">
+                <span>And Kullanici Cinsiyet kismini secer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_dogum_tarihine_girer(java.lang.String)">
+                <span>And Kullanici Dogum tarihine "03061988" girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_telefon_numarasina_valid_deger_girer()">
+                <span>And Kullanici  telefon numarasina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_ssn_kismina_valid_deger_girer()">
+                <span>And Kullanici SSN kismina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_user_name_alanina_valid_deger_girer()">
+                <span>And Kullanici User Name alanina valid deger girer</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_password_kismini_bos_birakir()">
+                <span>When Kullanici   password kismini bos birakir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_2NameSteps.kullanici_submit_tusuna_tiklarr()">
+                <span>And Kullanici submit tusuna tiklarr.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.US06_4Steps.kullanici_password_kisminin_doldurulmadigi_uyarisini_alir()">
+                <span>Then Kullanici password kisminin  doldurulmadigi uyarisini alir</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.uidefinitions.LoginStepDefinitions.close_driver()">
+                <span>Then close driver</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">23</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@US06TC03</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC03</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='31'>TC03 Name valid degerle doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC03 Name valid degerle doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@US06TC04</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC04</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='45'>TC04Name sadece tubtusuyla doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC04Name sadece tubtusuyla doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC22</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC22</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:39 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='313'>TC22 Password kismi bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC22 Password kismi bos birakilamaz</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC05</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC05</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='59'>TC05 Surname bos birakilmamali</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC05 Surname bos birakilmamali</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC17</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC17</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='238'>TC17 SSN belirtilen formatta olmalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC17 SSN belirtilen formatta olmalidir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@US06TC06</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC06</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='73'>TC06 Surname valid degerle doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC06 Surname valid degerle doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC15</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC15</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='207'>TC15 Kayitli telefonla kayit yapilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC15 Kayitli telefonla kayit yapilamaz</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC13</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC13</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='177'>TC13 Telefon no bos birakilmamalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC13 Telefon no bos birakilmamalidir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC20</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC20</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='283'>TC20 Username daha once alinmamis olmalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC20 Username daha once alinmamis olmalidir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@US06TC07</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC07</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='87'>TC07 Surname tub tusunu deger olarak kabul etmemelidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC07 Surname tub tusunu deger olarak kabul etmemelidir.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC16</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC16</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='223'>TC16 SSN bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC16 SSN bos birakilamaz</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC08</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC08</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='102'>TC08 Birt place bos birakilmamalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC08 Birt place bos birakilmamalidir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC02</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:07:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='17'>TC02 Name bos birakilmamali</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC02 Name bos birakilmamali</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC21</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC21</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='298'>TC21 Password sekizden az karakter icermemeli</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC21 Password sekizden az karakter icermemeli</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>16</span>
+<span class='badge log badge-danger'>6</span>
+</span>
+<p class="name">@US06</p>
+<p class="duration text-sm">22 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06</h4>
+<span status="pass" class='badge log pass-bg'>16 passed</span>
+<span status="fail" class='badge log badge-danger'>6 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:07:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>TC01 Dean basariyla viceDean eklemeli</a>
+<div class="">
+<span class="badge badge-default">Dean Vice Dean ekleyebilmeli.TC01 Dean basariyla viceDean eklemeli</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:07:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='17'>TC02 Name bos birakilmamali</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC02 Name bos birakilmamali</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='31'>TC03 Name valid degerle doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC03 Name valid degerle doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='45'>TC04Name sadece tubtusuyla doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC04Name sadece tubtusuyla doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='59'>TC05 Surname bos birakilmamali</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC05 Surname bos birakilmamali</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='73'>TC06 Surname valid degerle doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC06 Surname valid degerle doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='87'>TC07 Surname tub tusunu deger olarak kabul etmemelidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC07 Surname tub tusunu deger olarak kabul etmemelidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='102'>TC08 Birt place bos birakilmamalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC08 Birt place bos birakilmamalidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='117'>TC08 Birt place kismina valid deger girilmelidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC08 Birt place kismina valid deger girilmelidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='132'>TC10 Dogum tarihi bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC10 Dogum tarihi bos birakilamaz</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='147'>TC11 Dogum tarihi gelecek zaman secilemez</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC11 Dogum tarihi gelecek zaman secilemez</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:09:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='162'>TC12 Dogum tarihi onceki yuzyillardan secilemez</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC12 Dogum tarihi onceki yuzyillardan secilemez</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='177'>TC13 Telefon no bos birakilmamalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC13 Telefon no bos birakilmamalidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='192'>TC14 Telefon no istenen formatta girilmelidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC14 Telefon no istenen formatta girilmelidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='207'>TC15 Kayitli telefonla kayit yapilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC15 Kayitli telefonla kayit yapilamaz</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='223'>TC16 SSN bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC16 SSN bos birakilamaz</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='238'>TC17 SSN belirtilen formatta olmalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC17 SSN belirtilen formatta olmalidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:10:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='253'>TC18 SSN uniq olmalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC18 SSN uniq olmalidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='268'>TC19 User name bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC19 User name bos birakilamaz</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='283'>TC20 Username daha once alinmamis olmalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC20 Username daha once alinmamis olmalidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='298'>TC21 Password sekizden az karakter icermemeli</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC21 Password sekizden az karakter icermemeli</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:39 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='313'>TC22 Password kismi bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC22 Password kismi bos birakilamaz</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC09</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC09</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='117'>TC08 Birt place kismina valid deger girilmelidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC08 Birt place kismina valid deger girilmelidir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC10</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC10</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='132'>TC10 Dogum tarihi bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC10 Dogum tarihi bos birakilamaz</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC19</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC19</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:10:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='268'>TC19 User name bos birakilamaz</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC19 User name bos birakilamaz</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@failedScenario</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@failedScenario</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='31'>TC03 Name valid degerle doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC03 Name valid degerle doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='45'>TC04Name sadece tubtusuyla doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC04Name sadece tubtusuyla doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='73'>TC06 Surname valid degerle doldurulmalidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC06 Surname valid degerle doldurulmalidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='87'>TC07 Surname tub tusunu deger olarak kabul etmemelidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC07 Surname tub tusunu deger olarak kabul etmemelidir.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:08:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='117'>TC08 Birt place kismina valid deger girilmelidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC08 Birt place kismina valid deger girilmelidir</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:09:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='162'>TC12 Dogum tarihi onceki yuzyillardan secilemez</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC12 Dogum tarihi onceki yuzyillardan secilemez</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC11</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC11</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='147'>TC11 Dogum tarihi gelecek zaman secilemez</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC11 Dogum tarihi gelecek zaman secilemez</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@US06TC14</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC14</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:09:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='192'>TC14 Telefon no istenen formatta girilmelidir.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC14 Telefon no istenen formatta girilmelidir.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@US06TC18</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC18</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:10:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='253'>TC18 SSN uniq olmalidir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC18 SSN uniq olmalidir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@US06TC12</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@US06TC12</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:09:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='162'>TC12 Dogum tarihi onceki yuzyillardan secilemez</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC12 Dogum tarihi onceki yuzyillardan secilemez</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:09:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='101' id='174'>Then Kullanici invalid tarih uyarisi alir</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken birth place birt date,cinsiyet ve phone bos birakilmamali ve uygun doldurulmalidir..TC12 Dogum tarihi onceki yuzyillardan secilemez.Then Kullanici invalid tarih uyarisi alir</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:10:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='222' id='265'>Then Kullanici uniq olmayan ssn girdiginde uyari alarak dogrulama yapar.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken SSN,username,password bos birakilmamali ve uygun doldurulmalidir..TC18 SSN uniq olmalidir.Then Kullanici uniq olmayan ssn girdiginde uyari alarak dogrulama yapar.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">java.lang.RuntimeException</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.RuntimeException</h4>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:07:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='43'>Then Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC03 Name valid degerle doldurulmalidir..Then Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='85'>Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC06 Surname valid degerle doldurulmalidir..Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:08:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='99'>Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.</a>
+<div class="">
+<span class="badge badge-default">Vice Dean olusturulurken name ve surname bos birakilmamalidir..TC07 Surname tub tusunu deger olarak kabul etmemelidir..Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
