@@ -15,7 +15,7 @@ public class US10StepDefinition {
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
 
-    @Given("lesson Programi tiklar")
+    @Given("lessons Programi tiklar")
     public void lesson_programi_tiklar() {
         lessonsManagementPage.lessonProgram_asl.click();
         waitFor(1);

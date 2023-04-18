@@ -12,16 +12,7 @@ import utilities.ReusableMethods;
 
 public class US18 {
     StudentInfoManagement studentInfoManagement =new StudentInfoManagement();
-    LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
-    LoginStepDefinitions loginStepDefinitions= new LoginStepDefinitions();
-    @Given("Kullanıcı Menu seceneğine tıklar")
-    public void kullanici_menu_secenegine_tiklar() {
-        studentInfoManagement.menuStudentInfo.click();
 
-    }
-    @Given("Student Info Managment seceneğine tıklar")
-    public void student_info_managment_secenegine_tiklar() {
-   studentInfoManagement.studentInfoManagmentButtonStudentInfo.click();
     }
     @Given("İstenilen öğrencinin yanındaki delete butonuna basar")
     public void i̇stenilen_ogrencinin_yanindaki_delete_butonuna_basar() {

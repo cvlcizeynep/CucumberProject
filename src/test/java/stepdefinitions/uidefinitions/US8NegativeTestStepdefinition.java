@@ -32,7 +32,7 @@ public class US8NegativeTestStepdefinition {
 
 
     @And("Credit  Score  {string}  gırer")
-    public void creditScoreGırer(String arg0) {
+    public void creditScoreGirer(String arg0) {
         lessonsManagementPage.creditScore.sendKeys("?:",Keys.TAB,Keys.ENTER);
     }
 
