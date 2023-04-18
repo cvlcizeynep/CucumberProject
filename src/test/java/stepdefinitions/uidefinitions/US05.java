@@ -8,17 +8,15 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import pages.DeanManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.TestCase.assertFalse;
 
-public class US_05 {
+public class US05 {
     DeanManagementPage deanManagementPage = new DeanManagementPage();
 
     @And("Main menu sayfasindan Dean Management tiklar")
