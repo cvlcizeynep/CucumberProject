@@ -16,7 +16,7 @@ public class LessonsManagementPage {
     @FindBy(id="Submit") public WebElement submit;
     @FindBy(id="creditScore") public WebElement creditScore;
 
-    @FindBy(xpath="//div[contains(text(),'Lesson Created')]") public WebElement lessonDersOluşturulduMesaji;
+    @FindBy(xpath="//div[@class='Toastify__toast-body']") public WebElement lessonDersOluşturulduMesaji;
     @FindBy(xpath="//*[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement lessonhataMesaji;
 
 
