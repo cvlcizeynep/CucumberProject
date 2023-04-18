@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@viceDeanAdd",
+        tags = "@AdminAdd",
         dryRun = false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
