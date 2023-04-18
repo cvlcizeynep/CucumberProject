@@ -7,7 +7,6 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
@@ -18,9 +17,8 @@ import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class US_16 {
+public class US16 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String name = faker.name().name();
@@ -115,6 +113,11 @@ public class US_16 {
         Assert.assertEquals(emailSutun.getText(), email);
         Assert.assertEquals(messageSutun.getText(), message);
         softAssert.assertAll();
+    }
+
+    @Then("Kullanici Delete butonuna tiklar")
+    public void kullaniciDeleteButonunaTiklar() {
+        Assert.assertTrue(contactPage.successfullyToastify.isDisplayed());
     }
 /*
     @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")

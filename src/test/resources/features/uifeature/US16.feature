@@ -14,18 +14,18 @@ Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir
     And Kullanici Menu butonuna tiklar
     And Kullanici Contact Get All butonuna tiklar
     And Kullanici gonderen kisi  Name-mail-subject-message bilgilerinin listede goruntulendigini dogrular
-   # And Kullanici gonderen kisi  Name-mail-subject-message bilgilerinin listede goruntulendigini dogrular
 
-#  @16_2
-#  Scenario: Vice Dean, mesajları silebilmelidir
-#    Given  Kullanici viceDean olarak login olur
-#    And Kullanici Contact butonuna tiklar
-#    And Kullanici Your Name textboxini  gecerli yourname bilgisini girer
-#    And Kullanici Your Mail textboxini  gecerli mailini girer
-#    And Kullanici Subject textboxini doldurur
-#    And Kullanici Message textboxini doldurur
-#    And Kullanici Send Message butonuna tiklar
-#    And Kullanici basarili giris yapildigini dogrular
-#    And Kullanici Menu butonuna tiklar
-#    And Kullanici Contact Get All butonuna tiklar
-#    Then Kullanici Delete butonuna tiklar
+
+  @failedScenario1
+  Scenario: Vice Dean, mesajları silebilmelidir
+    Given  Kullanici viceDean olarak login olur
+    And Kullanici Contact butonuna tiklar
+    And Kullanici Your Name textboxini  gecerli yourname bilgisini girer
+    And Kullanici Your Mail textboxini  gecerli mailini girer
+    And Kullanici Subject textboxini doldurur
+    And Kullanici Message textboxini doldurur
+    And Kullanici Send Message butonuna tiklar
+    And Kullanici basarili giris yapildigini dogrular
+    And Kullanici Menu butonuna tiklar
+    And Kullanici Contact Get All butonuna tiklar
+    Then Kullanici Delete butonuna tiklar
