@@ -1,4 +1,4 @@
-@deanmessagedelete
+@US07
 Feature: Dean mesajlari silebilmeli
   Background: Dean get all sayfasina gider
     Given Kullanici Dean olarak login olur.

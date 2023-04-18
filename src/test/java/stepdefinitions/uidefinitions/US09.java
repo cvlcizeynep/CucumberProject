@@ -1,6 +1,5 @@
 package stepdefinitions.uidefinitions;
 
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -17,7 +16,6 @@ import java.util.List;
 public class US09 {
 
     LessonsManagementPage lessonsManagementPage=new LessonsManagementPage();
-
     @When("Kullanici listede creditScore dersAdi ve creditScore yazdigini dorular")
     public void kullaniciListedeCreditScoreDersAdiVeCreditScoreYazdiginiDorular() {
         List<String> lessonsListString = new ArrayList<>();

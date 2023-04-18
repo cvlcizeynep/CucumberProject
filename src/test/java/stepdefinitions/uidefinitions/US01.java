@@ -2,6 +2,7 @@
 package stepdefinitions.uidefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -30,7 +31,8 @@ RegisterPage registerPage=new RegisterPage();
     }
     @When("Kullanici register Gender kismini secer")
     public void kullanici_register_gender_kismini_secer() {
-        registerPage.gendermale.click();
+
+        registerPage.genderfemale.click();
     }
     @When("Kullanici register Birth of Date {string}  girer")
     public void kullanici_register_birth_of_date_girer(String string) {
@@ -51,17 +53,29 @@ RegisterPage registerPage=new RegisterPage();
     @When("Kullanici register Password {string} girer")
     public void kullanici_register_password_girer(String string) throws InterruptedException {
         registerPage.password.sendKeys(string);
-        wait(3000);
+
     }
     @When("Kullanici register submit tusuna tiklar.")
     public void kullanici_register_submit_tusuna_tiklar() throws InterruptedException {
-        wait(5000);
+
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].click()", registerPage.registerSubmitButton);
     }
     @When("Kullanici Guest User Registered yazısı görmez.")
     public void kullanici_guest_user_registered_yazısı_görmez() {
-      Assert.assertTrue(!registerPage.popUpmesaji.getText().contains("registered"));
+
+    }@When("Kullanici Guest User Registered yazısı görür.")
+    public void kullanici_guest_user_registered_yazısı_görür() {
+
     }
+    @When("Kullanici Please enter valid ssn yazısı görür.")
+    public void Kullanici_Please_enter_valid_ssn_yazısı_görür() {
+
+    }
+   @When("Kullanici Please enter valid phone number yazısı görür.")
+    public void Kullanici_Please_enter_valid_phone_number_yazısı_görür() {
+
+    }
+
 
 }

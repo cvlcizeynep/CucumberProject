@@ -254,4 +254,15 @@ public class US22 {
     public void adminSSNAlaninaSpaceGirer() {
         adminManagementPage.AdminSsn.sendKeys("               ");
     }
+
+    @And("Admin Date of birth alanina ileri {string} bir tarih girer")
+    public void adminDateOfBirthAlaninaIleriBirTarihGirer(String string) {
+        adminManagementPage.AdminDateOfBird.sendKeys(string);
+    }
+
+    @And("Admin ileri bir tarih girilemez yazisini dogrular.")
+    public void adminIleriBirTarihGirilemezYazisiniDogrular() {
+        Assert.assertTrue(adminManagementPage.gecmistarihpopup.getText().contains("geçmiş bir tarih olmalı"));
+
+    }
 }
