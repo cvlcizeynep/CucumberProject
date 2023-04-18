@@ -5,11 +5,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
+import pages.LessonsManagementPage;
 import pages.StudentInfoManagement;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class US18 {
     StudentInfoManagement studentInfoManagement =new StudentInfoManagement();
+    LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
+    LoginStepDefinitions loginStepDefinitions= new LoginStepDefinitions();
     @Given("Kullanıcı Menu seceneğine tıklar")
     public void kullanici_menu_secenegine_tiklar() {
         studentInfoManagement.menuStudentInfo.click();
@@ -35,33 +39,28 @@ public class US18 {
 
     @Given("Kullanıcı Choose Education Term kısmına tıklar ve dönemi seçer")
     public void kullanici_choose_education_term_kismina_tiklar_ve_donemi_secer() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        lessonsManagementPage.educationTerm_asl.click();
+        lessonsManagementPage.educationTerm_asl.sendKeys("SPRING_SEMESTER");
     }
     @Given("Kullanıcı Absentee kısmına {string} girer")
     public void kullanici_absentee_kismina_girer(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        studentInfoManagement.absenteeStudentInfo.sendKeys(string);
     }
     @Given("Kullanıcı Midterm Exam kısmına {string} girer")
     public void kullanici_midterm_exam_kismina_girer(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       studentInfoManagement.midtermStudentInfo.sendKeys(string);
     }
     @Given("Kullanıcı Final Exam kısmına {string} girer")
     public void kullanici_final_exam_kismina_girer(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       studentInfoManagement.finalStudentInfo.sendKeys(string);
     }
     @Given("Kullanıcı Info Note kısmına {string} girer")
     public void kullanici_info_note_kismina_girer(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       studentInfoManagement.infoNoteStudentInfo.sendKeys(string);
     }
     @Given("Kullanıcı submit butonuna tıklar")
     public void kullanici_submit_butonuna_tiklar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        studentInfoManagement.submitStudentInfo.click();
     }
     @Given("Kullanıcı Student Info Updated Succesfully yazısı görür")
     public void kullanici_student_info_updated_succesfully_yazisi_gorur() {
@@ -70,8 +69,7 @@ public class US18 {
     }
     @Given("Kullanıcı Info Note kısmına {string} a harfi girer")
     public void kullanici_info_note_kismina_a_harfi_girer(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        studentInfoManagement.infoNoteStudentInfo.sendKeys(string);
     }
     @Given("Kullanıcı Student Info Updated Succesfully yazısı görmez")
     public void kullanici_student_info_updated_succesfully_yazisi_gormez() {
@@ -86,8 +84,7 @@ public class US18 {
 
     @Given("Kullanıcı Midterm Exam kısmına not girer")
     public void kullanici_midterm_exam_kismina_not_girer() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       studentInfoManagement.midtermStudentInfo.sendKeys("50");
     }
     @Given("Kullanıcı Please enter final exam yazısı görür")
     public void kullanici_please_enter_final_exam_yazisi_gorur() {
@@ -97,8 +94,7 @@ public class US18 {
 
     @Given("ilk sıradaki ogrencinin yanındaki edit butonuna tıklar")
     public void ilk_siradaki_ogrencinin_yanindaki_edit_butonuna_tiklar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+      studentInfoManagement.ilkEditStudentInfo.click();
     }
     @Given("Kullanıcı Please enter midterm exam yazısı görür")
     public void kullanici_please_enter_midterm_exam_yazisi_gorur() {
@@ -108,8 +104,9 @@ public class US18 {
 
     @Given("Kullanıcı choose lessons butonuna tiklar ve dersi seçer")
     public void kullanici_choose_lessons_butonuna_tiklar_ve_dersi_secer() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        ReusableMethods.waitFor(5);
+        lessonsManagementPage.selectLesson_asl.click();
+        lessonsManagementPage.selectLesson_asl.sendKeys("fiziks");
     }
 
 
