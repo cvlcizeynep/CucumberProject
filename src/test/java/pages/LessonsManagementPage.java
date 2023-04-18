@@ -16,7 +16,7 @@ public class LessonsManagementPage {
     @FindBy(id="Submit") public WebElement submit;
     @FindBy(id="creditScore") public WebElement creditScore;
 
-    @FindBy(xpath="//div[contains(text(),'Lesson Created')]") public WebElement lessonDersOluşturulduMesaji;
+    @FindBy(xpath="//div[@class='Toastify__toast-body']") public WebElement lessonDersOluşturulduMesaji;
     @FindBy(xpath="//*[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement lessonhataMesaji;
 
 
@@ -58,8 +58,23 @@ public class LessonsManagementPage {
 public WebElement compulsoryYes;
 @FindBy(xpath="//span[normalize-space()='3']")
 public  WebElement creditScore3;
-@FindBy(xpath = "//body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[10]/td[4]/span[1]/button[1]/i[1]")
-public WebElement silmeButonu;
+@FindBy(xpath = "//tbody/tr[3]/td[4]/span[1]/button[1]/i[1]")
+public WebElement silmeButonu_asl;
 @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lessonsSecenek;
+@FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-lessonsList']//span[@aria-hidden='true'][contains(text(),'›')]")
+    public WebElement sagTus_asli;
+@FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']")
+    public WebElement lessonProgram_asl;
+    @FindBy(xpath = "//div[@class=' css-19bb58m']")
+    public WebElement selectLesson_asl;
+    @FindBy(xpath = "//select[@id='term']")
+    public WebElement educationTerm_asl;
+    @FindBy(xpath = "//select[@id='day']")
+    public WebElement chooseDay_asl;
+    @FindBy(xpath ="//input[@id='startTime']")
+    public WebElement startTime_asl;
+    @FindBy(xpath = "//input[@id='stopTime']")
+    public WebElement stopTime_asl;
+
 }

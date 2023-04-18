@@ -54,6 +54,16 @@ public class AdminManagementPage {
     public WebElement saveSuccesfullyMessage;
     @FindBy(xpath = "//div[text()='Admin Saved']")
     public WebElement adminSaved;
+    @FindBy (xpath = "//*[text()='Minimum 8 character']")
+    public WebElement minimum8;
+    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement minimin11ssn;
+    @FindBy(xpath = "//*[text()='Please enter valid SSN number']")
+    public WebElement ssnMesaj;
+    @FindBy(xpath = "//*[text()='Please enter valid phone number']")
+    public WebElement phoneNumberMesaj;
+    @FindBy (xpath = "//div[text()='geçmiş bir tarih olmalı']")
+    public WebElement gecmistarihpopup;
 
 
 
