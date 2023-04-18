@@ -15,6 +15,8 @@ public class MeetManagementPage {
 
     @FindBy(xpath = "//button[text()='Menu']")  public WebElement menu;
     @FindBy(xpath = "//a[text()='Meet Management']") public WebElement meet_Management;
+    @FindBy(xpath = "//*[@class=' css-19bb58m']") public WebElement selectStudents;
+
     @FindBy(xpath = "//input[@id='date']")  public WebElement date;
     @FindBy(xpath = "//input[@id='startTime']") public WebElement startTime;
     @FindBy(xpath = "//input[@id='stopTime']") public WebElement stopTime;
@@ -37,8 +39,18 @@ public class MeetManagementPage {
     @FindBy(xpath = "(//input[@id='stopTime'])[2]") public WebElement estopTime;
     @FindBy(xpath = "(//input[@id='description'])[2]")   public WebElement edescription;
     @FindBy(xpath = "(//button[text()='Submit'])[2]")   public WebElement esubmit;
-    @FindBy(xpath = "//div[contains(@class,'css-19bb58m')]")   public WebElement eselectStudent1;
-    @FindBy(xpath = "//div[contains(@class,'css-19bb58m')]")   public WebElement eselectStudent2;
+    @FindBy(xpath = "(//*[@class=' css-19bb58m'])[2]") public WebElement selectStudents2;
+
+
+    @FindBy(xpath = "(//*[@class='card-body']")   public WebElement edMettText;
+    @FindBy(xpath = "(//*[text()='Meet Updated Successfully']")   public WebElement editBasarili;
+
+
+
+
+
+
+
 
 
 

@@ -3,8 +3,6 @@ package stepdefinitions.uidefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import pages.MeetManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -51,7 +49,6 @@ public class US20PozitiveStepdefinition {
 //        actions.sendKeys(Keys.PAGE_DOWN).perform();
         Driver.clickWithJS(meetManagementPage.meetDelete);
 
-
     }
 
     @And("delete basarili yazisini gorur")
@@ -59,5 +56,14 @@ public class US20PozitiveStepdefinition {
         Assert.assertTrue(meetManagementPage.deleteBasarili.isDisplayed());
     }
 
+    @And("Bir tarih {string} girer")
+    public void birTarihGirer(String string) {
+        meetManagementPage.date.sendKeys(string);
+    }
 
+    @And("Toplantı guncellendı mesajini gorur")
+    public void toplantıGuncellendıMesajiniGorur() {
+        Assert.assertTrue(meetManagementPage.editBasarili.getText().contains("Meet updated Successfully"));
+
+    }
 }
