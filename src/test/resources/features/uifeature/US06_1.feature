@@ -1,4 +1,4 @@
-@US06.1, @smoke
+@US06
 Feature: Dean Vice Dean ekleyebilmeli
 
   Background:
@@ -15,5 +15,5 @@ Scenario: TC01 Dean basariyla viceDean eklemeli
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklar.
     Then Kullanici basariyla Vice Dean ekleyebildigini dogrular.
-    Then close driver
+
 

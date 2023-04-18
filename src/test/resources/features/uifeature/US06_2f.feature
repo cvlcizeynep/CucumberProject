@@ -1,4 +1,4 @@
-@US06.2
+@US06
 Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
 
   Background:dean olrak giris
@@ -17,7 +17,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici name kismi bos birakildiginda required uyarisi alarak kayit olunamdigini dogrular
-    Then close driver
+
 
   @US06TC03 @failedScenario
   Scenario: TC03 Name valid degerle doldurulmalidir.
@@ -32,7 +32,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici name kismina valid deger girilmediginde kayit olunmadigini dogrular.
-    Then close driver
+
 
   @US06TC04 @failedScenario
   Scenario:TC04Name  sadece tubtusuyla  doldurulmalidir.
@@ -47,7 +47,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici name kismina valid deger girilmediginde kayit olunmadigi mesajini gorur
-    Then close driver
+
 
   @US06TC05
   Scenario:TC05 Surname bos birakilmamali
@@ -62,7 +62,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici surname kismi bos birakildiginda kayit olunmadigi mesajini gorur
-    Then close driver
+
 
   @US06TC06 @failedScenario
   Scenario: TC06 Surname valid degerle doldurulmalidir.
@@ -77,7 +77,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.
-    Then close driver
+
 
   @US06TC07 @failedScenario
   Scenario:TC07 Surname tub tusunu deger olarak kabul etmemelidir.
@@ -92,7 +92,7 @@ Feature: Vice Dean olusturulurken name ve surname bos birakilmamalidir.
     And   Kullanici en az sekiz karakterden oluşan password  girer
     And   Kullanici submit tusuna tiklarr.
     Then Kullanici surname kismina valid deger girilmediginde kayit olunmadigini dogrular.
-    Then close driver
+
 
 
 

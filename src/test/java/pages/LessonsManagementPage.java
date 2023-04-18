@@ -16,7 +16,7 @@ public class LessonsManagementPage {
     @FindBy(id="Submit") public WebElement submit;
     @FindBy(id="creditScore") public WebElement creditScore;
 
-    @FindBy(xpath="//div[contains(text(),'Lesson Created')]") public WebElement lessonDersOluşturulduMesaji;
+    @FindBy(xpath="//div[@class='Toastify__toast-body']") public WebElement lessonDersOluşturulduMesaji;
     @FindBy(xpath="//*[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement lessonhataMesaji;
 
 
@@ -66,16 +66,15 @@ public WebElement silmeButonu_asl;
     public WebElement sagTus_asli;
 @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']")
     public WebElement lessonProgram_asl;
-@FindBy(xpath = "//div[@class=' css-19bb58m']")
+    @FindBy(xpath = "//div[@class=' css-19bb58m']")
     public WebElement selectLesson_asl;
-@FindBy(xpath = "//select[@id='term']")
+    @FindBy(xpath = "//select[@id='term']")
     public WebElement educationTerm_asl;
-@FindBy(xpath = "//select[@id='day']")
+    @FindBy(xpath = "//select[@id='day']")
     public WebElement chooseDay_asl;
-@FindBy(xpath ="//input[@id='startTime']")
+    @FindBy(xpath ="//input[@id='startTime']")
     public WebElement startTime_asl;
-@FindBy(xpath = "//input[@id='stopTime']")
+    @FindBy(xpath = "//input[@id='stopTime']")
     public WebElement stopTime_asl;
-
 
 }

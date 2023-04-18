@@ -28,7 +28,7 @@ Background:
     And Kullanici Lesson Program Bolumune tiklar
     And Kullanıcı Lesson Program Assignment başlığının altında ilhanlılar tarihi yazısını görür
     And Kullanıcı day altında FRIDAY yazısını görür
-    And Kullanıcı Start Timr altında 01:00 yazısını görür
+    And Kullanıcı Start Time altında 01:00 yazısını görür
     And Kullanıcı 02:00 yazısını görür.
     Then close driver
 
@@ -39,7 +39,7 @@ Background:
       And Kullanici Lesson Program Bolumune tiklar
       And Kullanıcı Lesson Program Assignment başlığının altında ilhanlılar tarihi yazısını görür
       And Kullanıcı day altında FRIDAY yazısını görür
-      And Kullanıcı Start Timr altında 01:00 yazısını görür
+      And Kullanıcı Start Time altında 01:00 yazısını görür
       And Kullanıcı 02:00 yazısını görür.
       And Kullanıcı bu bilgilerin olduğu satırdaki kutucuğa tıklar
       And Kullanıcı Choose Teacher bölümüne tıklar ve öğretmenini seçer
@@ -54,7 +54,7 @@ Background:
     And Kullanici Lesson Program Bolumune tiklar
     And Kullanıcı Choose Teacher bölümüne tıklar ve öğretmenini seçer
     And Kullanıcı submit butonuna tıklarf
-    And Lesson Added the Teacher yazısı ekranda çıkmaz.
+    And Lesson Added the Teacher yazısı ekranda çıkmaz
     Then close driver
 
     Scenario: TC-5 Öğretmen seçilmeden öğretmene ders atanamaz.
@@ -64,7 +64,7 @@ Background:
       And Kullanici Lesson Program Bolumune tiklar
     And Kullanıcı Lesson Program Assignment başlığının altında ilhanlılar tarihi yazısını görür
     And Kullanıcı day altında FRIDAY yazısını görür
-    And Kullanıcı Start Timr altında 01:00 yazısını görür
+    And Kullanıcı Start Time altında 01:00 yazısını görür
     And Kullanıcı 02:00 yazısını görür.
     And Kullanıcı bu bilgilerin olduğu satırdaki kutucuğa tıklar
      And Kullanıcı submit butonuna tıklarf
