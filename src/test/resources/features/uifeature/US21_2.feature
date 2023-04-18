@@ -1,4 +1,4 @@
-@US21_Negatif
+@US21
 
 Feature: Ogrenci Choose Lesson Listesini Görüntüleyebilmeli
 

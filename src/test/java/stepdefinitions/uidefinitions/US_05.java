@@ -16,6 +16,8 @@ import utilities.ReusableMethods;
 import java.util.ArrayList;
 import java.util.List;
 
+import static junit.framework.TestCase.assertFalse;
+
 public class US_05 {
     DeanManagementPage deanManagementPage = new DeanManagementPage();
 
@@ -61,25 +63,73 @@ public class US_05 {
 
     @When("Olusturulan daen'in edit butonuna tiklar")
     public void olusturulanDaenInEditButonunaTiklar() {
-
-        ReusableMethods.scrollIntoViewJS(Driver.getDriver().findElement(By.xpath("//table/tbody/tr[10]")));
-        ReusableMethods.clickWithTimeOut(deanManagementPage.viceDeanListSonSayfa, 2);
-        ReusableMethods.waitFor(1);
-        ReusableMethods.scrollIntoViewJS(deanManagementPage.viceDeanListText);
-        ReusableMethods.waitFor(2);
-        //Assert.assertTrue(deanManagementPage.viceDeanList.getText().contains("hayriye"));
         for (int i = 0; i < deanManagementPage.isimlertext.size(); i++) {
-            if (deanManagementPage.isimlertext.get(i).getText().contains("hayriye")) {
+            if (deanManagementPage.isimlertext.get(i).getText().contains("Dora")) {
                 ReusableMethods.waitFor(3);
                 int index = i + 1;
-                WebElement hayriyeicinedit = Driver.getDriver().findElement(By.xpath("(//button[@class='text-dark btn btn-outline-info'])" + "[" + index + "]"));
+                WebElement doraicinedit = Driver.getDriver().findElement(By.xpath("(//button[@class='text-dark btn btn-outline-info'])" + "[" + index + "]"));
 
-                ReusableMethods.clickWithTimeOut(hayriyeicinedit, 5);
+                ReusableMethods.JSEClickToElement(doraicinedit);
+                ReusableMethods.waitFor(2);
+
+            } }
+
+        //**************can hoca ile **********************
+//        for (int i = 0; i < deanManagementPage.isimlertext.size(); i++) {
+//            if (deanManagementPage.isimlertext.get(i).getText().contains("Veli")){
+//                Driver.clickWithJS(deanManagementPage.deanListEditButonu.get(i));
+//
+//
+//            }
+//
+//        }
 
 
-                // Driver.clickWithJS(deanManagementPage.deanListEditButonu);
 
-            }}}
+
+
+
+
+
+
+
+
+
+
+//        ReusableMethods.scrollIntoViewJS(Driver.getDriver().findElement(By.xpath("//table/tbody/tr[10]")));
+//        ReusableMethods.clickWithTimeOut(deanManagementPage.viceDeanListSonSayfa, 2);
+//        ReusableMethods.waitFor(1);
+//        ReusableMethods.scrollIntoViewJS(deanManagementPage.viceDeanListText);
+//        ReusableMethods.waitFor(2);
+//        //Assert.assertTrue(deanManagementPage.viceDeanList.getText().contains("hayriye"));
+//        for (int i = 0; i < deanManagementPage.isimlertext.size(); i++) {
+//            if (deanManagementPage.isimlertext.get(i).getText().contains("hayriye")) {
+//                ReusableMethods.waitFor(3);
+//                int index = i + 1;
+//                WebElement hayriyeicinedit = Driver.getDriver().findElement(By.xpath("(//button[@class='text-dark btn btn-outline-info'])" + "[" + index + "]"));
+//
+//                ReusableMethods.clickWithTimeOut(hayriyeicinedit, 5);
+//
+//
+//                // Driver.clickWithJS(deanManagementPage.deanListEditButonu);
+//
+//            }}}
+
+
+//            List<String> teacherListString = new ArrayList<>();
+//            List<WebElement> teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+//            teacherList.forEach(t -> teacherListString.add(t.getText()));
+
+//            while (deanManagementPage.deanListKayitliKisi.contains("Hayriye")) {
+//                Driver.clickWithJS(deanManagementPage.deanListEditsagButton);
+//               teacherList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[1]"));
+//                teacherListString.clear();
+//                teacherList.forEach(t -> teacherListString.add(t.getText()));
+//                ReusableMethods.waitFor(2);
+    //        }
+      //      Driver.clickWithJS(deanManagementPage.deanListEditButonu);
+
+        }
             @Given("name {string} kismina valid  girer")
             public void nameKisminaValidGirer (String String){
                 Driver.waitAndSendText(deanManagementPage.NameButton, String, 10);
@@ -126,6 +176,39 @@ public class US_05 {
             }
 
 
+    @Then("Kullanici delete butonunun varligini assert eder")
+    public void kullaniciDeleteButonununVarliginiAssertEder() {
+        List<WebElement>buttonList=Driver.getDriver().findElements(By.xpath("//button"));
+        for (int i = 1; i <26 ; i++) {
+            assertFalse(buttonList.get(i-1).getText().contains("delete"));
+
         }
+    }
+
+    @And("telefon numarasini gunceller")
+    public void telefonNumarasiniGunceller() {
+        deanManagementPage.editPhoneNumberButton.sendKeys(Keys.CONTROL+"A"+Keys.DELETE);
+        deanManagementPage.editPhoneNumberButton.sendKeys("556-858-2636");
+
+    }
+
+    @And("password girer")
+    public void passwordGirer() {
+        deanManagementPage.editPassword.sendKeys("12345678");
+
+    }
+
+    @And("edit sayfasindaki submit tusuna tiklar.")
+    public void editSayfasindakiSubmitTusunaTiklar() {
+        ReusableMethods.JSEClickToElement(deanManagementPage.editSubmitButton);
+
+    }
+
+    @And("Edit sayfasindaki Cinsiyet kismini secer")
+    public void editSayfasindakiCinsiyetKisminiSecer() {
+        ReusableMethods.JSEClickToElement(deanManagementPage.editGenderFemale);
+
+    }
+}
 
 
