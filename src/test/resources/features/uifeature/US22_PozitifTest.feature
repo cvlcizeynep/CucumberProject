@@ -3,7 +3,7 @@
 Feature: TC1_Admin
   Background:
     Given Kullanici admin olarak login olur.
-    @smokes
+    @smoke
     Scenario Outline:Admin_kayit_TC01
     Given Admin Name kismina valid  girer
     When Admin Surname kismina valid  girer
