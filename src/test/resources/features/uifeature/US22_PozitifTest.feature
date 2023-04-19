@@ -38,7 +38,7 @@ Feature: TC1_Admin
       |Date of Birth|Password|
       |11.02.2012   |12345678|
 
-  Scenario Outline:Admin_password_TC03
+  Scenario Outline:Admin_password7karakter_TC03
     Given Admin Name kismina valid  girer
     When Admin Surname kismina valid  girer
     And Admin Birth place kismina valid deger girer

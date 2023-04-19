@@ -87,6 +87,8 @@ public class DeanManagementPage {
     public WebElement editPassword;
     @FindBy(xpath = "(//*[@name='gender'])[3]")
     public  WebElement editGenderFemale;
+    @FindBy(xpath = "(//button[@type='button'])[6]")
+    public WebElement editdelete;
 
 
 
