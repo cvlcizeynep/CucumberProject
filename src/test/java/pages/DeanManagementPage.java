@@ -8,9 +8,6 @@ import utilities.Driver;
 import java.util.List;
 
 public class DeanManagementPage {
-
-
-
     //nuran hanim,hayriye hanim
     public DeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);

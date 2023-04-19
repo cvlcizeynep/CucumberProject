@@ -19,4 +19,5 @@ public class GuestUserPage {
     @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public  WebElement mesaj;
 
+
 }

@@ -12,8 +12,8 @@ import utilities.ReusableMethods;
 
 public class US18 {
     StudentInfoManagement studentInfoManagement =new StudentInfoManagement();
+    LessonsManagementPage lessonsManagementPage;
 
-    }
     @Given("İstenilen öğrencinin yanındaki delete butonuna basar")
     public void i̇stenilen_ogrencinin_yanindaki_delete_butonuna_basar() {
        studentInfoManagement.ilkDeleteStudentInfo.click();
@@ -30,8 +30,9 @@ public class US18 {
 
     @Given("Kullanıcı Choose Education Term kısmına tıklar ve dönemi seçer")
     public void kullanici_choose_education_term_kismina_tiklar_ve_donemi_secer() {
+
         lessonsManagementPage.educationTerm_asl.click();
-        lessonsManagementPage.educationTerm_asl.sendKeys("SPRING_SEMESTER");
+        lessonsManagementPage.educationTerm_asl.sendKeys("SPRING_SEMESTERA");
     }
     @Given("Kullanıcı Absentee kısmına {string} girer")
     public void kullanici_absentee_kismina_girer(String string) {
