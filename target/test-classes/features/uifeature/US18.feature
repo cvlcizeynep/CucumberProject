@@ -116,7 +116,7 @@ Scenario: Kullanıcı her şeyi doğru yaparak Not bilgisi güncelleyebilir.
   And Kullanıcı Student Info Updated Succesfully yazısı görür
   Then close driver
 
-
+@18e
 Scenario: Öğrenci Not bilgisini silebilmeli
 Given İstenilen öğrencinin yanındaki delete butonuna basar
 When StudenT delete Succesfully yazısı ekranda çıkar

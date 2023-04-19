@@ -33,10 +33,13 @@ public WebElement midtermStudentInfo;
 public WebElement finalStudentInfo;
 @FindBy(xpath = "(//*[@placeholder='Info Note'])[2]")
 public WebElement infoNoteStudentInfo;
-@FindBy(xpath = "(//*[@type='button'])[11]")
-public WebElement submitStudentInfo;
-@FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
-public WebElement alertStudentInfo;
+
+
+
+
+
+
+
 
 
     @FindBy(xpath = "//select[@id='studentId']")
@@ -55,5 +58,16 @@ public WebElement alertStudentInfo;
     public WebElement infoNote_asl;
     @FindBy(xpath = "//button[normalize-space()='Submit']")
     public WebElement submitTeacher_asl;
+
+    @FindBy(xpath = "//*[@class='table table-striped table-bordered table-hover']")
+    public WebElement table;
+
+    @FindBy(xpath = "(//*[@type='button'])[11]")
+    public WebElement submitStudentInfo;
+    @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+    public WebElement pleaseenterabsentee;
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[1]")
+    public WebElement deleteyazisi;
+
 
 }
