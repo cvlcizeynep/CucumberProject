@@ -15,24 +15,27 @@ public class US10StepDefinition {
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
 
-    @Given("lessons Programi tiklar")
-    public void lesson_programi_tiklar() {
+    @Given("Kullanici  lessons Programi tiklar")
+    public void kullanici_lessons_programi_tiklar()  {
         lessonsManagementPage.lessonProgram_asl.click();
         waitFor(1);
+    }
+
+
+    @Given("User select lessoni tıklar")
+    public void user_select_lessoni_tıklar() {
+        ReusableMethods.waitFor(5);
+        lessonsManagementPage.selectLesson_asl.click();
+        lessonsManagementPage.lessonName.sendKeys("fiziks");
+        waitFor(1);
+
     }
 
     @And("lesson Programi tiklar")
     public void lessonsaGirer(String ders) {
         waitFor(1);
     }
-        @Given("select lessoni tıklar")
-        public void select_lessoni_tiklar() {
-            ReusableMethods.waitFor(5);
-            lessonsManagementPage.selectLesson_asl.click();
-            lessonsManagementPage.lessonName.sendKeys("fiziks");
-            waitFor(1);
 
-        }
     @Given("acılan ders listesinden ders secer")
     public void acılan_ders_listesinden_ders_acılan_ders_listesinden_ders_secersecer() {
 
