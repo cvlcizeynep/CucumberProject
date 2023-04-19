@@ -43,10 +43,7 @@ public class US09 {
     }
 
 
-    @And("Submit butonuna tiklarr")
-    public void submitButonunaTiklarr() {
-        ReusableMethods.JSEClickToElement(lessonsManagementPage.submit);
-    }
+
 
     @When("Istenen dersin yanindaki cop kutusuna tiklayarak dersi siler")
     public void istenenDersinYanindakiCopKutusunaTiklayarakDersiSiler() {

@@ -1,4 +1,4 @@
-@us04-tc01 @smoke
+ @smoke
 Feature: Admin dean ekleyebilmeli
   Background:
     Given Kullanici Admin olarak giris yapar

@@ -64,7 +64,7 @@ public WebElement silmeButonu_asl;
     public WebElement lessonsSecenek;
 @FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-lessonsList']//span[@aria-hidden='true'][contains(text(),'›')]")
     public WebElement sagTus_asli;
-@FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']")
+@FindBy(xpath = "//button[@class='nav-link active']")
     public WebElement lessonProgram_asl;
     @FindBy(xpath = "//div[@class=' css-19bb58m']")
     public WebElement selectLesson_asl;
