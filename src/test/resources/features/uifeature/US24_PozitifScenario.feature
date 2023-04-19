@@ -2,7 +2,7 @@
 Feature:Admin teacher olusturabilmeli
 
 
-  @smoke1 @24_0 @a
+  @smokes
   Scenario Outline:Pozitif scenario
     Given Kullanici admin olarak login olur.
     And Kullanici Menu butonuna tiklar
