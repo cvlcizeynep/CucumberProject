@@ -1,4 +1,4 @@
-
+@b
 Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir
 
   @16_1
@@ -14,6 +14,7 @@ Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir
     And Kullanici Menu butonuna tiklar
     And Kullanici Contact Get All butonuna tiklar
     And Kullanici gonderen kisi  Name-mail-subject-message bilgilerinin listede goruntulendigini dogrular
+    And close driver
 
 
   @failedScenario
