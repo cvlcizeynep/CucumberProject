@@ -26,6 +26,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanini space girilir
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar
+    Then close driver
 
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |

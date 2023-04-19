@@ -7,8 +7,8 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     When Menu butonuna tiklar
     When Student Management butonuna tiklar
 
-
-  @US15_TC01 @smoke
+  @smokes
+  @US15_TC01
   Scenario Outline: TC_01 Ogrecinin danisman ogretmeni secilmelidir.
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
@@ -25,7 +25,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
 
     Examples:Choose Advisor Teacher
 
