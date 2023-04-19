@@ -8,9 +8,6 @@ import utilities.Driver;
 import java.util.List;
 
 public class DeanManagementPage {
-
-
-
     //nuran hanim,hayriye hanim
     public DeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -90,6 +87,8 @@ public class DeanManagementPage {
     public WebElement editPassword;
     @FindBy(xpath = "(//*[@name='gender'])[3]")
     public  WebElement editGenderFemale;
+    @FindBy(xpath = "(//button[@type='button'])[6]")
+    public WebElement editdelete;
 
 
 

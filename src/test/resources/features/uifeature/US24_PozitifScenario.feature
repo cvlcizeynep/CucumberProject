@@ -2,7 +2,7 @@
 Feature:Admin teacher olusturabilmeli
 
 
-  @smoke @24_0
+  @smoke
   Scenario Outline:Pozitif scenario
     Given Kullanici admin olarak login olur.
     And Kullanici Menu butonuna tiklar
@@ -20,6 +20,8 @@ Feature:Admin teacher olusturabilmeli
     And Kullanici Gender  alanindan cinsiyet "<Gender>" secer
     And Kullanici Date of birth alanina bir tarih "<Date of birth>" girer
     And Kullanici Submit butonuna tiklar
+    When Teacher saved successfully yazisini gorur
+    When Ekran goruntusu alinir
     Then close driver
 
     Examples:

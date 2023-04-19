@@ -25,7 +25,7 @@ Feature: TC1_Dean_User
     And Admin Deanlerin, User Name bilgisinin goruldugunu dogrular
     Then close driver
 
-    Scenario: Dean_User_TC06
+    Scenario: Dean_User_delete_assertionTC06
       Then Kullanici delete butonunun varligini assert eder
 
     Scenario:Edit_alani_TC07

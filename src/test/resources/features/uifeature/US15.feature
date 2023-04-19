@@ -7,8 +7,8 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     When Menu butonuna tiklar
     When Student Management butonuna tiklar
 
-  @smokes
-  @US15_TC01
+
+  @smoke
   Scenario Outline: TC_01 Ogrecinin danisman ogretmeni secilmelidir.
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
@@ -51,7 +51,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice Dean kayit yapilamadigini dogrular
-
+    Then close driver
 
     Examples:Choose Advisor Teacher
 
@@ -75,7 +75,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Required  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
    Examples:
      | Advisor Teacher | Date Of Birth |  | Password |
      | m               | 01.01.1990    |  | 12345678 |
@@ -97,7 +97,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  emailRequired  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |
       | m               | 01.01.1990    |  | 12345678 |
@@ -119,7 +119,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  phoneRequired  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |
       | m               | 01.01.1990    |  | 12345678 |
@@ -141,7 +141,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  error  mesaji gorur
-
+    Then close driver
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |
       | m               | 01.01.1990    |  | 12345678 |
@@ -163,7 +163,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  DateOfBirthRequired  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |
       | m               |               |  | 12345678 |
@@ -186,7 +186,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice "<Password>" Password alanina valid bir deger girer
     Then Vice Dean Submit Butonuna tiklar
     And Vice  ssnRequired  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |
       | m               | 01.01.1990    |  | 12345678 |

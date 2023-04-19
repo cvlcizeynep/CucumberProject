@@ -20,14 +20,12 @@ Feature: Your Name alaninin testi
     Examples: data
 
       |Your Name | Your Email           | Subject | Message                   |
-      |Cahit     |                      | Java    | Kaliteli bir egitim aldim  |
-      |Cahit     |                      | Java    | Kaliteli bir egitim aldim  |
       |Cahit     | zarifsair            | Java    |Kaliteli bir egitim aldim  |
       |Cahit     | zarifsairr@gmail.com  |   !     |Kaliteli bir egitim aldim  |
       |Cahit     | zariffsair@gmail.comr |   2     |Kaliteli bir egitim aldim  |
-      |Cahit     | zariifsair@gmail.com  |  Java   |                           |
       |Cahit     | zaarifsair@gmail.com  |  Java   |           a               |
       |Cahit     | zarifssair@gmail.com  |  Java   | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa |
+
 
 
 
@@ -45,22 +43,51 @@ Feature: Your Name alaninin testi
     When kullanici  mesaj alanina valid bir deger "notalari seviyorum" girer
     When kullanici Send Message alanina tiklar
     Then kullanici uyari ayni maili kullanamayacgi mesaji alir
-
     And sayfa kapatilir
 
 
-  @failedScenario
-  Scenario Outline: Alanların bos birakilması testi
 
-    When kullanici yourname "<Your Name>" alanini bos birakir
-    When kullanici subject "<Subject>" alanini bos birakir
-    When kullanici Message "<Message>" alanini bos birakir
+  Scenario: Name alanının bos birakilması testi
+
+    When kullanici yourname alanini bos birakir
+    When kullanici Your Email  alanina  valid bir deger girer
+    When kullanici subject  alanina valid bir deger "resim" girer
+    When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer
     When kullanici Send Message alanina tiklar
-    Then kullanici Contact Message Created Created Successfully mesajini goruntulemez
+    Then kullanici ilgili alanda Required mesaji alir
     And sayfa kapatilir
 
-    Examples: data2
-      |Your Name | Subject | Message      |
-      |Cahit     |  Java   |                           |
-      |          |Java     |Kaliteli bir egitim aldim |
-      |Cahit     |         |Kaliteli bir egitim aldim  |
+
+
+  Scenario: Email alanının bos birakilması testi
+
+    When kullanici Your Name alanina  valid bir deger "Ayse" girer
+    When kullanici Your Email  alanini bos birakir
+    When kullanici subject  alanina valid bir deger "resim" girer
+    When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer
+    When kullanici Send Message alanina tiklar
+    Then kullanici email alaninda Required mesaji alir
+    And sayfa kapatilir
+
+
+
+  Scenario: Subject alanının bos birakilması testi
+
+    When kullanici Your Name alanina  valid bir deger "Ayse" girer
+    When kullanici Your Email  alanina  valid bir deger girer
+    When kullanici subject  alanini bos birakir
+    When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer
+    When kullanici Send Message alanina tiklar
+    Then kullanici subject alaninda Required mesaji alir
+    And sayfa kapatilir
+
+
+  Scenario: Message alanının bos birakilması testi
+
+    When kullanici Your Name alanina  valid bir deger "Ayse" girer
+    When kullanici Your Email  alanina  valid bir deger girer
+    When kullanici subject  alanina valid bir deger "resim" girer
+    When kullanici  mesaj alanini bos birakir
+    When kullanici Send Message alanina tiklar
+    Then kullanici message alaninda Required mesaji alir
+    And sayfa kapatilir

@@ -17,16 +17,17 @@ And Student Info List'te Final Exam görülebilmeli
 And Student Info List'te Info Note görülebilmeli
 And Student Info List'te Average görülebilmeli
   Then close driver
+
   Scenario: TC-2 Kullanıcı Absentee Girmeden Not bilgisi güncelleyemez
 
     Given ilk sıradaki ogrencinin yanındaki edit butonuna tıklar
- And  Kullanıcı choose lessons butonuna tiklar ve dersi seçer
+    And  Kullanıcı choose lessons butonuna tiklar ve dersi seçer
     And  Kullanıcı Choose Education Term kısmına tıklar ve dönemi seçer
     And  Kullanıcı Midterm Exam kısmına "75" girer
     And  Kullanıcı Final Exam kısmına "65" girer
     And  Kullanıcı Info Note kısmına "100" girer
     And  Kullanıcı submit butonuna tıklar
- And Kullanıcı Please enter absentee yazisi görür
+    And Kullanıcı Please enter absentee yazisi görür
     Then close driver
 
   Scenario: Kullanıcı Midterm Exam Girmeden Not bilgisi güncelleyemez
@@ -115,7 +116,7 @@ Scenario: Kullanıcı her şeyi doğru yaparak Not bilgisi güncelleyebilir.
   And Kullanıcı Student Info Updated Succesfully yazısı görür
   Then close driver
 
-@18e
+
 Scenario: Öğrenci Not bilgisini silebilmeli
 Given İstenilen öğrencinin yanındaki delete butonuna basar
 When StudenT delete Succesfully yazısı ekranda çıkar
