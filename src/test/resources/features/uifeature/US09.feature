@@ -12,7 +12,6 @@ Feature:Vice dean dersi listede gorebilmeli-silebilmeli-guncelleyebilmeli
     And Lessonsa "fiziks"  girer
     And Credit Score degerini "25"  gırer
     And Dersin Compulsory olup olmadığını işaretler
-    And Submit butonuna tiklarr
     When Kullanici listede creditScore dersAdi ve creditScore yazdigini dorular
     When Istenen dersin yanindaki cop kutusuna tiklayarak dersi siler
     Then close driver
