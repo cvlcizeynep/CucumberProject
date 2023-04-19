@@ -32,7 +32,7 @@
           | Ayberk |Cam      |  İskenderun          |26.01.1996 |123-08-1234   | 123-08-0000  |ayberk00001|        |
           | Ayberk |Cam      |  İskenderun          |26.01.1996 |123-08-1234   | 123-08-0000  |ayberk00001| 12345 |
 
-
+    @smoke
     Scenario Outline:  Kullanıcı bütün boşluklara uygun değerler girerek kayıt olabilir
       Given Kullanıcı register sayfasına gider.
       When Kullanici register Name "<Name>" kismina değer  girer
@@ -49,7 +49,7 @@
       Then close driver
       Examples: data
         | Name    | Surname | Birth Place | Birth of Date | Phone Number | SSN         | User Name | Password |
-        | Emre |Yigit      |  İskenderun          |26.01.1996 |123-995-1274   | 123-59-1385  |emre004|123345678|
+        | Emre |Yigit      |  İskenderun          |26.01.1996 |123-995-1205   | 123-59-1310  |emre010|123345678|
 
     Scenario Outline: TC16 Kullanıcı 3. ve 5. rakamdan sonra "-" içermeyen bir "ssn" ile kayıt oluşturamaz
       Given Kullanıcı register sayfasına gider.
@@ -67,7 +67,7 @@
       Then close driver
       Examples: data
         | Name    | Surname | Birth Place | Birth of Date | Phone Number | SSN         | User Name | Password |
-        | Cem    |Yılmaz   |  İskenderun          |26.01.1996 |123-006-1234   |  12306000099   | cem00001 | 12345678 |
+        | Cem    |Yılmaz   |  İskenderun          |26.01.1996 |123-006-1235   |  12306000099   | cem00001 | 12345678 |
 
     Scenario Outline: TC11 Kullanıcı Cinsiyet seçmeden üye olamaz.
       Given Kullanıcı register sayfasına gider.
@@ -103,3 +103,5 @@
       Examples: data
         | Name    | Surname | Birth Place | Birth of Date | Phone Number | SSN         | User Name | Password |
         | Emrah |Kaman   |  Kadıköy          | 26.01.1996 |  123200321234 | 123-03-0099 | emrah00001 | 12345678 |
+
+

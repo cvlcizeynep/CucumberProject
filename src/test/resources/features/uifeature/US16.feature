@@ -30,3 +30,4 @@ Feature:Vice Dean, kullanıcıların gönderdiği mesajları görebilmelidir
     And Kullanici Menu butonuna tiklar
     And Kullanici Contact Get All butonuna tiklar
     Then Kullanici Delete butonuna tiklar
+    And close driver

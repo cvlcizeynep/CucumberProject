@@ -8,7 +8,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     When Student Management butonuna tiklar
 
 
-  @US15_TC01 @smoke
+  @smoke
   Scenario Outline: TC_01 Ogrecinin danisman ogretmeni secilmelidir.
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
