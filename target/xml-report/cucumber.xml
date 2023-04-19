@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="22.576">
+    <testcase classname="Teacher, öğrencilere not verebilmelidir." name="Kullanici ders secebilmelidir#" time="21.227">
+        <system-out>
+            <![CDATA[Given Kullanici Teacher olarak login olur...................................passed
+Given choose lesson tiklar..................................................passed
+And acilan Student Info Management sayfasindan Choose Education Term ı tiklar.passed
+And acilan menuden bir ogretim donemi secer.................................passed
+And acilan Student Info Management sayfasından Absentee ye tiklar...........passed
+And ogrencinin kac gun  devamsizlik yaptigini girer.........................passed
+Given acilan Student Info Management sayfasından Midterm Exam a tiklar......passed
+Given Midterm exam kısmına bir ara sınav Notu girer.........................passed
+Given acilan Student Info Management sayfasindan Final Exam a tiklar........passed
+Given Final exam kismina bir final Notu girer...............................passed
+Given acilan Student Info Management sayfasından Info Note a tiklar.........passed
+Given Info Note kısmına bir bilgi notu girer................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

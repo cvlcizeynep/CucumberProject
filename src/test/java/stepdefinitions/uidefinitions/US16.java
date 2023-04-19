@@ -100,12 +100,13 @@ public class US16 {
             ReusableMethods.waitFor(2);
         }
         int indexName = nameListString.indexOf(name);
+        //System.out.println(indexName);
         WebElement subjectSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[4]"));
-        System.out.println(subjectSutun.getText());
+        //System.out.println(subjectSutun.getText());
         WebElement emailSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[2]"));
-        System.out.println(emailSutun.getText());
-        WebElement messageSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[3]"));
-        System.out.println(messageSutun.getText());
+        //System.out.println(emailSutun.getText());
+        WebElement messageSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[5]"));
+        //System.out.println(messageSutun.getText());
 
         SoftAssert softAssert=new SoftAssert();
         Assert.assertTrue(nameListString.contains(name));
@@ -119,95 +120,6 @@ public class US16 {
     public void kullaniciDeleteButonunaTiklar() {
         Assert.assertTrue(contactPage.successfullyToastify.isDisplayed());
     }
-/*
-    @Given("Kullanici gonderen kisinin mailinin Email sutununda goruntulendigini dogrular")
-    public void kullanici_gonderen_kisinin_mailinin_email_sutununda_goruntulendigini_dogrular() {
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-        executor.executeScript("document.body.style.zoom = '70%'");
 
-        List<String> mailListString = new ArrayList<>();
-        List<WebElement> mailList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[2]"));
-        mailList.forEach(t -> mailListString.add(t.getText()));
-
-        while (!mailListString.contains(email)) {
-            Driver.clickWithJS(contactPage.oneTimeForward);
-            mailList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[2]"));
-            mailListString.clear();
-            mailList.forEach(t -> mailListString.add(t.getText()));
-            ReusableMethods.waitFor(2);
-        }
-        Assert.assertTrue(mailListString.contains(email));
-
-    }
-
- /* NOT :tarihte duzenleme yapilacak ve subject ile message isimle eslestirilecek
-
- @Given("Kullanici mesajin gonderilme tarinini Date sutununda goruntulendigini dogrular")
-    public void kullanici_mesajin_gonderilme_tarinini_date_sutununda_goruntulendigini_dogrular() {
-        List<String> mailListString = new ArrayList<>();
-        List<WebElement> mailList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[3]"));
-        mailList.forEach(t -> mailListString.add(t.getText()));
-
-        while (!mailListString.contains(email)) {
-            Driver.clickWithJS(contactPage.oneTimeForward);
-            mailList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[3]"));
-            mailListString.clear();
-            mailList.forEach(t -> mailListString.add(t.getText()));
-            ReusableMethods.waitFor(2);
-        }
-        Assert.assertTrue(mailListString.contains(email));
-    }*/
-/*
-    @Given("Kullanici mesajin konusunun Subject sutununda goruntulendigini dogrular")
-    public void kullanici_mesajin_konusunun_subject_sutununda_goruntulendigini_dogrular() {
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-        executor.executeScript("document.body.style.zoom = '70%'");
-
-
-        List<String> subjectListString = new ArrayList<>();
-        List<WebElement> subjectList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[4]"));
-        subjectList.forEach(t -> subjectListString.add(t.getText()));
-        while (!subjectListString.contains(subject)) {
-
-            Driver.clickWithJS(contactPage.oneTimeForward);
-            subjectList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[4]"));
-            subjectListString.clear();
-            subjectList.forEach(t -> subjectListString.add(t.getText()));
-            ReusableMethods.waitFor(2);
-        }
-
-
-        int satir =subjectListString.indexOf(subject);
-
-        WebElement satirdakiIsim= Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(satir+1)+"]//td[1]"));
-        System.out.println(satirdakiIsim.getText());
-        System.out.println(name);
-        Assert.assertTrue(subjectListString.contains(subject) && name.equals(satirdakiIsim.getText()));
-
-    }
-
-    @Given("Kullanici mesajin Message sutununda goruntulendigini dogrular")
-    public void kullanici_mesajin_message_sutununda_goruntulendigini_dogrular() {
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-        executor.executeScript("document.body.style.zoom = '70%'");
-        List<String> messageListString = new ArrayList<>();
-        List<WebElement> messageList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[5]"));
-        messageList.forEach(t -> messageListString.add(t.getText()));
-
-        while (!messageListString.contains(email)) {
-            Driver.clickWithJS(contactPage.oneTimeForward);
-            messageList = Driver.getDriver().findElements(By.xpath("(//table)[1]//tr//td[5]"));
-            messageListString.clear();
-            messageList.forEach(t -> messageListString.add(t.getText()));
-            ReusableMethods.waitFor(2);
-        }
-        Assert.assertTrue(messageListString.contains(message));
-    }
-
-    @Then("Kullanici Delete butonuna tiklar")
-    public void kullaniciDeleteButonunaTiklar() {
-        //Delete butonu olmadigi icin tiklayamiyoruz
-    }
-*/
 }
 
