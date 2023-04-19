@@ -20,6 +20,8 @@ Feature:Admin teacher olusturabilmeli
     And Kullanici Gender  alanindan cinsiyet "<Gender>" secer
     And Kullanici Date of birth alanina bir tarih "<Date of birth>" girer
     And Kullanici Submit butonuna tiklar
+    When Teacher saved successfully yazisini gorur
+    When Ekran goruntusu alinir
     Then close driver
 
     Examples:
