@@ -8,9 +8,9 @@
         When Kullanici register Name "<Name>" kismina değer  girer
         When Kullanici register Surname "<Surname>" kismina değer  girer
         And Kullanici register Birth place "<Birth Place>" kismina  deger girer
-        And  Kullanici register Gender kismini secer
         And  Kullanici register Birth of Date "<Birth of Date>"  girer
         And Kullanici register Phone Number "<Phone Number>" girer
+        And  Kullanici register Gender kismini secer
         And  Kullanici register SSN  "<SSN>" girer
         And Kullanici register User Name "<User Name>" girer
         And   Kullanici register Password "<Password>" girer
@@ -38,9 +38,9 @@
       When Kullanici register Name "<Name>" kismina değer  girer
       When Kullanici register Surname "<Surname>" kismina değer  girer
       And Kullanici register Birth place "<Birth Place>" kismina  deger girer
-      And  Kullanici register Gender kismini secer
       And  Kullanici register Birth of Date "<Birth of Date>"  girer
       And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register Gender kismini secer
       And  Kullanici register SSN  "<SSN>" girer
       And Kullanici register User Name "<User Name>" girer
       And   Kullanici register Password "<Password>" girer
@@ -49,25 +49,16 @@
       Then close driver
       Examples: data
         | Name    | Surname | Birth Place | Birth of Date | Phone Number | SSN         | User Name | Password |
-        | Tony    | Montana  | İskenderun | 26.01.1996    | 123-000-1234 | 123-00-0000 | tony00001 | 12345678 |
-        | Tommy   | Vercetti   | Vice City  | 26.01.1996    | 123-001-1234 | 123-01-0000 | tommy00001 | 12345678 |
-        | Micheal |Santana   | İskenderun   | 26.01.1996    | 123-002-1234 | 123-02-0000 | micheal00001 | 12345678 |
-        | Emrah |Kaman   |  Kadıköy          | 26.01.1996 |  123-003-1234 | 123-03-0000 | emrah00001 | 12345678 |
-        | Alice |Miller   |  Ula          | 26.01.1996 |  123-004-1234 | 123-04-0000 |alice00001 | 12345678 |
-        | İlkay  |Akkaya   |  Bodrum          | 26.01.1996   |123-05-1234   | 123-05-0000 | ilkay00001 | 12345678 |
-        | Cem    |Yılmaz   |  İskenderun          |26.01.1996 |123-006-1234   |  123-06-0000   | cem00001 | 12345678 |
-        | Can    |Yılmaz   |  İskenderun          |26.01.1996 |123-007-1234   | 123-07-0000  | can00001 | 12345678 |
-        | Ayberk |Cam      |  İskenderun          |26.01.1996 |123-008-1234   | 123-08-0000  |ayberk00001|123345678|
-        | Emre |Yigit      |  İskenderun          |26.01.1996 |123-995-1234   | 123-99-1234  |emre002|123345678|
+        | Emre |Yigit      |  İskenderun          |26.01.1996 |123-995-1274   | 123-59-1385  |emre004|123345678|
 
     Scenario Outline: TC16 Kullanıcı 3. ve 5. rakamdan sonra "-" içermeyen bir "ssn" ile kayıt oluşturamaz
       Given Kullanıcı register sayfasına gider.
       When Kullanici register Name "<Name>" kismina değer  girer
       When Kullanici register Surname "<Surname>" kismina değer  girer
       And Kullanici register Birth place "<Birth Place>" kismina  deger girer
-      And  Kullanici register Gender kismini secer
       And  Kullanici register Birth of Date "<Birth of Date>"  girer
       And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register Gender kismini secer
       And  Kullanici register SSN  "<SSN>" girer
       And Kullanici register User Name "<User Name>" girer
       And   Kullanici register Password "<Password>" girer
@@ -100,9 +91,9 @@
       When Kullanici register Name "<Name>" kismina değer  girer
       When Kullanici register Surname "<Surname>" kismina değer  girer
       And Kullanici register Birth place "<Birth Place>" kismina  deger girer
-      And  Kullanici register Gender kismini secer
       And  Kullanici register Birth of Date "<Birth of Date>"  girer
       And Kullanici register Phone Number "<Phone Number>" girer
+      And  Kullanici register Gender kismini secer
       And  Kullanici register SSN  "<SSN>" girer
       And Kullanici register User Name "<User Name>" girer
       And   Kullanici register Password "<Password>" girer
@@ -111,4 +102,4 @@
       Then close driver
       Examples: data
         | Name    | Surname | Birth Place | Birth of Date | Phone Number | SSN         | User Name | Password |
-        | Emrah |Kaman   |  Kadıköy          | 26.01.1996 |  123200321234 | 123-03-0000 | emrah00001 | 12345678 |
+        | Emrah |Kaman   |  Kadıköy          | 26.01.1996 |  123200321234 | 123-03-0099 | emrah00001 | 12345678 |

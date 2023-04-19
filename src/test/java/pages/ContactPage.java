@@ -80,4 +80,17 @@ public class ContactPage {
     @FindBy(xpath = "//*[@class='Toastify__toast-icon Toastify--animate-icon Toastify__zoom-enter']")
     public WebElement ayniMailPopUp;
 
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")
+    public WebElement requiredName;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")
+    public WebElement requiredEmail;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[3]")
+    public WebElement requiredSubject;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")
+    public WebElement requiredMessage;
+
+
 }

@@ -4,8 +4,8 @@ Feature:Vice dean ders secebilmeli
    Given Kullanici viceDean olarak login olur.
   Scenario:Kullanici ders secebilmelidir
 
-    And  lessons Programi tiklar
-    And  select lessoni tıklar
+    And Kullanici  lessons Programi tiklar
+    And User select lessoni tıklar
     And  acılan ders listesinden ders secer
     And Education Term i secer
     And acilan menuden SPRİNG_SEMESTERi secer

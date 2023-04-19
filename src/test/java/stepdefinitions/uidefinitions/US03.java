@@ -8,7 +8,7 @@ import pages.ContactPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US03_ConcatStepdefinition {
+public class US03 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String email = faker.internet().emailAddress();
@@ -31,6 +31,8 @@ public class US03_ConcatStepdefinition {
     }
     @When("kullanici Your Name alanina  valid bir deger {string} girer")
     public void kullanici_your_name_alanina_valid_bir_deger_girer(String string) {
+        ReusableMethods.waitFor(3);
+        ReusableMethods.scrollToElement(contactPage.yourNameBox);
         ReusableMethods.JSEClickToElement(contactPage.yourNameBox);
         contactPage.yourNameBox.sendKeys(string);
 
@@ -57,8 +59,6 @@ public class US03_ConcatStepdefinition {
 
     }
 
-
-
     @When("kullanici email {string} alanina valid deger girer")
     public void kullaniciEmailAlaninaValidDegerGirer(String string) {
         contactPage.yourEmailBox.sendKeys(string);
@@ -77,12 +77,7 @@ public class US03_ConcatStepdefinition {
 
     }
 
-    @Then("kullanici Contact Message Created Created Successfully mesajini goruntulemez")
-    public void kullaniciContactMessageCreatedCreatedSuccessfullyMesajiniGoruntulemez() {
-        Assert.assertFalse(ReusableMethods.waitForVisibility(contactPage.successfullyPopUp,5).isDisplayed());
 
-
-    }
 
 
     @Then("kullanici uyari ayni maili kullanamayacgi mesaji alir")
@@ -139,5 +134,52 @@ public class US03_ConcatStepdefinition {
     @When("kullanici Message {string} alanini bos birakir")
     public void kullaniciMessageAlaniniBosBirakir(String string) {
         contactPage.messageBox.sendKeys(string);
+    }
+
+    @Then("kullanici ilgili alanda Required mesaji alir")
+    public void kullaniciIlgiliAlandaRequiredMesajiAlir() {
+        Assert.assertTrue(ReusableMethods.waitForVisibility(contactPage.requiredName,5).isDisplayed());
+    }
+
+    @Then("kullanici Contact Message Created Created Successfully mesajini goruntulemez")
+    public void kullaniciContactMessageCreatedCreatedSuccessfullyMesajiniGoruntulemez() {
+        Assert.assertFalse(ReusableMethods.waitForVisibility(contactPage.successfullyPopUp,6).isDisplayed());
+    }
+
+    @When("kullanici yourname alanini bos birakir")
+    public void kullaniciYournameAlaniniBosBirakir() {
+        contactPage.yourNameBox.sendKeys("");
+    }
+
+    @When("kullanici Your Email  alanini bos birakir")
+    public void kullaniciYourEmailAlaniniBosBirakir() {
+        contactPage.yourEmailBox.sendKeys("");
+
+    }
+
+    @Then("kullanici email alaninda Required mesaji alir")
+    public void kullaniciEmailAlanindaRequiredMesajiAlir() {
+        Assert.assertTrue(ReusableMethods.waitForVisibility(contactPage.requiredEmail,5).isDisplayed());
+    }
+
+    @When("kullanici subject  alanini bos birakir")
+    public void kullaniciSubjectAlaniniBosBirakir() {
+        contactPage.subjectBox.sendKeys("");
+
+    }
+
+    @Then("kullanici subject alaninda Required mesaji alir")
+    public void kullaniciSubjectAlanindaRequiredMesajiAlir() {
+        Assert.assertTrue(ReusableMethods.waitForVisibility(contactPage.requiredSubject,5).isDisplayed());
+    }
+
+    @When("kullanici  mesaj alanini bos birakir")
+    public void kullaniciMesajAlaniniBosBirakir() {
+        contactPage.messageBox.sendKeys("");
+    }
+
+    @Then("kullanici message alaninda Required mesaji alir")
+    public void kullaniciMessageAlanindaRequiredMesajiAlir() {
+        Assert.assertTrue(ReusableMethods.waitForVisibility(contactPage.requiredMessage,5).isDisplayed());
     }
 }

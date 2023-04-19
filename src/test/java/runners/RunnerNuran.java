@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class) // test çalıştırıcı notasyonu
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
-
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@us19-test01",
+        tags = "@us19",
         dryRun = false
         //Seneryonun adımlarını kontrol eder ve çalıştığını görürüz
 
