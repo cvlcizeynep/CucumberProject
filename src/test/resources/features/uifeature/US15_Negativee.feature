@@ -9,7 +9,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
 
 
 
-  @US15_TC04_
+
   Scenario Outline:TC_04 name surname username mother father alani space girilir
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanini space girilir
@@ -31,7 +31,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
       | Advisor Teacher | Date Of Birth |  | Password |
       | Cem Can           | 01.01.1990    |  | 12345678 |
 
-  @US15_TC01 @smoke
+
   Scenario Outline: TC_05 Ogrecinin  Student Numarası otomatik gelir
     Then Vice Dean Choose "<Advisor Teacher>" Advisor_Teacher alani secilir
     Then Vice Dean "<Name>"Name alanina vaild bir deger girer
