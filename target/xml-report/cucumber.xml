@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="40.285">
+    <testcase classname="Vice dean ders secebilmeli" name="Kullanici ders secebilmelidir" time="20.01">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@id='controlled-tab-example-tab-lessonProgram']&quot;}&#10;  (Session info: chrome=112.0.5615.121)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [fc41cfe61c52033bd41e33d9fadc9d79, findElement {using=xpath, value=//button[@id='controlled-tab-example-tab-lessonProgram']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56764}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56764/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: fc41cfe61c52033bd41e33d9fadc9d79" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[And Kullanici  lessons Programi tiklar......................................failed
+And User select lessoni tıklar..............................................skipped
+And acılan ders listesinden ders secer......................................skipped
+And Education Term i secer..................................................skipped
+And acilan menuden SPRİNG_SEMESTERi secer...................................skipped
+And CHOOSE DAYii tiklar.....................................................skipped
+And acilan menuden Mondayi tiklar...........................................skipped
+And Start Time i tiklar.....................................................skipped
+And gecerli bir saat degeri girer...........................................skipped
+And Stop Time i tiklar......................................................skipped
+And gecerli bir saat degeri girer...........................................skipped
+Then close driver...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='controlled-tab-example-tab-lessonProgram']"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fc41cfe61c52033bd41e33d9fadc9d79, findElement {using=xpath, value=//button[@id='controlled-tab-example-tab-lessonProgram']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56764}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56764/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fc41cfe61c52033bd41e33d9fadc9d79
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at stepdefinitions.uidefinitions.US10StepDefinition.kullanici_lessons_programi_tiklar(US10StepDefinition.java:20)
+	at ✽.Kullanici  lessons Programi tiklar(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US10.feature:7)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Teacher, öğrencilere not verebilmelidir." name="Kullanici ders secebilmelidir#" time="19.651">
+        <system-out>
+            <![CDATA[Given Kullanici Teacher olarak login olur...................................passed
+Given choose lesson tiklar..................................................passed
+And acilan Student Info Management sayfasindan Choose Education Term ı tiklar.passed
+And acilan menuden bir ogretim donemi secer.................................passed
+And acilan Student Info Management sayfasından Absentee ye tiklar...........passed
+And ogrencinin kac gun  devamsizlik yaptigini girer.........................passed
+Given acilan Student Info Management sayfasından Midterm Exam a tiklar......passed
+Given Midterm exam kısmına bir ara sınav Notu girer.........................passed
+Given acilan Student Info Management sayfasindan Final Exam a tiklar........passed
+Given Final exam kismina bir final Notu girer...............................passed
+Given acilan Student Info Management sayfasından Info Note a tiklar.........passed
+Given Info Note kısmına bir bilgi notu girer................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
