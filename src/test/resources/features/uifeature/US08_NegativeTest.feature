@@ -10,7 +10,7 @@ Background:
     And And Lesson Name "fizik13" girer
     And Credit  Score  "?:"  gırer
     And Submit  e tiklarr
-    And Hata mesajini gorur
+      And Hata mesajini gorur
     Then close the application
 
   @failedScenario
