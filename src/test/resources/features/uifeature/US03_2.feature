@@ -4,9 +4,10 @@ Feature: Your Name alaninin testi
   Background:
     Given kullanici sayfaya gider
     When kullanici Contact butonuna tiklar
-    Then kullanici Concatct sayfasina yonlendirilir
 
-  Scenario Outline: US03_NegativeScenario
+    Then kullanici Concatct sayfasina yonlendirilir
+@failedScenario
+Scenario Outline: US03_NegativeScenario
     When kullanici yourname "<Your Name>" alanini doldurur
     When kullanici email "<Your Email>" alanina valid deger girer
     When kullanici subject "<Subject>" alanina valid deger  girer

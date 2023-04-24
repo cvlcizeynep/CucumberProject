@@ -64,7 +64,7 @@ Feature:Teacher Ekleme Negatif Senaryo 1
       | Team20  | Team20 | izmir       | 123456789 | 01-09-1998    |
 
 
-  @failedScenario1
+  @failedScenario
   Scenario Outline: Space Karakteri ile Ogretmen Ekleme
     When Choose Lessons alanindan bir ders secer
     When Alanlara space karakteri girer "<Name>", "<Surname>", "<Birth Place>", "<Password>","<Date of birth>","<Email>","<Phone>","<SSN>","<Username>"
