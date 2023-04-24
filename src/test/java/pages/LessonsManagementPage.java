@@ -17,7 +17,7 @@ public class LessonsManagementPage {
     @FindBy(id="creditScore") public WebElement creditScore;
 
     @FindBy(xpath="//div[@class='Toastify__toast-body']") public WebElement lessonDersOluşturulduMesaji;
-    @FindBy(xpath="//*[@class='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement lessonhataMesaji;
+    @FindBy(xpath="//*[@class='Toastify__toast-body']") public WebElement lessonhataMesaji;
 
 
 
@@ -64,7 +64,7 @@ public WebElement silmeButonu_asl;
     public WebElement lessonsSecenek;
 @FindBy(xpath = "//div[@id='controlled-tab-example-tabpane-lessonsList']//span[@aria-hidden='true'][contains(text(),'›')]")
     public WebElement sagTus_asli;
-@FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']")
+@FindBy(xpath = "//button[@class='nav-link active']")
     public WebElement lessonProgram_asl;
     @FindBy(xpath = "//div[@class=' css-19bb58m']")
     public WebElement selectLesson_asl;
