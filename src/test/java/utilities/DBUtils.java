@@ -8,13 +8,173 @@ public class DBUtils {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
+
+    //1. Adım: Driver'a kaydol
+    //2. Adım: Datbase'e bağlan
+    public static Connection connectToDataBase(String hostName, String dbName,String username, String password)  {
+
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            connection = DriverManager.getConnection("jdbc:postgresql://"+hostName+":5432/"+dbName,username,password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        if(connection!=null){
+            System.out.println("Connection Success");
+        }else {
+            System.out.println("Connection Fail");
+        }
+
+        return connection;
+    }
+
+    //3. Adım: Statement oluştur.
+    public static Statement createStatement(){
+
+
+        try {
+            statement = connection.createStatement();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return statement;
+    }
+
+    //4. Adım: Query çalıştır.
+    public static boolean execute(String sql){
+        boolean isExecute;
+        try {
+            isExecute = statement.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return isExecute;
+    }
+
+    //5. Adım: Bağlantı ve Statement'ı kapat.
+    public static void closeConnectionAndStatement(){
+
+        try {
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(connection.isClosed()&&statement.isClosed()){
+                System.out.println("Connection and statement closed!");
+
+            }else {
+                System.out.println("Connection and statement NOT closed!");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    //Table oluşturan method
+    public static void createTable(String tableName, String... columnName_dataType ){
+        StringBuilder columnName_dataValue = new StringBuilder("");
+
+        for(String w : columnName_dataType){
+
+            columnName_dataValue.append(w).append(",");
+        }
+
+        columnName_dataValue.deleteCharAt(columnName_dataValue.length()-1);
+
+        try {
+            statement.execute( "CREATE TABLE "+tableName+"("+columnName_dataValue+")");
+            System.out.println("Table "+tableName+" successfully created!");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //Ödev: ExecuteQuery, ExecuteUpdate, Table'a Değer giren,  Sütun Değerlerini List içerisine alan methodları oluşturunuz.
+
+    public static void dropTable(String tableName){
+        try {
+            statement.execute("DROP TABLE " + tableName);
+            System.out.println("Table " + tableName + " dropped");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //the method to create table
+    public static void createTables(String tableName, String ...columnName_DataType){
+        StringBuilder columnName_DataTypeString = new StringBuilder("");
+        for(String w : columnName_DataType){
+            columnName_DataTypeString.append(w).append(",");
+        }
+        columnName_DataTypeString.deleteCharAt(columnName_DataTypeString.lastIndexOf(","));
+
+        try {
+            statement.execute("CREATE TABLE " +tableName+ "(" +columnName_DataTypeString+ ")");
+            System.out.println("Table " +tableName+ " created!");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //the method insert into data table
+    public static void insertDataIntoTable(String tableName,String ...columnName_Value){
+        StringBuilder columnNames = new StringBuilder("");
+        StringBuilder values = new StringBuilder("");
+
+        for(String w : columnName_Value){
+            columnNames.append(w.split(" ")[0]).append(",");
+            values.append(w.split(" ")[1]).append(",");
+        }
+        columnNames.deleteCharAt(columnNames.lastIndexOf(","));
+        values.deleteCharAt(values.lastIndexOf(","));
+
+
+        String query = "INSERT INTO " +tableName+ "("+columnNames+") VALUES(" +values+")";
+        try {
+            statement.execute(query);
+            System.out.println("Data inserted into table " +tableName);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * DBUtils.createConnection(); -> to connect to teh database
      */
     public static void createConnection() {
-        String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
-        String username="medunna_user";
-        String password="medunna_pass_987";
+        String url = "jdbc:postgresql://209.38.244.227:5432/school_management";
+        String username="select_user";
+        String password="43w5ijfso";
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
