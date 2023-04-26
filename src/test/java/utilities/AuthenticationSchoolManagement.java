@@ -9,13 +9,13 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class AuthenticationSchoolManagement {
-    static   String url="https://school-management-v1.herokuapp.com/auth/login";
+    static   String url="http://209.38.244.227/auth/login";
     //--------------------------ADMİN----------------------------
     public static String generateTokenAdmin(){
         Map<String, Object> bodyMap = new HashMap<>();
-        bodyMap.put("password",ConfigReader.getProperty("adminPassword"));
+        bodyMap.put("password","485424698");
         bodyMap.put("rememberMe",true);
-        bodyMap.put("username",ConfigReader.getProperty("adminUserName"));
+        bodyMap.put("username","Admin");
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post(url);
         return  response.jsonPath().getString("token");
     }
@@ -49,9 +49,11 @@ public class AuthenticationSchoolManagement {
     //------------TEACHER--------------------
     public static String generateTokenTeacher() {
         Map<String, Object> bodyMap = new HashMap<>();
-        bodyMap.put("password", ConfigReader.getProperty("teacherPassword"));
+        //bodyMap.put("password", ConfigReader.getProperty("teacherPassword"));
+        bodyMap.put("password","12345678");
         bodyMap.put("rememberMe", true);
-        bodyMap.put("username", ConfigReader.getProperty("teacherUserName"));
+       // bodyMap.put("username", ConfigReader.getProperty("teacherUserName"));
+        bodyMap.put("username","Deneme456");
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post(url);
         return response.jsonPath().getString("token");
     }
