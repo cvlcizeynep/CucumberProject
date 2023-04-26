@@ -13,7 +13,7 @@ Feature: API_Validate_Teacher
 @APISIMDI
   Scenario: TC05_Validate_Teacher
     Given send get request to get teacher
-    Then validate body
+    Then validate body1
 
 
 
