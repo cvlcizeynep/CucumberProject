@@ -15,8 +15,6 @@ public class apisteps {
         spec.pathParams("first","teachers","second","getSavedTeacherById","third",35);
         Response response = given(spec).get("{first}/{second}/{third}");
         response.prettyPrint();
-
-
     }
     @Then("validate body")
     public void validate_body() {
