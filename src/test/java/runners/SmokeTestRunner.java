@@ -12,11 +12,11 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failed_scenarios.txt",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+               // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
-        features = "./src/test/resources/features/uifeature",//features folder path
-        glue = {"stepdefinitions"},   //stepdefinitions path
+        features = "./src/test/resources/features/apifeature",//features folder path
+        glue = {"stepdefinitions","hooks"},   //stepdefinitions path
         tags = "@smoke",
         dryRun =false
 )

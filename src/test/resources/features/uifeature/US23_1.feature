@@ -1,4 +1,4 @@
-@smoke
+@US23
 Feature: Admin Dean ekyebilmelidir.
 
   Background: Admin olarak giris yapip vice dean managementa gelme
