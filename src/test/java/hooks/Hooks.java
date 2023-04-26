@@ -1,3 +1,4 @@
+
 package hooks;
 
 import io.cucumber.java.After;
@@ -12,17 +13,21 @@ import utilities.Driver;
 
 public class Hooks {
     /*
+/*
     Hooks : Her bir Scenario yada Scenario Outline dan ONCE yada SONRA calismasmasini istedigim metotlar konur
     @Before ve @After metotlarini icerir
     Burda onemli olan raporlama isleminin ekran goruntusuyle birlikde Hooks yardimiyla yapilmasidir
+     *//*
+
      */
-  /*
+/*
    ------------5 kullanicimiz oldugu icin before methodunu iptal ettim(Erkam-->4.26.2023))-----------------
    @Before()
     public void before(){
         setUp();
     }
-    */
+    *//*
+
 
     @After
     public void tearDownScenarios(Scenario scenario){
@@ -39,3 +44,5 @@ public class Hooks {
     }
 }
 
+*/
+}

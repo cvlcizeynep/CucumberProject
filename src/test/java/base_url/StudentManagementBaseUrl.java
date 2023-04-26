@@ -6,49 +6,51 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 import utilities.AuthenticationSchoolManagement;
 
-public class StudentManagementBaseUrl extends AuthenticationSchoolManagement {
+import static utilities.AuthenticationSchoolManagement.*;
+
+public class StudentManagementBaseUrl  {
 
     public static RequestSpecification spec;
-    public void adminSetUp() {
+    static public void adminSetUp() {
 
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " + generateTokenAdmin()).
+                addHeader("Authorization", generateTokenAdmin()).
                 setBaseUri("http://209.38.244.227/").build();
     }
 
     public static void studentSetUp() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " + generateTokenStudent()).
+                addHeader("Authorization", generateTokenStudent()).
                 setBaseUri("http://209.38.244.227/").build();
     }
 
     public static void deanSetUp() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " + generateTokenDean()).
+                addHeader("Authorization",  generateTokenDean()).
                 setBaseUri("http://209.38.244.227/").build();
     }
 
     public static void studentManagementSetUp() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " +generateTokenStudent()).
+                addHeader("Authorization", generateTokenStudent()).
                 setBaseUri("http://209.38.244.227/").build();
     }
 
     public static void viceDeanSetUp() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " + generateTokenVicedean()).
+                addHeader("Authorization",  generateTokenVicedean()).
                 setBaseUri("http://209.38.244.227/").build();
     }
 
     public static void teacherSetUp() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " + generateTokenTeacher()).
+                addHeader("Authorization",  generateTokenTeacher()).
                 setBaseUri("http://209.38.244.227/").build();
     }
 
@@ -60,6 +62,4 @@ public class StudentManagementBaseUrl extends AuthenticationSchoolManagement {
                 build();
     }*/
 }
-
-
 
