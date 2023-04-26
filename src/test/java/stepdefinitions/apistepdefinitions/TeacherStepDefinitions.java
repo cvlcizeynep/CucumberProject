@@ -14,7 +14,8 @@ import pojos.TeacherPojo;
 import pojos.TeacherPutPojo;
 
 
-
+import static base_url.StudentManagementBaseUrl.spec;
+import static base_url.StudentManagementBaseUrl.teacherSetUp;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
@@ -29,6 +30,7 @@ public class TeacherStepDefinitions {
 
     @Given("send get request to get teacher")
     public void send_get_request_to_get_teacher() {
+        teacherSetUp();
         //Set the url
         spec.pathParams("first", "teachers", "second", "getSavedTeacherById", "third", 35);
 
@@ -42,7 +44,7 @@ public class TeacherStepDefinitions {
 
     }
 
-    @Then("validate body")
+    @Then("validate body1")
     public void validate_body() throws JsonProcessingException {
 
         TeacherPojo actualDataPojoMapper = new ObjectMapper().readValue(response.asString(), TeacherPojo.class);
