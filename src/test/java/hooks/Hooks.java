@@ -8,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import static base_url.SchoolManagementonBaseUrl.schoolManagementonSetUp;
+//import static base_url.StudentManagementBaseUrl.setUp;
 
 public class Hooks {
     /*
@@ -16,27 +16,26 @@ public class Hooks {
     @Before ve @After metotlarini icerir
     Burda onemli olan raporlama isleminin ekran goruntusuyle birlikde Hooks yardimiyla yapilmasidir
      */
-
-    @Before()
-    public void setUpScenarios(){
-        schoolManagementonSetUp();
+  /*
+   ------------5 kullanicimiz oldugu icin before methodunu iptal ettim(Erkam-->4.26.2023))-----------------
+   @Before()
+    public void before(){
+        setUp();
     }
+    */
 
+    @After
+    public void tearDownScenarios(Scenario scenario){
+        System.out.println("After Metotu");
+//        Eger bir Scenario FAIL ederse, ekran goruntusunu al ve rapora ekle
+        if (scenario.isFailed()) {
+            final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+//                       ekran goruntusu    file tipi                  ekran goruntusunun adi
+            scenario.attach(failedScreenshot, "image/png", "failed_scenario_"+scenario.getName());
 
-//    @After
-//    public void tearDownScenarios(Scenario scenario){
-//        System.out.println("After Metotu");
-////        Eger bir Scenario FAIL ederse, ekran goruntusunu al ve rapora ekle
-//        if (scenario.isFailed()) {
-//            final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-////                       ekran goruntusu    file tipi                  ekran goruntusunun adi
-//            scenario.attach(failedScreenshot, "image/png", "failed_scenario_"+scenario.getName());
-//
-//        }
-//        Driver.wait(1);
-//        Driver.closeDriver();
-//    }
-
-
+        }
+        Driver.wait(1);
+        Driver.closeDriver();
+    }
 }
 
