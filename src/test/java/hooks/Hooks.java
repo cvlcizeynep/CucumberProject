@@ -8,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import static base_url.StudentManagementBaseUrl.setUp;
+//import static base_url.StudentManagementBaseUrl.setUp;
 
 public class Hooks {
     /*
@@ -16,10 +16,13 @@ public class Hooks {
     @Before ve @After metotlarini icerir
     Burda onemli olan raporlama isleminin ekran goruntusuyle birlikde Hooks yardimiyla yapilmasidir
      */
-    @Before()
+  /*
+   ------------5 kullanicimiz oldugu icin before methodunu iptal ettim(Erkam-->4.26.2023))-----------------
+   @Before()
     public void before(){
         setUp();
     }
+    */
 
     @After
     public void tearDownScenarios(Scenario scenario){
