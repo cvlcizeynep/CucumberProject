@@ -4,73 +4,62 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MessagePojo {
-    private Integer id;
-   private String name;
     private String email;
-    private String subject;
     private String message;
+    private String name;
+    private  String subject;
 
-
-    public MessagePojo(int id,String name, String email, String subject, String message) {
-        this.id=id;
-        this.name = name;
-        this.email = email;
-        this.subject = subject;
-        this.message = message;
-    }
 
     public MessagePojo() {
-
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public MessagePojo(String email, String message, String name, String subject) {
+        this.email = email;
+        this.message = message;
         this.name = name;
+        this.subject = subject;
     }
+
 
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getMessage() {
         return message;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setMessage(String message) {
         this.message = message;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
     @Override
     public String toString() {
-        return "SchoolsPojo{" +
-                "id=" + id +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", subject='" + subject + '\'' +
+        return "US03Contact{" +
+                "email='" + email + '\'' +
                 ", message='" + message + '\'' +
+                ", name='" + name + '\'' +
+                ", subject='" + subject + '\'' +
                 '}';
     }
 }
