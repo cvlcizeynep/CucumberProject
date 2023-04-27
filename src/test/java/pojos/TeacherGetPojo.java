@@ -1,14 +1,14 @@
 package pojos;
 
-public class TeacherPojo {
+public class TeacherGetPojo {
     private ObjectPojo object;
     private String message;
     private String httpStatus;
 
-    public TeacherPojo() {
+    public TeacherGetPojo() {
     }
 
-    public TeacherPojo(ObjectPojo object, String message, String httpStatus) {
+    public TeacherGetPojo(ObjectPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;

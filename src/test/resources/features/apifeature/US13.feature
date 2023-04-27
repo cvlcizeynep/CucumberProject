@@ -1,20 +1,15 @@
 Feature: API_Validate_Teacher
 
-#  @TeacherGetRequest
-#  Scenario: Get_Teacher_And_Validate
-#    Given kullanici get request ve dogrulama yapar
-#
-#
-#  @TeacherPutRequest
-#  Scenario: Put_Teacher_And_Validate
-#    Given kullanici put request ve dogrulama yapar
+
+  @TeacherGetRequest
+  Scenario:TC05_Validate_Teacher
+    Given send get request and validate body
 
 
-@APISIMDI
-  Scenario: TC05_Validate_Teacher
-    Given send get request to get teacher
-    Then validate body1
 
+  @TeacherPutRequest
+  Scenario:Put_Teacher
+    Given send put request and validate body
 
 
 

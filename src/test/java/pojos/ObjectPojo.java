@@ -16,8 +16,8 @@ public class ObjectPojo {
     public ObjectPojo() {
     }
 
-    public ObjectPojo(int userId, String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender, String email) {
-        this.userId = userId;
+    public ObjectPojo( String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender, String email) {
+        //this.userId = userId;
         this.username = username;
         this.name = name;
         this.surname = surname;
@@ -112,7 +112,7 @@ public class ObjectPojo {
     @Override
     public String toString() {
         return "ObjectPojo{" +
-                "userId=" + userId +
+                //"userId=" + userId +
                 ", username='" + username + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
