@@ -15,9 +15,9 @@ public StudentInfoManagement(){
 public WebElement menuStudentInfo;
 @FindBy(xpath = "(//a[@role='button'])[10]")
 public WebElement studentInfoManagmentButtonStudentInfo;
-@FindBy(xpath = "//*[@class='text-dark btn btn-outline-info']")
+@FindBy(xpath = "//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/span[1]/button[1]")
 public WebElement ilkEditStudentInfo;
-@FindBy(xpath = "//*[@class='btn btn-danger']")
+@FindBy(xpath = "(//*[@class='fa-solid fa-trash'])[1]")
 public WebElement ilkDeleteStudentInfo;
 @FindBy(xpath = "(//*[@class='table table-striped table-bordered table-hover'])")
 public WebElement tableStudentInfo;
