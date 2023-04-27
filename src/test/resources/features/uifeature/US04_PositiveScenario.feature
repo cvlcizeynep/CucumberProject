@@ -1,7 +1,8 @@
- @smoke
+ @US04
 Feature: Admin dean ekleyebilmeli
   Background:
     Given Kullanici Admin olarak giris yapar
+
 #tc01-tc04-tc07-tc10-tc11-tc13-tc16-tc22-tc24
   Scenario Outline: Admin dean olusturabilmeli
     Given Kullanici Name kismina valid  girer
