@@ -145,27 +145,6 @@ public class DBUtils {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ///YASIN HOCANIN GOSTERDIGI DISINDAKI REUSABLELAR
     /**
      * DBUtils.createConnection(); -> to connect to teh database

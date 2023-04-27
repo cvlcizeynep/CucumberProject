@@ -107,7 +107,7 @@ public class US15_Positive {
 
     @Then("Vice Dean Submit Butonuna tiklar")
     public void viceDeanSubmitButonunaTiklar() {
-        viceDeamanagemet.submit.click();
+       Driver.clickWithJS(viceDeamanagemet.submit);
     }
 
     @And("Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar")
