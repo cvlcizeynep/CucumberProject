@@ -9,13 +9,13 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class AuthenticationSchoolManagement {
-    static   String url="http://209.38.244.227/auth/login";
+    static   String url="http://139.59.159.36:3000/auth/login";
     //--------------------------ADMİN----------------------------
     public static String generateTokenAdmin(){
         Map<String, Object> bodyMap = new HashMap<>();
-        bodyMap.put("password","485424698");
+        bodyMap.put("password","12345678");
         bodyMap.put("rememberMe",true);
-        bodyMap.put("username","Admin");
+        bodyMap.put("username","AdminB103");
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post(url);
         return  response.jsonPath().getString("token");
     }

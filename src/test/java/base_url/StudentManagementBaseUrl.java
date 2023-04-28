@@ -16,7 +16,7 @@ public class StudentManagementBaseUrl  {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
                 addHeader("Authorization", generateTokenAdmin()).
-                setBaseUri("http://209.38.244.227/").build();
+                setBaseUri("http://139.59.159.36:3000").build();
     }
 
     public static void studentSetUp() {
