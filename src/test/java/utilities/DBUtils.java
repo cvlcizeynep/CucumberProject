@@ -12,7 +12,6 @@ public class DBUtils {
     //1. Adım: Driver'a kaydol
     //2. Adım: Datbase'e bağlan
     public static Connection connectToDataBase(String hostName, String dbName,String username, String password)  {
-
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -146,28 +145,7 @@ public class DBUtils {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ///YASIN HOCANIN GOSTERDIGI DISINDAKI REUSABLELAR
     /**
      * DBUtils.createConnection(); -> to connect to teh database
      */
@@ -215,18 +193,7 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    public static Connection getConnection() {
-        String url = "jdbc:sqlserver://184.168.194.58:1433;databaseName=crystalkeyhotels2;user=Ahmet_User;password=Ahmet123!";
-        String username="Ahmet_User";
-        String password="Ahmet123!";
-        try {
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return connection;
-    }
+
     //used to get statement
     public static Statement getStatement() {
         try {
@@ -262,24 +229,24 @@ public class DBUtils {
         return getQueryResultList(query).get(0).get(0);
     }
     /**
-     * @return returns a list of Strings which represent a row of data. If the query
-     *         results in multiple rows and/or columns of data, only first row will
-     *         be returned. The rest of the data will be ignored
+     * @return bir veri satırını temsil eden Dizelerin bir listesini döndürür. eğer sorgu
+     *       * birden çok veri satırı ve/veya sütunuyla sonuçlanır, yalnızca ilk satır
+     *       * iade edilecektir. Verilerin geri kalanı yoksayılacak
      */
     public static List<Object> getRowList(String query) {
         return getQueryResultList(query).get(0);
     }
     /**
-     * @return returns a map which represent a row of data where key is the column
-     *         name. If the query results in multiple rows and/or columns of data,
-     *         only first row will be returned. The rest of the data will be ignored
+     * @return anahtarın sütun olduğu bir veri satırını temsil eden bir harita döndürür
+     *       *         isim. Sorgu, birden çok veri satırı ve/veya sütunuyla sonuçlanırsa,
+     *       * sadece ilk satır döndürülür. Verilerin geri kalanı yoksayılacak
      */
     public static Map<String, Object> getRowMap(String query) {
         return getQueryResultMap(query).get(0);
     }
     /**
-     * @return returns query result in a list of lists where outer list represents
-     *         collection of rows and inner lists represent a single row
+     * @return sorgu sonucunu, dış listenin temsil ettiği bir liste listesinde döndürür
+     *       * satırların ve iç listelerin toplanması tek bir satırı temsil eder
      */
     public static List<List<Object>> getQueryResultList(String query) {
         executeQuery(query);

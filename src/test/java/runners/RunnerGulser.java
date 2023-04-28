@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
         monochrome = true,
         features = "src/test/resources/features",
-        glue = {"stepdefinitions","hooks"},
-        tags = "@APISIMDI",
+        glue = {"stepdefinitions"},
+        tags = "@TeacherPutRequest",
         dryRun = false
 
 
