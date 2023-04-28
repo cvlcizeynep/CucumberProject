@@ -1,6 +1,7 @@
 
 package stepdefinitions.uidefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,6 +16,7 @@ import utilities.ReusableMethods;
 
 public class US01 {
 RegisterPage registerPage=new RegisterPage();
+Faker faker =new Faker();
 
     @Given("Kullanıcı register sayfasına gider.")
     public void kullanıcı_register_sayfasına_gider() {
@@ -51,19 +53,22 @@ RegisterPage registerPage=new RegisterPage();
     @When("Kullanici register Phone Number {string} girer")
     public void kullanici_register_phone_number_girer(String string) {
 
-        registerPage.phonenumber.sendKeys(string);
+
+        registerPage.phonenumber.sendKeys(faker.number().numberBetween(100,999)+"-"+
+                faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(1000,9999));
 
     }
     @When("Kullanici register SSN  {string} girer")
     public void kullanici_register_ssn_girer(String string) {
 
-        registerPage.ssn.sendKeys(string);
+        registerPage.ssn.sendKeys(faker.number().numberBetween(100,999)+"-"+
+                        faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999));
 
     }
     @When("Kullanici register User Name {string} girer")
     public void kullanici_register_user_name_girer(String string) {
 
-        registerPage.username.sendKeys(string);
+        registerPage.username.sendKeys(faker.name().username());
         ReusableMethods.waitFor(1);
     }
     @When("Kullanici register Password {string} girer")

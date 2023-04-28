@@ -8,7 +8,7 @@ Feature: TC3_Admin
     And Admin Birth place kismina valid deger girer
     And Admin Gender kismini secer
     And Admin User Name alanina valid bir deger girer
-
+@failedScenario
   Scenario Outline:Admin_ssnKarakter_TC01
     And Admin Phone Number alanina valid bir deger girer
     And Admin Date of birth alanina "<Date of Birth>" bir tarih girer
@@ -20,7 +20,7 @@ Feature: TC3_Admin
     Examples: data
       |Date of Birth|Password|
       |11.02.2012   |12345678|
-
+@failedScenario
   Scenario Outline:Admin_numberKarakter_TC02
     And Admin Date of birth alanina "<Date of Birth>" bir tarih girer
     And Admin Phone Number alanina ozel karakter girer
