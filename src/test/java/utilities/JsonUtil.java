@@ -16,6 +16,7 @@ public class JsonUtil {
     //1. Method: Json Datasını Java Objesine çevirir.(De-Serialization)
 
     public static <T> T convertJsonToJavaObject(String json, Class<T> cls) {//Generic Method
+
         T javaResult = null;
 
         try {

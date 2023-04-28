@@ -19,18 +19,18 @@ public class US16api {
     String mail = faker.internet().emailAddress();
 
     //burasi test amacli degil
-    @Given("Teacher login olarak bir mesaj olusturur")
+    @Given("Teacher API ile login olarak bir mesaj olusturur")
     public void teacher_api_ile_login_olarak_bir_mesaj_olusturur() {
-        adminSetUp();
+    teacherSetUp();
 
         MessagePojo mesaj = new MessagePojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
 
 
         spec.pathParams("first", "contactMessages", "second", "save");
         response = given(spec).body(mesaj).when().post("/{first}/{second}");
-        response.prettyPrint();
+       // response.prettyPrint();
 
-        response.then().assertThat().statusCode(201);
+        assertEquals(200,response.statusCode());
 
     }
 
@@ -38,9 +38,9 @@ public class US16api {
     @Given("Vice Dean olusturulan tum mesajlari API ile goruntuler")
     public void vice_dean_olusturulan_tum_mesajlari_api_ile_goruntuler() {
         viceDeanSetUp();
-        spec.pathParams("first", "contactMessages", "second", "getAll");
-        Response response = given(spec).when().get("/{first}/{second}");
-     //   response.prettyPrint();
+        spec.pathParams("first", "contactMessages", "second", "getAll","ds",4);
+        Response response = given(spec).get("/{first}/{second}");
+        //   response.prettyPrint();
 
         MessagePojo expectedData = new MessagePojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
 
@@ -60,7 +60,7 @@ public class US16api {
 
     @Then("Vice Dean bir mesaji API ile siler")
     public void vice_dean_bir_mesaji_api_ile_siler() {
-
+        viceDeanSetUp();
 
     }
 

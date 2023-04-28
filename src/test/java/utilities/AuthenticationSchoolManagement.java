@@ -9,13 +9,13 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class AuthenticationSchoolManagement {
-    static   String url="http://139.59.159.36:3000/auth/login";
+    static   String url= ConfigReader.getProperty("AuthenticationURL");
     //--------------------------ADMİN----------------------------
     public static String generateTokenAdmin(){
         Map<String, Object> bodyMap = new HashMap<>();
-        bodyMap.put("password","12345678");
+        bodyMap.put("password","485424698");
         bodyMap.put("rememberMe",true);
-        bodyMap.put("username","AdminB103");
+        bodyMap.put("username","Admin");
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post(url);
         return  response.jsonPath().getString("token");
     }
@@ -49,20 +49,18 @@ public class AuthenticationSchoolManagement {
     //------------TEACHER--------------------
     public static String generateTokenTeacher() {
         Map<String, Object> bodyMap = new HashMap<>();
-        //bodyMap.put("password", ConfigReader.getProperty("teacherPassword"));
-        bodyMap.put("password","12345678");
+        bodyMap.put("password", ConfigReader.getProperty("teacherPassword"));
         bodyMap.put("rememberMe", true);
-       // bodyMap.put("username", ConfigReader.getProperty("teacherUserName"));
-        bodyMap.put("username","Deneme456");
+        bodyMap.put("username", ConfigReader.getProperty("teacherUserName"));
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post(url);
         return response.jsonPath().getString("token");
     }
 
-   /* public static void main(String[] args) {
+   public static void main(String[] args) {
         System.out.println("generateTokenAdmin() = " + generateTokenAdmin());
         System.out.println("generateTokenTeacher() = " + generateTokenTeacher());
         System.out.println("generateTokenDean() = " + generateTokenDean());
         System.out.println("generateTokenViceDean() = " + generateTokenDean());
         System.out.println("generateTokenStudent() = " + generateTokenStudent());
-    }*/
+    }
 }
