@@ -13,9 +13,9 @@ public class AuthenticationSchoolManagement {
     //--------------------------ADMİN----------------------------
     public static String generateTokenAdmin(){
         Map<String, Object> bodyMap = new HashMap<>();
-        bodyMap.put("password","485424698");
+        bodyMap.put("password",ConfigReader.getProperty("adminPassword"));
         bodyMap.put("rememberMe",true);
-        bodyMap.put("username","Admin");
+        bodyMap.put("username",ConfigReader.getProperty("adminUserName"));
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post(url);
         return  response.jsonPath().getString("token");
     }
