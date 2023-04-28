@@ -61,35 +61,35 @@ public class US13TeacherStepDefinitions {
 
         //Do Assertion
 
-        TeacherPojo actualData =  JsonUtil.convertJsonToJavaObject(response.asString(), TeacherPojo.class);
+//        TeacherPojo actualData =  JsonUtil.convertJsonToJavaObject(response.asString(), TeacherPojo.class);
+//
+//        assertEquals(200, response.statusCode());
+//        assertEquals(expectedData.getObject().getUsername(),actualData.getObject().getUsername());
+//        assertEquals(expectedData.getObject().getName(),actualData.getObject().getName());
+//        assertEquals(expectedData.getObject().getSurname(),actualData.getObject().getSurname());
+//        assertEquals(expectedData.getObject().getBirthDay(),actualData.getObject().getBirthDay());
+//        assertEquals(expectedData.getObject().getSsn(),actualData.getObject().getSsn());
+//        assertEquals(expectedData.getObject().getBirthPlace(),actualData.getObject().getBirthPlace());
+//        assertEquals(expectedData.getObject().getPhoneNumber(),actualData.getObject().getPhoneNumber());
+//        assertEquals(expectedData.getObject().getGender(),actualData.getObject().getGender());
+//        assertEquals(expectedData.getMessage(),actualData.getMessage());
+//        assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
+//        assertEquals(expectedData.getObject().getEmail(),actualData.getObject().getEmail());
 
-        assertEquals(200, response.statusCode());
-        assertEquals(expectedData.getObject().getUsername(),actualData.getObject().getUsername());
-        assertEquals(expectedData.getObject().getName(),actualData.getObject().getName());
-        assertEquals(expectedData.getObject().getSurname(),actualData.getObject().getSurname());
-        assertEquals(expectedData.getObject().getBirthDay(),actualData.getObject().getBirthDay());
-        assertEquals(expectedData.getObject().getSsn(),actualData.getObject().getSsn());
-        assertEquals(expectedData.getObject().getBirthPlace(),actualData.getObject().getBirthPlace());
-        assertEquals(expectedData.getObject().getPhoneNumber(),actualData.getObject().getPhoneNumber());
-        assertEquals(expectedData.getObject().getGender(),actualData.getObject().getGender());
-        assertEquals(expectedData.getMessage(),actualData.getMessage());
-        assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
-        assertEquals(expectedData.getObject().getEmail(),actualData.getObject().getEmail());
 
 
-
-//        JsonPath jsonPath = response.jsonPath();
-//        assertEquals(expectedData.getMessage(),jsonPath.getString("message"));
-//        assertEquals(expectedData.getHttpStatus(),jsonPath.getString("httpStatus"));
-//        assertEquals(expectedData.getObject().getBirthDay(),jsonPath.getString("object.birthDay"));
-//        assertEquals(expectedData.getObject().getBirthPlace(),jsonPath.getString("object.birthPlace"));
-//        assertEquals(expectedData.getObject().getEmail(),jsonPath.getString("object.email"));
-//        assertEquals(expectedData.getObject().getGender(),jsonPath.getString("object.gender"));
-//        assertEquals(expectedData.getObject().getName(),jsonPath.getString("object.name"));
-//        assertEquals(expectedData.getObject().getPhoneNumber(),jsonPath.getString("object.phoneNumber"));
-//        assertEquals(expectedData.getObject().getSsn(),jsonPath.getString("object.ssn"));
-//        assertEquals(expectedData.getObject().getSurname(),jsonPath.getString("object.surname"));
-//        assertEquals(expectedData.getObject().getUsername(),jsonPath.getString("object.username"));
+        JsonPath jsonPath = response.jsonPath();
+        assertEquals(expectedData.getMessage(),jsonPath.getString("message"));
+        assertEquals(expectedData.getHttpStatus(),jsonPath.getString("httpStatus"));
+        assertEquals(expectedData.getObject().getBirthDay(),jsonPath.getString("object.birthDay"));
+        assertEquals(expectedData.getObject().getBirthPlace(),jsonPath.getString("object.birthPlace"));
+        assertEquals(expectedData.getObject().getEmail(),jsonPath.getString("object.email"));
+        assertEquals(expectedData.getObject().getGender(),jsonPath.getString("object.gender"));
+        assertEquals(expectedData.getObject().getName(),jsonPath.getString("object.name"));
+        assertEquals(expectedData.getObject().getPhoneNumber(),jsonPath.getString("object.phoneNumber"));
+        assertEquals(expectedData.getObject().getSsn(),jsonPath.getString("object.ssn"));
+        assertEquals(expectedData.getObject().getSurname(),jsonPath.getString("object.surname"));
+        assertEquals(expectedData.getObject().getUsername(),jsonPath.getString("object.username"));
 
 
 
