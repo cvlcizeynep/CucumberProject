@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="63.074">
+    <testcase classname="Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve" name="TCO1 Dean mesajlari gorebilmelidir" time="17.633">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given Ogrenci mesaj gonderir................................................passed
+Given Database icin connect saglanir........................................passed
+When Databaseden olusturulan mesajlar sorgulanir............................passed
+Then Gonderilen mesajlarin goruldugu dogrulanir.............................failed
+
+StackTrace:
+java.lang.AssertionError
+	at stepdefinitions.dbstepdefinitions.US07Steps.gonderilen_mesajlarin_goruldugu_dogrulanir(US07Steps.java:62)
+	at ✽.Gonderilen mesajlarin goruldugu dogrulanir(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/dbfeature/US07.feature:11)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve" name="TCO2 Dean yazarlari gorebilmelidir" time="15.482">
+        <system-out>
+            <![CDATA[Given Ogrenci mesaj gonderir................................................passed
+Given Database icin connect saglanir........................................passed
+When Databaseden olusturulan yazarlar sorgulanir............................passed
+Then Gonderilen mesajlarin yazarlarinin goruldugu dogrulanir................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve" name="TCO3 Dean mesajlari gonderenlerin emaillerini gorebilmelidir" time="15.691">
+        <system-out>
+            <![CDATA[Given Ogrenci mesaj gonderir................................................passed
+Given Database icin connect saglanir........................................passed
+When Databaseden mesajlari gonderenlerin emailleri  sorgulanir..............passed
+Then Gonderilen mesajlari gonderenlerin emaillerinin goruldugu dogrulanir...passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve" name="TCO3 Dean mesajlari subjectini gorebilmelidir" time="13.425">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [2e1669dea4342e2dbe4ec13694ad5689, findElement {using=xpath, value=(//*[@type='button'])[3]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53624}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53624/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 2e1669dea4342e2dbe4ec13694ad5689" type="org.openqa.selenium.NoSuchWindowException">
+            <![CDATA[Given Ogrenci mesaj gonderir................................................failed
+Given Database icin connect saglanir........................................skipped
+When Databaseden mesajlarin subjecti  sorgulanir............................skipped
+Then Gonderilen mesaajlarin subjectinin goruldugu dogrulanir................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2e1669dea4342e2dbe4ec13694ad5689, findElement {using=xpath, value=(//*[@type='button'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53624}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53624/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e1669dea4342e2dbe4ec13694ad5689
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy22.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:52)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
+	at utilities.ReusableMethods.scrollToElement(ReusableMethods.java:230)
+	at stepdefinitions.dbstepdefinitions.US07Steps.ogrenci_mesaj_gonderir(US07Steps.java:42)
+	at ✽.Ogrenci mesaj gonderir.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/dbfeature/US07.feature:6)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve" name="TC04 Dean  mesajlarin gonderildigi tarihi  gorebilmelidir" time="0.03">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [2e1669dea4342e2dbe4ec13694ad5689, get {url=http://139.59.159.36:3000/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53624}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53624/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 2e1669dea4342e2dbe4ec13694ad5689" type="org.openqa.selenium.NoSuchWindowException">
+            <![CDATA[Given Ogrenci mesaj gonderir................................................failed
+Given Database icin connect saglanir........................................skipped
+When Databaseden mesajlarin gonderildigi tarih  sorgulanir..................skipped
+Then Gonderilen mesajlarin gonderildigi tarihin goruldugu dogrulanir........skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2e1669dea4342e2dbe4ec13694ad5689, get {url=http://139.59.159.36:3000/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53624}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53624/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e1669dea4342e2dbe4ec13694ad5689
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.dbstepdefinitions.US07Steps.ogrenci_mesaj_gonderir(US07Steps.java:32)
+	at ✽.Ogrenci mesaj gonderir.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/dbfeature/US07.feature:6)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
