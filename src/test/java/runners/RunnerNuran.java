@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "src/test/resources/features/apifeature",
         glue = {"stepdefinitions","hooks"},
-        tags = "@Apius11",
+        tags = "@ApiUs04",
         dryRun = false
 
 
