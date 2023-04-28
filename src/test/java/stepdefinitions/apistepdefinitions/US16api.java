@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 public class US16api {
     Response response;
     Faker faker = new Faker();
-    String mail = faker.internet().emailAddress();
+    String mail = faker.name()+faker.name().lastName()+"@gmail.com";
 
     //burasi test amacli degil
     @Given("Teacher API ile login olarak bir mesaj olusturur")
@@ -25,10 +25,9 @@ public class US16api {
 
         MessagePojo mesaj = new MessagePojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
 
-
         spec.pathParams("first", "contactMessages", "second", "save");
         response = given(spec).body(mesaj).when().post("/{first}/{second}");
-       // response.prettyPrint();
+        response.prettyPrint();
 
         assertEquals(200,response.statusCode());
 
