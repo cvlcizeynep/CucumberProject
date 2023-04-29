@@ -2,41 +2,34 @@ package stepdefinitions.dbstepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import utilities.DBUtils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static utilities.DBUtils.insertDataIntoTable;
 
 public class US01steps {
-    @Given("Kullanıcı insert into methodu ile valid değerler ile öğrenci kaydı yapar.")
-    public void kullanici_insert_into_methodu_ile_valid_degerler_ile_ogrenci_kaydi_yapar() {
-        // Tablo adı ve eklenecek sütunlar ve değerlerinin listesi
-        String tableName = "guest_user";
-        String[] columnValueArray = new String[] {"birth_day 26-01-1996","gender MALE", "surname yigit", "name Emre","password rtyuwerıtuweyrıtuewyru", "phone_number 567-907-4023", "ssn 567-90-7403", "username emre12312312", "user_role_id 7"};
+    List<Object> userNameList = new ArrayList<>();
 
-        // Verileri tabloya ekleme işlemi
-        insertDataIntoTable(tableName, columnValueArray);
-    }
-    @Given("Kayıt yaptığını doğrular")
-    public void kayit_yaptigini_dogrular() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
+
     @Then("Database ile bağlantı kesilir.")
     public void database_ile_baglanti_kesilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+      DBUtils.closeConnectionAndStatement();
+    }
+
+    @Given("Database icin contact saglanir")
+    public void database_icin_contact_saglanir() {
+        DBUtils.createConnection();
     }
 
 
-    @Given("Kullanıcı insert into methodu ile valid olmayan değerler ile öğrenci kaydı yapar.")
-    public void kullanici_insert_into_methodu_ile_valid_olmayan_degerler_ile_ogrenci_kaydi_yapar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Given("Kayıt yapamadığını doğrular")
-    public void kayit_yapamadigini_dogrular() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
-
-}
+    @Given("Kullanıcı database'de username'i {string} olan hesabın varlığını doğrular")
+    public void kullanici_databasede_usernamei_string_olan_hesabin_varligini_dogrular(String string) {
+     userNameList  = Collections.singletonList(DBUtils.getQueryResultList("select username from guest_user"));
+        Assert.assertTrue(userNameList.toString().contains(string));
+}}
