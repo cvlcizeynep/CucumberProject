@@ -1,12 +1,33 @@
 package pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class DeanObjectPojo {
+public class TeacherRequestPojo {
+    /*
+    {
+  "birthDay": "<string>",
+  "birthPlace": "<string>",
+  "email": "<string>",
+  "gender": "<string>",
+  "isAdvisorTeacher": "<boolean>",
+  "lessonsIdList": [
+    "<long>",
+    "<long>"
+  ],
+  "name": "<string>",
+  "password": "<string>",
+  "phoneNumber": "<string>",
+  "ssn": "<string>",
+  "surname": "<string>",
+  "username": "<string>"
+}
+     */
     private String birthDay;
     private String birthPlace;
+    private String email;
     private String gender;
+    private boolean isAdvisorTeacher;
+    private List<Integer> lessonsIdList;
     private String name;
     private String password;
     private String phoneNumber;
@@ -14,13 +35,16 @@ public class DeanObjectPojo {
     private String surname;
     private String username;
 
-    public DeanObjectPojo() {
+    public TeacherRequestPojo() {
     }
 
-    public DeanObjectPojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+    public TeacherRequestPojo(String birthDay, String birthPlace, String email, String gender, boolean isAdvisorTeacher, List<Integer> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
         this.birthDay = birthDay;
         this.birthPlace = birthPlace;
+        this.email = email;
         this.gender = gender;
+        this.isAdvisorTeacher = isAdvisorTeacher;
+        this.lessonsIdList = lessonsIdList;
         this.name = name;
         this.password = password;
         this.phoneNumber = phoneNumber;
@@ -45,12 +69,36 @@ public class DeanObjectPojo {
         this.birthPlace = birthPlace;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getGender() {
         return gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public boolean isAdvisorTeacher() {
+        return isAdvisorTeacher;
+    }
+
+    public void setAdvisorTeacher(boolean advisorTeacher) {
+        isAdvisorTeacher = advisorTeacher;
+    }
+
+    public List<Integer> getLessonsIdList() {
+        return lessonsIdList;
+    }
+
+    public void setLessonsIdList(List<Integer> lessonsIdList) {
+        this.lessonsIdList = lessonsIdList;
     }
 
     public String getName() {
@@ -103,10 +151,13 @@ public class DeanObjectPojo {
 
     @Override
     public String toString() {
-        return "DeanPojo{" +
+        return "TeacherRequestPojo{" +
                 "birthDay='" + birthDay + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
+                ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
+                ", isAdvisorTeacher=" + isAdvisorTeacher +
+                ", lessonsIdList=" + lessonsIdList +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
@@ -115,5 +166,4 @@ public class DeanObjectPojo {
                 ", username='" + username + '\'' +
                 '}';
     }
-
 }

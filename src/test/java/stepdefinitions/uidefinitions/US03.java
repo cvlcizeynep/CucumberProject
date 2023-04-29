@@ -35,7 +35,6 @@ public class US03 {
         ReusableMethods.scrollToElement(contactPage.yourNameBox);
         ReusableMethods.JSEClickToElement(contactPage.yourNameBox);
         contactPage.yourNameBox.sendKeys(string);
-
     }
 
     @When("kullanici subject  alanina valid bir deger {string} girer")

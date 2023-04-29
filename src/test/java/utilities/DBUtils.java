@@ -150,9 +150,9 @@ public class DBUtils {
      * DBUtils.createConnection(); -> to connect to teh database
      */
     public static void createConnection() {
-        String url = "jdbc:postgresql://209.38.244.227:5432/school_management";
-        String username="select_user";
-        String password="43w5ijfso";
+        String url = "jdbc:postgresql://164.92.252.42:5432/school_management";
+        String username = "select_user";
+        String password = "43w5ijfso";
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {

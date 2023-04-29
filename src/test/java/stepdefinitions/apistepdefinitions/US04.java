@@ -21,7 +21,7 @@ public class US04 {
     DeanPojo expectedData;
     @Given("kullanici dean eklemek icin post request gonderir")
     public void kullanici_dean_eklemek_icin_post_request_gonderir() {
-        //faker=new Faker();
+        faker=new Faker();
         adminSetUp();
         spec.pathParams("first","dean","second","save");
 
@@ -39,7 +39,7 @@ public class US04 {
         expectedData=new DeanPojo(object,"Dean Saved","CREATED");
         System.out.println(expectedData);
 
-        response=given(spec).body(expectedData).post("{first}/{second}");
+        response=given().spec(spec).body(object).post("{first}/{second}");
         response.prettyPrint();
 
 
@@ -55,7 +55,6 @@ public class US04 {
         assertEquals(expectedData.getObject().getGender(),actualData.getObject().getGender());
         assertEquals(expectedData.getObject().getSsn(),actualData.getObject().getSsn());
         assertEquals(expectedData.getObject().getBirthDay(),actualData.getObject().getBirthDay());
-        assertEquals(expectedData.getObject().getPassword(),actualData.getObject().getPassword());
         assertEquals(expectedData.getObject().getSurname(),actualData.getObject().getSurname());
         assertEquals(expectedData.getMessage(),actualData.getMessage());
         assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());

@@ -1,8 +1,24 @@
 package pojos;
 
-public class ObjectPojo {
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-    private int userId;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ResponseTeacherObjectPojo {
+    /*
+    "object": {
+        "userId": 1,
+        "username": "Muserref02",
+        "name": "Muserref",
+        "surname": "Albayrak",
+        "birthDay": "1992-12-10",
+        "ssn": "222-91-7654",
+        "birthPlace": "Ankara",
+        "phoneNumber": "234-458-9012",
+        "gender": "FEMALE",
+        "email": "mus@gmail.com"
+    },
+     */
+    private long userId;
     private String username;
     private String name;
     private String surname;
@@ -13,11 +29,11 @@ public class ObjectPojo {
     private String gender;
     private String email;
 
-    public ObjectPojo() {
+    public ResponseTeacherObjectPojo() {
     }
 
-    public ObjectPojo( String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender, String email) {
-        //this.userId = userId;
+    public ResponseTeacherObjectPojo(long userId,String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender, String email) {
+        this.userId = userId;
         this.username = username;
         this.name = name;
         this.surname = surname;
@@ -28,12 +44,11 @@ public class ObjectPojo {
         this.gender = gender;
         this.email = email;
     }
-
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -111,9 +126,9 @@ public class ObjectPojo {
 
     @Override
     public String toString() {
-        return "ObjectPojo{" +
-                //"userId=" + userId +
-                ", username='" + username + '\'' +
+        return "ResponseTeacherObjectPojo{" +
+                "userId='" + userId + '\'' +
+                "username='" + username + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthDay='" + birthDay + '\'' +

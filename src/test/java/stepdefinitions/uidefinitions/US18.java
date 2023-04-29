@@ -21,7 +21,7 @@ public class US18 {
 
     @Given("İstenilen öğrencinin yanındaki delete butonuna basar")
     public void i̇stenilen_ogrencinin_yanindaki_delete_butonuna_basar() {
-       studentInfoManagement.ilkDeleteStudentInfo.click();
+        ReusableMethods.doubleClick(studentInfoManagement.ilkDeleteStudentInfo);
     }
     @When("StudenT delete Succesfully yazısı ekranda çıkar")
     public void student_delete_succesfully_yazisi_ekranda_cikar() {
