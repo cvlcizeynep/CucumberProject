@@ -4,20 +4,6 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResponseTeacherObjectPojo {
-    /*
-    "object": {
-        "userId": 1,
-        "username": "Muserref02",
-        "name": "Muserref",
-        "surname": "Albayrak",
-        "birthDay": "1992-12-10",
-        "ssn": "222-91-7654",
-        "birthPlace": "Ankara",
-        "phoneNumber": "234-458-9012",
-        "gender": "FEMALE",
-        "email": "mus@gmail.com"
-    },
-     */
     private long userId;
     private String username;
     private String name;

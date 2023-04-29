@@ -1,7 +1,6 @@
 package stepdefinitions.apistepdefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
@@ -16,7 +15,7 @@ import static utilities.FakerUtils.*;
 public class US13TeacherStepDefinitions {
     Response response;
     TeacherRequestPojo expectedData;
-    ResponseOutherPojo expectedDataOuther;
+    ResponseTeacherOutherPojo expectedDataOuther;
     ResponseTeacherObjectPojo object;
 
     @Given("vice dean sends put request")
@@ -38,7 +37,7 @@ public class US13TeacherStepDefinitions {
                 usernameFaker());
 
         //Set the expected data
-        expectedDataOuther = new ResponseOutherPojo(object, "Teacher updated Successful", "OK");
+        expectedDataOuther = new ResponseTeacherOutherPojo(object, "Teacher updated Successful", "OK");
 
         //Send the request and get the response
         response = given(spec)
@@ -50,7 +49,7 @@ public class US13TeacherStepDefinitions {
 
     @Then("assertion")
     public void assertion() {
-        ResponseOutherPojo actualData = response.as(ResponseOutherPojo.class);
+        ResponseTeacherOutherPojo actualData = response.as(ResponseTeacherOutherPojo.class);
         System.out.println("actualData = " + actualData);
         JsonPath jsonPath = response.jsonPath();
 
@@ -93,7 +92,7 @@ public class US13TeacherStepDefinitions {
                 usernameFaker());
 
         //Set the expected data
-        expectedDataOuther = new ResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
+        expectedDataOuther = new ResponseTeacherOutherPojo(object, "Teacher saved successfully", "CREATED");
 
         //Send the request and get the response
         response = given(spec)
@@ -105,7 +104,7 @@ public class US13TeacherStepDefinitions {
 
     @Then("do assertion for post")
     public void assertionPost() {
-        ResponseOutherPojo actualData = response.as(ResponseOutherPojo.class);
+        ResponseTeacherOutherPojo actualData = response.as(ResponseTeacherOutherPojo.class);
         System.out.println("actualData = " + actualData);
         JsonPath jsonPath = response.jsonPath();
 
