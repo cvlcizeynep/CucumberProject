@@ -24,23 +24,24 @@ public class US02 {
     }
     @Then("Guest User List, Name bilgisinin goruldugunu dogrular")
     public void guestUserListNameBilgisininGoruldugunuDogrular() {
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Name Surname"));
-        ReusableMethods.waitFor(3);
+
+        Assert.assertTrue(guestUserPage.namebaslık.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
     @Then("Guest User List, Phone Number bilgisinin goruldugunu dogrular")
     public void guestUserListPhoneNumberBilgisininGoruldugunuDogrular() {
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Phone Number"));
-        ReusableMethods.waitFor(3);
+        Assert.assertTrue(guestUserPage.phonenumberbaslık.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
     @Then("Guest User List, SSN bilgisinin goruldugunu dogrular")
     public void guestUserListSsnBilgisininGoruldugunuDogrular() {
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Ssn"));
-        ReusableMethods.waitFor(3);
+        Assert.assertTrue(guestUserPage.ssnbaslık.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
     @Then("Guest User List, User Name bilgisinin goruldugunu dogrular")
     public void guestUserListUserNameGoruldugunuDogrular() {
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("User Name"));
-        ReusableMethods.waitFor(3);
+        Assert.assertTrue(guestUserPage.usernamebaslık.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
 
     @Then("Guest User List bilgilerini siler")

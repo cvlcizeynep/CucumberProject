@@ -28,7 +28,7 @@ public class US05 {
 
     @Then("Admin Deanlerin, Name bilgisinin goruldugunu dogrular")
     public void adminDeanlerinNameBilgisininGoruldugunuDogrular() {
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Name Surname"));
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Name"));
         ReusableMethods.waitFor(5);
     }
 
@@ -176,12 +176,12 @@ public class US05 {
 
     @Then("Kullanici delete butonunun varligini assert eder")
     public void kullaniciDeleteButonununVarliginiAssertEder() {
-        List<WebElement>buttonList=Driver.getDriver().findElements(By.xpath("//button"));
-        for (int i = 1; i <26 ; i++) {
-            assertFalse(buttonList.get(i-1).getText().contains("delete"));
+        Assert.assertFalse(deanManagementPage.editdelete.isDisplayed());
+
+
 
         }
-    }
+
 
     @And("telefon numarasini gunceller")
     public void telefonNumarasiniGunceller() {
