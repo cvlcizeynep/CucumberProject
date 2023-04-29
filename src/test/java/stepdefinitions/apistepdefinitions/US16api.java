@@ -23,7 +23,7 @@ public class US16api {
     public void teacher_api_ile_login_olarak_bir_mesaj_olusturur() {
     teacherSetUp();
 
-        MessagePojo mesaj = new MessagePojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
+        MessagePojo mesaj = new MessagePojo("fff@maeil", "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
 
         spec.pathParams("first", "contactMessages", "second", "save");
         response = given(spec).body(mesaj).when().post("/{first}/{second}");
@@ -33,11 +33,10 @@ public class US16api {
 
     }
 
-
     @Given("Vice Dean olusturulan tum mesajlari API ile goruntuler")
     public void vice_dean_olusturulan_tum_mesajlari_api_ile_goruntuler() {
         viceDeanSetUp();
-        spec.pathParams("first", "contactMessages", "second", "getAll","ds",4);
+       spec.pathParams("first", "contactMessages", "second", "getAll","ds",4);
         Response response = given(spec).get("/{first}/{second}");
         //   response.prettyPrint();
 
