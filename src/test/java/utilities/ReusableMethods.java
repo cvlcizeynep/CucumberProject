@@ -192,7 +192,7 @@ public class ReusableMethods {
 
 
     public static void login(String username,String password){
-   Driver.getDriver().get("https://www.managementonschools.com/login");
+   Driver.getDriver().get("http://139.59.159.36:3000/");
     loginPage=new LoginPage();
     loginPage.login.click();
     loginPage.userName.sendKeys(username);
