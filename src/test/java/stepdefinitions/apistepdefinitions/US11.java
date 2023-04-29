@@ -2,11 +2,16 @@ package stepdefinitions.apistepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.restassured.response.Response;
+import utilities.JsonUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.viceDeanSetUp;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
 
 public class US11 {
     Response response;
@@ -21,6 +26,21 @@ public class US11 {
 
         response.then().statusCode(200);
     }
+    @Given("kullanici silmek istedigi ders icin delete request gonderir ve dogrulamayapar.")
+    public void kullanici_silmek_istedigi_ders_icin_delete_request_gonderir_ve_dogrulamayapar() {
+        viceDeanSetUp();
+        spec.pathParams("first","lessonPrograms","second","delete","third",165);
+        Map<String,String> expecteddata=new HashMap<>();
+        expecteddata.put("message","Lesson Program Deleted");
+        expecteddata.put("httpStatus","OK");
+        System.out.println(expecteddata);
 
+        Response response=given(spec).delete("{first}/{second}/{third}");
+        response.prettyPrint();
+        Map<String,String> actualData= JsonUtil.convertJsonToJavaObject(response.asString(),HashMap.class);
+        assertEquals(200,response.getStatusCode());
+        assertEquals(expecteddata,actualData);
+
+    }
 
 }
