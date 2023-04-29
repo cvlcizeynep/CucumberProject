@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "src/test/resources/features/dbfeature",
         glue = {"stepdefinitions"},
-        tags = "@US06DB",
+        tags = "@US23DB",
         dryRun = false
 
 

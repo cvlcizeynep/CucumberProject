@@ -4,45 +4,58 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import io.restassured.response.Response;
 import pages.ContactPage;
+import pojos.MessagePojo;
+import pojos.MessagePostPojo;
 import utilities.DBUtils;
-import utilities.Driver;
-import utilities.ReusableMethods;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static base_url.StudentManagementBaseUrl.spec;
+import static base_url.StudentManagementBaseUrl.studentSetUp;
+import static io.restassured.RestAssured.given;
+
 public class US07Steps {
     List<Object> messageNamelist= new ArrayList<>();
-    ContactPage contactPage = new ContactPage();
+    //ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String message=faker.lorem().paragraph();
     String author=faker.name().fullName();
     String email=faker.name().username()+"@"+"gmail.com";
-    String subject=faker.name().firstName();
+    String subject=faker.internet().password(18,20);
     static LocalDate localDate=LocalDate.now();
     static String bugun=localDate.toString();
+Response response;
+MessagePojo messagePojo;
 
 
     @Given("Ogrenci mesaj gonderir.")
     public void ogrenci_mesaj_gonderir() {
-        Driver.getDriver().get("http://139.59.159.36:3000/");
+      /*  Driver.getDriver().get("http://139.59.159.36:3000/");
         ReusableMethods.JSEClickToElement(contactPage.contact);
         ReusableMethods.waitFor(2);
-      //  ReusableMethods.scrollToElement(contactPage.yourNameBox);
+        //  ReusableMethods.scrollToElement(contactPage.yourNameBox);
         ReusableMethods.JSEClickToElement(contactPage.yourNameBox);
         contactPage.yourNameBox.sendKeys(author);
-        contactPage.yourEmailBox.sendKeys("mnllkiojhg@gmail.com");
-        contactPage.subjectBox.sendKeys("ASERTKLMNBJKIHDNLI");
+        contactPage.yourEmailBox.sendKeys(email);
+        contactPage.subjectBox.sendKeys(subject);
         contactPage.messageBox.sendKeys(message);
         ReusableMethods.waitFor(2);
         ReusableMethods.scrollToElement(contactPage.sendMessajButton);
         ReusableMethods.JSEClickToElement(contactPage.sendMessajButton);
-        System.out.println(subject+"   "+email);
-        Driver.closeDriver();
+        System.out.println(subject + "   " + email);
+        Driver.closeDriver();*/
+
+        studentSetUp();
+        spec.pathParams("first","contactMessages","second","save");
+        messagePojo=new MessagePojo(email,message,author,subject);
+        MessagePostPojo expectedData=new MessagePostPojo(messagePojo,"Contact Message Created Successfully","CREATED");
+        System.out.println(expectedData);
+        response=given(spec).when().body(messagePojo).post("{first}/{second}");
+        response.prettyPrint();
     }
     @Given("Database icin connect saglanir")
     public void database_icin_connect_saglanir() {
@@ -52,13 +65,12 @@ public class US07Steps {
     @When("Databaseden olusturulan mesajlar sorgulanir")
     public void databaseden_olusturulan_mesajlar_sorgulanir() {
       messageNamelist= Collections.singletonList(DBUtils.getQueryResultList("select * from contact_message"));
-        System.out.println(messageNamelist);
+        //System.out.println(messageNamelist);
 
           }
 
     @Then("Gonderilen mesajlarin goruldugu dogrulanir")
     public void gonderilen_mesajlarin_goruldugu_dogrulanir() {
-
         assert messageNamelist.toString().contains(message);
 
 
