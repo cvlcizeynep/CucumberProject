@@ -8,13 +8,15 @@ Feature: API_Validate_Teacher
 
 
   @TeacherPutRequest
-  Scenario:Put_Teacher
-    Given send put request and validate body
+  Scenario: teacher update
+    Given vice dean sends put request
+    Then assertion
 
 
   @TeacherPostRequest
   Scenario:Post_Teacher
-    Given send post request and validate body
+    Given vice dean sends post request
+    When do assertion for post
 
 
 

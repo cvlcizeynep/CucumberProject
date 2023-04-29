@@ -2,122 +2,71 @@ package stepdefinitions.apistepdefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import pojos.TeacherObjectPojo;
-import pojos.TeacherPojo;
-import utilities.JsonUtil;
-
-
-import static base_url.StudentManagementBaseUrl.adminSetUp;
-import static base_url.StudentManagementBaseUrl.spec;
+import pojos.*;
+import java.util.Collections;
+import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static utilities.FakerUtils.*;
 
 public class US13TeacherStepDefinitions {
-
     Response response;
-    Faker faker = new Faker();
-    String name = faker.name().firstName();
-    String surname = faker.name().lastName();
-    String username = faker.name().username();
-    String email = faker.internet().emailAddress();
-    String password = faker.internet().password();
-    String phoneNumber = faker.phoneNumber().phoneNumber().replaceAll("[^0-9]", "");
-    String formattedPhoneNumber = String.format("%s-%s-%s",
-            phoneNumber.substring(0, 3),
-            phoneNumber.substring(3, 6),
-            phoneNumber.substring(6, 10)
-            );
-    String ssn = faker.idNumber().ssnValid().replaceAll("[^0-9]", "");
-    String formattedSSN=ssn.substring(0,3)+"-"+ssn.substring(3,5)+"-"+ssn.substring(5,9);
+    TeacherRequestPojo expectedData;
+    ResponseOutherPojo expectedDataOuther;
+    ResponseTeacherObjectPojo object;
 
-    @Given("send put request and validate body")
+    @Given("vice dean sends put request")
     public void sendPutRequestToGetTeacher() throws JsonProcessingException {
-        adminSetUp();
+        viceDeanSetUp();
         //Set the url
-        spec.pathParams("pp1","teachers","pp2","update","pp3",1);
-//        TeacherObjectPojo objectPojo = new TeacherObjectPojo("1998-01-09","izmir",email,"FEMALE",true,1,name,password,formattedPhoneNumber,formattedSSN,surname,username);
-//        TeacherPojo requestBody = new TeacherPojo(objectPojo,"Teacher Updated Successful","OK");
+        spec.pathParams("pp1", "teachers", "pp2", "update", "pp3", 5);
+        expectedData = new TeacherRequestPojo("1998-01-09",
+                "izmir",
+                "team20@gmail.com",
+                "FEMALE",
+                true,
+                Collections.singletonList(1),
+                nameFaker(),
+                passwordFaker(),
+                phoneNumberFaker(),
+                ssnFaker(),
+                surnameFaker(),
+                usernameFaker());
 
         //Set the expected data
-//        TeacherObjectPojo objectPojo1 = new TeacherObjectPojo("1998-01-09","izmir",email,"FEMALE",true,1,name,password,formattedPhoneNumber,formattedSSN,surname,username);
-//        TeacherPojo expectedData = new TeacherPojo(objectPojo1,"Teacher Updated Successful","OK");
-
-
-        TeacherObjectPojo objectPojo = new TeacherObjectPojo("1998-01-09","ankara","gregfred@gmail.com","MALE",true,1,"alicank","123456789","123-651-6541","611-45-4562","chdjkcs","djkhckpdsc");
-        TeacherPojo expectedData = new TeacherPojo(objectPojo,"Teacher Updated Successful","OK");
-
+        expectedDataOuther = new ResponseOutherPojo(object, "Teacher updated Successful", "OK");
 
         //Send the request and get the response
-        Response response = given().spec(spec).when()
+        response = given(spec)
                 .body(expectedData)
                 .put("{pp1}/{pp2}/{pp3}");
-                response.prettyPrint();
-
-
-        //Do Assertion
-
-//        TeacherPojo actualData =  JsonUtil.convertJsonToJavaObject(response.asString(), TeacherPojo.class);
-//
-//        assertEquals(200, response.statusCode());
-//        assertEquals(expectedData.getObject().getUsername(),actualData.getObject().getUsername());
-//        assertEquals(expectedData.getObject().getName(),actualData.getObject().getName());
-//        assertEquals(expectedData.getObject().getSurname(),actualData.getObject().getSurname());
-//        assertEquals(expectedData.getObject().getBirthDay(),actualData.getObject().getBirthDay());
-//        assertEquals(expectedData.getObject().getSsn(),actualData.getObject().getSsn());
-//        assertEquals(expectedData.getObject().getBirthPlace(),actualData.getObject().getBirthPlace());
-//        assertEquals(expectedData.getObject().getPhoneNumber(),actualData.getObject().getPhoneNumber());
-//        assertEquals(expectedData.getObject().getGender(),actualData.getObject().getGender());
-//        assertEquals(expectedData.getMessage(),actualData.getMessage());
-//        assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
-//        assertEquals(expectedData.getObject().getEmail(),actualData.getObject().getEmail());
-
-
-
-        JsonPath jsonPath = response.jsonPath();
-        assertEquals(expectedData.getMessage(),jsonPath.getString("message"));
-        assertEquals(expectedData.getHttpStatus(),jsonPath.getString("httpStatus"));
-        assertEquals(expectedData.getObject().getBirthDay(),jsonPath.getString("object.birthDay"));
-        assertEquals(expectedData.getObject().getBirthPlace(),jsonPath.getString("object.birthPlace"));
-        assertEquals(expectedData.getObject().getEmail(),jsonPath.getString("object.email"));
-        assertEquals(expectedData.getObject().getGender(),jsonPath.getString("object.gender"));
-        assertEquals(expectedData.getObject().getName(),jsonPath.getString("object.name"));
-        assertEquals(expectedData.getObject().getPhoneNumber(),jsonPath.getString("object.phoneNumber"));
-        assertEquals(expectedData.getObject().getSsn(),jsonPath.getString("object.ssn"));
-        assertEquals(expectedData.getObject().getSurname(),jsonPath.getString("object.surname"));
-        assertEquals(expectedData.getObject().getUsername(),jsonPath.getString("object.username"));
-
-
-
-    }
-
-    @Given("send post request and validate body")
-    public void sendPostRequestAndValidateBody() throws JsonProcessingException {
-        adminSetUp();
-        spec.pathParams("pp1","teachers","pp2","save");
-        
-        TeacherObjectPojo teacherObjectPojo = new TeacherObjectPojo("1998-01-09","izmir",email,"FEMALE",true,1,name,password,formattedPhoneNumber,ssn,surname,username);
-        TeacherPojo expectedData = new TeacherPojo(teacherObjectPojo,"Teacher Saved Successful","OK");
-
-        response = given(spec).body(expectedData).post("{pp1}/{pp2}");
         response.prettyPrint();
 
-        TeacherPojo actualData = new ObjectMapper().readValue(response.asString(), TeacherPojo.class);
-        assertEquals(expectedData.getObject().getUsername(),actualData.getObject().getUsername());
-        assertEquals(expectedData.getObject().getName(),actualData.getObject().getName());
-        assertEquals(expectedData.getObject().getSurname(),actualData.getObject().getSurname());
-        assertEquals(expectedData.getObject().getBirthDay(),actualData.getObject().getBirthDay());
-        assertEquals(expectedData.getObject().getSsn(),actualData.getObject().getSsn());
-        assertEquals(expectedData.getObject().getBirthPlace(),actualData.getObject().getBirthPlace());
-        assertEquals(expectedData.getObject().getPhoneNumber(),actualData.getObject().getPhoneNumber());
-        assertEquals(expectedData.getObject().getGender(),actualData.getObject().getGender());
-        assertEquals(expectedData.getObject().getEmail(),actualData.getObject().getEmail());
-        assertEquals(expectedData.getMessage(),actualData.getMessage());
-        assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
+    }
+
+    @Then("assertion")
+    public void assertion() {
+        ResponseOutherPojo actualData = response.as(ResponseOutherPojo.class);
+        System.out.println("actualData = " + actualData);
+        JsonPath jsonPath = response.jsonPath();
+
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedDataOuther.getHttpStatus(), jsonPath.getString("httpStatus"));
+        assertEquals(expectedDataOuther.getMessage(), actualData.getMessage());
+
+        assertEquals(expectedData.getUsername(), jsonPath.getString("object.username"));
+        assertEquals(expectedData.getName(), jsonPath.getString("object.name"));
+        assertEquals(expectedData.getSurname(), jsonPath.getString("object.surname"));
+        assertEquals(expectedData.getBirthDay(), jsonPath.getString("object.birthDay"));
+        assertEquals(expectedData.getSsn(), jsonPath.getString("object.ssn"));
+        assertEquals(expectedData.getBirthPlace(), jsonPath.getString("object.birthPlace"));
+        assertEquals(expectedData.getPhoneNumber(), jsonPath.getString("object.phoneNumber"));
+        assertEquals(expectedData.getGender(), jsonPath.getString("object.gender"));
+        assertEquals(expectedData.getEmail(), jsonPath.getString("object.email"));
 
 
 
@@ -125,55 +74,59 @@ public class US13TeacherStepDefinitions {
     }
 
 
+    @Given("vice dean sends post request")
+    public void sendPostRequestAndValidateBody() throws JsonProcessingException {
+        viceDeanSetUp();
+        //Set the url
+        spec.pathParams("pp1", "teachers", "pp2", "save");
+        expectedData = new TeacherRequestPojo("1998-01-09",
+                "izmir",
+                "asdfg1234@gmail.com",
+                "FEMALE",
+                true,
+                Collections.singletonList(1),
+                nameFaker(),
+                passwordFaker(),
+                phoneNumberFaker(),
+                ssnFaker(),
+                surnameFaker(),
+                usernameFaker());
+
+        //Set the expected data
+        expectedDataOuther = new ResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
+
+        //Send the request and get the response
+        response = given(spec)
+                .body(expectedData)
+                .post("{pp1}/{pp2}");
+        response.prettyPrint();
+
+    }
+
+    @Then("do assertion for post")
+    public void assertionPost() {
+        ResponseOutherPojo actualData = response.as(ResponseOutherPojo.class);
+        System.out.println("actualData = " + actualData);
+        JsonPath jsonPath = response.jsonPath();
+
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedDataOuther.getHttpStatus(), jsonPath.getString("httpStatus"));
+        assertEquals(expectedDataOuther.getMessage(), actualData.getMessage());
+
+        assertEquals(expectedData.getUsername(), jsonPath.getString("object.username"));
+        assertEquals(expectedData.getName(), jsonPath.getString("object.name"));
+        assertEquals(expectedData.getSurname(), jsonPath.getString("object.surname"));
+        assertEquals(expectedData.getBirthDay(), jsonPath.getString("object.birthDay"));
+        assertEquals(expectedData.getSsn(), jsonPath.getString("object.ssn"));
+        assertEquals(expectedData.getBirthPlace(), jsonPath.getString("object.birthPlace"));
+        assertEquals(expectedData.getPhoneNumber(), jsonPath.getString("object.phoneNumber"));
+        assertEquals(expectedData.getGender(), jsonPath.getString("object.gender"));
+        assertEquals(expectedData.getEmail(), jsonPath.getString("object.email"));
 
 
 
 
-
-
-
-
-
-
-
-
-
-//    @Given("send get request and validate body")
-//    public void send_get_request_to_get_teacher() throws JsonProcessingException {
-//        adminSetUp();
-//        //Set the url
-//        spec.pathParams("first", "teachers", "second", "getSavedTeacherById", "third", 35);
-//
-//        //Set the expected data
-//      //  objectPojo = new ObjectPojo(35, "alican", "Ali", "Can", "2000-01-05", "222-55-9977", "Ankara", "333-333-9955", "MALE", "ali.can@gmail.com");
-//        expectedData = new TeacherGetPojo(objectPojo, "Teacher successfully found", "OK");
-//        System.out.println("expectedData = " + expectedData);
-//
-//        //Send the request and get the response
-//        response = given(spec).get("{first}/{second}/{third}");
-//        response.prettyPrint();
-//
-//
-//        //Do Assertion
-//        TeacherGetPojo actualDataPojoMapper = new ObjectMapper().readValue(response.asString(), TeacherGetPojo.class);
-//
-//        assertEquals(objectPojo.getUsername(), actualDataPojoMapper.getObject().getUsername());
-//        assertEquals(objectPojo.getName(), actualDataPojoMapper.getObject().getName());
-//        assertEquals(objectPojo.getSurname(), actualDataPojoMapper.getObject().getSurname());//Gerisi Ödev
-//
-//        assertEquals(expectedData.getMessage(), actualDataPojoMapper.getMessage());
-//        assertEquals(expectedData.getHttpStatus(), actualDataPojoMapper.getHttpStatus());
-//
-//    }
-
-
-
-
-
-//    @Then("validate body1")
-//    public void validate_body() throws JsonProcessingException {
-
-
+    }
 
 
 //    @Given("kullanici get request ve dogrulama yapar")
@@ -268,7 +221,7 @@ public class US13TeacherStepDefinitions {
 //    }
 
 
-    }
+}
 
 
 
