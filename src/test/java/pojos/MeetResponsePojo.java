@@ -2,17 +2,17 @@ package pojos;
 
 import java.util.ArrayList;
 
-public class MeetSavePojo {
+public class MeetResponsePojo {
     public String date;
     public String description;
     public String startTime;
     public String stopTime;
     public ArrayList<Integer> studentIds;
 
-    public MeetSavePojo() {
+    public MeetResponsePojo() {
     }
 
-    public MeetSavePojo(String date, String description, String startTime, String stopTime, ArrayList<Integer> studentIds) {
+    public MeetResponsePojo(String date, String description, String startTime, String stopTime, ArrayList<Integer> studentIds) {
         this.date = date;
         this.description = description;
         this.startTime = startTime;
