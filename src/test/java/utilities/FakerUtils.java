@@ -25,12 +25,12 @@ public class FakerUtils {
     }
 
     public static String usernameFaker(){
-        String username = faker.name().username();
+        String username = (faker.name().username()+"team20").substring(0,4);
         return username;
     }
 
     public static String emailFaker(){
-        String email = faker.internet().emailAddress();
+        String email = faker.name().lastName().substring(0,2)+"@"+faker.name().name().substring(0,4);
         return email;
     }
 

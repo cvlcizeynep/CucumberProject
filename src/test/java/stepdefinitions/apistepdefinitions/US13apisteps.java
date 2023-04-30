@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.FakerUtils.*;
 
-public class US13TeacherStepDefinitions {
+public class US13apisteps {
     Response response;
     TeacherRequestPojo expectedData;
     TeacherResponseOutherPojo expectedDataOuther;
@@ -24,7 +24,7 @@ public class US13TeacherStepDefinitions {
     @Given("vice dean sends put request")
     public void sendPutRequestToGetTeacher() throws JsonProcessingException {
         viceDeanSetUp();
-        spec.pathParams("pp1", "teachers", "pp2", "update", "pp3", 5);
+        spec.pathParams("pp1", "teachers", "pp2", "update", "pp3", 6);
         expectedData = new TeacherRequestPojo("1998-01-09",
                 "izmir",
                 "team20@gmail.com",
