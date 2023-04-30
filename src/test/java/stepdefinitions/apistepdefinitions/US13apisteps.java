@@ -21,13 +21,13 @@ public class US13apisteps {
     TeacherResponseOutherPojo expectedDataOuther;
     TeacherResponseObjectPojo object;
 
-    @Given("vice dean sends put request")
+    @Given("kullanici teacher guncellemek icin put request gonderir")
     public void sendPutRequestToGetTeacher() throws JsonProcessingException {
         viceDeanSetUp();
         spec.pathParams("pp1", "teachers", "pp2", "update", "pp3", 6);
         expectedData = new TeacherRequestPojo("1998-01-09",
                 "izmir",
-                "team20@gmail.com",
+                emailFaker(),
                 "FEMALE",
                 true,
                 Collections.singletonList(1),
@@ -46,7 +46,60 @@ public class US13apisteps {
 
     }
 
-    @Then("assertion")
+
+    //------------------POST--------------------------------------
+    @Given("kullanici teacher eklemek icin post request gonderir")
+    public void sendPostRequestAndValidateBody() throws JsonProcessingException {
+        viceDeanSetUp();
+        spec.pathParams("pp1", "teachers", "pp2", "save");
+        expectedData = new TeacherRequestPojo("1998-01-09",
+                "izmir",
+                emailFaker(),
+                "FEMALE",
+                true,
+                Collections.singletonList(1),
+                nameFaker(),
+                passwordFaker(),
+                phoneNumberFaker(),
+                ssnFaker(),
+                surnameFaker(),
+                usernameFaker());
+
+        expectedDataOuther = new TeacherResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
+        response = given(spec)
+                .body(expectedData)
+                .post("{pp1}/{pp2}");
+        response.prettyPrint();
+
+    }
+
+
+    //----------------------GET_TEACHER_BY_NAME-----------------------
+
+    @Given("kullanici gormek istedigi teacher ismini girer")
+    public void kullaniciGormekIstedigiTeacherIsminiGirer() {
+
+        viceDeanSetUp();
+        spec.pathParams("pp1", "teachers", "pp2", "getTeacherByName").queryParam("{pp3}","name");
+        response = given(spec).get("{pp1}/{pp2}");
+        response.prettyPrint();
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+    //--------------------------ASSERTION----------------------------------------------
+
+    @Then("response body nin beklendigi gibi geldigini dogrular")
     public void assertion() {
         TeacherResponseOutherPojo actualData = response.as(TeacherResponseOutherPojo.class);
         System.out.println("actualData = " + actualData);
@@ -69,55 +122,8 @@ public class US13apisteps {
     }
 
 
-    @Given("vice dean sends post request")
-    public void sendPostRequestAndValidateBody() throws JsonProcessingException {
-        viceDeanSetUp();
-        spec.pathParams("pp1", "teachers", "pp2", "save");
-        expectedData = new TeacherRequestPojo("1998-01-09",
-                "izmir",
-                "asdf@gmail.com",
-                "FEMALE",
-                true,
-                Collections.singletonList(1),
-                nameFaker(),
-                passwordFaker(),
-                phoneNumberFaker(),
-                ssnFaker(),
-                surnameFaker(),
-                usernameFaker());
 
-        expectedDataOuther = new TeacherResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
-        response = given(spec)
-                .body(expectedData)
-                .post("{pp1}/{pp2}");
-        response.prettyPrint();
-
-    }
-
-    @Then("verify that the response body should be as an expected")
-    public void assertionPost() {
-        TeacherResponseOutherPojo actualData = response.as(TeacherResponseOutherPojo.class);
-        System.out.println("actualData = " + actualData);
-        JsonPath jsonPath = response.jsonPath();
-
-        assertEquals(200, response.statusCode());
-        assertEquals(expectedDataOuther.getHttpStatus(), jsonPath.getString("httpStatus"));
-        assertEquals(expectedDataOuther.getMessage(), actualData.getMessage());
-
-        assertEquals(expectedData.getUsername(), jsonPath.getString("object.username"));
-        assertEquals(expectedData.getName(), jsonPath.getString("object.name"));
-        assertEquals(expectedData.getSurname(), jsonPath.getString("object.surname"));
-        assertEquals(expectedData.getBirthDay(), jsonPath.getString("object.birthDay"));
-        assertEquals(expectedData.getSsn(), jsonPath.getString("object.ssn"));
-        assertEquals(expectedData.getBirthPlace(), jsonPath.getString("object.birthPlace"));
-        assertEquals(expectedData.getPhoneNumber(), jsonPath.getString("object.phoneNumber"));
-        assertEquals(expectedData.getGender(), jsonPath.getString("object.gender"));
-        assertEquals(expectedData.getEmail(), jsonPath.getString("object.email"));
-
-    }
-
-
-    @Given("verify that the response body contains all expected data")
+    @Given("kullanici olusturulan teacher in bilgilerini goruntuler")
     public void kullanici_get_request_ve_dogrulama_yapar() {
         // Set the url
         // {{baseUrl}}/teachers/getAll
@@ -146,7 +152,6 @@ public class US13apisteps {
         assertTrue(jsonPath.getList("email").contains(expectedData.getEmail()));
 
     }
-
 
 
 }

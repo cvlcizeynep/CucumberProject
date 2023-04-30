@@ -43,6 +43,9 @@ public class US24api {
                 usernameFaker());
 
         expectedDataOuther = new TeacherResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
+
+        //Send the request and get the response
+
         response = given(spec)
                 .body(expectedData)
                 .post("{pp1}/{pp2}");

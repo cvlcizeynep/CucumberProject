@@ -1,24 +1,24 @@
-Feature: API_Validate_Teacher
-
+@US13API
+Feature: Vice Dean Teacher ekleyebilmelidir
 
   @TeacherGetRequest
-  Scenario:TC05_Validate_Teacher
-#    Given vice dean sends get request
-    Then verify that the response body contains all expected data
+  Scenario:Teacher goruntulenebilmelidir
+    Given kullanici teacher eklemek icin post request gonderir
+    Then kullanici olusturulan teacher in bilgilerini goruntuler
 
-
-
-  @TeacherPutRequest
-  Scenario: teacher update
-    Given vice dean sends put request
-    Then assertion
+    #Then verify that the response body contains all expected data
 
 
   @TeacherPostRequest
-  Scenario:Post_Teacher
-    Given vice dean sends post request
-    Then verify that the response body should be as an expected
+  Scenario:Vice Dean Teacher ekleyebilmelidir
+    Given kullanici teacher eklemek icin post request gonderir
+    Then response body nin beklendigi gibi geldigini dogrular
 
+
+  @getSavedTeacherById
+  Scenario:Teacher goruntulenebilmelidir
+    Given kullanici gormek istedigi teacher ismini girer
+    Then kullanici olusturulan teacher in bilgilerini goruntuler
 
 
 
