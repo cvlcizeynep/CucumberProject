@@ -55,7 +55,7 @@ public class MessageObjectPojo {
 
     @Override
     public String toString() {
-        return "US03Contact{" +
+        return "MessageObjectPojo{" +
                 "email='" + email + '\'' +
                 ", message='" + message + '\'' +
                 ", name='" + name + '\'' +
