@@ -29,7 +29,7 @@ public class US24api {
         spec.pathParams("pp1", "teachers", "pp2", "save");
         expectedData = new TeacherRequestPojo("1998-01-09",
                 "izmir",
-                "asdfg1234@gmail.com",
+                emailFaker(),
                 "FEMALE",
                 true,
                 Collections.singletonList(1),
