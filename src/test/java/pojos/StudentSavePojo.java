@@ -4,6 +4,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class StudentSavePojo {
 
     private Integer advisorTeacherId;
@@ -19,6 +20,9 @@ public class StudentSavePojo {
     private String ssn;
     private String surname;
     private String username;
+    public StudentSavePojo() {
+    }
+
 
     public StudentSavePojo(Integer advisorTeacherId, String birthDay, String birthPlace, String email, String fatherName, String gender, String motherName, String name, String password, String phoneNumber, String ssn, String surname, String username) {
         this.advisorTeacherId = advisorTeacherId;
@@ -159,4 +163,5 @@ public class StudentSavePojo {
                 ", username='" + username + '\'' +
                 '}';
     }
+
 }
