@@ -3,7 +3,7 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseTeacherObjectPojo {
+public class TeacherResponseObjectPojo {
     private long userId;
     private String username;
     private String name;
@@ -15,10 +15,10 @@ public class ResponseTeacherObjectPojo {
     private String gender;
     private String email;
 
-    public ResponseTeacherObjectPojo() {
+    public TeacherResponseObjectPojo() {
     }
 
-    public ResponseTeacherObjectPojo(long userId,String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender, String email) {
+    public TeacherResponseObjectPojo(long userId, String username, String name, String surname, String birthDay, String ssn, String birthPlace, String phoneNumber, String gender, String email) {
         this.userId = userId;
         this.username = username;
         this.name = name;

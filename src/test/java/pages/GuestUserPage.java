@@ -21,13 +21,13 @@ public class GuestUserPage {
     public  WebElement silmeButonu;
     @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public  WebElement mesaj;
-    @FindBy(xpath = "//table//thead//tr[1]//th")
+    @FindBy(xpath = "(//*[@class='table table-striped table-bordered table-hover']//tr[1])[1]")
     public WebElement namebaslık;
-    @FindBy(xpath = "//table//thead//tr[2]//th")
+    @FindBy(xpath = "(//*[@class='table table-striped table-bordered table-hover']//tr[1])[1]")
     public WebElement phonenumberbaslık;
-    @FindBy(xpath = "//table//thead//tr[3]//th")
+    @FindBy(xpath = "(//*[@class='table table-striped table-bordered table-hover']//tr[1])[1]")
     public WebElement ssnbaslık;
-    @FindBy(xpath = "//table//thead//tr[4]//th")
+    @FindBy(xpath = "(//*[@class='table table-striped table-bordered table-hover']//tr[1])[1]")
     public WebElement usernamebaslık;
 
 
