@@ -4,9 +4,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import pojos.ResponseTeacherObjectPojo;
-import pojos.ResponseTeacherOutherPojo;
+
 import pojos.TeacherRequestPojo;
+import pojos.TeacherResponseObjectPojo;
+import pojos.TeacherResponseOutherPojo;
 
 import java.util.Collections;
 
@@ -20,8 +21,8 @@ import static utilities.FakerUtils.usernameFaker;
 public class US24api {
     Response response;
     TeacherRequestPojo expectedData;
-    ResponseTeacherOutherPojo expectedDataOuther;
-    ResponseTeacherObjectPojo object;
+    TeacherResponseOutherPojo expectedDataOuther;
+    TeacherResponseObjectPojo object;
 
     @Given("admin sends post request")
     public void admin_sends_post_request() {
@@ -41,7 +42,7 @@ public class US24api {
                 usernameFaker());
 
         //Set the expected data
-        expectedDataOuther = new ResponseTeacherOutherPojo(object, "Teacher saved successfully", "CREATED");
+        expectedDataOuther = new TeacherResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
 
         //Send the request and get the response
         response = given(spec)
