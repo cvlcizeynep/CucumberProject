@@ -1,65 +1,50 @@
 package pojos;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class MessagePojo {
-    private String email;
-    private String message;
-    private String name;
-    private  String subject;
 
+    private MessageObjectPojo object;
+    private String message;
+    private String httpStatus;
 
     public MessagePojo() {
     }
 
-    public MessagePojo(String email, String message, String name, String subject) {
-        this.email = email;
-        this.message = message;
-        this.name = name;
-        this.subject = subject;
+    public MessageObjectPojo getObject() {
+        return object;
     }
 
-
-    public String getEmail() {
-        return email;
+    public void setObject(MessageObjectPojo object) {
+        this.object = object;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public void setMessage(String message) {
         this.message = message;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getHttpStatus() {
+        return httpStatus;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setHttpStatus(String httpStatus) {
+        this.httpStatus = httpStatus;
+    }
+
+    public MessagePojo(MessageObjectPojo object, String message, String httpStatus) {
+        this.object = object;
+        this.message = message;
+        this.httpStatus = httpStatus;
     }
 
     @Override
     public String toString() {
-        return "US03Contact{" +
-                "email='" + email + '\'' +
+        return "MessagePojo{" +
+                "object=" + object +
                 ", message='" + message + '\'' +
-                ", name='" + name + '\'' +
-                ", subject='" + subject + '\'' +
+                ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
 }

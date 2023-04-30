@@ -1,9 +1,9 @@
 package stepdefinitions.apistepdefinitions;
 
-import base_url.StudentManagementBaseUrl;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
+import pojos.MessageObjectPojo;
 import pojos.MessagePojo;
 import utilities.JsonUtil;
 
@@ -16,44 +16,52 @@ import static org.junit.Assert.assertTrue;
 public class US16api {
     Response response;
     Faker faker = new Faker();
-    String mail = faker.name()+faker.name().lastName()+"@gmail.com";
+    String mail = faker.name() + faker.name().lastName() + "@gmail.com";
 
     //burasi test amacli degil
     @Given("Teacher API ile login olarak bir mesaj olusturur")
     public void teacher_api_ile_login_olarak_bir_mesaj_olusturur() {
-    teacherSetUp();
+        teacherSetUp();
 
-        MessagePojo mesaj = new MessagePojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
+        MessageObjectPojo object = new MessageObjectPojo("aslfdas@sadad", "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
+        MessagePojo expected =new MessagePojo(object ,"Contact Message Created Successfully","CREATED");
+
 
         spec.pathParams("first", "contactMessages", "second", "save");
-        response = given(spec).body(mesaj).when().post("/{first}/{second}");
+        response = given(spec).body(expected).when().post("/{first}/{second}");
         response.prettyPrint();
 
-        assertEquals(200,response.statusCode());
+        MessageObjectPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MessageObjectPojo.class);
+        System.out.println(actualData);
 
+//        assertEquals(200, response.statusCode());
+//        assertEquals(expected.getObject().getEmail(), actualData.getO);
+//        assertEquals(expected.getObject().getName(), actualData.getName());
+//        assertEquals(expected.getObject().getMessage(), actualData.get());
+//        assertEquals(expected.getObject().getSubject(), actualData.getSubject());
+//        assertEquals(expected.getMessage(),actualData.getMessage());
+//        assertEquals(expected.getHttpStatus(),actualData.get
     }
-
 
     @Given("Vice Dean olusturulan tum mesajlari API ile goruntuler")
     public void vice_dean_olusturulan_tum_mesajlari_api_ile_goruntuler() {
         viceDeanSetUp();
-        spec.pathParams("first", "contactMessages", "second", "getAll","ds",4);
+        spec.pathParams("first", "contactMessages", "second", "getAll", "ds", 4);
         Response response = given(spec).get("/{first}/{second}");
         //   response.prettyPrint();
 
-        MessagePojo expectedData = new MessagePojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
-
-
-        MessagePojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MessagePojo.class);
+        MessageObjectPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MessageObjectPojo.class);
+        MessageObjectPojo object= new MessageObjectPojo(mail, "Drsler guzel gidiyor", "Erkam  ", "Ders hakkinda");
+        MessagePojo expected= new MessagePojo(object ,"Contact Message Created Successfully","CREATED");
 
         response.then().assertThat().statusCode(200);
+        assertEquals(expected.getObject().getEmail(), actualData.getEmail());
+        assertEquals(expected.getObject().getName(), actualData.getName());
+        assertEquals(expected.getMessage(), actualData.getMessage());
+        assertEquals(expected.getObject().getSubject(), actualData.getSubject());
 
-//-------------------Hard Assertion---------------------------
 
-        assertTrue(actualData.getEmail().contains(expectedData.getEmail()));
-        assertTrue(actualData.getName().contains(expectedData.getName()));
-        assertTrue(actualData.getSubject().contains(expectedData.getSubject()));
-        assertTrue(actualData.getMessage().contains(expectedData.getMessage()));
+
 
     }
 

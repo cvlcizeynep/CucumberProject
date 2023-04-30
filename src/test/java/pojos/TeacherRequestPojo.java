@@ -1,19 +1,57 @@
 package pojos;
 
-public class TeacherObjectPojo {
+import java.util.List;
 
+public class TeacherRequestPojo {
+    /*
+    {
+  "birthDay": "<string>",
+  "birthPlace": "<string>",
+  "email": "<string>",
+  "gender": "<string>",
+  "isAdvisorTeacher": "<boolean>",
+  "lessonsIdList": [
+    "<long>",
+    "<long>"
+  ],
+  "name": "<string>",
+  "password": "<string>",
+  "phoneNumber": "<string>",
+  "ssn": "<string>",
+  "surname": "<string>",
+  "username": "<string>"
+}
+     */
     private String birthDay;
     private String birthPlace;
     private String email;
     private String gender;
     private boolean isAdvisorTeacher;
-    private long lessonsIdList;
+    private List<Integer> lessonsIdList;
     private String name;
     private String password;
     private String phoneNumber;
     private String ssn;
     private String surname;
     private String username;
+
+    public TeacherRequestPojo() {
+    }
+
+    public TeacherRequestPojo(String birthDay, String birthPlace, String email, String gender, boolean isAdvisorTeacher, List<Integer> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+        this.birthDay = birthDay;
+        this.birthPlace = birthPlace;
+        this.email = email;
+        this.gender = gender;
+        this.isAdvisorTeacher = isAdvisorTeacher;
+        this.lessonsIdList = lessonsIdList;
+        this.name = name;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.ssn = ssn;
+        this.surname = surname;
+        this.username = username;
+    }
 
     public String getBirthDay() {
         return birthDay;
@@ -55,11 +93,11 @@ public class TeacherObjectPojo {
         isAdvisorTeacher = advisorTeacher;
     }
 
-    public long getLessonsIdList() {
+    public List<Integer> getLessonsIdList() {
         return lessonsIdList;
     }
 
-    public void setLessonsIdList(long lessonsIdList) {
+    public void setLessonsIdList(List<Integer> lessonsIdList) {
         this.lessonsIdList = lessonsIdList;
     }
 
@@ -111,27 +149,9 @@ public class TeacherObjectPojo {
         this.username = username;
     }
 
-    public TeacherObjectPojo() {
-    }
-
-    public TeacherObjectPojo(String birthDay, String birthPlace, String email, String gender, boolean isAdvisorTeacher, long lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
-        this.birthDay = birthDay;
-        this.birthPlace = birthPlace;
-        this.email = email;
-        this.gender = gender;
-        this.isAdvisorTeacher = isAdvisorTeacher;
-        this.lessonsIdList = lessonsIdList;
-        this.name = name;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.ssn = ssn;
-        this.surname = surname;
-        this.username = username;
-    }
-
     @Override
     public String toString() {
-        return "TeacherObjectPojo{" +
+        return "TeacherRequestPojo{" +
                 "birthDay='" + birthDay + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", email='" + email + '\'' +

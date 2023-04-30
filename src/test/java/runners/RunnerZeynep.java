@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions( // Seneryoların nerede ve nasıl çalışacağı, hangi raporun kullanılmasıyla alakalı seçenekleri ayarlar
         monochrome = true,
         features = "src/test/resources/features/dbfeature",
-        glue = {"stepdefinitions","hooks"},
-        tags = "",
+        glue = {"stepdefinitions"},
+        tags = "@US06DB",
         dryRun = false
 
 
