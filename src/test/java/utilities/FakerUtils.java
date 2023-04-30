@@ -6,20 +6,13 @@ public class FakerUtils {
 
     static Faker faker = new Faker();
     public static String phoneNumberFaker(){
-        String phoneNumber = faker.phoneNumber().phoneNumber().replaceAll("[^0-9]", "");
-        String formattedPhoneNumber = String.format("%s-%s-%s",
-                phoneNumber.substring(0, 3),
-                phoneNumber.substring(3, 6),
-                phoneNumber.substring(6, 10)
-        );
-
-        return formattedPhoneNumber;
+        String phone=faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(1000,9999);
+        return phone;
     }
 
     public static String ssnFaker(){
-        String ssn = faker.idNumber().ssnValid().replaceAll("[^0-9]", "");
-        String formattedSSN = ssn.substring(0, 3) + "-" + ssn.substring(3, 5) + "-" + ssn.substring(5, 9);
-        return formattedSSN;
+        String ssn=faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999);
+        return ssn;
     }
 
     public static String nameFaker(){
@@ -32,12 +25,12 @@ public class FakerUtils {
     }
 
     public static String usernameFaker(){
-        String username = faker.name().username();
+        String username = (faker.name().username()+"team20").substring(0,4);
         return username;
     }
 
     public static String emailFaker(){
-        String email = faker.internet().emailAddress();
+        String email = faker.name().lastName().substring(0,2)+"@"+faker.name().name().substring(0,4);
         return email;
     }
 
@@ -45,7 +38,10 @@ public class FakerUtils {
         String password = faker.internet().password();
         return password;
     }
-
+    public static String birthPlaceFaker(){
+        String birthPlace = faker.country().capital();
+        return birthPlace;
+    }
 
 
 }
