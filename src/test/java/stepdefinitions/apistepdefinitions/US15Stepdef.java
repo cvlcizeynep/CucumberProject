@@ -45,8 +45,6 @@ public class US15Stepdef {
         String ssn = faker.idNumber().ssnValid().replaceAll("[^0-9]", "");
         String formattedSSN=ssn.substring(0,3)+"-"+ssn.substring(3,5)+"-"+ssn.substring(5,9);
 
-        response=given().spec(spec).body(object).post("{first}/{second}");
-        response.prettyPrint();
         //Set the url
 
         /*
@@ -62,8 +60,8 @@ public class US15Stepdef {
         StudentSavePojo object = new StudentSavePojo(249,
                birthDay,birthPlace,email,fathername,gender,mothername,name,password,phoneNumber,formattedSSN,surname
         ,username);
-        Response response = given().spec(spec).body(object).when().put("/{first}/{second}");
-        System.out.println(object);
+        Response response = given().spec(spec).body(object).when().put("{first}/{second}");
+        //System.out.println(object);
         response.prettyPrint();
 
     }
