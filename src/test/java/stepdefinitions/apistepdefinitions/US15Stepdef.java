@@ -17,6 +17,9 @@ public class US15Stepdef {
     String username = faker.name().username();
     String email = faker.internet().emailAddress();
     String password = faker.internet().password();
+    String birthPlace = faker.address().city();
+    String passwordd = faker.bothify("a1S#f??rQ");
+
     String phoneNumber = faker.phoneNumber().phoneNumber().replaceAll("[^0-9]", "");
     String formattedPhoneNumber = String.format("%s-%s-%s",
             phoneNumber.substring(0, 3),
