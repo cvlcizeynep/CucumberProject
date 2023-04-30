@@ -25,7 +25,7 @@ public class US13TeacherStepDefinitions {
         spec.pathParams("pp1", "teachers", "pp2", "update", "pp3", 5);
         expectedData = new TeacherRequestPojo("1998-01-09",
                 "izmir",
-                "team20@gmail.com",
+                "abc@gmail.com",
                 "FEMALE",
                 true,
                 Collections.singletonList(1),
