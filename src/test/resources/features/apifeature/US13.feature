@@ -3,7 +3,8 @@ Feature: API_Validate_Teacher
 
   @TeacherGetRequest
   Scenario:TC05_Validate_Teacher
-   # Given send get request and validate body
+#    Given vice dean sends get request
+    Then verify that the response body contains all expected data
 
 
 
@@ -16,7 +17,9 @@ Feature: API_Validate_Teacher
   @TeacherPostRequest
   Scenario:Post_Teacher
     Given vice dean sends post request
-    When do assertion for post
+    Then verify that the response body should be as an expected
+
+
 
 
 

@@ -3,25 +3,25 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseTeacherOutherPojo {
-    private ResponseTeacherObjectPojo object;
+public class TeacherResponseOutherPojo {
+    private TeacherResponseObjectPojo object;
     private String message;
     private String httpStatus;
 
-    public ResponseTeacherOutherPojo() {
+    public TeacherResponseOutherPojo() {
     }
 
-    public ResponseTeacherOutherPojo(ResponseTeacherObjectPojo object, String message, String httpStatus) {
+    public TeacherResponseOutherPojo(TeacherResponseObjectPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-    public ResponseTeacherObjectPojo getObject() {
+    public TeacherResponseObjectPojo getObject() {
         return object;
     }
 
-    public void setObject(ResponseTeacherObjectPojo object) {
+    public void setObject(TeacherResponseObjectPojo object) {
         this.object = object;
     }
 
