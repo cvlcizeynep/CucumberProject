@@ -3,7 +3,9 @@ package pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GuestUserPojo {
+public class GuestUserObjectPojo {
+
+    private int userId;
     private String birthDay;
     private String birthPlace;
     private String gender;
@@ -14,10 +16,10 @@ public class GuestUserPojo {
     private String surname;
     private String username;
 
-    public GuestUserPojo() {
+    public GuestUserObjectPojo() {
     }
 
-    public GuestUserPojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+    public GuestUserObjectPojo(int userId, String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
         this.birthDay = birthDay;
         this.birthPlace = birthPlace;
         this.gender = gender;
@@ -27,6 +29,7 @@ public class GuestUserPojo {
         this.ssn = ssn;
         this.surname = surname;
         this.username = username;
+        this.userId = userId;
     }
 
 
@@ -102,10 +105,19 @@ public class GuestUserPojo {
         this.username = username;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
-        return "GuestUserPojo{" +
-                "birthDay='" + birthDay + '\'' +
+        return "GuestUserObjectPojo{" +
+                "userId=" + userId +
+                ", birthDay='" + birthDay + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", gender='" + gender + '\'' +
                 ", name='" + name + '\'' +

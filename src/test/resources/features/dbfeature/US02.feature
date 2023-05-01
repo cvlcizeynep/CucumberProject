@@ -34,10 +34,7 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
 
   Scenario: TC05 Admin Guest User List bilgilerini silebilir
     #Api
-    #Given Kullanici admin olarak login olur.
-    #And Menu botonuna tiklar
-    #And Main menu sayfasindan Guest User List tiklar
-    #When Guest User List bilgilerini siler
+    Given Guest user datayi delete request ile siler
     #DB
     When Database icin connect saglanir
     When Admin Guest User username bilgilerini databasede sorgular
