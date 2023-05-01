@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.FakerUtils.*;
 
-public class US13apisteps {
+public class US13 {
     Response response;
     TeacherRequestPojo expectedData;
     TeacherResponseOutherPojo expectedDataOuther;
@@ -80,17 +80,12 @@ public class US13apisteps {
     public void kullaniciGormekIstedigiTeacherIsminiGirer() {
 
         viceDeanSetUp();
-        spec.pathParams("pp1", "teachers", "pp2", "getTeacherByName").queryParam("{pp3}","name");
-        response = given(spec).get("{pp1}/{pp2}");
+     //   spec.pathParams("pp1", "teachers", "pp2", "getTeacherByName").queryParam("pp3","name");
+//        response = given(spec).get("{pp1}/{pp2}/{pp3}");
+         response = given()
+                .when()
+                .get("http://164.92.252.42:8080/teachers/getTeacherByName?name=Roza");
         response.prettyPrint();
-
-
-
-
-
-
-
-
     }
 
 
@@ -154,7 +149,35 @@ public class US13apisteps {
     }
 
 
-}
+    @Then("kullanici olusturulan teacher in bilgilerini id ile goruntuler")
+    public void kullaniciOlusturulanTeacherInBilgileriniIdIleGoruntuler() {
+
+        TeacherResponseObjectPojo actualData = response.as(TeacherResponseObjectPojo.class);
+        System.out.println(actualData);
+        JsonPath jsonPath = response.jsonPath();
+
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedData.getUsername(), jsonPath.getString("object.username"));
+        assertEquals(expectedData.getName(), jsonPath.getString("object.name"));
+        assertEquals(expectedData.getSurname(), jsonPath.getString("object.surname"));
+        assertEquals(expectedData.getBirthDay(), jsonPath.getString("object.birthDay"));
+        assertEquals(expectedData.getSsn(), jsonPath.getString("object.ssn"));
+        assertEquals(expectedData.getBirthPlace(), jsonPath.getString("object.birthPlace"));
+        assertEquals(expectedData.getPhoneNumber(), jsonPath.getString("object.phoneNumber"));
+        assertEquals(expectedData.getGender(), jsonPath.getString("object.gender"));
+        assertEquals(expectedData.getEmail(), jsonPath.getString("object.email"));
+
+    }
+
+
+
+
+
+
+
+
+
+    }
 
 
 
