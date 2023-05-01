@@ -20,7 +20,7 @@ Faker faker =new Faker();
 
     @Given("Kullanıcı register sayfasına gider.")
     public void kullanıcı_register_sayfasına_gider() {
-        Driver.getDriver().get("https://www.managementonschools.com/register");
+        Driver.getDriver().get("http://139.59.159.36:3000/register");
         ReusableMethods.waitFor(1);
 
     }
@@ -68,7 +68,7 @@ Faker faker =new Faker();
     @When("Kullanici register User Name {string} girer")
     public void kullanici_register_user_name_girer(String string) {
 
-        registerPage.username.sendKeys(faker.name().username());
+        registerPage.username.sendKeys(string);
         ReusableMethods.waitFor(1);
     }
     @When("Kullanici register Password {string} girer")
