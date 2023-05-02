@@ -43,7 +43,7 @@ public class StudentManagementBaseUrl  {
     }
 
     public static void viceDeanSetUp() {
-        specVicedean = new RequestSpecBuilder().
+        spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
                 addHeader("Authorization",  generateTokenVicedean()).
                 setBaseUri(ConfigReader.getProperty("APIURL")).build();
