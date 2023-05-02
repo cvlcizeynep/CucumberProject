@@ -14,7 +14,7 @@ public class US08Steps {
     Statement statement;
     @Given("query gonderir")
     public void query_gonderir() throws SQLException {
-//SELECT * FROM teacher WHERE id = 35;
+
         connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = connection.createStatement();
         resultSet = statement.executeQuery("SELECT * FROM lesson WHERE lesson_id = 5");

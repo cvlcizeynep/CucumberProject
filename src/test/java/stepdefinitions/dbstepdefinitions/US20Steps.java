@@ -15,7 +15,7 @@ public class US20Steps {
 
     @Given("query gonderirr")
     public void query_gonderirr() throws SQLException {
-//SELECT * FROM teacher WHERE id = 35;
+
         connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = connection.createStatement();
         resultSet = statement.executeQuery("select *from meet where id=63");
