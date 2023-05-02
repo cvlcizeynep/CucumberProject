@@ -23,5 +23,5 @@ Feature: "Aday öğrenciler sisteme kayıt olabilmelidir.(Register)"
       | Emre | Yigit   | İskenderun  | 26.01.1996    | 123-995-1405 | 123-59-1315 | emre012   | 123345678 |
 
     Scenario: TC02 TC01'deki kayıdın database'de olup olmadığı sorgulanır.
-      Given  Kullanıcı database'de username'i "emre011" olan hesabın varlığını doğrular
+      Given  Kullanıcı database'de username'i "emre012" olan hesabın varlığını doğrular
       Then Database ile bağlantı kesilir.
