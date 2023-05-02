@@ -87,7 +87,7 @@ public class US13steps {
 
     @Then("Databasede vice deanin ekledigi teacher in goruldugu dogrulanir.")
     public void databasedeViceDeaninEkledigiTeacherInGorulduguDogrulanir() {
-        Assert.assertTrue(teacherNamelist.toString().contains(name));
+        Assert.assertTrue(teacherNamelist.toString().contains(nameFaker()));
         assert teacherSurnamelist.toString().contains(surname);
         assert teacherBirthPlacelist.toString().contains(birthplace);
         assert teacherPhonelist.toString().contains(phone);
