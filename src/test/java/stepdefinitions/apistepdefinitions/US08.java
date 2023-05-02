@@ -9,8 +9,7 @@ import pojos.LessonPojo;
 import pojos.MessagePojo;
 import utilities.JsonUtil;
 
-import static base_url.StudentManagementBaseUrl.specVicedean;
-import static base_url.StudentManagementBaseUrl.viceDeanSetUp;
+import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
@@ -25,12 +24,12 @@ public class US08 {
     @Given("user sends post request for lesson data")
     public void user_sends_post_request_for_lesson_data() {
         viceDeanSetUp();
-        specVicedean.pathParams("first", "lessons", "second", "save");
+        spec.pathParams("first", "lessons", "second", "save");
 
         expected=new LessonPojo("true","25",lessonm);
         System.out.println("expected = " + expected);
 
-        response = given(specVicedean).body(expected).post("{first}/{second}");
+        response = given(spec).body(expected).post("{first}/{second}");
         response.prettyPrint();
 
 

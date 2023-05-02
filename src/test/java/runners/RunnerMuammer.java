@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@DBtest2",
-        dryRun = true
+        tags = "@lessons_add_Lesson",
+        dryRun = false
 
 
 )
