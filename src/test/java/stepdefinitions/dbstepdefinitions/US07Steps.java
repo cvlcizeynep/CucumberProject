@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import pages.ContactPage;
 import pojos.MessagePojo;
 import pojos.MessagePostPojo;
 import utilities.DBUtils;
@@ -13,7 +12,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.studentSetUp;
 import static io.restassured.RestAssured.given;

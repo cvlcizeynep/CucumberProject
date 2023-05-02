@@ -31,11 +31,11 @@ public class US06Steps {
     String Ssn=faker.number().numberBetween(100,999)+"-"+faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999);
     String usename=faker.name().username();
     String password=faker.internet().password(8,17);
+    List<Object>myDynamicQuery= new ArrayList<>();
     @Given("Kullanici Vice Dean ekler")
     public void kullanici_vice_dean_ekler() {
         faker=new Faker();
         viceDeanManagement=new ViceDeanManagement();
-
         viceDeanManagement.name.sendKeys(name);
         viceDeanManagement.surName.sendKeys(lastname);
         viceDeanManagement.birtDate.sendKeys("09091999");
@@ -60,6 +60,7 @@ public class US06Steps {
       viceSsnlist= Collections.singletonList(DBUtils.getQueryResultList("select ssn from vice_dean"));
       vicePasswordlist= Collections.singletonList(DBUtils.getQueryResultList("select password from vice_dean"));
       vicePhonelist= Collections.singletonList(DBUtils.getQueryResultList("select phone_number from vice_dean;"));
+
     }
     @Then("Databasede deanin ekledigi vice deanin goruldugu dogrulanir.")
     public void databasede_deanin_ekledigi_vice_deanin_goruldugu_dogrulanir() {
@@ -70,6 +71,16 @@ public class US06Steps {
         //assert vicePasswordlist.toString().contains(password);
         assert viceUsernamelist.toString().contains(usename);
         assert viceSsnlist.toString().contains(Ssn);
+    }
+    @When("Databaseden olusturulan {string} icin {string} ozellikli sorgu yapilir.")
+    public void databaseden_olusturulan_icin_ozellikli_sorgu_yapilir(String column, String data) {
+    myDynamicQuery= Collections.singletonList(DBUtils.getQueryResultList("select * from vice_dean where " + column + "=" + data));
+
+    }
+
+    @Then("Olusturulan {string} icin {string} ozellikli verinin dogrulamasi yapilir")
+    public void olusturulan_icin_ozellikli_verinin_dogrulamasi_yapilir(String column, String data) {
+        assert myDynamicQuery.toString().contains(data);
 
 
     }

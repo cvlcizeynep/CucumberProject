@@ -9,10 +9,8 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "src/test/resources/features/dbfeature",
         glue = {"stepdefinitions"},
-        tags = "@US23DB",
+        tags = "@US06DB",
         dryRun = false
-
-
 )
 public class RunnerZeynep {
 
