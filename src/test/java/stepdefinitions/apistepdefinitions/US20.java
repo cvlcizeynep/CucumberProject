@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static base_url.StudentManagementBaseUrl.spec;
-import static base_url.StudentManagementBaseUrl.specVicedean;
+import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -41,7 +40,7 @@ public class US20 {
 
     @Then("teacher gets the add_meetList and assert_GET")
     public void teacher_gets_the_add_meet_list_and_assert_get() {
-
+        teacherSetUp();
         StudentMeetPojo studentMeetPojos = new StudentMeetPojo(41, "mehmetcan",
                 "333-22-9999", "mehmet", "can", "2010-02-01",
                 "almanya", "111-222-9999", "MALE",
@@ -56,7 +55,7 @@ public class US20 {
                 "123-54-3478", studentMeetPojo);
 
         MeetRootPojo expectedData = new MeetRootPojo(meetObjectPojo, "Meet successfully found", "CREATED");
-        specVicedean.pathParams("first", "meet", "second", "getMeetById", "third", 63);
+        spec.pathParams("first", "meet", "second", "getMeetById", "third", 63);
 
         response = given(spec).when().get("{first}/{second}/{third}");
         response.prettyPrint();
@@ -93,34 +92,16 @@ public class US20 {
 
     @Given("teacher sends the add_meetList_PUT")
     public void teacher_sends_the_add_meet_list_put() {
+        teacherSetUp();
         MeetResponsePojo expecteddata = new MeetResponsePojo("2023-08-22", "ggggggggtytttttttttt", "12:14", "13:18", null);
         System.out.println("expecteddata = " + expecteddata);
 
         Response response = given().spec(spec).when().body(expecteddata).get("{first}/{second}/{third}");
         response.prettyPrint();
 
-//        DummyRestApiDataPojo expecteddata = new DummyRestApiDataPojo("Ali Can", 111111, 23, "Perfect image");
-//        System.out.println("expecteddata = " + expecteddata);
-//        DummyRestApiResponseBodyPojo expectedBodyPojo = new DummyRestApiResponseBodyPojo("success", expecteddata, "Successfully! Record has been updated.");
-//
-//        Response response = given().spec(spec).when().body(expectedBodyPojo).get("/{first}/{second}");
-//        response.prettyPrint();
-//
-//        //Do assertion
-//        DummyRestApiResponseBodyPojo actualdata = ObjectMapperUtils.convertJsonTojava(response.asString(), DummyRestApiResponseBodyPojo.class);
-//        System.out.println("actualdata = " + actualdata);
-//
-//        assertEquals(200, response.statusCode());
-//        assertEquals(expectedBodyPojo.getStatus(), actualdata.getStatus());
-//        assertEquals(expectedBodyPojo.getMessage(), actualdata.getMessage());
-//
-//        assertEquals(expecteddata.getEmployee_name(), actualdata.getData().getEmployee_name());
-//        assertEquals(expecteddata.getEmployee_age(), actualdata.getData().getEmployee_age());
-//        assertEquals(expecteddata.getEmployee_salary(), actualdata.getData().getEmployee_salary());
 
 
-//    }
-//
+
 //    @Then("teacher gets the add_meetList and assert_PUT")
 //    public void teacher_gets_the_add_meet_list_and_assert_put() {
 //
