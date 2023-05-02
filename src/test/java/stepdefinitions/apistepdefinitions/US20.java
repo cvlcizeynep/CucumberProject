@@ -99,6 +99,9 @@ public class US20 {
         Response response = given().spec(spec).when().body(expecteddata).get("{first}/{second}/{third}");
         response.prettyPrint();
 
+        MeetRootPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MeetRootPojo.class);
+
+        assertEquals(200, response.statusCode());
 
 
 
