@@ -29,7 +29,7 @@ public class US11 {
     @Given("kullanici silmek istedigi ders icin delete request gonderir ve dogrulamayapar.")
     public void kullanici_silmek_istedigi_ders_icin_delete_request_gonderir_ve_dogrulamayapar() {
         viceDeanSetUp();
-        spec.pathParams("first","lessonPrograms","second","delete","third",165);
+        spec.pathParams("first","lessonPrograms","second","delete","third",478);
         Map<String,String> expecteddata=new HashMap<>();
         expecteddata.put("message","Lesson Program Deleted");
         expecteddata.put("httpStatus","OK");
