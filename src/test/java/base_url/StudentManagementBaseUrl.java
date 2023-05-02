@@ -12,6 +12,7 @@ import static utilities.AuthenticationSchoolManagement.*;
 public class StudentManagementBaseUrl  {
 
     public static RequestSpecification spec;
+    public static RequestSpecification specVicedean;
     static public void adminSetUp() {
 
         spec = new RequestSpecBuilder().
@@ -42,7 +43,7 @@ public class StudentManagementBaseUrl  {
     }
 
     public static void viceDeanSetUp() {
-        spec = new RequestSpecBuilder().
+        specVicedean = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
                 addHeader("Authorization",  generateTokenVicedean()).
                 setBaseUri(ConfigReader.getProperty("APIURL")).build();
