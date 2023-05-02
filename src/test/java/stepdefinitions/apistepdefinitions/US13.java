@@ -22,7 +22,7 @@ public class US13 {
     TeacherResponseObjectPojo object;
 
     @Given("kullanici teacher guncellemek icin put request gonderir")
-    public void sendPutRequestToGetTeacher() throws JsonProcessingException {
+    public void sendPutRequest() throws JsonProcessingException {
         viceDeanSetUp();
         spec.pathParams("pp1", "teachers", "pp2", "update", "pp3", 6);
         expectedData = new TeacherRequestPojo("1998-01-09",
@@ -49,7 +49,7 @@ public class US13 {
 
     //------------------POST--------------------------------------
     @Given("kullanici teacher eklemek icin post request gonderir")
-    public void sendPostRequestAndValidateBody() throws JsonProcessingException {
+    public void sendPostRequest() throws JsonProcessingException {
         viceDeanSetUp();
         spec.pathParams("pp1", "teachers", "pp2", "save");
         expectedData = new TeacherRequestPojo("1998-01-09",
@@ -80,12 +80,22 @@ public class US13 {
     public void kullaniciGormekIstedigiTeacherIsminiGirer() {
 
         viceDeanSetUp();
-     //   spec.pathParams("pp1", "teachers", "pp2", "getTeacherByName").queryParam("pp3","name");
-//        response = given(spec).get("{pp1}/{pp2}/{pp3}");
-         response = given()
-                .when()
-                .get("http://164.92.252.42:8080/teachers/getTeacherByName?name=Roza");
+        spec.pathParams("pp1", "teachers", "pp2", "getTeacherByName").queryParam("name","Geoffrey");
+        response = given(spec).get("{pp1}/{pp2}");
         response.prettyPrint();
+        TeacherResponseObjectPojo expectedData = new TeacherResponseObjectPojo(32,"hae.bosco","Geoffrey","Borer","1990-04-05","557-61-5667","New Quiana","107-065-7992","FEMALE","yapayalnız@gmail.com");
+
+        JsonPath jsonPath = response.jsonPath();
+        assertEquals(200,response.statusCode());
+        assertTrue(jsonPath.getList("username").contains(expectedData.getUsername()));
+        assertTrue(jsonPath.getList("name").contains(expectedData.getName()));
+        assertTrue(jsonPath.getList("surname").contains(expectedData.getSurname()));
+        assertTrue(jsonPath.getList("birthDay").contains(expectedData.getBirthDay()));
+        assertTrue(jsonPath.getList("ssn").contains(expectedData.getSsn()));
+        assertTrue(jsonPath.getList("birthPlace").contains(expectedData.getBirthPlace()));
+        assertTrue(jsonPath.getList("phoneNumber").contains(expectedData.getPhoneNumber()));
+        assertTrue(jsonPath.getList("gender").contains(expectedData.getGender()));
+        assertTrue(jsonPath.getList("email").contains(expectedData.getEmail()));
     }
 
 
@@ -133,9 +143,7 @@ public class US13 {
 
         //Do assertion
         assertEquals(200, response.statusCode());
-
         JsonPath jsonPath = response.jsonPath();
-
         assertTrue(jsonPath.getList("username").contains(expectedData.getUsername()));
         assertTrue(jsonPath.getList("name").contains(expectedData.getName()));
         assertTrue(jsonPath.getList("surname").contains(expectedData.getSurname()));
@@ -152,20 +160,17 @@ public class US13 {
     @Then("kullanici olusturulan teacher in bilgilerini id ile goruntuler")
     public void kullaniciOlusturulanTeacherInBilgileriniIdIleGoruntuler() {
 
-        TeacherResponseObjectPojo actualData = response.as(TeacherResponseObjectPojo.class);
-        System.out.println(actualData);
         JsonPath jsonPath = response.jsonPath();
-
-        assertEquals(200, response.statusCode());
-        assertEquals(expectedData.getUsername(), jsonPath.getString("object.username"));
-        assertEquals(expectedData.getName(), jsonPath.getString("object.name"));
-        assertEquals(expectedData.getSurname(), jsonPath.getString("object.surname"));
-        assertEquals(expectedData.getBirthDay(), jsonPath.getString("object.birthDay"));
-        assertEquals(expectedData.getSsn(), jsonPath.getString("object.ssn"));
-        assertEquals(expectedData.getBirthPlace(), jsonPath.getString("object.birthPlace"));
-        assertEquals(expectedData.getPhoneNumber(), jsonPath.getString("object.phoneNumber"));
-        assertEquals(expectedData.getGender(), jsonPath.getString("object.gender"));
-        assertEquals(expectedData.getEmail(), jsonPath.getString("object.email"));
+        assertEquals(200,response.statusCode());
+        assertTrue(jsonPath.getList("username").contains(expectedData.getUsername()));
+        assertTrue(jsonPath.getList("name").contains(expectedData.getName()));
+        assertTrue(jsonPath.getList("surname").contains(expectedData.getSurname()));
+        assertTrue(jsonPath.getList("birthDay").contains(expectedData.getBirthDay()));
+        assertTrue(jsonPath.getList("ssn").contains(expectedData.getSsn()));
+        assertTrue(jsonPath.getList("birthPlace").contains(expectedData.getBirthPlace()));
+        assertTrue(jsonPath.getList("phoneNumber").contains(expectedData.getPhoneNumber()));
+        assertTrue(jsonPath.getList("gender").contains(expectedData.getGender()));
+        assertTrue(jsonPath.getList("email").contains(expectedData.getEmail()));
 
     }
 
