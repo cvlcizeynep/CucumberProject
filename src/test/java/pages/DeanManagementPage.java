@@ -13,7 +13,7 @@ public class DeanManagementPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//button[normalize-space()='Menu']")
+    @FindBy(xpath = "(//button[normalize-space()='Menu'])[1]")
     public WebElement MenuButton;
 
     @FindBy(xpath = "//a[normalize-space()='Dean Management']")
