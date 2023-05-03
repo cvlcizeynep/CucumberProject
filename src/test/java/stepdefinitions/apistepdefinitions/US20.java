@@ -95,7 +95,7 @@ public class US20 {
         teacherSetUp();
         MeetResponsePojo expecteddata = new MeetResponsePojo("2023-08-22", "ggggggggtytttttttttt", "12:14", "13:18", null);
         System.out.println("expecteddata = " + expecteddata);
-
+        spec.pathParams("first", "meet", "second", "update", "third", 63);
         Response response = given().spec(spec).when().body(expecteddata).get("{first}/{second}/{third}");
         response.prettyPrint();
 
@@ -114,7 +114,8 @@ public class US20 {
 //    @Given("teacher sends the add_meetList_DELETE")
 //    public void teacher_sends_the_add_meet_list_delete() {
 //        //Set the url
-//        specVicedean.pathParams("first", "todos", "second", 198);
+//        teacherSetUp();
+//        spec.pathParams("first", "todos", "second", 198);
 //
 //        //Set the expected data
 //        Map<String, String> expectedData = new HashMap<>();
