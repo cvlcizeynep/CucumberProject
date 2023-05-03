@@ -6,7 +6,6 @@ Feature: Vice Dean Teacher ekleyebilmelidir
     Given kullanici teacher eklemek icin post request gonderir
     Then kullanici olusturulan teacher in bilgilerini goruntuler
 
-    #Then verify that the response body contains all expected data
 
 
   @TeacherPostRequest
