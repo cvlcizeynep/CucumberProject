@@ -43,7 +43,7 @@ public class US02Steps {
     }
     @Then("Admin Guest User phone number bilgilerini gorebildigini dogrular")
     public void admin_guest_user_phone_number_bilgilerini_gorebildigini_dogrular() {
-        Assert.assertTrue(phonenumberlist.toString().contains("[645-969-9245]"));
+        Assert.assertTrue(phonenumberlist.toString().contains("[598-256-6589]"));
 
     //**************************ssn************************
 
@@ -55,7 +55,7 @@ public class US02Steps {
     }
     @Then("Admin Guest User ssn bilgilerini gorebildigini dogrular")
     public void admin_guest_user_ssn_bilgilerini_gorebildigini_dogrular() {
-        Assert.assertTrue(ssnlist.toString().contains("[159-31-4394]"));
+        Assert.assertTrue(ssnlist.toString().contains("[235-56-5896]"));
 
      //***********************username*******************
 
@@ -68,14 +68,14 @@ public class US02Steps {
     }
     @Then("Admin Guest User username bilgilerini gorebildigini dogrular")
     public void admin_guest_user_username_bilgilerini_gorebildigini_dogrular() {
-        Assert.assertTrue(usernamelist.toString().contains("[hayriye_kilic]"));
+        Assert.assertTrue(usernamelist.toString().contains("[hayriyekilic]"));
 
     }
 
 
     @Then("Admin Guest User username bilgilerini goremedigini dogrular")
     public void adminGuestUserUsernameBilgileriniGoremediginiDogrular() {
-        Assert.assertFalse(usernamelist.toString().contains("a78d"));
+        Assert.assertFalse(usernamelist.toString().contains("echo"));
 
     }
 

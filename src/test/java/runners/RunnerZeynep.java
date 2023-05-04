@@ -11,8 +11,6 @@ import org.junit.runner.RunWith;
         glue = {"stepdefinitions"},
         tags = "@US06DB",
         dryRun = false
-
-
 )
 public class RunnerZeynep {
 

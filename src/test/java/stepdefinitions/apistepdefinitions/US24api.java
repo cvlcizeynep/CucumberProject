@@ -21,6 +21,7 @@ import static utilities.FakerUtils.usernameFaker;
 public class US24api {
     Response response;
     TeacherRequestPojo expectedData;
+
     TeacherResponseOutherPojo expectedDataOuther;
     TeacherResponseObjectPojo object;
 
@@ -41,10 +42,10 @@ public class US24api {
                 surnameFaker(),
                 usernameFaker());
 
-        //Set the expected data
         expectedDataOuther = new TeacherResponseOutherPojo(object, "Teacher saved successfully", "CREATED");
 
         //Send the request and get the response
+
         response = given(spec)
                 .body(expectedData)
                 .post("{pp1}/{pp2}");
