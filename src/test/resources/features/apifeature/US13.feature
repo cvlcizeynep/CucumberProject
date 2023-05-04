@@ -4,9 +4,8 @@ Feature: Vice Dean Teacher ekleyebilmelidir
   @TeacherGetRequest
   Scenario:Teacher goruntulenebilmelidir
     Given kullanici teacher eklemek icin post request gonderir
-    Then kullanici olusturulan teacher in bilgilerini goruntuler
+    Then kullanici gormek istedigi teacher ismini girer ve dogrular
 
-    #Then verify that the response body contains all expected data
 
 
   @TeacherPostRequest
@@ -17,7 +16,7 @@ Feature: Vice Dean Teacher ekleyebilmelidir
 
   @getSavedTeacherByName
   Scenario:Teacher goruntulenebilmelidir
-    Given kullanici gormek istedigi teacher ismini girer
+    Given kullanici gormek istedigi teacher ismini girer ve dogrular
     Then kullanici olusturulan teacher in bilgilerini id ile goruntuler
 
 

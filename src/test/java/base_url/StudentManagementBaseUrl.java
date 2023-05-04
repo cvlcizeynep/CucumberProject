@@ -12,6 +12,7 @@ import static utilities.AuthenticationSchoolManagement.*;
 public class StudentManagementBaseUrl  {
 
     public static RequestSpecification spec;
+    public static RequestSpecification specVicedean;
     static public void adminSetUp() {
 
 
