@@ -14,6 +14,7 @@ public class StudentManagementBaseUrl  {
     public static RequestSpecification spec;
     static public void adminSetUp() {
 
+
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
                 addHeader("Authorization", generateTokenAdmin()).
