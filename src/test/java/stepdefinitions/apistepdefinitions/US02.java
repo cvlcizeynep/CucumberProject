@@ -9,9 +9,16 @@ import io.restassured.response.Response;
 import pojos.DeanPojo;
 import pojos.GuestUserObjectPojo;
 import pojos.GuestUserOutherPojo;
+import utilities.DBUtils;
 import utilities.JsonUtil;
+import utilities.ReusableMethods;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static base_url.StudentManagementBaseUrl.adminSetUp;
@@ -37,7 +44,7 @@ public class US02 {
         ssnFaker();
         usernameFaker();
         phoneNumberFaker();
-        object = new GuestUserObjectPojo(1,"2012-12-12","izmir","MALE","hayriye","12345678",phoneNumberFaker(),ssnFaker(),"kilic",usernameFaker());
+        object = new GuestUserObjectPojo(1,"2012-12-12","izmir","MALE","hayriye","12345678",phoneNumberFaker(),ssnFaker(),"kilic","hayriyekilic");
         expectedData = new GuestUserOutherPojo(object,"Guest User Save","CREATED");
         System.out.println(expectedData);
         response=given().spec(spec).body(object).post("{first}/{second}");
@@ -51,29 +58,26 @@ public class US02 {
                 "object.phoneNumber",equalTo(expectedData.getObject().getPhoneNumber()),
                 "object.ssn",equalTo(expectedData.getObject().getSsn()),
                 "object.username",equalTo(expectedData.getObject().getUsername()));
-
-
-
-
-
-
-
-//        GuestUserOutherPojo actualData =  response.as( GuestUserOutherPojo.class);
-//        System.out.println(actualData);
-//        assertEquals(expectedData.getObject().getUsername(),actualData.getObject().getUsername());
-//        assertEquals(expectedData.getObject().getPhoneNumber(),actualData.getObject().getPhoneNumber());
-//        assertEquals(expectedData.getObject().getName(),actualData.getObject().getName());
-//        assertEquals(expectedData.getMessage(),actualData.getMessage().contains("Guest User registered."));
-//        assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
-
-
-
-
     }
     @Then("Guest user datayi delete request ile siler")
-    public void guest_user_datayi_delete_request_ile_siler() {
+    public void guest_user_datayi_delete_request_ile_siler() throws SQLException {
+
+        //**********************id 'yi dinamik almak için*************
+        DBUtils.createConnection();
+        Statement st = DBUtils.createStatement();
+        String query = ("SELECT * FROM guest_user WHERE username = 'hayriyekilic'");
+        ResultSet rs = st.executeQuery(query);
+        List<Object> id = new ArrayList<>();
+        while(rs.next()){
+            id.add(rs.getString(1));
+        }
+        System.out.println("id " + id);
+        int yeniid = Integer.parseInt((String) id.get(0));
+        System.out.println("yeniid " + yeniid);
+        ReusableMethods.waitFor(3);
+
         adminSetUp();
-        spec.pathParams("first","guestUser","second","delete","third",173);
+        spec.pathParams("first","guestUser","second","delete","third",yeniid);
         Map<String,String> expecteddata=new HashMap<>();
         expecteddata.put("message","Guest User Deleted");
         expecteddata.put("httpStatus","OK");
