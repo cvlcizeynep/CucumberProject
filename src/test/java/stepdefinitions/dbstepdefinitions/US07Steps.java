@@ -49,7 +49,7 @@ MessagePojo messagePojo;
 
         studentSetUp();
         spec.pathParams("first","contactMessages","second","save");
-        messagePojo=new MessagePojo(email,message,author,subject);
+      //  messagePojo=new MessagePojo(email,message,author,subject);
         MessagePostPojo expectedData=new MessagePostPojo(messagePojo,"Contact Message Created Successfully","CREATED");
         System.out.println(expectedData);
         response=given(spec).when().body(messagePojo).post("{first}/{second}");
