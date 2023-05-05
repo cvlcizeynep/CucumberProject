@@ -6,8 +6,6 @@ import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.LessonPojo;
-import pojos.MessagePojo;
-import utilities.JsonUtil;
 
 import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;

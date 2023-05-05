@@ -1,31 +1,26 @@
 package pojos;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MessagePostPojo {
-
-
-    private MessageObjectPojo object;
+public class ViceDeanOutherPojo {
+    private ViceDeanInnerPojo object;
     private String message;
     private String httpStatus;
 
-    public MessagePostPojo() {
+    public ViceDeanOutherPojo() {
     }
 
-    public MessagePostPojo(MessageObjectPojo object, String message, String httpStatus) {
+    public ViceDeanOutherPojo(ViceDeanInnerPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-
-
-    public MessageObjectPojo getObject() {
+    public ViceDeanInnerPojo getObject() {
         return object;
     }
 
-    public void setObject(MessageObjectPojo object) {
+    public void setObject(ViceDeanInnerPojo object) {
         this.object = object;
     }
 
@@ -47,7 +42,7 @@ public class MessagePostPojo {
 
     @Override
     public String toString() {
-        return "MessagePostPojo{" +
+        return "ViceDeanOutherPojo{" +
                 "object=" + object +
                 ", message='" + message + '\'' +
                 ", httpStatus='" + httpStatus + '\'' +
