@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 import pojos.MessageObjectPojo;
+import pojos.MessagePojo;
 
 import static base_url.StudentManagementBaseUrl.adminSetUp;
 import static base_url.StudentManagementBaseUrl.spec;
