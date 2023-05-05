@@ -22,8 +22,8 @@ import java.util.List;
 public class US16 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
-    String name = FakerUtils.nameFaker();
-    public String email = FakerUtils.emailFaker();
+    public static String name = FakerUtils.nameFaker();
+    public static String email = FakerUtils.emailFaker();
     Actions action = new Actions(Driver.getDriver());
     String subject = "konumuz bu";
     String message = "ne yazayim ki mesaj iste";
@@ -102,14 +102,14 @@ public class US16 {
         }
         int indexName = nameListString.indexOf(name);
         //System.out.println(indexName);
-        WebElement subjectSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[4]"));
+        WebElement subjectSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr[" + (indexName + 1) + "]//td[4]"));
         //System.out.println(subjectSutun.getText());
-        WebElement emailSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[2]"));
+        WebElement emailSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr[" + (indexName + 1) + "]//td[2]"));
         //System.out.println(emailSutun.getText());
-        WebElement messageSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr["+(indexName+1)+"]//td[5]"));
+        WebElement messageSutun = Driver.getDriver().findElement(By.xpath("(//table)[1]//tr[" + (indexName + 1) + "]//td[5]"));
         //System.out.println(messageSutun.getText());
 
-        SoftAssert softAssert=new SoftAssert();
+        SoftAssert softAssert = new SoftAssert();
         Assert.assertTrue(nameListString.contains(name));
         Assert.assertEquals(subjectSutun.getText(), subject);
         Assert.assertEquals(emailSutun.getText(), email);

@@ -52,6 +52,7 @@ public class US24Steps {
     public void databasede_adminin_ekledigi_teacher_in_goruldugu_dogrulanir() throws SQLException {
         connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = connection.createStatement();
+        System.out.println(isim);
         resultSet = statement.executeQuery("SELECT name FROM TEACHER where name='"+isim+"';");
         resultSet.next();
         System.out.println(resultSet.getString(1));
