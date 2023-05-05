@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import pojos.MessagePojo;
+import pojos.MessageObjectPojo;
 import pojos.MessagePostPojo;
 import utilities.DBUtils;
 import java.time.LocalDate;
@@ -27,7 +27,7 @@ public class US07Steps {
     static LocalDate localDate=LocalDate.now();
     static String bugun=localDate.toString();
 Response response;
-MessagePojo messagePojo;
+MessageObjectPojo messageObjectPojo;
 
 
     @Given("Ogrenci mesaj gonderir.")
@@ -49,10 +49,11 @@ MessagePojo messagePojo;
 
         studentSetUp();
         spec.pathParams("first","contactMessages","second","save");
-        messagePojo=new MessagePojo(email,message,author,subject);
-        MessagePostPojo expectedData=new MessagePostPojo(messagePojo,"Contact Message Created Successfully","CREATED");
+        messageObjectPojo=new MessageObjectPojo(email,message,author,subject);
+
+        MessagePostPojo expectedData=new MessagePostPojo(messageObjectPojo,"Contact Message Created Successfully","CREATED");
         System.out.println(expectedData);
-        response=given(spec).when().body(messagePojo).post("{first}/{second}");
+        response=given(spec).when().body(messageObjectPojo).post("{first}/{second}");
         response.prettyPrint();
     }
     @Given("Database icin connect saglanir")

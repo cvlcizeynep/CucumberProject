@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 import pojos.MessageObjectPojo;
-import pojos.MessagePojo;
 import utilities.JsonUtil;
 
 import static base_url.StudentManagementBaseUrl.*;
