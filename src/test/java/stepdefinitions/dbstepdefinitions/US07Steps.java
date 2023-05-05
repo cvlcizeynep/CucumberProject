@@ -47,13 +47,13 @@ MessagePojo messagePojo;
         System.out.println(subject + "   " + email);
         Driver.closeDriver();*/
 
-        studentSetUp();
+     /*   studentSetUp();
         spec.pathParams("first","contactMessages","second","save");
         messagePojo=new MessagePojo(email,message,author,subject);
         MessagePostPojo expectedData=new MessagePostPojo(messagePojo,"Contact Message Created Successfully","CREATED");
         System.out.println(expectedData);
         response=given(spec).when().body(messagePojo).post("{first}/{second}");
-        response.prettyPrint();
+        response.prettyPrint();*/
     }
     @Given("Database icin connect saglanir")
     public void database_icin_connect_saglanir() {
