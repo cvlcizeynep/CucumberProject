@@ -14,11 +14,6 @@ import utilities.Driver;
 
 public class Hooks {
 
-    @Before("@US04")
-    public void deanOlusturma(){
-
-
-    }
 
 /*
     Hooks : Her bir Scenario yada Scenario Outline dan ONCE yada SONRA calismasmasini istedigim metotlar konur

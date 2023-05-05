@@ -28,8 +28,4 @@ public class US01steps {
 
 
 
-    @Given("Kullanıcı database'de username'i {string} olan hesabın varlığını doğrular")
-    public void kullanici_databasede_usernamei_string_olan_hesabin_varligini_dogrular(String string) {
-     userNameList  = Collections.singletonList(DBUtils.getQueryResultList("select username from guest_user"));
-        Assert.assertTrue(userNameList.toString().contains(string));
-}}
+   }

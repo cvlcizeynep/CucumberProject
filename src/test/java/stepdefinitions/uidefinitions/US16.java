@@ -13,6 +13,7 @@ import org.testng.asserts.SoftAssert;
 import pages.ContactPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.FakerUtils;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
@@ -21,8 +22,8 @@ import java.util.List;
 public class US16 {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
-    String name = faker.name().name();
-    String email = faker.internet().emailAddress();
+    String name = FakerUtils.nameFaker();
+    public String email = FakerUtils.emailFaker();
     Actions action = new Actions(Driver.getDriver());
     String subject = "konumuz bu";
     String message = "ne yazayim ki mesaj iste";

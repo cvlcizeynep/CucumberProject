@@ -11,12 +11,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.RegisterPage;
+import utilities.DBUtils;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class US01 {
 RegisterPage registerPage=new RegisterPage();
 Faker faker =new Faker();
+String username = faker.name().username();
 
     @Given("Kullanıcı register sayfasına gider.")
     public void kullanıcı_register_sayfasına_gider() {
@@ -68,7 +74,7 @@ Faker faker =new Faker();
     @When("Kullanici register User Name {string} girer")
     public void kullanici_register_user_name_girer(String string) {
 
-        registerPage.username.sendKeys(string);
+        registerPage.username.sendKeys(username);
         ReusableMethods.waitFor(1);
     }
     @When("Kullanici register Password {string} girer")
@@ -107,6 +113,10 @@ Faker faker =new Faker();
        Assert.assertTrue(registerPage.pleaseentervalidphone.isDisplayed());
        ReusableMethods.waitFor(1);
     }
-
-
+    List<Object> userNameList = new ArrayList<>();
+    @Given("Kullanıcı database'de username'i {string} olan hesabın varlığını doğrular")
+    public void kullanici_databasede_usernamei_string_olan_hesabin_varligini_dogrular(String string) {
+        userNameList  = Collections.singletonList(DBUtils.getQueryResultList("select username from guest_user"));
+        Assert.assertTrue(userNameList.toString().contains(username));
+    }
 }
