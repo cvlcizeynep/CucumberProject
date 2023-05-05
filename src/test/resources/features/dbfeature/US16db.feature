@@ -9,8 +9,8 @@ Feature: Vicedean mesaj sorgulama
     * Kullanici Subject textboxini doldurur
     * Kullanici Message textboxini doldurur
     * Kullanici Send Message butonuna tiklar
-    Given Database icin connect saglanir
-    When Databaseden olusturulan mesajlar sorgulanir
+    When Databaseden olusturulan mesaj maille sorgulanir
+    When Databaseden olusturulan mesaj isimle sorgulanir
 
   Scenario: TC02 Vicedean mesaj silebilmelidir
       #bizim silme yetkimiz olmadigi icin yapilmadi
