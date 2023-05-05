@@ -28,11 +28,6 @@ public class US06api {
     Response response6;
     ViceDeanInnerPojo object;
     ViceDeanOutherPojo expectedData;
-    ViceDeanOutherPojo expectedData1;
-    ViceDeanOutherPojo expectedData2;
-    ViceDeanOutherPojo expectedData3;
-    ViceDeanOutherPojo expectedData4;
-    ViceDeanOutherPojo expectedData5;
 
 
     @Given("Dean butun gerekli alanlari doldurarak Vice Dean ekler")
@@ -97,9 +92,6 @@ public class US06api {
         assertEquals(expectedData.getObject().getBirthDay(),actualDataObjectMapper.getObject().getBirthDay());
         assertEquals(expectedData.getObject().getBirthPlace(),actualDataObjectMapper.getObject().getBirthPlace());
         assertEquals(expectedData.getObject().getUsername(),actualDataObjectMapper.getObject().getUsername());*/
-
-
-
     }
     @Given("Dean name kismi bos bir body ile post request yapar")
     public void dean_name_kismi_bos_bir_body_ile_post_request_yapar() {
@@ -197,14 +189,12 @@ public class US06api {
         object=new ViceDeanInnerPojo("","","","","","","","","");
         response5 = given(spec).body(object).when().post("/{first}/{second}");
         response5.prettyPrint();
-
     }
     @Then("Kullanici bos body ile post yapilmadigini dogrular")
     public void kullanici_bos_body_ile_post_yapilmadigini_dogrular() {
         response5.then().statusCode(400);
         ViceDeanOutherPojo  actualDataPojo = response5.as(ViceDeanOutherPojo.class);
         assertTrue( actualDataPojo.getMessage().contains("Cannot coerce empty String"));
-
     }
     @Given("Kullanici post bodysine invalid degerler girer")
     public void kullanici_post_bodysine_invalid_degerler_girer() {
@@ -213,17 +203,12 @@ public class US06api {
         object=new ViceDeanInnerPojo("987654","8908765","NKJ","098","MNBVCCX","MNBVCXFG","POIUYTREWAB","  ","NMNMJJBT");
         response6 = given(spec).body(object).when().post("/{first}/{second}");
         response6.prettyPrint();
-
-
-
     }
     @Then("Kulanici invalid degerlerle post yapilmadigini dogrular.")
     public void kulanici_invalid_degerlerle_post_yapilmadigini_dogrular() {
         response6.then().statusCode(400);
         ViceDeanOutherPojo  actualDataPojo = response6.as(ViceDeanOutherPojo.class);
         assertTrue( actualDataPojo.getMessage().contains("InvalidFormatException"));
-
-
     }
 
 
