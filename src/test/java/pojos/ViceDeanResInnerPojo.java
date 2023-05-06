@@ -1,12 +1,10 @@
 package pojos;
-
-
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ViceDeanInnerPojo {
+public class ViceDeanResInnerPojo {
 
-
+    private long userId;
     private String birthDay;
     private String birthPlace;
     private String gender;
@@ -17,10 +15,12 @@ public class ViceDeanInnerPojo {
     private String surname;
     private String username;
 
-    public ViceDeanInnerPojo() {
+    public ViceDeanResInnerPojo() {
     }
 
-    public ViceDeanInnerPojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+    public ViceDeanResInnerPojo(long userId, String birthDay, String birthPlace, String gender,
+                                String name, String password, String phoneNumber, String ssn, String surname, String username) {
+        this.userId = userId;
         this.birthDay = birthDay;
         this.birthPlace = birthPlace;
         this.gender = gender;
@@ -30,6 +30,14 @@ public class ViceDeanInnerPojo {
         this.ssn = ssn;
         this.surname = surname;
         this.username = username;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getBirthDay() {
@@ -106,8 +114,9 @@ public class ViceDeanInnerPojo {
 
     @Override
     public String toString() {
-        return "ViceDeanInnerPojo{" +
-                "birthDay='" + birthDay + '\'' +
+        return "ViceDeanResponsein{" +
+                "userId=" + userId +
+                ", birthDay='" + birthDay + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", gender='" + gender + '\'' +
                 ", name='" + name + '\'' +
