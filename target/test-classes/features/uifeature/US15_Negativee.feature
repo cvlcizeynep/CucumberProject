@@ -27,7 +27,6 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar
     Then close driver
-
     Examples:
       | Advisor Teacher | Date Of Birth |  | Password |
       | Cem Can           | 01.01.1990    |  | 12345678 |
@@ -50,7 +49,7 @@ Feature: Vice Dean ogrenci  olusturabilmelidir
     Then Vice Dean Student Numarası otomatik gelir
     Then Vice Dean Submit Butonuna tiklar
     And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar
-
+    Then close driver
 
     Examples:Choose Advisor Teacher
 

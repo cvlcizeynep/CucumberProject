@@ -1,4 +1,4 @@
-@US23DB
+ @US23DB
   Feature: Adminin ekledigi Dean databasede goruntulenmelidir.
 
   Scenario: TC01 Adminin ekledigi dean databaseden dogrulanir.

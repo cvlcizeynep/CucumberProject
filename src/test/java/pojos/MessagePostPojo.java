@@ -6,24 +6,26 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class MessagePostPojo {
 
 
-    private MessagePojo object;
+    private MessageObjectPojo object;
     private String message;
     private String httpStatus;
 
     public MessagePostPojo() {
     }
 
-    public MessagePostPojo(MessagePojo object, String message, String httpStatus) {
+    public MessagePostPojo(MessageObjectPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-    public MessagePojo getObject() {
+
+
+    public MessageObjectPojo getObject() {
         return object;
     }
 
-    public void setObject(MessagePojo object) {
+    public void setObject(MessageObjectPojo object) {
         this.object = object;
     }
 
