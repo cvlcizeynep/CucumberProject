@@ -7,9 +7,9 @@ Feature: Add_meetList
 
 
 
-#  Scenario: TC20_add_meetList_PUT
-#    Given teacher sends the add_meetList_PUT
-#    Then teacher gets the add_meetList and assert_PUT
+    Scenario: TC20_add_meetList_PUT
+    Given teacher sends the add_meetList_PUT
+    Then teacher gets the add_meetList and assert_PUT
 #
 #
 #
