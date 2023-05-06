@@ -46,7 +46,7 @@ MessageObjectPojo messageObjectPojo;
     public void ogrenci_mesaj_gonderir() {
         studentSetUp();
         spec.pathParams("first","contactMessages","second","save");
-        messageObjectPojo=new MessageObjectPojo(email,message,author,subject);
+        //messageObjectPojo=new MessageObjectPojo(email,message,author,subject);
         response=given(spec).when().body(messageObjectPojo).post("{first}/{second}");
         response.prettyPrint();
         ReusableMethods.waitFor(3);
