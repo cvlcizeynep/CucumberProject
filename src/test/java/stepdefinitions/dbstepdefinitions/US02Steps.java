@@ -10,7 +10,6 @@ import pages.RegisterPage;
 import utilities.DBUtils;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -75,7 +74,8 @@ public class US02Steps {
 
     @Then("Admin Guest User username bilgilerini goremedigini dogrular")
     public void adminGuestUserUsernameBilgileriniGoremediginiDogrular() {
-        Assert.assertFalse(usernamelist.toString().contains("echo"));
+
+        Assert.assertFalse(usernamelist.toString().contains("hayriyekilic"));
 
     }
 

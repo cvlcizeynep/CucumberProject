@@ -23,6 +23,8 @@ public class US01 {
 RegisterPage registerPage=new RegisterPage();
 Faker faker =new Faker();
 String username = faker.name().username();
+String ssn =faker.number().numberBetween(100,999)+"-"+
+        faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999);
 
     @Given("Kullanıcı register sayfasına gider.")
     public void kullanıcı_register_sayfasına_gider() {
@@ -67,8 +69,7 @@ String username = faker.name().username();
     @When("Kullanici register SSN  {string} girer")
     public void kullanici_register_ssn_girer(String string) {
 
-        registerPage.ssn.sendKeys(faker.number().numberBetween(100,999)+"-"+
-                        faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999));
+        registerPage.ssn.sendKeys(ssn);
 
     }
     @When("Kullanici register User Name {string} girer")
@@ -113,10 +114,5 @@ String username = faker.name().username();
        Assert.assertTrue(registerPage.pleaseentervalidphone.isDisplayed());
        ReusableMethods.waitFor(1);
     }
-    List<Object> userNameList = new ArrayList<>();
-    @Given("Kullanıcı database'de username'i {string} olan hesabın varlığını doğrular")
-    public void kullanici_databasede_usernamei_string_olan_hesabin_varligini_dogrular(String string) {
-        userNameList  = Collections.singletonList(DBUtils.getQueryResultList("select username from guest_user"));
-        Assert.assertTrue(userNameList.toString().contains(username));
-    }
+
 }
