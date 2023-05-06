@@ -7,10 +7,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import pojos.ViceDeanResInnerPojo;
 import pojos.ViceDeanResponsePojo;
 import utilities.JsonUtil;
-
-
 import java.io.IOException;
-
 import static base_url.StudentManagementBaseUrl.deanSetUp;
 import static base_url.StudentManagementBaseUrl.spec;
 import static io.restassured.RestAssured.given;

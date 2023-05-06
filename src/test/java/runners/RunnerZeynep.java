@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "src/test/resources/features/apifeature",
         glue = {"stepdefinitions"},
-        tags = "@US06API",
-        dryRun = false
+        tags = "@US07API",
+        dryRun = true
 )
 public class RunnerZeynep {
 
