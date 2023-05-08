@@ -35,7 +35,7 @@ public class FakerUtils {
     }
 
     public static String passwordFaker(){
-        String password = faker.internet().password();
+        String password = faker.internet().password(8,12);
         return password;
     }
     public static String birthPlaceFaker(){

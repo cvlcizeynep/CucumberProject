@@ -76,7 +76,7 @@ public class US13 {
 
     //----------------------GET_TEACHER_BY_NAME-----------------------
 
-    @Given("kullanici gormek istedigi teacher ismini girer")
+    @Given("kullanici gormek istedigi teacher ismini girer ve dogrular")
     public void kullaniciGormekIstedigiTeacherIsminiGirer() {
 
         viceDeanSetUp();

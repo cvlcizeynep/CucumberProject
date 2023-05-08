@@ -1,10 +1,15 @@
 package stepdefinitions.apistepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.restassured.response.Response;
 import pojos.MeetResponsePojo;
+import pojos.MeetRootPojo;
 
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import static base_url.StudentManagementBaseUrl.spec;
@@ -21,12 +26,16 @@ public class US19 {
 
         ArrayList<Integer> studentId=new ArrayList<>();
         studentId.add(63);
+        Faker faker = new Faker();
+        LocalDate date = faker.date().future(365, java.util.concurrent.TimeUnit.DAYS).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-        MeetResponsePojo body=new MeetResponsePojo("2025-01-01","toplanti","22:00","22:01",studentId);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = date.format(formatter);
+
+        MeetResponsePojo body=new MeetResponsePojo(formattedDate,"toplanti","22:00","22:01",studentId);
 
         Response response= given(spec).body(body).when().post("{first}/{second}");
         response.prettyPrint();
-
 
 
         response. then().
@@ -34,9 +43,9 @@ public class US19 {
                 statusCode(200).
                 body("message", equalTo("Meet Saved Successfully")).
                 body("object.description", equalTo("toplanti")).
-                body("object.date", equalTo("2025-01-01")).
-                body("object.startTime", equalTo("19:12:00")).
-                body("object.stopTime", equalTo("21:01:00")).
+                body("object.date", equalTo(formattedDate)).
+                body("object.startTime", equalTo("22:00:00")).
+                body("object.stopTime", equalTo("22:01:00")).
                 body("object.students[0].id", equalTo(63)).
                 body("object.students[0].name", equalTo("namesiz")).
                 body("object.students[0].surname", equalTo("surname")).

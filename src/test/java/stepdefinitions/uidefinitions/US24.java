@@ -11,10 +11,13 @@ import utilities.ReusableMethods;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+import static utilities.FakerUtils.nameFaker;
+
 public class US24 {
 
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
     Faker faker = new Faker();
+    public static String isim;
 
     @Given("Kullanici Surname textboxina valid bir deger girer")
     public void kullanici_surname_textboxina_valid_bir_deger_girer() {
@@ -99,7 +102,7 @@ public class US24 {
 
     @And("Kullanici Name textboxina valid bir deger girer")
     public void kullaniciNameTextboxinaValidBirDegerGirer() {
-        String isim = faker.name().name();
+        isim =  faker.name().name();
         teacherManagementPage.name.sendKeys(isim);
     }
 
@@ -178,6 +181,8 @@ public class US24 {
         }
 
     }
+
+
 
 
 }

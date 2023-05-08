@@ -5,8 +5,7 @@ import io.cucumber.java.en.Then;
 
 import java.sql.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class US08Steps {
     ResultSet resultSet;
@@ -17,16 +16,18 @@ public class US08Steps {
 
         connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = connection.createStatement();
-        resultSet = statement.executeQuery("SELECT * FROM lesson WHERE lesson_id = 5");
+        resultSet = statement.executeQuery("SELECT * FROM lesson WHERE lesson_id = 6");
         resultSet.next();
 
     }
     @Then("validete data")
     public void validete_data() throws SQLException {
-        assertEquals(5, resultSet.getInt("lesson_id"));
-        assertEquals(3, resultSet.getInt("credit_score"));
-        assertFalse( resultSet.getBoolean("is_compulsory"));
-        assertEquals("HEAT TRANSFER", resultSet.getString("lesson_name"));
+        assertEquals(6, resultSet.getInt("lesson_id"));
+        assertEquals(5, resultSet.getInt("credit_score"));
+        assertEquals("Math", resultSet.getString("lesson_name"));
+
+        assertTrue( resultSet.getBoolean("is_compulsory"));
+
         connection.close();
         statement.close();
         resultSet.close();

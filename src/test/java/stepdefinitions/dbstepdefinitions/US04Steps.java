@@ -37,6 +37,7 @@ public class US04Steps {
     String password = faker.internet().password(8, 17);
     @Given("Kullanici Dean ekler")
     public void kullanici_dean_ekler() {
+
         deanManagementPage.MenuButton.click();
         deanManagementPage.DeanManagementButton.click();
         deanManagementPage.NameButton.sendKeys(name);
