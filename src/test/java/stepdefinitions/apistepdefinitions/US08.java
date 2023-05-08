@@ -3,6 +3,7 @@ package stepdefinitions.apistepdefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.LessonObjectPojo;
@@ -17,19 +18,19 @@ public class US08 {
     LessonObjectPojo lessonObjectPojo;
     Response response;
 
-    int creditScore = Faker.instance().number().numberBetween(1, 100);
+    Integer creditScore = Faker.instance().number().numberBetween(1, 100);
     String lessons = Faker.instance().programmingLanguage().name();
 
     @Given("user sends post request for lesson data")
     public void user_sends_post_request_for_lesson_data() {
         viceDeanSetUp();
+
         spec.pathParams("first", "lessons", "second", "save");
 
-        lessonObjectPojo=new LessonObjectPojo(63,lessons,creditScore,"dvdfegvdfehdvdfgdgdfdfdgdfg");
+        lessonObjectPojo=new LessonObjectPojo(lessons,creditScore,"true");
         expected=new LessonPojo(lessonObjectPojo,"Lesson Created","OK");
         System.out.println("expected = " + expected);
-
-        response = given(spec).body(expected).post("{first}/{second}");
+        response = given().spec(spec).body(lessonObjectPojo).post("{first}/{second}");
         response.prettyPrint();
 
 
@@ -39,6 +40,7 @@ public class US08 {
     public void user_gets_the_lesson_data_and_assert() {
         assertEquals(200, response.statusCode());
         JsonPath jsonPath=response.jsonPath();
+        response.prettyPrint();
         assertEquals(expected.getObject().getLessonName(),jsonPath.getString("object.lessonName"));
         assertEquals(expected.getObject().getCreditScore(),jsonPath.getString("object.creditScore"));
         assertEquals(expected.getObject().getLessonName(),jsonPath.getString("object.lessonName"));
