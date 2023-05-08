@@ -131,10 +131,10 @@ public class US20 {
     public void teacher_sends_the_add_meet_list_delete() {
 
         teacherSetUp();
-        spec.pathParams("first", "todos", "second", 1928);
+        spec.pathParams("first", "meet", "second", "delete","third", 99);
 
 
-        Response response = given(spec).delete("{first}/{second}");
+        Response response = given(spec).delete("{first}/{second}/{third}");
         response.prettyPrint();
 
     }
