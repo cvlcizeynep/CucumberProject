@@ -1,10 +1,11 @@
 package pojos;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ViceDeanInnerPojo {
+
 
     private String birthDay;
     private String birthPlace;

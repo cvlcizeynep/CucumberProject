@@ -2,6 +2,8 @@ package stepdefinitions.apistepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.MeetObjectPojo;
 import pojos.MeetResponsePojo;
@@ -13,54 +15,55 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static base_url.StudentManagementBaseUrl.*;
+import static base_url.StudentManagementBaseUrl.spec;
+import static base_url.StudentManagementBaseUrl.teacherSetUp;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class US20 {
     Response response;
-
+    MeetRootPojo expectedData;
+    MeetRootPojo actualData;
+    MeetObjectPojo meetObjectPojo;
+    StudentMeetPojo studentMeetPojos;
+    MeetResponsePojo expecteddataput;
     @Given("teacher sends the add_meetList_GET")
     public void teacher_sends_the_add_meet_list_get() {
-//        teacherSetUp();
-//        spec.pathParams("first", "meet", "second", "save");
-//
-//        ArrayList<Integer> studentId = new ArrayList<>();
-//        studentId.add(63);
-//
-//        MeetResponsePojo body = new MeetResponsePojo("2025-01-01", "toplanti", "22:00", "22:01", studentId);
-//
-//        Response response = given(spec).body(body).when().post("{first}/{second}");
-//        response.prettyPrint();
-//--------------------------------------------------
-
-
-    }
-
-    @Then("teacher gets the add_meetList and assert_GET")
-    public void teacher_gets_the_add_meet_list_and_assert_get() {
         teacherSetUp();
-        StudentMeetPojo studentMeetPojos = new StudentMeetPojo(41, "mehmetcan",
-                "333-22-9999", "mehmet", "can", "2010-02-01",
-                "almanya", "111-222-9999", "MALE",
-                "ayse", "ali", 1039, "team08@gmail.com", true);
+        spec.pathParams("first", "meet", "second", "getMeetById", "third", 128);
+        studentMeetPojos = new StudentMeetPojo(179, "arda",
+                "222-44-3333", "Arda", "Güler", "2005-01-01",
+                "Kahramanmaraş", "222-444-3333", "MALE",
+                "Aynur", "Mustafa", 176, "arda@gmail.com", true);
 
         ArrayList<StudentMeetPojo> studentMeetPojo = new ArrayList<>();
         studentMeetPojo.add(studentMeetPojos);
 
 
-        MeetObjectPojo meetObjectPojo = new MeetObjectPojo(63, "vgf", "2025-08-12",
-                "17:30:00", "18:00:00", 8, "Nihal",
-                "123-54-3478", studentMeetPojo);
+        meetObjectPojo = new MeetObjectPojo(128, "hm", "2023-05-14",
+                "07:00:00", "08:00:00", 352, "Volkan",
+                "222-33-1111", studentMeetPojo);
 
-        MeetRootPojo expectedData = new MeetRootPojo(meetObjectPojo, "Meet successfully found", "CREATED");
-        spec.pathParams("first", "meet", "second", "getMeetById", "third", 63);
 
-        response = given(spec).when().get("{first}/{second}/{third}");
+        expectedData = new MeetRootPojo(meetObjectPojo, "Meet successfully found", "CREATED");
+        System.out.println(expectedData);
+
+
+        response = given(spec).
+                when().
+                get("{first}/{second}/{third}");
         response.prettyPrint();
 
-        MeetRootPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MeetRootPojo.class);
+
+        actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MeetRootPojo.class);
+        System.out.println(actualData);
+
+    }
+
+    @Then("teacher gets the add_meetList and assert_GET")
+    public void teacher_gets_the_add_meet_list_and_assert_get() {
+
 
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getMessage(), actualData.getMessage());
@@ -92,53 +95,64 @@ public class US20 {
 
     @Given("teacher sends the add_meetList_PUT")
     public void teacher_sends_the_add_meet_list_put() {
+
         teacherSetUp();
-        MeetResponsePojo expecteddata = new MeetResponsePojo("2023-08-22", "ggggggggtytttttttttt", "12:14", "13:18", null);
-        System.out.println("expecteddata = " + expecteddata);
-        spec.pathParams("first", "meet", "second", "update", "third", 63);
-        Response response = given().spec(spec).when().body(expecteddata).get("{first}/{second}/{third}");
-        response.prettyPrint();
+        spec.pathParams("first", "meet", "second", "update", "third", 99);
+
+        ArrayList<Integer> studentId = new ArrayList<>();
+        studentId.add(0);
+        expecteddataput=new MeetResponsePojo("2026-09-09","muammer","18:14","19:15",studentId);
+
+
+        meetObjectPojo = new MeetObjectPojo(99, "muammer", "2026-09-09",
+                "18:14:00", "19:15:00", 20, "fvdesfgt",
+                "123-45-7896",null);
+        expectedData = new MeetRootPojo(meetObjectPojo, "Meet successfully found", "CREATED");
+
+        response = given(spec).when().body(expecteddataput).get("{first}/{second}/{third}");
+       response.prettyPrint();
 
         MeetRootPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MeetRootPojo.class);
+    }
+    @Then("teacher gets the add_meetList and assert_PUT")
+    public void teacher_gets_the_add_meet_list_and_assert_put() {
 
+            JsonPath jsonPath = response.jsonPath();
+            assertEquals(200, response.statusCode());
+            assertEquals(expecteddataput.date, jsonPath.getString("object.date"));
+            assertEquals(expecteddataput.startTime, jsonPath.getString("object.startTime"));
+            assertEquals(expecteddataput.stopTime, jsonPath.getString("object.stopTime"));
+            assertEquals(expecteddataput.description, jsonPath.getString("object.description"));
+            assertEquals(expecteddataput.studentIds, jsonPath.getString("object.students[0]"));
+            assertEquals(expecteddataput.studentIds, jsonPath.getString("object.students[1]"));
+   }
+//
+    @Given("teacher sends the add_meetList_DELETE")
+    public void teacher_sends_the_add_meet_list_delete() {
+
+        teacherSetUp();
+        spec.pathParams("first", "meet", "second", "delete","third", 99);
+
+
+        Response response = given(spec).delete("{first}/{second}/{third}");
+        response.prettyPrint();
+
+    }
+
+    @Then("teacher gets the add_meetList and assert_DELETE")
+    public void teacher_gets_the_add_meet_list_and_assert_delete() {
+
+
+        HashMap actualData = JsonUtil.convertJsonToJavaObject(response.asString(), HashMap.class);
         assertEquals(200, response.statusCode());
 
+        assertEquals(0, actualData.size());
 
-
-//    @Then("teacher gets the add_meetList and assert_PUT")
-//    public void teacher_gets_the_add_meet_list_and_assert_put() {
-//
-//
-//    }
-//
-//    @Given("teacher sends the add_meetList_DELETE")
-//    public void teacher_sends_the_add_meet_list_delete() {
-//        //Set the url
-//        teacherSetUp();
-//        spec.pathParams("first", "todos", "second", 198);
-//
-//        //Set the expected data
-//        Map<String, String> expectedData = new HashMap<>();
-//
-//        //Send the request and get the response
-//        Response response = given(spec).delete("{first}/{second}");
-//        response.prettyPrint();
-//
-//    }
-//
-//    @Then("teacher gets the add_meetList and assert_DELETE")
-//    public void teacher_gets_the_add_meet_list_and_assert_delete() {
-//
-//
-//        //Do assertion
-//
-//        Map<String, String> actualData = JsonUtil.convertJsonToJavaObject(response.asString(), HashMap.class);
-//        assertEquals(200, response.statusCode());
-//
-//        assertEquals(0, actualData.size());
-//
-//    }
+    }
 
 
     }
-}
+
+
+
+

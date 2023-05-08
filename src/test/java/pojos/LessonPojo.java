@@ -1,49 +1,50 @@
 package pojos;
 
 public class LessonPojo {
-        public String compulsory;
-        public String creditScore;
-        public String lessonName;
+    private LessonObjectPojo object;
+    private String message;
+    private String httpStatus;
+
 
     public LessonPojo() {
     }
 
-    public LessonPojo(String compulsory, String creditScore, String lessonName) {
-        this.compulsory = compulsory;
-        this.creditScore = creditScore;
-        this.lessonName = lessonName;
+    public LessonPojo(LessonObjectPojo object, String message, String httpStatus) {
+        this.object = object;
+        this.message = message;
+        this.httpStatus = httpStatus;
     }
 
-    public String getCompulsory() {
-        return compulsory;
+    public LessonObjectPojo getObject() {
+        return object;
     }
 
-    public void setCompulsory(String compulsory) {
-        this.compulsory = compulsory;
+    public void setObject(LessonObjectPojo object) {
+        this.object = object;
     }
 
-    public String getCreditScore() {
-        return creditScore;
+    public String getMessage() {
+        return message;
     }
 
-    public void setCreditScore(String creditScore) {
-        this.creditScore = creditScore;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public String getLessonName() {
-        return lessonName;
+    public String getHttpStatus() {
+        return httpStatus;
     }
 
-    public void setLessonName(String lessonName) {
-        this.lessonName = lessonName;
+    public void setHttpStatus(String httpStatus) {
+        this.httpStatus = httpStatus;
     }
 
     @Override
     public String toString() {
         return "LessonPojo{" +
-                "compulsory='" + compulsory + '\'' +
-                ", creditScore='" + creditScore + '\'' +
-                ", lessonName='" + lessonName + '\'' +
+                "object=" + object +
+                ", message='" + message + '\'' +
+                ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
 }

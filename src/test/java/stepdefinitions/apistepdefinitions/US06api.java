@@ -4,15 +4,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
-import pojos.ViceDeanInnerPojo;
-import pojos.ViceDeanOutherPojo;
-
-
+import pojos.ViceDeanResInnerPojo;
+import pojos.ViceDeanResponsePojo;
+import utilities.JsonUtil;
 import java.io.IOException;
-
 import static base_url.StudentManagementBaseUrl.deanSetUp;
 import static base_url.StudentManagementBaseUrl.spec;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -26,8 +25,8 @@ public class US06api {
     Response response4;
     Response response5;
     Response response6;
-    ViceDeanInnerPojo object;
-    ViceDeanOutherPojo expectedData;
+    ViceDeanResInnerPojo object;
+    ViceDeanResponsePojo expectedData;
 
 
     @Given("Dean butun gerekli alanlari doldurarak Vice Dean ekler")
@@ -41,12 +40,15 @@ public class US06api {
         nameFaker();
         phoneNumberFaker();
         ssnFaker();
-        object=new ViceDeanInnerPojo("1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
+        object=new ViceDeanResInnerPojo(8,"1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
                 phoneNumberFaker(),ssnFaker(),surnameFaker(),usernameFaker());
-        expectedData=new ViceDeanOutherPojo(object,"Vice dean Saved","CREATED");
+
+        expectedData=new ViceDeanResponsePojo(object,"Vice dean Saved","CREATED");
         response = given(spec).body(object).when().post("/{first}/{second}");
+        System.out.println(expectedData);
         response.prettyPrint();
-      /*  ViceDeanOutherPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), ViceDeanOutherPojo.class);
+        ViceDeanResponsePojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), ViceDeanResponsePojo.class);
+
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getObject().getBirthPlace(), actualData.getObject().getBirthPlace());
         assertEquals(expectedData.getObject().getBirthDay(), actualData.getObject().getBirthDay());
@@ -56,7 +58,7 @@ public class US06api {
         assertEquals(expectedData.getObject().getGender(), actualData.getObject().getGender());
         assertEquals(expectedData.getObject().getPhoneNumber(), actualData.getObject().getPhoneNumber());
         assertEquals(expectedData.getObject().getSsn(), actualData.getObject().getSsn());
-        assertEquals(expectedData.getObject().getPassword(), actualData.getObject().getPassword());*/
+       // assertEquals(expectedData.getObject().getPassword(), actualData.getObject().getPassword());
     }
     @Then("Eklenen vice deanin olustugunu test eder.")
     public void eklenen_vice_deanin_olustugunu_test_eder() throws IOException {
@@ -66,7 +68,7 @@ public class US06api {
                 "object.ssn",equalTo(expectedData.getObject().getSsn()),
                 "object.username",equalTo(expectedData.getObject().getUsername()));
         //2VALIDATION
-        ViceDeanOutherPojo  actualDataPojo = response.as(ViceDeanOutherPojo.class);
+        ViceDeanResponsePojo actualDataPojo = response.as(ViceDeanResponsePojo.class);
         assertEquals(expectedData.getMessage(), actualDataPojo.getMessage());
         assertEquals(expectedData.getHttpStatus(), actualDataPojo.getHttpStatus());
         assertEquals(expectedData.getObject().getName(),actualDataPojo.getObject().getName());
@@ -80,18 +82,18 @@ public class US06api {
         assertEquals(expectedData.getObject().getUsername(),actualDataPojo.getObject().getUsername());
 
         //3 Validation
-     /*   ViceDeanOutherPojo actualDataObjectMapper = new ObjectMapper().readValue(response.asString(), ViceDeanOutherPojo.class);
+       ViceDeanResponsePojo actualDataObjectMapper = new ObjectMapper().readValue(response.asString(), ViceDeanResponsePojo.class);
         assertEquals(expectedData.getMessage(),actualDataObjectMapper .getMessage());
         assertEquals(expectedData.getHttpStatus(), actualDataObjectMapper.getHttpStatus());
         assertEquals(expectedData.getObject().getName(),actualDataObjectMapper.getObject().getName());
         assertEquals(expectedData.getObject().getSurname(),actualDataObjectMapper.getObject().getSurname());
-        assertEquals(expectedData.getObject().getPassword(),actualDataObjectMapper.getObject().getPassword());
+        //assertEquals(expectedData.getObject().getPassword(),actualDataObjectMapper.getObject().getPassword());
         assertEquals(expectedData.getObject().getSsn(),actualDataObjectMapper.getObject().getSsn());
         assertEquals(expectedData.getObject().getGender(),actualDataObjectMapper.getObject().getGender());
         assertEquals(expectedData.getObject().getPhoneNumber(),actualDataObjectMapper.getObject().getPhoneNumber());
         assertEquals(expectedData.getObject().getBirthDay(),actualDataObjectMapper.getObject().getBirthDay());
         assertEquals(expectedData.getObject().getBirthPlace(),actualDataObjectMapper.getObject().getBirthPlace());
-        assertEquals(expectedData.getObject().getUsername(),actualDataObjectMapper.getObject().getUsername());*/
+        assertEquals(expectedData.getObject().getUsername(),actualDataObjectMapper.getObject().getUsername());
     }
     @Given("Dean name kismi bos bir body ile post request yapar")
     public void dean_name_kismi_bos_bir_body_ile_post_request_yapar() {
@@ -104,16 +106,16 @@ public class US06api {
         nameFaker();
         phoneNumberFaker();
         ssnFaker();
-        object=new ViceDeanInnerPojo("1988-09-09",birthPlaceFaker(),"MALE","",passwordFaker(),
+        object=new ViceDeanResInnerPojo(8,"1988-09-09",birthPlaceFaker(),"MALE","",passwordFaker(),
                 phoneNumberFaker(),ssnFaker(),surnameFaker(),usernameFaker());
         response1= given(spec).body(object).when().post("/{first}/{second}");
         response1.prettyPrint();
     }
     @Then("Name kismi bos birakilinca post yapilamadigini dogrular")
     public void name_kismi_bos_birakilinca_post_yapilamadigini_dogrular() {
-        response1.then().statusCode(400);
-        ViceDeanOutherPojo  actualDataPojo = response1.as(ViceDeanOutherPojo.class);
-        assertEquals("Validation failed for object='viceDeanRequest'. Error count: 2", actualDataPojo.getMessage());
+        response1.then().statusCode(400).body("message",equalTo("Validation failed for object='viceDeanRequest'. Error count: 2"));
+        System.out.println(response1);
+
 
     }
     @Given("Kullanici Dean tokeniyle surname ve birt place bos birakilarak post yapar")
@@ -127,16 +129,15 @@ public class US06api {
         nameFaker();
         phoneNumberFaker();
         ssnFaker();
-        object=new ViceDeanInnerPojo("1988-09-09","","MALE",nameFaker(),passwordFaker(),
+        object=new ViceDeanResInnerPojo(8,"1988-09-09","","MALE",nameFaker(),passwordFaker(),
                 phoneNumberFaker(),ssnFaker(),"",usernameFaker());
         response2= given(spec).body(object).when().post("/{first}/{second}");
         response2.prettyPrint();
     }
     @Then("Surname ve birth place bosken post yapilamadigini dogrular")
     public void surname_ve_birth_place_bosken_post_yapilamadigini_dogrular() {
-        response2.then().statusCode(400);
-        ViceDeanOutherPojo  actualDataPojo = response2.as(ViceDeanOutherPojo.class);
-        assertEquals("Validation failed for object='viceDeanRequest'. Error count: 4", actualDataPojo.getMessage());
+        response2.then().statusCode(400).body("message",equalTo("Validation failed for object='viceDeanRequest'. Error count: 4"));
+
     }
 
 
@@ -151,15 +152,13 @@ public class US06api {
         nameFaker();
         phoneNumberFaker();
         ssnFaker();
-        object=new ViceDeanInnerPojo("1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
+        object=new ViceDeanResInnerPojo(8,"1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
                 "240-640-1805","890-96-3848",surnameFaker(),usernameFaker());
         response3= given(spec).body(object).when().post("/{first}/{second}");
         response3.prettyPrint();    }
     @Then("SSN ve telefon tekrarli olunca post yapilamadigini dogrular")
     public void ssn_ve_telefon_tekrarli_olunca_post_yapilamadigini_dogrular() {
-        response3.then().statusCode(409);
-        ViceDeanOutherPojo  actualDataPojo = response3.as(ViceDeanOutherPojo.class);
-        assertEquals("Error: User with ssn 890-96-3848 already register", actualDataPojo.getMessage());
+        response3.then().statusCode(409).body("message", equalTo("Error: User with ssn 890-96-3848 already register"));
     }
     @Given("Kullanici dean tokeniyle username  kismina tekrarli veri ile post yapar")
     public void kullanici_dean_tokeniyle_username_kismina_tekrarli_veri_ile_post_yapar() {
@@ -172,43 +171,39 @@ public class US06api {
         nameFaker();
         phoneNumberFaker();
         ssnFaker();
-        object=new ViceDeanInnerPojo("1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
+        object=new ViceDeanResInnerPojo(8,"1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
                 phoneNumberFaker(),ssnFaker(),surnameFaker(),"Kiel.Gislason");
                response4 = given(spec).body(object).when().post("/{first}/{second}");
         response4.prettyPrint();    }
     @Then("Kullanici tekrarli username ile post yapilamadigini dogrular")
     public void kullanici_tekrarli_username_ile_post_yapilamadigini_dogrular() {
-        response4.then().statusCode(409);
-        ViceDeanOutherPojo  actualDataPojo = response4.as(ViceDeanOutherPojo.class);
-        assertEquals("Error: User with username Kiel.Gislason already register", actualDataPojo.getMessage());
+        response4.then().statusCode(409).body("message",equalTo("Error: User with username Kiel.Gislason already register"));
     }
     @Given("Kullanici dean tokeniyle bos body gondererek post yapar")
     public void kullanici_dean_tokeniyle_bos_body_gondererek_post_yapar() {
         deanSetUp();
         spec.pathParams("first","vicedean","second","save");
-        object=new ViceDeanInnerPojo("","","","","","","","","");
+        object=new ViceDeanResInnerPojo(9,"","","","","","","","","");
         response5 = given(spec).body(object).when().post("/{first}/{second}");
         response5.prettyPrint();
     }
     @Then("Kullanici bos body ile post yapilmadigini dogrular")
     public void kullanici_bos_body_ile_post_yapilmadigini_dogrular() {
-        response5.then().statusCode(400);
-        ViceDeanOutherPojo  actualDataPojo = response5.as(ViceDeanOutherPojo.class);
-        assertTrue( actualDataPojo.getMessage().contains("Cannot coerce empty String"));
+        response5.then().statusCode(400).body("message",containsString("Cannot coerce empty String"));
+
     }
     @Given("Kullanici post bodysine invalid degerler girer")
     public void kullanici_post_bodysine_invalid_degerler_girer() {
         deanSetUp();
         spec.pathParams("first","vicedean","second","save");
-        object=new ViceDeanInnerPojo("987654","8908765","NKJ","098","MNBVCCX","MNBVCXFG","POIUYTREWAB","  ","NMNMJJBT");
+        object=new ViceDeanResInnerPojo(9,"987654","8908765","NKJ","098","MNBVCCX","MNBVCXFG","POIUYTREWAB","  ","NMNMJJBT");
         response6 = given(spec).body(object).when().post("/{first}/{second}");
         response6.prettyPrint();
     }
     @Then("Kulanici invalid degerlerle post yapilmadigini dogrular.")
     public void kulanici_invalid_degerlerle_post_yapilmadigini_dogrular() {
-        response6.then().statusCode(400);
-        ViceDeanOutherPojo  actualDataPojo = response6.as(ViceDeanOutherPojo.class);
-        assertTrue( actualDataPojo.getMessage().contains("InvalidFormatException"));
+        response6.then().statusCode(400).body("message",containsString("InvalidFormatException"));
+
     }
 
 

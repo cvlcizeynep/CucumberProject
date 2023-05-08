@@ -11,12 +11,20 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.RegisterPage;
+import utilities.DBUtils;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class US01 {
 RegisterPage registerPage=new RegisterPage();
 Faker faker =new Faker();
+String username = faker.name().username();
+String ssn =faker.number().numberBetween(100,999)+"-"+
+        faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999);
 
     @Given("Kullanıcı register sayfasına gider.")
     public void kullanıcı_register_sayfasına_gider() {
@@ -61,14 +69,13 @@ Faker faker =new Faker();
     @When("Kullanici register SSN  {string} girer")
     public void kullanici_register_ssn_girer(String string) {
 
-        registerPage.ssn.sendKeys(faker.number().numberBetween(100,999)+"-"+
-                        faker.number().numberBetween(10,99)+"-"+faker.number().numberBetween(1000,9999));
+        registerPage.ssn.sendKeys(ssn);
 
     }
     @When("Kullanici register User Name {string} girer")
     public void kullanici_register_user_name_girer(String string) {
 
-        registerPage.username.sendKeys(string);
+        registerPage.username.sendKeys(username);
         ReusableMethods.waitFor(1);
     }
     @When("Kullanici register Password {string} girer")
@@ -107,6 +114,5 @@ Faker faker =new Faker();
        Assert.assertTrue(registerPage.pleaseentervalidphone.isDisplayed());
        ReusableMethods.waitFor(1);
     }
-
 
 }
