@@ -16,15 +16,15 @@ public class US08Steps {
 
         connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = connection.createStatement();
-        resultSet = statement.executeQuery("SELECT * FROM lesson WHERE lesson_id = 63");
+        resultSet = statement.executeQuery("SELECT * FROM lesson WHERE lesson_id = 6");
         resultSet.next();
 
     }
     @Then("validete data")
     public void validete_data() throws SQLException {
-        assertEquals(63, resultSet.getInt("lesson_id"));
-        assertEquals(25, resultSet.getInt("credit_score"));
-        assertEquals("fiziksss", resultSet.getString("lesson_name"));
+        assertEquals(6, resultSet.getInt("lesson_id"));
+        assertEquals(5, resultSet.getInt("credit_score"));
+        assertEquals("Math", resultSet.getString("lesson_name"));
 
         assertTrue( resultSet.getBoolean("is_compulsory"));
 
