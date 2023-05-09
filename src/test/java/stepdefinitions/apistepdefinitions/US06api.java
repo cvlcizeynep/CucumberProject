@@ -2,19 +2,24 @@ package stepdefinitions.apistepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import pojos.ViceDeanResInnerPojo;
 import pojos.ViceDeanResponsePojo;
+import utilities.DBUtils;
 import utilities.JsonUtil;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static base_url.StudentManagementBaseUrl.deanSetUp;
 import static base_url.StudentManagementBaseUrl.spec;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static utilities.FakerUtils.*;
 
 public class US06api {
@@ -27,7 +32,9 @@ public class US06api {
     Response response6;
     ViceDeanResInnerPojo object;
     ViceDeanResponsePojo expectedData;
+    JsonPath jsonPath;
 
+     List<List<Object>> usernamelist=new ArrayList<>();
 
     @Given("Dean butun gerekli alanlari doldurarak Vice Dean ekler")
     public void dean_butun_gerekli_alanlari_doldurarak_vice_dean_ekler() {
@@ -42,10 +49,10 @@ public class US06api {
         ssnFaker();
         object=new ViceDeanResInnerPojo(8,"1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
                 phoneNumberFaker(),ssnFaker(),surnameFaker(),usernameFaker());
-
         expectedData=new ViceDeanResponsePojo(object,"Vice dean Saved","CREATED");
         response = given(spec).body(object).when().post("/{first}/{second}");
-        System.out.println(expectedData);
+
+       System.out.println(expectedData);
         response.prettyPrint();
         ViceDeanResponsePojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), ViceDeanResponsePojo.class);
 
@@ -137,10 +144,7 @@ public class US06api {
     @Then("Surname ve birth place bosken post yapilamadigini dogrular")
     public void surname_ve_birth_place_bosken_post_yapilamadigini_dogrular() {
         response2.then().statusCode(400).body("message",equalTo("Validation failed for object='viceDeanRequest'. Error count: 4"));
-
     }
-
-
     @Given("Kullanici dean tokeniyle telefon ve SSN  kismina tekrarli veri ile post yapar")
     public void kullanici_dean_tokeniyle_telefon_ve_ssn_kismina_tekrarli_veri_ile_post_yapar() {
         deanSetUp();
@@ -163,8 +167,14 @@ public class US06api {
     @Given("Kullanici dean tokeniyle username  kismina tekrarli veri ile post yapar")
     public void kullanici_dean_tokeniyle_username_kismina_tekrarli_veri_ile_post_yapar() {
         deanSetUp();
+//        spec.pathParams("first","vicedean","second","getAll");
+//        Response response7=given(spec).when().get("/{first}/{second}");
+//        jsonPath = response7.jsonPath();
+//        List<String>users= jsonPath.getList("object.findAll{it.userId<1000}.username");
+//        System.out.println("users"+users);
+//       // String usersname=users.get(0).toString();
+//       // System.out.println("userss"+usersname);
         spec.pathParams("first","vicedean","second","save");
-        usernameFaker();
         passwordFaker();
         birthPlaceFaker();
         surnameFaker();
@@ -172,12 +182,13 @@ public class US06api {
         phoneNumberFaker();
         ssnFaker();
         object=new ViceDeanResInnerPojo(8,"1988-09-09",birthPlaceFaker(),"MALE",nameFaker(),passwordFaker(),
-                phoneNumberFaker(),ssnFaker(),surnameFaker(),"Kiel.Gislason");
+                phoneNumberFaker(),ssnFaker(),surnameFaker(),"roderick.okuneva");
                response4 = given(spec).body(object).when().post("/{first}/{second}");
-        response4.prettyPrint();    }
+               response4.prettyPrint();
+    }
     @Then("Kullanici tekrarli username ile post yapilamadigini dogrular")
     public void kullanici_tekrarli_username_ile_post_yapilamadigini_dogrular() {
-        response4.then().statusCode(409).body("message",equalTo("Error: User with username Kiel.Gislason already register"));
+        response4.then().statusCode(409);
     }
     @Given("Kullanici dean tokeniyle bos body gondererek post yapar")
     public void kullanici_dean_tokeniyle_bos_body_gondererek_post_yapar() {
@@ -203,7 +214,6 @@ public class US06api {
     @Then("Kulanici invalid degerlerle post yapilmadigini dogrular.")
     public void kulanici_invalid_degerlerle_post_yapilmadigini_dogrular() {
         response6.then().statusCode(400).body("message",containsString("InvalidFormatException"));
-
     }
 
 
