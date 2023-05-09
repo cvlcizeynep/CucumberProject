@@ -7,7 +7,6 @@ Feature: Contact Creation
     Then mesaj basarili sekilde gonderilir
 
 
-
   @US03_API02
   Scenario: TC02_NameAlaniBosBirakilmasi
     Given kullanici name alanini bos birakarak mesaj gonderir
