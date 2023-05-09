@@ -12,7 +12,6 @@ import pojos.LessonPojo;
 import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-
 public class US08 {
     LessonPojo expected;
     LessonObjectPojo lessonObjectPojo;
@@ -30,7 +29,7 @@ public class US08 {
         lessonObjectPojo=new LessonObjectPojo(lessons,creditScore,"true");
         expected=new LessonPojo(lessonObjectPojo,"Lesson Created","OK");
         System.out.println("expected = " + expected);
-        response = given().spec(spec).body(lessonObjectPojo).post("{first}/{second}");
+        response = given(spec).body(lessonObjectPojo).post("{first}/{second}");
         response.prettyPrint();
 
 
@@ -40,7 +39,7 @@ public class US08 {
     public void user_gets_the_lesson_data_and_assert() {
         assertEquals(200, response.statusCode());
         JsonPath jsonPath=response.jsonPath();
-        response.prettyPrint();
+        //response.prettyPrint();
         assertEquals(expected.getObject().getLessonName(),jsonPath.getString("object.lessonName"));
         assertEquals(expected.getObject().getCreditScore(),jsonPath.getString("object.creditScore"));
         assertEquals(expected.getObject().getLessonName(),jsonPath.getString("object.lessonName"));
