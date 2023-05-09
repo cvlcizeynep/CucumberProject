@@ -1,6 +1,9 @@
 package pojos;
 
+import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties (ignoreUnknown = true)
 public class LessonPojo {
+
     private LessonObjectPojo object;
     private String message;
     private String httpStatus;

@@ -1,5 +1,4 @@
 package pojos;
-
 public class StudentMeetPojo {
     public int id;
     public String username;
