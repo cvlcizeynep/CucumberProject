@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class US15 {
+public class US15_ViceDeanAddStudentDb {
     List<Object> studentSave = new ArrayList<>();
 
     @Then("ogrenci bilgileri database de dogrulanir")

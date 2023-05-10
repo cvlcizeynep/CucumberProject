@@ -7,21 +7,25 @@ import pojos.StudentOutherPojo;
 import pojos.StudentRequestPojo;
 
 import static base_url.StudentManagementBaseUrl.*;
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 import static utilities.FakerUtils.*;
 
 
-
-public class US25 {
+public class US15_ViceDeanAddStudentApi {
     Response response;
-    StudentObjectPojo object ;
+    StudentObjectPojo object = null;
     StudentOutherPojo expectedData;
     StudentRequestPojo request;
-    @Given("Admin butun gerekli alanlari doldurur ve ogrenci ekleyebilmelidir")
-    public void admin_butun_gerekli_alanlari_doldurur_ve_ogrenci_ekleyebilmelidir() {
-        adminSetUp();
+
+
+
+    @Given("Vice Dean butun gerekli alanlari doldurur ve ogrenci ekleyebilmelidir")
+    public void vice_dean_butun_gerekli_alanlari_doldurur_ve_ogrenci_ekleyebilmelidir() {
+
+        viceDeanSetUp();
         spec.pathParams("first", "students", "second", "save");
+
         nameFaker();
         surnameFaker();
         usernameFaker();
@@ -29,12 +33,20 @@ public class US25 {
         emailFaker();
         birthPlaceFaker();
 
-        request = new StudentRequestPojo(251,"1990-01-01",birthPlaceFaker(),emailFaker(),nameFaker(),"MALE",nameFaker(),nameFaker(),passwordFaker(),
+
+
+
+         request = new StudentRequestPojo(251,"1990-01-01",birthPlaceFaker(),emailFaker(),nameFaker(),"MALE",nameFaker(),nameFaker(),passwordFaker(),
                 phoneNumberFaker(),ssnFaker(),surnameFaker(),usernameFaker());
         System.out.println(request);
+        // expectedData = new StudentOutherPojo(object, "Student saved Successfully");
+      //  System.out.println(expectedData);
+
+
     }
-    @Then("eklenen ogrencinin olustunu dogrular")
-    public void eklenen_ogrencinin_olustunu_dogrular() {
+
+    @Then("eklen ogrencinin olustunu dogrular")
+    public void eklen_ogrencinin_olustunu_dogrular() {
         response = given(spec).body(request).when().post("{first}/{second}");
         response.prettyPrint();
         expectedData = response.as(StudentOutherPojo.class);
@@ -42,4 +54,6 @@ public class US25 {
         assertEquals("Student saved Successfully",expectedData.getMessage());
 
     }
+
+
 }
