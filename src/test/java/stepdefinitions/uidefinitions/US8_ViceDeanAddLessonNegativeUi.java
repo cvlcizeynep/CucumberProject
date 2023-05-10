@@ -5,13 +5,12 @@ import io.cucumber.java.en.Then;
 
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import pages.LessonsManagementPage;
 import utilities.Driver;
 
 import utilities.ReusableMethods;
 
-public class US8NegativeTestStepdefinition {
+public class US8_ViceDeanAddLessonNegativeUi {
     LessonsManagementPage lessonsManagementPage=new LessonsManagementPage();
     @And("And Lesson Name {string} girer")
     public void andLessonNameGirer(String string) {

@@ -7,7 +7,7 @@ import pages.MeetManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US20PozitiveStepdefinition {
+public class US20_TeacherCanSeeMeetListPozitiveUi {
     MeetManagementPage meetManagementPage = new MeetManagementPage();
 
 

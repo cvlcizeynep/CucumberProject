@@ -8,7 +8,7 @@ import java.sql.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-public class US20Steps {
+public class US20_TeacherCanSeeMeetListDb {
     ResultSet resultSet;
     Connection connection;
     Statement statement;

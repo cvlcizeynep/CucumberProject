@@ -1,17 +1,15 @@
 package stepdefinitions.uidefinitions;
 
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.PageFactory;
 import pages.LessonsManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US8PozitiveStepdefinition {
+public class US8_ViceDeanAddLessonPozitiveUi {
     LessonsManagementPage lessonsManagementPage = new LessonsManagementPage();
 
 
