@@ -2,7 +2,6 @@ package stepdefinitions.apistepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.MeetObjectPojo;
@@ -13,7 +12,6 @@ import utilities.JsonUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.teacherSetUp;
@@ -28,6 +26,7 @@ public class US20 {
     MeetObjectPojo meetObjectPojo;
     StudentMeetPojo studentMeetPojos;
     MeetResponsePojo expecteddataput;
+
     @Given("teacher sends the add_meetList_GET")
     public void teacher_sends_the_add_meet_list_get() {
         teacherSetUp();
@@ -101,37 +100,39 @@ public class US20 {
 
         ArrayList<Integer> studentId = new ArrayList<>();
         studentId.add(0);
-        expecteddataput=new MeetResponsePojo("2026-09-09","muammer","18:14","19:15",studentId);
+        expecteddataput = new MeetResponsePojo("2026-09-09", "muammer", "18:14", "19:15", studentId);
 
 
         meetObjectPojo = new MeetObjectPojo(99, "muammer", "2026-09-09",
                 "18:14:00", "19:15:00", 20, "fvdesfgt",
-                "123-45-7896",null);
+                "123-45-7896", null);
         expectedData = new MeetRootPojo(meetObjectPojo, "Meet successfully found", "CREATED");
 
         response = given(spec).when().body(expecteddataput).get("{first}/{second}/{third}");
-       response.prettyPrint();
+        response.prettyPrint();
 
         MeetRootPojo actualData = JsonUtil.convertJsonToJavaObject(response.asString(), MeetRootPojo.class);
     }
+
     @Then("teacher gets the add_meetList and assert_PUT")
     public void teacher_gets_the_add_meet_list_and_assert_put() {
 
-            JsonPath jsonPath = response.jsonPath();
-            assertEquals(200, response.statusCode());
-            assertEquals(expecteddataput.date, jsonPath.getString("object.date"));
-            assertEquals(expecteddataput.startTime, jsonPath.getString("object.startTime"));
-            assertEquals(expecteddataput.stopTime, jsonPath.getString("object.stopTime"));
-            assertEquals(expecteddataput.description, jsonPath.getString("object.description"));
-            assertEquals(expecteddataput.studentIds, jsonPath.getString("object.students[0]"));
-            assertEquals(expecteddataput.studentIds, jsonPath.getString("object.students[1]"));
-   }
-//
+        JsonPath jsonPath = response.jsonPath();
+        assertEquals(200, response.statusCode());
+        assertEquals(expecteddataput.date, jsonPath.getString("object.date"));
+        assertEquals(expecteddataput.startTime, jsonPath.getString("object.startTime"));
+        assertEquals(expecteddataput.stopTime, jsonPath.getString("object.stopTime"));
+        assertEquals(expecteddataput.description, jsonPath.getString("object.description"));
+        assertEquals(expecteddataput.studentIds, jsonPath.getString("object.students[0]"));
+        assertEquals(expecteddataput.studentIds, jsonPath.getString("object.students[1]"));
+    }
+
+    //
     @Given("teacher sends the add_meetList_DELETE")
     public void teacher_sends_the_add_meet_list_delete() {
 
         teacherSetUp();
-        spec.pathParams("first", "meet", "second", "delete","third", 99);
+        spec.pathParams("first", "meet", "second", "delete", "third", 99);
 
 
         Response response = given(spec).delete("{first}/{second}/{third}");
@@ -151,7 +152,7 @@ public class US20 {
     }
 
 
-    }
+}
 
 
 

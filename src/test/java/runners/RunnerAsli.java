@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@lesson_delete",
+        tags = "@ApiUs17Test01",
         dryRun = false
 
 

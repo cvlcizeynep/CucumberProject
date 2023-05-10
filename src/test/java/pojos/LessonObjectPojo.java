@@ -1,6 +1,9 @@
 package pojos;
 
+import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LessonObjectPojo {
+
 
     private String lessonName;
     private int creditScore;

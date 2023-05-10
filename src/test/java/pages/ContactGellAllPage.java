@@ -31,6 +31,8 @@ public class ContactGellAllPage {
    @FindBy(xpath = "//dletetusu") public WebElement deleteButton;
    @FindBy(xpath="//succesfullydelete") public WebElement succesfullyDelete;
 
+   @FindBy(xpath = "//table[@class='table table-striped table-bordered table-hover']") public WebElement contactGetAll;
+
 }
 
 

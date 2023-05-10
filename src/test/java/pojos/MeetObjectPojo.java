@@ -1,7 +1,9 @@
 package pojos;
 
-import java.util.ArrayList;
+import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MeetObjectPojo {
     private int id;
     private String description;
