@@ -25,11 +25,18 @@ spec.pathParams("first","lessonPrograms","second","save");
         LessonName lessonName=new LessonName(7,"SQL",6,true);
         ArrayList<LessonName> lessonNames=new ArrayList<>();
         lessonNames.add(lessonName);
-        Object object=new Object(54,"14:50:00","14:55:00",lessonNames,"MONDAY");
+        Object object=new Object(2048,"14:50:00","14:55:00",lessonNames,"MONDAY");
         Root expectedData=new Root(object,"Created Lesson Program","CREATED");
         Response response= given(spec).body(lessonProgramRequest).when().post("{first}/{second}");
         response.prettyPrint();
         Root actualData= response.as(Root.class);
-        assertEquals(expectedData.getObject().getLessonName(),actualData.getObject().getLessonName());
+        assertEquals(expectedData.getMessage(),actualData.getMessage());
+        assertEquals(expectedData.getHttpStatus(),actualData.getHttpStatus());
+
+        assertEquals(expectedData.getObject().getStartTime(),actualData.getObject().getStartTime());
+        assertEquals(expectedData.getObject().getStopTime(),actualData.getObject().getStopTime());
+       assertEquals(expectedData.getObject().getDay(),actualData.getObject().getDay());
+
+
     }
 }
