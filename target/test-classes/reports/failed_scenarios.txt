@@ -1,3 +1,0 @@
-file:src/test/resources/features/uifeature/US06_3f.feature:63
-file:src/test/resources/features/uifeature/US06_2f.feature:23:38:68:83
-file:src/test/resources/features/uifeature/US03_2.feature:24:25:26:27:28
