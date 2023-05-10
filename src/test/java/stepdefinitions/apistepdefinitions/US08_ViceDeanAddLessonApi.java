@@ -3,7 +3,6 @@ package stepdefinitions.apistepdefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.LessonObjectPojo;
@@ -12,7 +11,7 @@ import pojos.LessonPojo;
 import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-public class US08 {
+public class US08_ViceDeanAddLessonApi {
     LessonPojo expected;
     LessonObjectPojo lessonObjectPojo;
     Response response;
