@@ -1,4 +1,4 @@
-@US06DB
+
 Feature: Dean Vice Dean ekleyebilmelidir.
 
 Scenario: TC01 Eklenen vice dean database gorulebilmelidir.

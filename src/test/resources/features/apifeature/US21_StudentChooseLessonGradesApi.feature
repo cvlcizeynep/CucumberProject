@@ -1,4 +1,5 @@
-@US21Api
+@End2End
+
 Feature: Student Controller
 
   @US21_API01
