@@ -1,4 +1,4 @@
-@US10DB
+@US17.StudentInfoDB
   Feature: Teacher, öğrencilere not verebilmelidir
     Scenario:
 
