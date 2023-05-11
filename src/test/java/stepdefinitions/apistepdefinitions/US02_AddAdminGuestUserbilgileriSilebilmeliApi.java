@@ -40,7 +40,7 @@ public class US02_AddAdminGuestUserbilgileriSilebilmeliApi {
         ssnFaker();
         usernameFaker();
         phoneNumberFaker();
-        object = new GuestUserObjectPojo(1,"2012-12-12","izmir","MALE","hayriye","12345678",phoneNumberFaker(),ssnFaker(),"kilic","hayriyekilic");
+        object = new GuestUserObjectPojo(1,"2012-12-12","izmir","MALE","hayriye","12345678",phoneNumberFaker(),ssnFaker(),"kilic","hayriyeklc");
         expectedData = new GuestUserOutherPojo(object,"Guest User Save","CREATED");
         System.out.println(expectedData);
         response=given().spec(spec).body(object).post("{first}/{second}");
@@ -61,7 +61,7 @@ public class US02_AddAdminGuestUserbilgileriSilebilmeliApi {
         //**********************id 'yi dinamik almak için*************
         DBUtils.createConnection();
         Statement st = DBUtils.createStatement();
-        String query = ("SELECT * FROM guest_user WHERE username = 'hayriyekilic'");
+        String query = ("SELECT * FROM guest_user WHERE username = 'hayriyeklc'");
         ResultSet rs = st.executeQuery(query);
         List<Object> id = new ArrayList<>();
         while(rs.next()){

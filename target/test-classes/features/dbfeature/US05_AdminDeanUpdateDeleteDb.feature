@@ -1,4 +1,4 @@
-@US05DB
+@End2End
 Feature: Admin Dean'lerin Name, Gender, Phone Number, SSN, User Name bilgilerini görebilmeli
 
   Scenario:TC01 Admin deanlerin name bilgilerini gorebilmeli

@@ -1,4 +1,4 @@
-@US02DB
+@End2End
 Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
 
   Scenario Outline: TC01 Admin Guest User name bilgilerini gorebilmeli
@@ -12,7 +12,7 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
 
     Examples:
       | name | surname | birthplace | phone | date | ssn | username | password |
-      |hayriye |kilic    |izmir      |598-256-6589|12-12-2012|235-56-5896|hayriyekilic|12345678|
+      |hayriye |kilic    |izmir      |598-256-6589|12-12-2012|235-56-5896|hayriyeklc|12345678|
 
   Scenario: TC02 Admin Guest User phone number bilgilerini gorebilmeli
     Given Database icin connect saglanir

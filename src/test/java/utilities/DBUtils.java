@@ -29,7 +29,7 @@ public class DBUtils {
 
         return connection;
     }
-    //parematresi connection methodu
+    //parematresiz connection methodu
     public static void createConnection() {
         String url = "jdbc:postgresql://164.92.252.42:5432/school_management";
         String username = "select_user";
