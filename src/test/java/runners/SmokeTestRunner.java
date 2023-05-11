@@ -12,12 +12,12 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failed_scenarios.txt",
-               // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
-        features = "./src/test/resources/features/dbfeature",//features folder path
+        features = "./src/test/resources/features",//features folder path
         glue = {"stepdefinitions"},   //stepdefinitions path
-        tags = "@US07DB",
+        tags = "@smoke",
         dryRun =false
 )
 public class SmokeTestRunner {

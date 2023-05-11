@@ -8,7 +8,7 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
     When Database icin connect saglanir
     When Admin Guest User name bilgilerini databasede sorgular
     Then Admin Guest User name bilgilerini gorebildigini dogrular
-    Then Close Database
+    Then hClose Database
 
     Examples:
       | name | surname | birthplace | phone | date | ssn | username | password |
@@ -18,19 +18,19 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
     Given Database icin connect saglanir
     When Admin Guest User phone number bilgilerini databasede sorgular
     Then Admin Guest User phone number bilgilerini gorebildigini dogrular
-    Then Close Database
+    Then hClose Database
 
   Scenario: TC03 Admin Guest User ssn bilgilerini gorebilmeli
     Given Database icin connect saglanir
     When Admin Guest User ssn bilgilerini databasede sorgular
     Then Admin Guest User ssn bilgilerini gorebildigini dogrular
-    Then Close Database
+    Then hClose Database
 
   Scenario: TC04 Admin Guest User username bilgilerini gorebilmeli
     Given Database icin connect saglanir
     When Admin Guest User username bilgilerini databasede sorgular
     Then Admin Guest User username bilgilerini gorebildigini dogrular
-    Then Close Database
+    Then hClose Database
 
   Scenario: TC05 Admin Guest User List bilgilerini silebilir
     #Api
@@ -39,5 +39,5 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
     When Database icin connect saglanir
     When Admin Guest User username bilgilerini databasede sorgular
     Then Admin Guest User username bilgilerini goremedigini dogrular
-    Then Close Database
+    Then hClose Database
 
