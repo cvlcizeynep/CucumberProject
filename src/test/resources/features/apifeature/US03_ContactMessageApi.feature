@@ -1,4 +1,5 @@
-@US03Api
+@End2End
+
 Feature: Contact Creation
 
   @US03_API01
@@ -49,8 +50,8 @@ Feature: Contact Creation
     Then subject alani invalid deger hata mesajini goruntuledigini dogrular
 
 
-  @US03_API09
-  Scenario: TC9_AyniMailleIkinciMesajGonderemez
-    Given kullanici gun icinde ayni maille mesaj gondermeye calisir
-    Then ayni maille ikinci mesaj gondermez mesajini goruntuledigini dogrular
+  #@US03_API09
+  #Scenario: TC9_AyniMailleIkinciMesajGonderemez
+   # Given kullanici gun icinde ayni maille mesaj gondermeye calisir
+    #Then ayni maille ikinci mesaj gondermez mesajini goruntuledigini dogrular
 

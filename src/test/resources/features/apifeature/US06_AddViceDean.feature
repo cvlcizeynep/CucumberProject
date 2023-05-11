@@ -1,4 +1,4 @@
-@US06API
+@End2End
 Feature: Dean Vice Dean Hesabi Olusturabilmelidir.
 
   Scenario: TC01 Dean butun gerekli alanlari doldurarak Vice Dean ekleyebilmeli.
