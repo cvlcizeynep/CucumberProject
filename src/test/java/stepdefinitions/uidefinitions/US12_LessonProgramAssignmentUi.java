@@ -2,7 +2,7 @@ package stepdefinitions.uidefinitions;
 
 import io.cucumber.java.en.Given;
 
-public class US12 {
+public class US12_LessonProgramAssignmentUi {
 
     @Given("Kullanıcı Lesson Program Assignment başlığının altında ilhanlılar tarihi yazısını görür")
     public void kullanici_lesson_program_assignment_basliginin_altinda_ilhanlilar_tarihi_yazisini_gorur() {

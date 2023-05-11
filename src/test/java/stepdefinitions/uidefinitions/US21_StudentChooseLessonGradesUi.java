@@ -10,7 +10,7 @@ import pages.GradesAnnouncementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US21 {
+public class US21_StudentChooseLessonGradesUi {
 
     ChooseLessonPage chooseLessonPage = new ChooseLessonPage();
     GradesAnnouncementPage gradesAnnouncementPage = new GradesAnnouncementPage();

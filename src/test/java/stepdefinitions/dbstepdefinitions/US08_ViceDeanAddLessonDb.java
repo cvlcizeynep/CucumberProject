@@ -7,7 +7,7 @@ import java.sql.*;
 
 import static org.junit.Assert.*;
 
-public class US08Steps {
+public class US08_ViceDeanAddLessonDb {
     ResultSet resultSet;
     Connection connection;
     Statement statement;

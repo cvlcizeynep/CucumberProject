@@ -3,23 +3,15 @@ package stepdefinitions.uidefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import pages.RegisterPage;
-import utilities.DBUtils;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class US01 {
+public class US01_GusetUserRegisterUi {
 RegisterPage registerPage=new RegisterPage();
 Faker faker =new Faker();
 String username = faker.name().username();

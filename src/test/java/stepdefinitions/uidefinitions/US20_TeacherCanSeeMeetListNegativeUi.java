@@ -5,12 +5,11 @@ import io.cucumber.java.en.And;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import pages.MeetManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US20NegativeStepdefinition {
+public class US20_TeacherCanSeeMeetListNegativeUi {
     MeetManagementPage meetManagementPage = new MeetManagementPage();
 
     @And("Meet Manegamente tiklarız")

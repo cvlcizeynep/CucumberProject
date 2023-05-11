@@ -1,4 +1,4 @@
 package stepdefinitions.dbstepdefinitions;
 
-public class US18Steps {
+public class US18_StudentInfoManagmentDb {
 }

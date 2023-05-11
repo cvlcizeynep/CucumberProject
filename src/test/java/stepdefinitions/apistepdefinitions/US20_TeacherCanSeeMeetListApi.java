@@ -19,7 +19,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class US20 {
+public class US20_TeacherCanSeeMeetListApi {
     Response response;
     MeetRootPojo expectedData;
     MeetRootPojo actualData;

@@ -1,4 +1,4 @@
 package stepdefinitions.apistepdefinitions;
 
-public class US18 {
+public class US18_StudentInfoManagmentApi {
 }
