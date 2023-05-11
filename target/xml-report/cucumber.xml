@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="95.408">
+    <testcase classname="&quot;Aday öğrenciler sisteme kayıt olabilmelidir&quot;(Register)" name="Kullanıcı bütün boşluklara uygun değerler girerek kayıt olabilir" time="19.806">
+        <system-out>
+            <![CDATA[Given Kullanıcı register sayfasına gider....................................passed
+When Kullanici register Name "Emre" kismina değer  girer....................passed
+When Kullanici register Surname "Yigit" kismina değer  girer................passed
+And Kullanici register Birth place "İskenderun" kismina  deger girer........passed
+And Kullanici register Birth of Date "26.01.1996"  girer....................passed
+And Kullanici register Phone Number "123-995-1205" girer....................passed
+And Kullanici register Gender kismini secer.................................passed
+And Kullanici register SSN  "123-59-1310" girer.............................passed
+And Kullanici register User Name "emre010" girer............................passed
+And Kullanici register Password "123345678" girer...........................passed
+And Kullanici register submit tusuna tiklar.................................passed
+And Kullanici Guest User Registered yazısı görür............................passed
+Then close driver...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dean Vice Dean ekleyebilmeli" name="TC01 Dean basariyla viceDean eklemeli" time="26.636">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()='Vice dean Saved']&quot;}&#10;  (Session info: chrome=113.0.5672.93)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//div[text()='Vice dean Saved']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: f11407cb495bb860593febd8117ed8cd" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given Kullanici Dean olarak login olur......................................passed
+Given Kullanici  Name kismina valid deger girer.............................passed
+When Kullanici Surname kismina valid deger girer............................passed
+And Birth Place kismina valid deger girer...................................passed
+And Kullanici Cinsiyet kismini secer........................................passed
+And Kullanici Dogum tarihine "03061988" girer...............................passed
+And Kullanici  telefon numarasina valid deger girer.........................passed
+And Kullanici SSN kismina valid deger girer.................................passed
+And Kullanici User Name alanina valid deger girer...........................passed
+And Kullanici en az sekiz karakterden oluşan password  girer................passed
+And Kullanici submit tusuna tiklar..........................................passed
+Then Kullanici basariyla Vice Dean ekleyebildigini dogrular.................failed
+Then close driver...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Vice dean Saved']"}
+  (Session info: chrome=113.0.5672.93)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//div[text()='Vice dean Saved']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f11407cb495bb860593febd8117ed8cd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy24.isDisplayed(Unknown Source)
+	at stepdefinitions.uidefinitions.US06_1AddViceDeanSteps.kullanici_basariyla_vice_dean_ekleyebildigini_dogrular(US06_1AddViceDeanSteps.java:31)
+	at ✽.Kullanici basariyla Vice Dean ekleyebildigini dogrular.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US06_1.feature:17)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Vice Dean ogrenci  olusturabilmelidir" name="TC_01 Ogrecinin danisman ogretmeni secilmelidir." time="15.754">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class='header_link ms-2']&quot;}&#10;  (Session info: chrome=113.0.5672.93)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//a[@class='header_link ms-2']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: f11407cb495bb860593febd8117ed8cd" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[When Kullanici viceDean olarak login olur...................................failed
+Then Basariyla viceDean girisi yaptigini dogrular...........................skipped
+When Menu butonuna tiklar...................................................skipped
+When Student Management butonuna tiklar.....................................skipped
+Then Vice Dean Choose "m" Advisor_Teacher alani secilir.....................skipped
+Then Vice Dean "janet"Name alanina vaild bir deger girer....................skipped
+Then Vice Dean "al" surname alanina valid bir deger girer...................skipped
+Then Vice Dean "ordu" Birth Place alanina valid bir deger girer.............skipped
+Then Vice Dean "janet@hotmail.com" Email alanina valid bir deger girer......skipped
+Then Vice Dean "534-301-4211" Phone alanina valid bir deger girer...........skipped
+Then Vice Dean Gender secer.................................................skipped
+Then Vice Dean "01.01.1990" Date Of Birth alanina valid bir deger girer.....skipped
+Then Vice Dean "420-53-0010" Ssn alanina valid bir deger girer..............skipped
+Then Vice Dean "janetal" User Name alanina valid bir deger girer............skipped
+Then Vice "adem" Father alanina valid bir deger girer.......................skipped
+Then Vice "havva" Mother alanina valid bir deger girer......................skipped
+Then Vice "12345678" Password alanina valid bir deger girer.................skipped
+Then Vice Dean Submit Butonuna tiklar.......................................skipped
+And Vice  Dean succesfully  ibaresini gorur dogrulamasini yapar.............skipped
+Then close driver...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='header_link ms-2']"}
+  (Session info: chrome=113.0.5672.93)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//a[@class='header_link ms-2']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f11407cb495bb860593febd8117ed8cd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at utilities.ReusableMethods.login(ReusableMethods.java:197)
+	at stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_vice_dean_olarak_login_olur(LoginStepDefinitions.java:51)
+	at ✽.Kullanici viceDean olarak login olur.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US15.feature:5)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="TC1_Admin" name="Admin_kayit_TC01" time="15.807">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class='header_link ms-2']&quot;}&#10;  (Session info: chrome=113.0.5672.93)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//a[@class='header_link ms-2']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: f11407cb495bb860593febd8117ed8cd" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given Kullanici admin olarak login olur.....................................failed
+Given Admin Name kismina valid  girer.......................................skipped
+When Admin Surname kismina valid  girer.....................................skipped
+And Admin Birth place kismina valid deger girer.............................skipped
+And Admin Gender kismini secer..............................................skipped
+And Admin Date of birth alanina "11.02.2012" bir tarih girer................skipped
+And Admin Phone Number alanina valid bir deger girer........................skipped
+And Admin SSN  alanina valid bir deger girer................................skipped
+And Admin User Name alanina valid bir deger girer...........................skipped
+And Admin en az sekiz karakterden oluşan Password "12345678" girer..........skipped
+And Admin submit tusuna tiklar..............................................skipped
+And Admin basariyla kayit ekleyebildigini dogrular..........................skipped
+Then close driver...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='header_link ms-2']"}
+  (Session info: chrome=113.0.5672.93)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//a[@class='header_link ms-2']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f11407cb495bb860593febd8117ed8cd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at utilities.ReusableMethods.login(ReusableMethods.java:197)
+	at stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_admin_olarak_login_olur(LoginStepDefinitions.java:20)
+	at ✽.Kullanici admin olarak login olur.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US22_PozitifTest.feature:5)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Admin teacher olusturabilmeli" name="Pozitif scenario" time="15.609">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class='header_link ms-2']&quot;}&#10;  (Session info: chrome=113.0.5672.93)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//a[@class='header_link ms-2']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: f11407cb495bb860593febd8117ed8cd" type="org.openqa.selenium.NoSuchElementException">
+            <![CDATA[Given Kullanici admin olarak login olur.....................................failed
+And Kullanici Menu butonuna tiklar..........................................skipped
+And Teacher Management butonuna tiklar......................................skipped
+And Choose Lessons alanindan bir ders secer.................................skipped
+And Kullanici Name textboxina valid bir deger "Team20" girer................skipped
+And Kullanici Surname textboxina valid bir deger "Team20" girer.............skipped
+And Kullanici Birth Place textboxina valid bir deger "izmir" girer..........skipped
+And Kullanici Email textboxina valid bir deger girer........................skipped
+And Kullanici Phone textboxina valid bir deger girer........................skipped
+And Kullanici SSN textboxina valid bir deger girer..........................skipped
+And Kullanici Username textboxina valid bir deger  girer....................skipped
+And Kullanici Password textboxina valid bir deger "12345678" girer..........skipped
+And Kullanici Is Advisor Teacher checkboxina tiklar.........................skipped
+And Kullanici Gender  alanindan cinsiyet "male" secer.......................skipped
+And Kullanici Date of birth alanina bir tarih "01-09-1998" girer............skipped
+And Kullanici Submit butonuna tiklar........................................skipped
+When Teacher saved successfully yazisini gorur..............................skipped
+When Ekran goruntusu alinir.................................................skipped
+Then close driver...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='header_link ms-2']"}
+  (Session info: chrome=113.0.5672.93)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f11407cb495bb860593febd8117ed8cd, findElement {using=xpath, value=//a[@class='header_link ms-2']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\cvlci\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56530/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f11407cb495bb860593febd8117ed8cd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy24.click(Unknown Source)
+	at utilities.ReusableMethods.login(ReusableMethods.java:197)
+	at stepdefinitions.uidefinitions.LoginStepDefinitions.kullanici_admin_olarak_login_olur(LoginStepDefinitions.java:20)
+	at ✽.Kullanici admin olarak login olur.(file:///C:/Users/cvlci/IdeaProjects/CucumberProjectTeam20/./src/test/resources/features/uifeature/US24_PozitifScenario.feature:7)
+]]>
+        </failure>
+    </testcase>
+</testsuite>

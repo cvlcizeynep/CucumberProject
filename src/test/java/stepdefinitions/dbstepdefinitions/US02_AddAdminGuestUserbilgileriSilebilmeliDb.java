@@ -104,7 +104,7 @@ public class US02_AddAdminGuestUserbilgileriSilebilmeliDb {
 
     }
 
-    @Then("Close Database")
+    @Then("hClose Database")
     public void closeDatabase() {
         DBUtils.closeConnection();
     }
