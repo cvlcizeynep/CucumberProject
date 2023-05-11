@@ -12,7 +12,6 @@ import java.sql.*;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-
 public class US19Steps {
 
     Connection connection;
@@ -38,8 +37,6 @@ public class US19Steps {
         assertEquals(stoptime,actstopTime);
         assertEquals(description,actdecs);
 
+
     }
-
-
-
 }

@@ -1,28 +1,25 @@
 package pojos;
 
-import io.cucumber.messages.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-@JsonIgnoreProperties (ignoreUnknown = true)
-public class LessonPojo {
+public class StudentInfoRoot {
 
-    private LessonObjectPojo object;
-    private String message;
-    private String httpStatus;
+        private StudentInfoObject object;
+        private String message;
+        private String httpStatus;
 
-
-    public LessonPojo() {
+    public StudentInfoRoot() {
     }
 
-    public LessonPojo(LessonObjectPojo object, String message, String httpStatus) {
+    public StudentInfoRoot(StudentInfoObject object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-    public LessonObjectPojo getObject() {
+    public StudentInfoObject getObject() {
         return object;
     }
 
-    public void setObject(LessonObjectPojo object) {
+    public void setObject(StudentInfoObject object) {
         this.object = object;
     }
 
@@ -44,11 +41,13 @@ public class LessonPojo {
 
     @Override
     public String toString() {
-        return "LessonPojo{" +
+        return "StudentInfoRoot{" +
                 "object=" + object +
                 ", message='" + message + '\'' +
                 ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
 }
+
+
 
