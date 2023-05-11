@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 
-public class US04 {
+public class US04_AddDeanApi {
     Response response;
     Faker faker;
     DeanObjectPojo object;
