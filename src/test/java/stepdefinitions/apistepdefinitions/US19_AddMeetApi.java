@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.restassured.response.Response;
 import pojos.MeetResponsePojo;
-import pojos.MeetRootPojo;
 
 
 import java.time.LocalDate;
@@ -18,7 +17,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 
-public class US19 {
+public class US19_AddMeetApi {
     @Given("kullanici toplanti olusturmak icin post request gonderir ve validation yapar")
     public void kullanici_toplanti_olusturmak_icin_post_request_gonderir_ve_validation_yapar() {
         teacherSetUp();

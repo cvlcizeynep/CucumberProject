@@ -5,19 +5,15 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import pages.DeanManagementPage;
-import pages.MeetManagementPage;
 import utilities.DBUtils;
-import utilities.Driver;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 
-public class US04Steps {
+public class US04_AddDeanDb {
     List<Object> deanbirtdaylist= new ArrayList<>();
     List<Object> deanNamelist= new ArrayList<>();
     List<Object> deanSurnamelist= new ArrayList<>();

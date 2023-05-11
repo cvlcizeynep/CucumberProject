@@ -1,9 +1,7 @@
 package stepdefinitions.dbstepdefinitions;
 
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import utilities.DBUtils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,7 +10,7 @@ import java.sql.*;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class US19Steps {
+public class US19_AddMeetDb {
 
     Connection connection;
     Statement statement;

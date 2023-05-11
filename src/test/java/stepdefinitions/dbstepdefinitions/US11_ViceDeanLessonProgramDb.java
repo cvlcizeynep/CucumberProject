@@ -1,28 +1,14 @@
 package stepdefinitions.dbstepdefinitions;
 
-import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
-import pages.ChooseLessonPage;
-import pages.LessonsManagementPage;
-import pages.LoginPage;
-import stepdefinitions.uidefinitions.LoginStepDefinitions;
-import utilities.ConfigReader;
 import utilities.DBUtils;
-import utilities.Driver;
-import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static utilities.ReusableMethods.waitFor;
-
-public class US11Steps {
+public class US11_ViceDeanLessonProgramDb {
     List<Object> LessonProgramList= new ArrayList<>();
 
     @Given("kullanici Databaseden ders programini gorebilmelidir.")

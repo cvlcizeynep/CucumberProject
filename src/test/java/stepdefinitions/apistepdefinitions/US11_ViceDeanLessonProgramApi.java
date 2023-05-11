@@ -10,10 +10,9 @@ import java.util.Map;
 import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.viceDeanSetUp;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
-public class US11 {
+public class US11_ViceDeanLessonProgramApi {
     Response response;
 
     @Given("kullanici Lesson program goruntulemek icin get request gonderir ve dogrulama yapar")
