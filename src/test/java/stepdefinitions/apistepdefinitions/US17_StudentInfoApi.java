@@ -1,25 +1,18 @@
 package stepdefinitions.apistepdefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
-import org.junit.Assert;
-import org.junit.internal.RealSystem;
 import pojos.StudentInfoObject;
 import pojos.StudentInfoRequest;
 import pojos.StudentInfoRoot;
 import pojos.StudentResponsePojo;
-import utilities.JsonUtil;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.teacherSetUp;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class US17 {
+public class US17_StudentInfoApi {
     StudentInfoObject id = new StudentInfoObject();
     @Given("kullanici not vermek icin post request gonderir ve validation yapar")
     public void kullanici_not_vermek_icin_post_request_gonderir_ve_validation_yapar() {

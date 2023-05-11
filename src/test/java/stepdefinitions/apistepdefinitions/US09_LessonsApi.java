@@ -1,11 +1,8 @@
 package stepdefinitions.apistepdefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import pojos.DeanObjectPojo;
-import pojos.LessonPojo;
 import utilities.JsonUtil;
 
 import java.util.HashMap;
@@ -14,11 +11,10 @@ import java.util.Map;
 import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.viceDeanSetUp;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class US09 {
+public class US09_LessonsApi {
 Response response;
     @Given("kullanici Lesson name goruntulemek icin get request gonderir ve dogrulama yapar")
     public void kullanici_lesson_name_goruntulemek_icin_get_request_gonderir_ve_dogrulama_yapar() {
