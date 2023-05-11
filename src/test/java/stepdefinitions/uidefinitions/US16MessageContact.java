@@ -19,7 +19,7 @@ import utilities.ReusableMethods;
 import java.util.ArrayList;
 import java.util.List;
 
-public class US16 {
+public class US16MessageContact {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     public static String name = FakerUtils.nameFaker();
