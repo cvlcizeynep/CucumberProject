@@ -3,8 +3,8 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 import java.sql.*;
-import static stepdefinitions.uidefinitions.US16.email;
-import static stepdefinitions.uidefinitions.US16.name;
+import static stepdefinitions.uidefinitions.US16MessageContact.email;
+import static stepdefinitions.uidefinitions.US16MessageContact.name;
 
 public class US16db {
     java.sql.Connection connection;

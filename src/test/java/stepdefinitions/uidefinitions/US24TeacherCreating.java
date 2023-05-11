@@ -11,9 +11,7 @@ import utilities.ReusableMethods;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
-import static utilities.FakerUtils.nameFaker;
-
-public class US24 {
+public class US24TeacherCreating {
 
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
     Faker faker = new Faker();
