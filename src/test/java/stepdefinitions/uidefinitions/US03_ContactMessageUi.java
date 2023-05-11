@@ -8,7 +8,7 @@ import pages.ContactPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US03 {
+public class US03_ContactMessageUi {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
     String email = faker.internet().emailAddress();

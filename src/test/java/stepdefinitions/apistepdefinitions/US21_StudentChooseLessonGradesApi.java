@@ -7,7 +7,7 @@ import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.studentSetUp;
 import static io.restassured.RestAssured.given;
 
-public class US21 {
+public class US21_StudentChooseLessonGradesApi {
 
     Response response;
 

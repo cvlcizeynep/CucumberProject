@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 import pojos.MessageObjectPojo;
 import pojos.MessagePojo;
+import utilities.FakerUtils;
 
 import static base_url.StudentManagementBaseUrl.adminSetUp;
 import static base_url.StudentManagementBaseUrl.spec;
@@ -14,11 +15,11 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 
 
-public class US03 {
+public class US03_ContactMessageApi {
 
     Response response;
     Faker faker = new Faker();
-    String email = faker.internet().emailAddress();
+    String email = FakerUtils.emailFaker();
     String name = faker.name().firstName();
     MessageObjectPojo object;
     MessagePojo expectedData;

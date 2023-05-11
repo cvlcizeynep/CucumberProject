@@ -7,7 +7,7 @@ import java.sql.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class US21Steps {
+public class US21_ChooseLessonGradesDb {
     Connection connection;
     Statement statement;
     ResultSet resultSet;
