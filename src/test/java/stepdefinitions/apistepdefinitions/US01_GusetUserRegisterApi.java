@@ -19,7 +19,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static utilities.FakerUtils.*;
 
-public class US01 {
+public class US01_GusetUserRegisterApi {
     Response response;
     GuestUserObjectPojo object;
     GuestUserOutherPojo expectedData;

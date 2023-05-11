@@ -1,21 +1,17 @@
 package stepdefinitions.uidefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import pages.LessonsManagementPage;
 import pages.StudentInfoManagement;
-import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class US18 {
+public class US18_StudentInfoManagmentUi {
     StudentInfoManagement studentInfoManagement =new StudentInfoManagement();
 
 

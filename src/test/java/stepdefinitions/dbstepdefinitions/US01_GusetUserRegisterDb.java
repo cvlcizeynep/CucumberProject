@@ -2,16 +2,12 @@ package stepdefinitions.dbstepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import utilities.DBUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-import static utilities.DBUtils.insertDataIntoTable;
-
-public class US01steps {
+public class US01_GusetUserRegisterDb {
     List<Object> userNameList = new ArrayList<>();
 
 
