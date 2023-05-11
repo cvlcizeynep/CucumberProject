@@ -1,2 +1,4 @@
-file:src/test/resources/features/uifeature/US03_ContactMessagePozitiveUi.feature:9
-file:src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:24:25:26:27:28:35:51:63:75:86
+file:src/test/resources/features/uifeature/US22_PozitifTest.feature:22
+file:src/test/resources/features/uifeature/US24_PozitifScenario.feature:29
+file:src/test/resources/features/uifeature/US15.feature:33
+file:src/test/resources/features/uifeature/US06_1.feature:6
