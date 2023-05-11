@@ -15,9 +15,9 @@ import org.junit.runner.RunWith;
                // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,//raporlarin consoleda okunakli sekilde cikmasi icin
-        features = "./src/test/resources/features/dbfeature",//features folder path
+        features = "./src/test/resources/features",//features folder path
         glue = {"stepdefinitions"},   //stepdefinitions path
-        tags = "@US07DB",
+        tags = "@smoke",
         dryRun =false
 )
 public class SmokeTestRunner {
