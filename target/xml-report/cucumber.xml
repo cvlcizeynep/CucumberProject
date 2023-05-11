@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="11" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="11" time="12.337">
+    <testcase classname="Your Name alaninin testi" name="US03_NegativeScenario" time="7.385">
+        <failure message="unknown error: net::ERR_CONNECTION_REFUSED&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.WebDriverException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname "Cahit" alanini doldurur............................skipped
+When kullanici email "zarifsair" alanina valid deger girer..................skipped
+When kullanici subject "Java" alanina valid deger  girer....................skipped
+When kullanici Message "Kaliteli bir egitim aldim" alanina valid deger  girer.skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici Contact Message Created Created Successfully mesajini goruntulemez.skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="US03_NegativeScenario_2" time="3.588">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, findElement {using=xpath, value=//*[text()='Contact']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................passed
+When kullanici Contact butonuna tiklar......................................failed
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname "Cahit" alanini doldurur............................skipped
+When kullanici email "zarifsairr@gmail.com" alanina valid deger girer.......skipped
+When kullanici subject "!" alanina valid deger  girer.......................skipped
+When kullanici Message "Kaliteli bir egitim aldim" alanina valid deger  girer.skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici Contact Message Created Created Successfully mesajini goruntulemez.skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, findElement {using=xpath, value=//*[text()='Contact']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy22.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:52)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
+	at utilities.ReusableMethods.JSEClickToElement(ReusableMethods.java:206)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_contact_butonuna_tiklar(US03_ContactMessageUi.java:24)
+	at ✽.kullanici Contact butonuna tiklar(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:6)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="US03_NegativeScenario_3" time="0.036">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname "Cahit" alanini doldurur............................skipped
+When kullanici email "zariffsair@gmail.comr" alanina valid deger girer......skipped
+When kullanici subject "2" alanina valid deger  girer.......................skipped
+When kullanici Message "Kaliteli bir egitim aldim" alanina valid deger  girer.skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici Contact Message Created Created Successfully mesajini goruntulemez.skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="US03_NegativeScenario_4" time="0.03">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname "Cahit" alanini doldurur............................skipped
+When kullanici email "zaarifsair@gmail.com" alanina valid deger girer.......skipped
+When kullanici subject "Java" alanina valid deger  girer....................skipped
+When kullanici Message "a" alanina valid deger  girer.......................skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici Contact Message Created Created Successfully mesajini goruntulemez.skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="US03_NegativeScenario_5" time="0.173">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname "Cahit" alanini doldurur............................skipped
+When kullanici email "zarifssair@gmail.com" alanina valid deger girer.......skipped
+When kullanici subject "Java" alanina valid deger  girer....................skipped
+When kullanici Message "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" alanina valid deger  girer.skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici Contact Message Created Created Successfully mesajini goruntulemez.skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="Aynı maili gün icinde ikinci kez kullanamaz" time="0.024">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici Your Name alanina  valid bir deger "Ayse" girer..............skipped
+When kullanici Your Email  alanina  valid bir deger girer...................skipped
+When kullanici subject  alanina valid bir deger "resim" girer...............skipped
+When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer....skipped
+When kullanici Send Message alanina tiklar..................................skipped
+When kullanici Your Name alanina  valid bir deger "Beyza" girer.............skipped
+When kullanici Your Email  alanina  ayni maili girer........................skipped
+When kullanici subject  alanina valid bir deger "muzik" girer...............skipped
+When kullanici  mesaj alanina valid bir deger "notalari seviyorum" girer....skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici uyari ayni maili kullanamayacgi mesaji alir..................skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="Name alanının bos birakilması testi" time="0.021">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname alanini bos birakir.................................skipped
+When kullanici Your Email  alanina  valid bir deger girer...................skipped
+When kullanici subject  alanina valid bir deger "resim" girer...............skipped
+When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer....skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici ilgili alanda Required mesaji alir...........................skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="Email alanının bos birakilması testi" time="0.02">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici Your Name alanina  valid bir deger "Ayse" girer..............skipped
+When kullanici Your Email  alanini bos birakir..............................skipped
+When kullanici subject  alanina valid bir deger "resim" girer...............skipped
+When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer....skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici email alaninda Required mesaji alir..........................skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="Subject alanının bos birakilması testi" time="0.014">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici Your Name alanina  valid bir deger "Ayse" girer..............skipped
+When kullanici Your Email  alanina  valid bir deger girer...................skipped
+When kullanici subject  alanini bos birakir.................................skipped
+When kullanici  mesaj alanina valid bir deger "renkleri seviyorum" girer....skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici subject alaninda Required mesaji alir........................skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Your Name alaninin testi" name="Message alanının bos birakilması testi" time="0.014">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici Your Name alanina  valid bir deger "Ayse" girer..............skipped
+When kullanici Your Email  alanina  valid bir deger girer...................skipped
+When kullanici subject  alanina valid bir deger "resim" girer...............skipped
+When kullanici  mesaj alanini bos birakir...................................skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici message alaninda Required mesaji alir........................skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessageNegativeUi.feature:5)
+]]></failure>
+    </testcase>
+    <testcase classname="Pozitif Test Senaryosu" name="Tum_Alanlarin_Dogru_Girilmesi" time="0.015">
+        <failure message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=112.0.5615.138)&#10;Build info: version: '4.8.3', revision: 'e5e76298c3'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6c13acc42be8d3a882bda59baf5d9d7c" type="org.openqa.selenium.NoSuchWindowException"><![CDATA[Given kullanici sayfaya gider...............................................failed
+When kullanici Contact butonuna tiklar......................................skipped
+Then kullanici Concatct sayfasina yonlendirilir.............................skipped
+When kullanici yourname "Ahmet" alanini doldurur............................skipped
+When kullanici Your Email  alanina  valid bir deger girer...................skipped
+When kullanici subject "Java" alanina valid deger  girer....................skipped
+When kullanici Message "Dersler cok verimli" alanina valid deger  girer.....skipped
+When kullanici Send Message alanina tiklar..................................skipped
+Then kullanici Contact Message Created Created Successfully mesajini goruntuler.skipped
+And sayfa kapatilir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=112.0.5615.138)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6c13acc42be8d3a882bda59baf5d9d7c, get {url=https://www.managementonschools.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\faatm\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59213/devtoo..., se:cdpVersion: 112.0.5615.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c13acc42be8d3a882bda59baf5d9d7c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.uidefinitions.US03_ContactMessageUi.kullanici_sayfaya_gider(US03_ContactMessageUi.java:19)
+	at ✽.kullanici sayfaya gider(file:///C:/Users/faatm/CucumberProjectTeam20/./src/test/resources/features/uifeature/US03_ContactMessagePozitiveUi.feature:5)
+]]></failure>
+    </testcase>
+</testsuite>
