@@ -14,7 +14,7 @@ import static base_url.StudentManagementBaseUrl.viceDeanSetUp;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class US10 {
+public class US10_AddLessonProgramApi {
     @Given("kullanici ders programı olusturmak icin post request gonderir ve dogrular")
     public void kullanici_ders_programı_olusturmak_icin_post_request_gonderir_ve_dogrular() {
         viceDeanSetUp();

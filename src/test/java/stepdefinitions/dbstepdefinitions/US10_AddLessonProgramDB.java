@@ -1,14 +1,13 @@
 package stepdefinitions.dbstepdefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 
 import java.sql.*;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class US10StepDef {
+public class US10_AddLessonProgramDB {
 
     @Given("Vice Dean education_term_id,day,start_time,stop_time i gorur, dogrular")
     public void vice_dean_education_term_id_day_start_time_stop_time_i_gorur_dogrular() throws SQLException {
