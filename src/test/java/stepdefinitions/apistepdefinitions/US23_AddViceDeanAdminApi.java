@@ -3,7 +3,7 @@ package stepdefinitions.apistepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class US23API {
+public class US23_AddViceDeanAdminApi {
 
     @Given("Admin name kismi bos bir body ile post request yapar")
     public void admin_name_kismi_bos_bir_body_ile_post_request_yapar() {

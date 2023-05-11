@@ -9,6 +9,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class AuthenticationSchoolManagement {
+    // api testleri icin  bes farkli generate token methodu
     static   String url= ConfigReader.getProperty("AuthenticationURL");
     //--------------------------ADMİN----------------------------
     public static String generateTokenAdmin(){

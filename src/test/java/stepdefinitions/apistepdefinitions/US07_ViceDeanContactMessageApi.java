@@ -19,7 +19,7 @@ import static base_url.StudentManagementBaseUrl.*;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class US07Api {
+public class US07_ViceDeanContactMessageApi {
     ContactGellAllPage contactGellAllPage;
     Response response;
     MessageObjectPojo messageObjectPojo;

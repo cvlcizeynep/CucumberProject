@@ -5,12 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import org.openqa.selenium.interactions.Actions;
 import pojos.MessageObjectPojo;
-import pojos.MessagePojo;
-import pojos.MessagePostPojo;
 import utilities.DBUtils;
-import utilities.Driver;
 import utilities.FakerUtils;
 import utilities.ReusableMethods;
 
@@ -22,7 +18,7 @@ import static base_url.StudentManagementBaseUrl.spec;
 import static base_url.StudentManagementBaseUrl.studentSetUp;
 import static io.restassured.RestAssured.given;
 
-public class US07Steps {
+public class US07_ViceDeanContactMessagesDb {
     List<Object> messagelist= new ArrayList<>();
     List<Object> messageaouthorlist= new ArrayList<>();
     List<Object> messagesubjectlist= new ArrayList<>();

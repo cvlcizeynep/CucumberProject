@@ -7,11 +7,9 @@ import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import pojos.ViceDeanResInnerPojo;
 import pojos.ViceDeanResponsePojo;
-import utilities.DBUtils;
 import utilities.JsonUtil;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static base_url.StudentManagementBaseUrl.deanSetUp;
@@ -22,7 +20,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static utilities.FakerUtils.*;
 
-public class US06api {
+public class US06_AddViceDeanApi {
     Response response;
     Response response1;
     Response response2;
