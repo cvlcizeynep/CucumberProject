@@ -3,6 +3,7 @@ package utilities;
 import com.github.javafaker.Faker;
 
 public class FakerUtils {
+    // her post ve putta data degistirmemek icin faker utils olusturduk.
 
     static Faker faker = new Faker();
     public static String phoneNumberFaker(){
@@ -17,8 +18,13 @@ public class FakerUtils {
 
     public static String nameFaker(){
         String name = faker.name().firstName();
+        if(name.length()>2){
         return name;
+        }else return name=nameFaker();
     }
+
+
+
     public static String surnameFaker(){
         String surname = faker.name().lastName();
         return surname;

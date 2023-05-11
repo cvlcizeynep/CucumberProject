@@ -9,8 +9,7 @@ public class DBUtils {
     private static Statement statement;
     private static ResultSet resultSet;
 
-    //1. Adım: Driver'a kaydol
-    //2. Adım: Datbase'e bağlan
+   //parametreli connection methodu
     public static Connection connectToDataBase(String hostName, String dbName,String username, String password)  {
         try {
             Class.forName("org.postgresql.Driver");
@@ -30,6 +29,63 @@ public class DBUtils {
 
         return connection;
     }
+    //parematresi connection methodu
+    public static void createConnection() {
+        String url = "jdbc:postgresql://164.92.252.42:5432/school_management";
+        String username = "select_user";
+        String password = "43w5ijfso";
+        try {
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    //girilen queryi list halinde donen method
+    public static List<List<Object>> getQueryResultList(String query) {
+        executeQuery(query);
+        List<List<Object>> rowList = new ArrayList<>();
+        ResultSetMetaData rsmd;
+        try {
+            rsmd = resultSet.getMetaData();
+            while (resultSet.next()) {
+                List<Object> row = new ArrayList<>();
+                for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+                    row.add(resultSet.getObject(i));
+                }
+                rowList.add(row);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return rowList;
+    }
+
+    //database baglantisini kapatan method
+    public static void closeConnectionAndStatement(){
+
+        try {
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(connection.isClosed()&&statement.isClosed()){
+                System.out.println("Connection and statement closed!");
+
+            }else {
+                System.out.println("Connection and statement NOT closed!");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+
 
     //3. Adım: Statement oluştur.
     public static Statement createStatement(){
@@ -58,26 +114,7 @@ public class DBUtils {
     }
 
     //5. Adım: Bağlantı ve Statement'ı kapat.
-    public static void closeConnectionAndStatement(){
 
-        try {
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(connection.isClosed()&&statement.isClosed()){
-                System.out.println("Connection and statement closed!");
-
-            }else {
-                System.out.println("Connection and statement NOT closed!");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
     //Table oluşturan method
     public static void createTable(String tableName, String... columnName_dataType ){
@@ -149,17 +186,7 @@ public class DBUtils {
     /**
      * DBUtils.createConnection(); -> to connect to teh database
      */
-    public static void createConnection() {
-        String url = "jdbc:postgresql://164.92.252.42:5432/school_management";
-        String username = "select_user";
-        String password = "43w5ijfso";
-        try {
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
+
     /**
      * DBUtils.executeQuery(String query); -> Execute the query and store is the result set object
      */
@@ -248,25 +275,7 @@ public class DBUtils {
      * @return sorgu sonucunu, dış listenin temsil ettiği bir liste listesinde döndürür
      *       * satırların ve iç listelerin toplanması tek bir satırı temsil eder
      */
-    public static List<List<Object>> getQueryResultList(String query) {
-        executeQuery(query);
-        List<List<Object>> rowList = new ArrayList<>();
-        ResultSetMetaData rsmd;
-        try {
-            rsmd = resultSet.getMetaData();
-            while (resultSet.next()) {
-                List<Object> row = new ArrayList<>();
-                for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-                    row.add(resultSet.getObject(i));
-                }
-                rowList.add(row);
-            }
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return rowList;
-    }
+
     /**
      * @return list of values of a single column from the result set
      */

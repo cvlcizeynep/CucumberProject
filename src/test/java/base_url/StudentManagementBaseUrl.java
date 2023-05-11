@@ -12,7 +12,9 @@ import static utilities.AuthenticationSchoolManagement.*;
 public class StudentManagementBaseUrl  {
 
     public static RequestSpecification spec;
-    public static RequestSpecification specVicedean;
+
+
+    //tokenlera ozel RequestSpecification
     static public void adminSetUp() {
 
 
