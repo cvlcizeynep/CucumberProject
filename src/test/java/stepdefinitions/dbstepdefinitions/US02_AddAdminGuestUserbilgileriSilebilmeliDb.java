@@ -66,7 +66,7 @@ public class US02_AddAdminGuestUserbilgileriSilebilmeliDb {
     }
     @Then("Admin Guest User username bilgilerini gorebildigini dogrular")
     public void admin_guest_user_username_bilgilerini_gorebildigini_dogrular() {
-        Assert.assertTrue(usernamelist.toString().contains("[hayriyekilic]"));
+        Assert.assertTrue(usernamelist.toString().contains("[hayriyeklc]"));
 
     }
 
@@ -74,7 +74,8 @@ public class US02_AddAdminGuestUserbilgileriSilebilmeliDb {
     @Then("Admin Guest User username bilgilerini goremedigini dogrular")
     public void adminGuestUserUsernameBilgileriniGoremediginiDogrular() {
 
-        Assert.assertFalse(usernamelist.toString().contains("asdf12"));
+        ReusableMethods.waitFor(2);
+        Assert.assertFalse(usernamelist.toString().contains("mnhtr"));
 
     }
 

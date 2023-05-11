@@ -22,6 +22,3 @@ Feature: Admin Dean'lerin Name, Gender, Phone Number, SSN, User Name bilgilerini
 
 
 
-
-
-
